@@ -99,10 +99,13 @@ Our aim is to rank the best portfolio managers during a period of time ( quarter
  <h1> Mathematical Modelling and Formulations: </h1>
 
 Our task is to build an abstract mathematical representation for  the hedge fund assessment problem. These mathematical models will be characterized by performing analytic calculations and makes recommendations based on the given public hedge fund data. Also the model will summarize particular indications for the end-user  for more statistical analysis and machine learning process.
+
+<br>
 Approach One, Dual Comparison: 
 
 A kind of capital asset pricing model (CAPM) is derived to compare two given portfolios, the appreciation rates of two portfolios are intrinsically related to their returns, their volatilities and the covariance between their  returns.  
 This stochastic process framework has a formulation related to Alpha quantification which is a measure of performance on a risk-adjusted basis.
+<br>
 Approach Two, Intrinsic Evaluation:
 
 A second  problem is concerned with the question of whether the hedge fund portfolio can be considered as a particular market index in which investors  are viewing and making new decisions to invest ( buy it and sell it ) continuously over time. A natural assumption is to consider the exponential growth, we suppose a key ingredient that the posterior time  to sell is following an  exponential time distribution ( for instance, the sell is conducted, on average, daily, weakly or monthly,  after buying). 
@@ -110,46 +113,43 @@ A wealth accumulation framework is formulated to gauge the hedge fund portfolio 
 Under our assumption that stock prices are following stochastic processes, the numerical values of this wealth accumulation framework are mainly related to  the logarithmic returns of the hedge fund portfolio. 
 The formulation takes into consideration the presence of the volatility which diminishes the wealth accumulation  that one might naively expect from a given arithmetic  return.
 The broad movements that can be discerned are described as the exponential growth trend of  wealth accumulation or the dynamic process of capital formation fostered by the hedge fund portfolio. 
-Gained Insights:
+<br>
+ <h1>  Gained Insights: </h1> 
 
 The two approaches provide critical insights on the performance of the portfolio over short-term and long-term time horizons, covering aspects such as arithmetic/geometric returns, volatility/risk, risk-adjusted returns, alpha and other key parameters used by portfolio industry. 
 The statistical / machine learning  analysis on the derived  data from the algorithms/codes based on these approaches  will help Portfolio Manager to evaluate the portfolio’s performance over a benchmark of portfolios/stocks across different time frames.
 Correlation Between Approaches One and Two :
-
+<br>
 One important question to assess is:  Are the hedge funds outperforming  accordingly to the Approach One having the suitable portfolio composition for an adequate wealth accumulation rate accordingly to the Approach Two?
 This point will be investigated empirically by using public hedge fund data and will be reported in the section "Results and Discussion".
 Public Hedge Fund Data:
-
+<br>
 We collected a highly representative group of hedge funds from the EDGAR Form 13F Database to construct our the Hedge Fund Universe (HFU).
 These files are downloaded using Python code, only 13F-HR filings are used to extract the holdings, excluding the amendments and the notice filings which do not contain any significant information for our purposes, since they contain no holdings.
 The historical stocks prices are retrieved from Yahoo! Finance .  We use daily historical data. 
 Market Portfolio:
-
+<br>
 For each given portfolio, we considered its associated Market portfolio which is a portfolio consisting of a weighted sum of every asset in the market, with weights in the proportions that they exist in the market. These Market portfolios are our  Market Portfolio Universe (MarketU).  This will help us to answer this question: Is the hedge fund portfolio beating its market portfolio benchmark?
-
+<br>
 Asset determination measures a manager’s ability to select stocks that outperform their market benchmarks, insight about their stock picking skills, detecting the  stocks within the portfolio that are mainly contributing to Alpha generation.
-
+<br>
 The comparison provides critical insights on the impact of allocation decisions taken by the Portfolio Manager on the its portfolio’s return performance and to evaluate the key stocks that contribute to return differential with respect to the market portfolio benchmark.
 
 
-Scientific Computation, from Abstraction to Implementation:
+<h1> Scientific Computation, from Abstraction to Implementation:</h1>
 
  The shaped algorithms from our mathematical modelling & formulations are implemented using C++ Language as an analytic engine on the top of  the databases EDGAR Form 13F Database and Yahoo! Finance .  The C++ implementation is using Boost Asio Library to extract data from Yahoo! Finance Network. The statistical analysis uses  R programming language  which is a software environment for statistical computing and graphics supported by the R Foundation for Statistical Computing. 
 Results and Discussion
-
+<br>
 
 The featured results are obtained by processing our codes on a Laptop with four cores: i3-core-CPU-2.10 GHz- 4GB-RAM and 64-bit-Ubuntu 14-04.
-
+<br>
 Our whole universe of investment possibilities is composed by Hedge Fund Universe (HFU), Market Portfolio  Universe (MarketU) and the Stocks Fund Universe (StockU) which is the set  union of all stocks reported in all hedge fund 13F Form (holdings).  A fourth universe, (SectorU), formed by stock market sectors  where stocks in similar industries are grouped together. By assessing stock market sectors, an investor may see how a particular stock is performing in relation to its peers. 
+<br>
+Numerics are in 
+<a target="alone"  href="../examples/site.html"> EQUITY RESEARCH-NUMERICS ESSENTIALS </a>
 
-Global Statistical View
-
-The averaged wealth accumulation from hedge funds and Market Portfolios almost exactly matches the averaged wealth accumulation from all equities. By contrast, the volatility from equity wealth accumulations over the used period  exceeds the volatility from hedge fund wealth accumulations. 
- The volatility from market portfolio wealth accumulations is comparable to the ones from hedge fund wealth accumulations, see Figures 1-2.
-
-
-
-    </p>
+</p>
 
     </section>
 </div>

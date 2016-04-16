@@ -77,10 +77,9 @@
     <body style="background-color:lightgrey;">
 
     <h1 style="color:black"> EQUITY RESEARCH-NUMERICS ESSENTIALS</h1>
-   
-     <div>
-    <a target="alone"  href="http://nvd3.org/" style="color:black"> Using Nvd3's Chart libraries </a>
-     </div>  
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
 </header>
 
 <!-- <div id="banner">
@@ -135,7 +134,18 @@
             <a target="alone" id="showonlythis" href="#">View in a New Window</a>
         </div>
 
+
+<br><br>
+<br><br>
+Publications are in preparation.
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+
+
     </section>
 </div>
+ 
 </body>
 </html>

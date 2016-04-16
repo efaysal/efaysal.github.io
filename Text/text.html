@@ -66,6 +66,9 @@
 <header>
     <body style="background-color:lightgrey;">
     <h1 style="color:black"> EQUITY RESEARCH-REPORT ESSENTIALS</h1>
+  <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com </a>
+     </div> 
 </header>
 
 
@@ -81,6 +84,8 @@
 The nature of financial world is stochastic, not deterministic. Phenomena are mainly subject to randomness and only statistical statements can be made.
 </blockquote>
 
+<br><br>
+
  <h1> Aim: </h1>
 
 Our aim is to rank the hedge fund equity portfolio managers during a period of time ( quarterly basis, for instance) using the numerical data related to their equities(stocks) in the file form 13F holdings . Their stock-picking decisions are quantified, analyzed and compared to other hedge funds in a Hedge Fund Universe (HFU). We considered two analytical approaches, to compare between two hedge fund portfolios, we assumed that the stocks are represented by prices following known stochastic processes in the 
@@ -88,7 +93,7 @@ Our aim is to rank the hedge fund equity portfolio managers during a period of t
 <a target="alone" href="http://www.probabilityandfinance.com/"> well-established stochastic finance theory</a>.
 
 The second approach is based only on the logarithmic returns of the hedge fund portfolio to determine his capital accumulation process, this second approach is well-established in <a target="alone" href= http://scholar.harvard.edu/files/campbell/files/campbellshiller_jf1988.pdf"> Campbell-Shiller framework</a>.
-
+<br><br>
 <h1>  Analytical Modeling and <a target="alone"  href="../Numerics/site.html"> Numerics </a>
  </h1>
 
@@ -113,11 +118,11 @@ than typical results from stochastic finance theory. The wealth accumulation
 analytic used the mean and variance of the actual returns, not as estimated
 parameters in a stochastic process that is assumed to generate these returns.
 <br><br>
-Nevertheless, our mathematical analysis showed that the first approach is
+Nevertheless, our mathematical analysis ( to be published ) showed that the first approach is
 indeed a special case of the second approach when prices are following the
 known stochastic process in the modern portfolio theory, for instance stochastic
 portfolio framework. 
-
+<br><br>
 <h1>  Hedge Fund Datasets </h1>
 We collected a highly representative group of hedge funds from the <a target="alone" href="https://www.sec.gov/answers/form13f.htm"> EDGAR
 Form 13F Database </a> to construct our the Hedge Fund Universe (HFU). These
@@ -126,7 +131,7 @@ tract the holdings, excluding the amendments and the notice filings which do
 not contain any significant information for our purposes, since they contain no
 holdings. The historical stocks prices are retrieved from <a target="alone" href="https://finance.yahoo.com/"> Yahoo! Finance </a> . We
 use daily historical data.
-
+<br><br>
 <h1> Implementation:</h1>
 Our Mathematical formulations are implemented using C++ Language as an
 analytic engine on the top of the databases EDGAR Form 13F Database and
@@ -141,7 +146,7 @@ The insight analysis uses R programming language to
 process the C++ results ( R is a software environment for statistical computing
 and graphics supported by the <a target="alone" href="https://www.r-project.org/" > R Foundation for Statistical Computing </a>). The interactive data visualizations in web browsers uses the <a target="alone"  href="http://nvd3.org/"> NVD3 data visualization library. </a>
 
- 
+ <br><br>
 <h1> Numerical Results:</h1>
 
 The featured numerical results are obtained by processing our codes on a Laptop
@@ -151,10 +156,19 @@ historical prices from a stock for the period from a given prior date until a
 given posterior date. Often we use data from a quarter to make comparisons
 and evaluate trends.
 <br><br>
-Ther numerical results are in 
-<a target="alone"  href="../Numerics/site.html"> EQUITY RESEARCH-NUMERICS ESSENTIALS </a>
+The numerical results are in 
+<a target="alone"  href="../Numerics/site.html"> EQUITY RESEARCH-NUMERICS ESSENTIALS </a>.
+
+<br><br>
+<br><br>
+Publications are in preparation.
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com </a>
+     </div> 
 
  </section>
 </div>
+
 </body>
 </html>

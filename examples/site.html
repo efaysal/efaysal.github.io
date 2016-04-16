@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>HF Equaty Portfolio: Digital Analytics & Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #CCC; font-family: arial; font-size: 14px; font-weight:bold;">'
+                + 'Click the links above to load the example here'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+
+    <h1 style="color:black"> EQUITY RESEARCH-REPORT ESSENTIALS</h1>
+   <p  style="color:gold"> <mark> Digital Analytics & Metrics </mark></p> -->
+     <div>
+    <a target="alone"  href="http://nvd3.org/" style="color:black"> Using Nvd3's Chart libraries </a>
+     </div>  
+</header>
+
+<!-- <div id="banner">
+    <div>
+        <span id="logo"></span>
+
+        <a href="https://github.com/nvd3-community/nvd3" target="github" class="button fork"><strong>GitHub</strong></a>
+        <a href="site.html" class="button fork docs selected"><strong>Examples</strong></a>
+        <a href="documentation.html" class="button fork docs"><strong>Documentation</strong></a>
+        <div class="downloads">
+            <span>Downloads:</span>
+            <ul>
+                <li><a href="https://github.com/nvd3-community/nvd3/zipball/master" class="button">ZIP</a></li>
+                <li><a href="https://github.com/nvd3-community/nvd3/tarball/master" class="button">TAR</a></li>
+            </ul>
+        </div>
+    </div>
+</div><!-- end banner --> 
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+         <h3>
+            Equity Research
+        </h3>
+        <p>
+            <a target="alone"  href="http://fekhfbdna.blogspot.ca/2016/03/hedge-fund-portfolio-analytical-tracking.html">Our Equity Research uses a multi-layered framework:</a> Mathematical financial modeling to build an analytical assessement of a financial asset or portfolio. Data related to corporation, sector, industry and hedge fund equity portfolio construction have been integrated to provide key components driving financial asset or portfolio performance. Result visualization uses 
+           <a target="alone"  href="http://nvd3.org/"> the NVD3 data visualization library. </a>
+        </p>
+
+        <div>
+            <a href="#" class="showcharts">Show Chart Examples</a>
+        </div>
+         <div class="examplelinks chartlinks">
+               <a href="ScatterChart _HF_ALL_.html"> Major_US_Hedge_Funds </a> |
+             <a href="ScatterChart _USIND_.html"> US_Industries </a> |
+              <a href="LineChart_USIND_.html">  US_Industries_Trends </a> |
+              <br>
+            <a href="ScatterChart _WMEXCHANGE_.html">  Major_World_Echanges </a> |
+             <a href="LineChart_MWEXCHANGES_.html"> Major_World_Echanges_Trends </a> |
+        </div>
+
+        <div id="show_wrapper"><iframe id="show"></iframe></div>
+        <div id="example_options" style="visibility: hidden;">
+            <a target="alone" id="showonlythis" href="#">View in a New Window</a>
+        </div>
+
+    </section>
+</div>
+</body>
+</html>

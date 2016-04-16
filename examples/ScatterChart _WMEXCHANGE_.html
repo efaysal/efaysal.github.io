@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="/home/faysal/Desktop/nvd3-community-nvd3-c41d501/build/nv.d3.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js" charset="utf-8"></script>
+    <script src="/home/faysal/Desktop/nvd3-community-nvd3-c41d501/build/nv.d3.js"></script>
+
+    <style>
+        text {
+            font: 12px sans-serif;
+        }
+        svg {
+            display: block;
+        }
+        html, body, #test1, svg {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="test1" class='with-3d-shadow with-transitions'>
+    <svg></svg>
+</div>
+
+<script>
+
+var datax=[{"Name":"AMS","AMEAN":-0.0175,"GMEAN":-0.029,"PERFORMANCE":25.3143,"STOCKN":64,"_row":"AMS"},{"Name":"ASE","AMEAN":-0.0153,"GMEAN":-0.0115,"PERFORMANCE":24.802,"STOCKN":348,"_row":"ASE"},{"Name":"ASX","AMEAN":-0.004,"GMEAN":-0.0086,"PERFORMANCE":26.6326,"STOCKN":1014,"_row":"ASX"},{"Name":"ATH","AMEAN":-0.0247,"GMEAN":-0.012,"PERFORMANCE":24.4884,"STOCKN":54,"_row":"ATH"},{"Name":"BER","AMEAN":-0.0105,"GMEAN":-0.0166,"PERFORMANCE":24.6117,"STOCKN":287,"_row":"BER"},{"Name":"BRU","AMEAN":-0.0006,"GMEAN":-0.0043,"PERFORMANCE":28.0285,"STOCKN":71,"_row":"BRU"},{"Name":"BSE","AMEAN":-0.0023,"GMEAN":-0.0018,"PERFORMANCE":24.9715,"STOCKN":504,"_row":"BSE"},{"Name":"BUE","AMEAN":0.0483,"GMEAN":-0.0041,"PERFORMANCE":40.3699,"STOCKN":44,"_row":"BUE"},{"Name":"CPH","AMEAN":-0.0202,"GMEAN":-0.0142,"PERFORMANCE":22.5477,"STOCKN":83,"_row":"CPH"},{"Name":"DOH","AMEAN":-0.0336,"GMEAN":-0.0362,"PERFORMANCE":23.6602,"STOCKN":43,"_row":"DOH"},{"Name":"EBS","AMEAN":-0.021,"GMEAN":-0.0021,"PERFORMANCE":25.2064,"STOCKN":156,"_row":"EBS"},{"Name":"FRA","AMEAN":-0.0147,"GMEAN":-0.0223,"PERFORMANCE":24.3825,"STOCKN":1242,"_row":"FRA"},{"Name":"GER","AMEAN":-0.0172,"GMEAN":-0.0159,"PERFORMANCE":25.5023,"STOCKN":492,"_row":"GER"},{"Name":"HAM","AMEAN":-0.0155,"GMEAN":-0.0101,"PERFORMANCE":22.7976,"STOCKN":78,"_row":"HAM"},{"Name":"HAN","AMEAN":-0.0174,"GMEAN":-0.0193,"PERFORMANCE":24.362,"STOCKN":28,"_row":"HAN"},{"Name":"HEL","AMEAN":-0.0073,"GMEAN":-0.0071,"PERFORMANCE":26.6518,"STOCKN":61,"_row":"HEL"},{"Name":"HKG","AMEAN":-0.0184,"GMEAN":-0.0231,"PERFORMANCE":24.661,"STOCKN":822,"_row":"HKG"},{"Name":"IOB","AMEAN":-0.0234,"GMEAN":-0.0278,"PERFORMANCE":26.6529,"STOCKN":28,"_row":"IOB"},{"Name":"IST","AMEAN":-0.0043,"GMEAN":-0.0043,"PERFORMANCE":29.9798,"STOCKN":227,"_row":"IST"},{"Name":"JKT","AMEAN":0.0038,"GMEAN":-0.0014,"PERFORMANCE":29.9152,"STOCKN":231,"_row":"JKT"},{"Name":"KLS","AMEAN":-0.0017,"GMEAN":-0.0073,"PERFORMANCE":27.6662,"STOCKN":186,"_row":"KLS"},{"Name":"KSC","AMEAN":-0.0157,"GMEAN":-0.012,"PERFORMANCE":23.4892,"STOCKN":294,"_row":"KSC"},{"Name":"LSE","AMEAN":-0.0099,"GMEAN":-0.0215,"PERFORMANCE":25.1414,"STOCKN":1279,"_row":"LSE"},{"Name":"MCE","AMEAN":-0.0232,"GMEAN":-0.0271,"PERFORMANCE":24.8017,"STOCKN":67,"_row":"MCE"},{"Name":"MCX","AMEAN":-0.0015,"GMEAN":0.0064,"PERFORMANCE":24.7901,"STOCKN":81,"_row":"MCX"},{"Name":"MEX","AMEAN":0.004,"GMEAN":0.0008,"PERFORMANCE":28.1655,"STOCKN":216,"_row":"MEX"},{"Name":"MIL","AMEAN":-0.0246,"GMEAN":-0.0351,"PERFORMANCE":21.5682,"STOCKN":122,"_row":"MIL"},{"Name":"MUN","AMEAN":-0.0137,"GMEAN":-0.0113,"PERFORMANCE":24.8124,"STOCKN":299,"_row":"MUN"},{"Name":"NCM","AMEAN":-0.0144,"GMEAN":-0.0246,"PERFORMANCE":24.0848,"STOCKN":705,"_row":"NCM"},{"Name":"NGM","AMEAN":-0.0191,"GMEAN":-0.0243,"PERFORMANCE":22.2973,"STOCKN":468,"_row":"NGM"},{"Name":"NMS","AMEAN":-0.0146,"GMEAN":-0.0203,"PERFORMANCE":25.3787,"STOCKN":1577,"_row":"NMS"},{"Name":"NSI","AMEAN":-0.0004,"GMEAN":-0.0053,"PERFORMANCE":25.7105,"STOCKN":278,"_row":"NSI"},{"Name":"NYQ","AMEAN":-0.0065,"GMEAN":-0.0185,"PERFORMANCE":29.3201,"STOCKN":2774,"_row":"NYQ"},{"Name":"NZE","AMEAN":0.0045,"GMEAN":0.0044,"PERFORMANCE":31.1467,"STOCKN":92,"_row":"NZE"},{"Name":"OBB","AMEAN":-0.0062,"GMEAN":-0.0491,"PERFORMANCE":25.6889,"STOCKN":301,"_row":"OBB"},{"Name":"OSL","AMEAN":-0.0083,"GMEAN":-0.0114,"PERFORMANCE":27.5505,"STOCKN":140,"_row":"OSL"},{"Name":"PAR","AMEAN":-0.0025,"GMEAN":-0.0151,"PERFORMANCE":28.6921,"STOCKN":331,"_row":"PAR"},{"Name":"PCX","AMEAN":-0.019,"GMEAN":-0.0249,"PERFORMANCE":27.2385,"STOCKN":21,"_row":"PCX"},{"Name":"PNK","AMEAN":-0.0077,"GMEAN":-0.0208,"PERFORMANCE":26.488,"STOCKN":5160,"_row":"PNK"},{"Name":"SAO","AMEAN":0.05,"GMEAN":0.0005,"PERFORMANCE":66.198,"STOCKN":200,"_row":"SAO"},{"Name":"SES","AMEAN":-0.0015,"GMEAN":-0.0129,"PERFORMANCE":27.9582,"STOCKN":325,"_row":"SES"},{"Name":"SET","AMEAN":-0.0052,"GMEAN":-0.0144,"PERFORMANCE":27.285,"STOCKN":108,"_row":"SET"},{"Name":"STO","AMEAN":-0.0168,"GMEAN":-0.0142,"PERFORMANCE":23.6107,"STOCKN":148,"_row":"STO"},{"Name":"STU","AMEAN":-0.0209,"GMEAN":-0.0173,"PERFORMANCE":23.8771,"STOCKN":160,"_row":"STU"}];
+
+
+var PERIOD= [{"PERIOD":"Period {2015-11-25} : {2016-04-12}"}];
+
+
+    // register our custom symbols to nvd3
+    // make sure your path is valid given any size because size scales if the chart scales.
+    nv.utils.symbolMap.set('thin-x', function(size) {
+        size = Math.sqrt(size);
+        return 'M' + (-size/2) + ',' + (-size/2) +'l' + size + ',' + size +'m0,' + -(size) +'l' + (-size) + ',' + size;
+    });
+
+    // create the chart
+    var chart;
+    nv.addGraph(function() {
+        chart = nv.models.scatterChart()
+            .showDistX(true)
+            .showDistY(true)
+            .useVoronoi(true)
+            .color(d3.scale.category10().range())
+            .duration(300)
+            .showLegend(false)
+        ;
+
+        chart.yAxis
+    .axisLabel('Performance');
+    chart.xAxis
+    .axisLabel('Arth_Mean');
+    
+       chart.dispatch.on('renderEnd', function(){
+           console.log('render complete');
+        });
+
+        chart.xAxis.tickFormat(d3.format('.02f'));
+        chart.yAxis.tickFormat(d3.format('.02f'));
+       chart.tooltipContent(function(key) {
+       // return '<h2>' + key + '</h2>';
+       return key;
+       });
+
+        d3.select('#test1 svg')
+            .datum(randomData(datax.length))
+            .call(chart);
+
+        nv.utils.windowResize(chart.update);
+
+        chart.dispatch.on('stateChange', function(e) { ('New State:', JSON.stringify(e)); });
+        return chart;
+    });
+
+    function randomData(points) { //# groups,# points per group
+        // smiley and thin-x are our custom symbols!
+        var data = [];
+        var shapes = ['square'];
+        var     random = d3.random.normal();
+
+        for (i = 0; i < points; i++) {
+            data.push({ key:'<h2>' +  datax[i].Name + '</h2>' + '<p><small> ' + ' # of Stocks ' + datax[i].STOCKN + ' </small> </p>'+ '<p><small>' + PERIOD[0].PERIOD + ' </small> </p>',values: []});
+            data[i].values.push({x: datax[i].AMEAN,y: datax[i].PERFORMANCE,size: Math.round(datax[i].PERFORMANCE * 1000) / 100,shape: shapes[0 % shapes.length]});
+        }
+
+        return data;
+    }
+
+
+</script>
+</body>
+</html>

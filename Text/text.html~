@@ -138,7 +138,7 @@ finance formulations.
 <br><br>
 The insight analysis uses R programming language to
 process the C++ results ( R is a software environment for statistical computing
-and graphics supported by the <a target="alone" href="https://www.r-project.org/" > R Foundation for Statistical Computing </a>). The interactive data visualizations in web browsers uses <a target="alone"  href="http://nvd3.org/"> the NVD3 data visualization library. </a>
+and graphics supported by the R Foundation for Statistical Computing). The interactive data visualizations in web browsers uses <a target="alone"  href="http://nvd3.org/"> the NVD3 data visualization library. </a>
 
  
 <h1> Numerical Results:</h1>

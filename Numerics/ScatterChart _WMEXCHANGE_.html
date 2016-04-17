@@ -88,7 +88,7 @@ var PERIOD= [{"PERIOD":"Period {2015-11-30} : {2016-04-15}"}];
 
         for (i = 0; i < points; i++) {
             data.push({ key:'<h2>' +  datax[i].Name + '</h2>' + '<p><small> ' + ' # of Stocks ' + datax[i].STOCKN + ' </small> </p>'+ '<p><small>' + PERIOD[0].PERIOD + ' </small> </p>',values: []});
-            data[i].values.push({x: datax[i].AMEAN,y: datax[i].PERFORMANCE,size: Math.round(datax[i].PERFORMANCE * 100) ,shape: shapes[0 % shapes.length]});
+            data[i].values.push({x: datax[i].AMEAN,y: datax[i].PERFORMANCE,size: Math.round(datax[i].PERFORMANCE )*1000 ,shape: shapes[0 % shapes.length]});
         }
 
         return data;

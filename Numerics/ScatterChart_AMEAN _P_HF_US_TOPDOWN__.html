@@ -89,8 +89,8 @@ var PERIOD= [{"PERIOD":"Period {2015-11-30} : {2016-04-22}"}];
         var     random = d3.random.normal();
 
         for (i = 0; i < points; i++) {
-            data.push({ key:'<h2>' +  datax[i].Name + '</h2>' + '<p><small> ' + ' # of Stocks ' + datax[i].STOCKN+ ' </small> </p>'+ '<p><small>' + PERIOD[0].PERIOD + ' </small> </p>',values: []});
-            data[i].values.push({x: datax[i].Mmean,y: datax[i].Hmean,size: Math.round(datax[i].Mmean * 100) / 100,shape: shapes[0 % shapes.length]});
+            data.push({ key:'<h2>' +  datax[i].Name + '</h2>' + '<p><small> ' + ' # of Stocks ' + datax[i].STOCKN+ ' </small> </p>'+ '<p><small>' + PERIOD[0].PERIOD + ' </small> </p>',values: [],slope: 1.0, intercept: 0.0 });
+            data[i].values.push({x: datax[i].Mmean,y: datax[i].Hmean,size: 1000,shape: shapes[0 % shapes.length]});
         }
 
         return data;

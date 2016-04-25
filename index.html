@@ -1,24 +1,177 @@
-<html><body>
-<style>
-html, body, iframe {
- margin: 0px;
- padding: 0px;
- width: 100%;
- height: 100%;
- border: 0px;
-}
-</style>
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title> Digital Analytics &amp Metrics: </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+//                 + '<br><br>'
+//                 + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+//                 + 'To load the Numerics'
+// + '<br><br>'
+//                 + ' Click Above:'
+// + '<br><br>'
+//                 + 'For US Hedge Funds: '
+// + '<br> '
+// +'  | Major_US_Hedge_Funds_Top_Down | ..._Performance'
+// + '<br><br>'
+//                 + 'For US Market: '
+// + '<br> '
+// +'  | US_Industries_Wealth_Accumulation_Performance | ..._Trends'
+// + '<br><br>'
+//                 + 'For Major World Exchanges: '
+// + '<br>'
+// +' Major_World_Exchanges_Wealth_Accumulation_Performance | ..._Trends'
+// + '<br><br>'
+//                 + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+
+    <h1 style="color:black"> Digital Analytics & Metrics </h1>
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+<!-- <div id="banner">
+    <div>
+        <span id="logo"></span>
+
+        <a href="https://github.com/nvd3-community/nvd3" target="github" class="button fork"><strong>GitHub</strong></a>
+        <a href="site.html" class="button fork docs selected"><strong>Examples</strong></a>
+        <a href="documentation.html" class="button fork docs"><strong>Documentation</strong></a>
+        <div class="downloads">
+            <span>Downloads:</span>
+            <ul>
+                <li><a href="https://github.com/nvd3-community/nvd3/zipball/master" class="button">ZIP</a></li>
+                <li><a href="https://github.com/nvd3-community/nvd3/tarball/master" class="button">TAR</a></li>
+            </ul>
+        </div>
+    </div>
+</div><!-- end banner --> 
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+
+
+ <h2> Big Data Analytics</h2>
+ <p>
+It is becoming increasingly vital to make better decisions based on data. This work is mainly related to Data analytics: 
+to understand and draw insights from data more effectively.
+<br>
+<h4> Digital Analytics for Real Cases:</h4>
+<div>
+<a target="alone"  href="Numerics/site.html" style="color:green"> Equity Data.</a>
+</div>  
+<div>
+    <a target="alone"  href="ZILOWPROCESSING_STATE/ZILLO_US_STATES.html" style="color:green"> Zillow Housing Data. </a>
+     </div>  
+ <div>
+    <a target="alone"  href="KADHDT/FEKKADHDT1.html" style="color:green">  DHT for Internet of the Things. </a>
+     </div>  
+<br><br>
+ <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+   
+</section>
+</div>
+ 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
 <script>
-    // force https to avoid stupid mixed content stuff.
-    // don't force just http because http-everywhere plugins cause infinite redirect loop
-    // can't use relative links because they break when loading the site locally on disk (browsers suck)
-    // if (window.location.protocol == "http:")
-    //     window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+  
+
+
+
+
 </script>
+
+
+
+
+
+
+
 <iframe src="Numerics/site.html"></iframe>
 
 </body>
-</html>
+</html> -->
 
 
  

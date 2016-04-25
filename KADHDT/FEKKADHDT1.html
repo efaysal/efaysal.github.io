@@ -1,0 +1,213 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title> Distributed Hash Table in the Era of Internet of the Things </title>
+    <link rel="stylesheet" href="../Numerics/stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #CCC; font-family: arial; font-size: 14px; font-weight:bold;">'
+                + 'Click the links above to load the example here'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+    <h1 style="color:black"> Distributed Hash Table in the Era of Internet of the Things </h1>
+  <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>  
+         <h3>
+Ethereum & MaidSafe: Overlay P2P Network Using XOR Logical Bicondition.
+ <br>
+Click on this link for the <a target="alone"  href="FEKKADHDT0.html" style="color:green"> companion site</a>
+ </h3>
+
+<h2>
+Aim:  
+</h2>
+<p>
+
+Kademlia is a well known routing algorithm based on XOR logical biconditional operations to structure the peer to peer networks on the Internet. 
+<br> 
+In this work, we conducted a mathematical study of the different topological spaces that can be obtained from the XOR logical biconditional operations. We are concerned with the properties of these topological spaces when the peers are labeled by random keys obtained from a higher address space size, for instance 512 and more. 
+<br> <br>
+We conducted a number of numerical simulation using keys (SHA512) as the ones practically used in two recent projects MaidSafe and Ethereum to investigate properties as connectedness, uniformity, continuity and boundary in their overlay peer to peer networks.
+Definition: Peer-to-peer (P2P) is a decentralized communications model in which each peer has the same capabilities and either peer can initiate a communication session. Unlike the standard model client/service where the client makes a  request for a service and the server fulfills the request. The P2P network enable each peer to be  a client & server.
+<br> <br>
+
+<h1> Introduction </h1> <br> 
+
+Structured peer-to-peer (p2p) networks are considered as  a potential tool to shape the future internet enabling the conception of novel models and mechanisms to foster a wide range of functional capabilities on a large scale.
+<br> <br>
+These structured P2P networks typically adopt Distributed Hash Table (DHT) techniques. Distributed Hash Tables are distributed data structures where the information objects are placed "deterministically" at the peer whose identifier corresponds to the information object’s unique key according to a given logical operation on keys.
+<br> <br>
+Kademlia as described in "Kademlia: A Peer-to-peer Information System Based on the XOR Metric" is a well-known routing algorithms.  
+<br> <br>
+This Kademlia protocol is used in two interesting projects MaidSafe and Ethereum to achieve a holistic realization of future internet including the Internet of Things, the Internet of Services, and Cloud Storage & Computation.
+<br> <br>
+MaidSafe Statement: To ensure quick and accurate transfers of data between Vaults it is vital for the SAFE Network to be able to identify other Vaults that are in the same proximity. The network needs to be able to monitor the status of Vaults and data at all times, with all decisions on the network being made only in consensus with other Vaults. To do this, Vaults use an enhanced distributed hash table (DHT) to manage the identification and confirmation of Vaults in the same network area. Being optimised for efficiency and accuracy enables the network to globally reconfigure very rapidly (between 20ms and 5 seconds).
+Ethereum Objectives: Peers have access to a uniform network topology.  Peers can uniformly connect to network. Kademlia Protocol to secure a Robust Network ... Robust peer discovery.
+<br> <br>
+Also there is a strong believe that the decentralized nature of P2P network can be used to establish  consensus algorithm based on a well formed XOR space distributed hash table. For more numerical simulation on consensus using XOR Logical Bicondition Space, see here.
+<br> <br>
+We provide in this work numerical simulation using pratical keys used in the two projects,  this will enable us to get insight of the characteristics of our XOR Logical Bicondition space conveniently. 
+<br> <br>
+<h1> Numerical Results: </h1>
+<br> <br>
+We extracted a number of peers using the open software in Ethereum C++ . 
+Each peer has a key with 512 bits. We used the class  KeyPair and the its function "create".
+Actually its the public key derived from Elliptic Curve using a random number.  In a previous work, we showed the statistical proprieties between private keys, public keys and their hash.  In general, the keys or their hash are uniformly distributed in a specific range.  If one use 512 bits, don't expect to have very small number ... 
+<br> <br>
+We processed the proximity between the keys using 4 "distances", D1(XOR), D2, D3 and D4. 
+<br> <br>
+D1 is the XOR metric distance. 
+<br> <br> 
+D2, D3 and D4 are based on XOR logical bicondition operation to generate semi-metric on address space X:  d : X × X → R that satisfies the first three axioms, but not necessarily the triangle inequality:
+<br> <br> 
+d(x, y) ≥ 0 <br> 
+d(x, y) = 0   if and only if   x = y <br> 
+d(x, y) = d(y, x) <br> 
+D2, D3 and D4 have a weaker form of the triangle inequality, such as:
+<br> <br> 
+d(x, z) ≤ ρ (d(x, y) + d(y, z))     (ρ-relaxed triangle inequality) <br> 
+d(x, z) ≤ ρ max(d(x, y), d(y, z))     (ρ-inframetric inequality) <br> 
+Semi-metrics satisfying these equivalent conditions have sometimes been referred to as "quasimetrics".<br> <br> 
+
+The red color in the figures is for strong proximity or strongly connected and the blue color is for weak proximity or slightly connected.  Colors between red and blue, including white color, are expressing medium proximity or "averagely" connected.  
+
+<br> <br> 
+
+<h3> A)  Keys are sorted by the associated number of connections: </h3>
+<br> <br> 
+Each key ID of a peer  is a sequence of bits and when interpreted as a big-endian integer, the keys are represented in a sorted manner along X-axis and Y-axis accordingly to its importance in the graph, table or matrix  formed by the specific distance, let's say  from the keys that are less connected key IDs to highly connected key IDs, key IDs here may be the public key IDs, their Hashing  or any scrambled operation over the real key IDs.  Here we are more concerned by the patterns generated by XOR logical bicondition operations and its variant when the key IDs are randomly selected.
+<br> <br> 
+X-axis: from lower value to higher, left to right, less connected to highly connected. <br> 
+Y-axis: from lower value to higher, top to bottom, less connected to highly connected. <br> <br> 
+The same order is replicated over X-axis and Y-axis. This way of visualization is more relevant to present the real pattern in the graph. Visualizing the graph is depending on specific set up as the number of edges and so on. This color-map  shows all the graph as a matrix without any truncation, flaw or bias.  <br> <br> 
+
+For a visualization when the keys are sorted by the associated big-Endian value see the section below B). <br> <br> 
+</p>
+
+<img align="middle" src="D1-600.jpg" style="width:70%;height:70%;" alt="" />
+<br><br>
+<img align="middle" src="D1-800.jpg" style="width:70%;height:70%;" alt="" />
+<br><br>
+ <img align="middle" src="D2-600.jpg" style="width:70%;height:70%;" alt="" />
+<br><br>
+<img align="middle" src="D2-800.jpg" style="width:70%;height:70%;" alt="" />
+<br><br>
+ <img align="middle" src="D3-600.jpg" style="width:70%;height:70%;" alt="" />
+<br><br>
+<img align="middle" src="D3-800.jpg" style="width:70%;height:70%;" alt="" />
+<br><br>
+<br><br>
+ <img align="middle" src="D4-600.jpg" style="width:70%;height:70%;" alt="" />
+<br><br>
+<img align="middle" src="D4-800.jpg" style="width:70%;height:70%;" alt="" />
+<br><br>
+
+
+
+<h3> B) Keys are sorted by the associated big-Endian value:</h3>
+<p>
+Each key ID of a peer  is a sequence of bits and when interpreted as a big-Endian integer, the keys are represented in a sorted manner along X-axis and Y-axis accordingly to their big-Endian values.<br> <br>
+X-axis: from lower value to higher, left to right.<br> 
+Y-axis: from lower value to higher, top to bottom.
+<br> <br>
+</p>
+
+<img align="middle" src="iD1-1000.jpg" style="width:70%;height:70%;" alt="" />
+<br><br>
+<img align="middle" src="iD2-1000.jpg" style="width:70%;height:70%;" alt="" />
+<br><br>
+ <img align="middle" src="iD3-1000.jpg" style="width:70%;height:70%;" alt="" />
+<br><br>
+<img align="middle" src="iD4-1000.jpg" style="width:70%;height:70%;" alt="" />
+<br><br>
+ <img align="middle" src="sorD1-1000.jpg" style="width:70%;height:70%;" alt="" />
+<br><br>
+<img align="middle" src="sorD2-1000.jpg" style="width:70%;height:70%;" alt="" />
+<br><br>
+<br><br>
+ <img align="middle" src="sorD3-1000.jpg" style="width:70%;height:70%;" alt="" />
+<br><br>
+<img align="middle" src="sorD4-1000.jpg" style="width:70%;height:70%;" alt="" />
+<br><br>
+ 
+
+<a> Implementation used  a modified version of Ethereum C++ to extract public keys or their Hash3. Hardware is a Laptop with i3-core-CPU-2.10 GHz- 4GB-RAM and 64-bit-Ubuntu 13-10 . </a>
+
+<br><br>
+Click on this link for the <a target="alone"  href="FEKKADHDT0.html" style="color:green"> companion site</a>
+<br><br>
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+
+ </section>
+</div>
+
+</body>
+</html>

@@ -100,15 +100,29 @@
             Debt Analytics &amp Metrics:
         </h3>
         <p>
-
-Most of the households around the developed countries are highly leveraged. 
-Are these leverage ratios optimal in sense that minimize the cost of capital for households without acquiring a high possibility of default under an economic downturn? Or especially if interest rates start to rise again  as more debt means higher debt service ratios?  </p>
+Most publicly economical or financial data services provided by the developed countries show that the households(also other economical entities) are highly leveraged.
+ <br> <br>
+Are these leverage ratios optimal in sense that minimize the cost of capital for households without acquiring a high possibility of default under an economic downturn? Or especially if interest rates start to rise again as more debt means higher debt service ratios? </p>
  <p>
-In this work using the data from  <a href="http://www5.statcan.gc.ca/cansim/"> Cansim </a>, the optimal leverage dynamics are compared to the current leverage dynamics and a statistical assessment is conducted to see if the new indicator related to the debt service ratio is appropriately reflecting an early warning indicator. The methodology, the data inputs and some results are discussed in the remainder of this essay.  </p>
+In this work using the data from  <a href="http://www5.statcan.gc.ca/cansim/"> Cansim </a>, the optimal leverage ratio dynamics are compared to the current leverage ratio dynamics and a statistical assessment is conducted to see if the new indicator related to the debt service ratio is appropriately reflecting an early warning indicator. The methodology, the data inputs and some results are discussed in the remainder of this essay.  </p>
+
+<h3>
+ Nomenclature  &amp Definition:
+  </h3>
+ <p>
+In this essay, the leverage ratio is defined as the "amount" of liability devided by the "amount" of the equity. In financial accounting, see International Financial Reporting Standards - <a href="http://www.ifrs.org/Pages/default.aspx/"> IFRS </a>, a balance sheet covers the assets defined as liabilities plus the ownership equity. A balance sheet provides a "snapshot" of the financial condition of an economic entity at  single point in time, yearly or quarterly as the case of Cansim which follows mainly <a href="http://www.ifrs.org/Pages/default.aspx/"> IFRS </a> and The System of National Accounts <a href="http://unstats.un.org/unsd/nationalaccount/sna.asp"> SNA </a>.
+ <br> <br>
+ The debt service ratio-DSR is defined as the ratio of interest payments plus amortisations to income, see  <a href="http://www.bis.org/publ/qtrpdf/r_qt1509h.pdf"> DSR </a>. 
+ </p>
 
  <h3>
   Methodology:
-  </h3>
+</h3>
+
+  To derive an optimal leverage ratio, we used a variant formulation of the framework in <a target="alone" href="https://ideas.repec.org/f/pst581.html"> Stochastic Optimal Control and Financial Modeling </a>. Our approach derived interpretable and compatible formulations as in <a target="alone" href="http://www.probabilityandfinance.com/"> "a new mathematics for finance theory: game theory instead of stochastic models"</a>. 
+<br> <br>
+  Our reformulation is encouraging and simplifies our numerical task considerably as it lessens the need for extra or intermediate level-datasets required in the first formulation which are simply not always available or its estimations are hindred by considerable biases. Our reformulation enbales us to compute the optimal leverage ratio as an inverse problem: calculating from a set of observations the causal factors that produced them.
+
  <p>
  
  </p>
@@ -119,7 +133,7 @@ In this work using the data from  <a href="http://www5.statcan.gc.ca/cansim/"> C
   Numerics:
   </h3>
  <p>
- 
+ more text to come ... 
  </p>
   
 <br>
@@ -127,17 +141,32 @@ In this work using the data from  <a href="http://www5.statcan.gc.ca/cansim/"> C
             <a href="#" class="showcharts">Show Chart Examples</a>
         </div>
          <div class="examplelinks chartlinks">
+
+            <h3>
+    Economical Entity : Households (Table 380-0073)
+     </h3>
                <a href="Debttonetworth.html"> Optimal &amp Current Leverage Dynamics </a>      
              <br>
+
              <a href="DebtServiceRatioSeasonallyadjustedatannualratesZSCORENET.html"> Current Debt Service Ratios (Seasonally adjusted at annual rates) </a> 
               <br>
              <a href="DebtServiceRatioUnadjustedZSCORENET.html"> Current Debt Service Ratios (Unadjusted) </a> 
-        </div>
+             <br>  <br>
+ <h3>
+    Economical Entity : Oil and gas extraction and support activities (Table 187-0001)
+     </h3> 
+ <a href="OilandgasextractionandsupportactivitiesASSETLIABILITYEQUITY.html">Balance Sheet</a> 
+ <br>
+ <a href="OilandgasextractionandsupportactivitiesZscoredDegreeofleverage.html"> Optimal Leverage vs. Current Leverage Ratios</a>
+</div>
      
 <br><br>
+ <h3>
+Acknowledgement:
+ </h3> 
+ Thanks to Cansim for the raw data. 
 <br><br>
 Publications are in preparation.
-
     <div>
     <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com </a>
      </div> 

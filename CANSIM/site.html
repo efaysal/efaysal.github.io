@@ -19,18 +19,6 @@
 + '<br><br>'
                 + ' Click Above:'
 + '<br><br>'
-                + 'For US Hedge Funds: '
-+ '<br> '
-+'  | Major_US_Hedge_Funds_Top_Down | ..._Performance'
-+ '<br><br>'
-                + 'For US Market: '
-+ '<br> '
-+'  | US_Industries_Wealth_Accumulation_Performance | ..._Trends'
-+ '<br><br>'
-                + 'For Major World Exchanges: '
-+ '<br>'
-+' Major_World_Exchanges_Wealth_Accumulation_Performance | ..._Trends'
-+ '<br><br>'
                 + '</div>';
 
             $('.showbases').click(function(evt){
@@ -113,76 +101,44 @@
         </h3>
         <p>
 
-Most of the households around the developed countries are highly leveraged. 
+Most 
+
+of the households around the developed countries are highly leveraged. 
  <p>
 Are these leverage ratios optimal in sense that minimize the cost of capital for households without acquiring a high possibility of default under an economic downturn?  </p>
  <p>
 Or especially if interest rates start to rise again  as more debt means higher debt service ratios?  </p>
  <p>
-In this work, the optimal leverage dynamics are compared to the current leverage dynamics using the data from CANSIM.  </p>
+In this work using the data from CANSIM, the optimal leverage dynamics are compared to the current leverage dynamics and a statistical assessment is conducted to see if the new indicator related to the debt service ratio is appropriately reflecting an early warning indicator. The methodology, the data inputs and some results are discussed in the remainder of this essay.  </p>
 
  <h3>
-            Numerics:
+  Methodology:
   </h3>
  <p>
-The featured numerical results used daily historical prices from a given prior date to a given posterior date. Often we use data from a quarter to make comparisons and evaluate trends. 
- </p>
-<p> 
-
-
-            For the number of times  a stock  has been included in hedge fund equity portfolios and their associated capitalization (at market close 2016-04-15),
-            <a target="alone" href="CAPITALIZATIONGLOBAL.html"  >  click here. </a> This is mainly normative, it may happen  that the hedge fund manager changed the portfolio's composition  of the published 13F holdings before this calculation.
-
-        </p>
-        <p>
- Result visualization uses the <a target="alone"  href="http://nvd3.org/"> NVD3 data visualization library </a>. It's an interactive browser based visualizations, just click inside the show-charts (plots) for more labels & indications. </p>
- <p>
- For  World Wide Currencies, the label is a currency pair, for example, USDCAD, is the performance of US dollar versus Canadian dollar. If US dollar outperforms, USDCAD is more than one otherwise USDCAD is less than one. In the show-charts, Arth_mean is positive when US dollar outperforms and negative if US dollar under-performs (versus a given currency). 
-        </p>
-
- <p>
- <a href="IndUSINDHeatmapP.html">  US_Industries_HeatMap_Performance </a> ;
- </p>
  
+ </p>
+  
+<br>
+
+ <h3>
+  Numerics:
+  </h3>
+ <p>
+ 
+ </p>
+  
 <br>
         <div>
             <a href="#" class="showcharts">Show Chart Examples</a>
         </div>
          <div class="examplelinks chartlinks">
-               <a href="Debttonetworth.html"> Major_US_Hedge_Funds_Top_Down </a> |
-              <!--  <a href="ScatterChart_AMEAN _P_HF_US_TOPDOWN__.html"> Major_US_Hedge_Funds_Wealth_Accumulation_Performance </a> ;
-       -->        
+               <a href="Debttonetworth.html"> Optimal &amp Current Leverage Dynamics </a>      
              <br>
-             <a href="ScatterChart _USIND_.html"> US_Industries_Wealth_Accumulation_Performance </a> |
-              <a href="LineChart_USIND_.html">  US_Industries_Trends </a> ;
+             <a href="DebtServiceRatioSeasonallyadjustedatannualratesZSCORENET.html"> Current Debt Service Ratios (Seasonally adjusted at annual rates) </a> 
               <br>
-            <a href="ScatterChart _WMEXCHANGE_.html">Major_World_Exchanges_Wealth_Accumulation_Performance </a> |
-             <a href="LineChart_MWEXCHANGES_.html"> Major_World_Exchanges_Trends </a> ;
-             <br>
-             <a href="ScatterChart _CURRENCYUSD_.html"> World Wide Currencies </a> .
-            <!--  <br>
-            <a href="LineChart_CURRENCYUSD_.html">  World_Currenccy_Trends </a> . -->
+             <a href="DebtServiceRatioUnadjustedZSCORENET.html"> Current Debt Service Ratios (Unadjusted) </a> 
         </div>
-         <br>
-        <div id="show_wrapper"><iframe id="show"></iframe></div>
-        <div id="example_options" style="visibility: hidden;">
-            <a target="alone" id="showonlythis" href="#">View in a New Window</a> ;
-            <br>
-            <a href=""> <strong> Refresh </strong></a> ;
-            <br>
-            <a target="alone"  href="../Text/Echangecodes.html" style="color:blue"> <strong> World Exchange Names </strong></a> ; 
-            <a target="alone"  href="http://finance.yahoo.com/exchanges" style="color:blue"> <strong>  Yahoo! Finance - Exchanges </strong></a> ; 
-             <br>
-            <a href="https://biz.yahoo.com/ic/ind_index.html"> <strong> Complete Yahoo! Finance Industry List </strong></a> ;
-            <br>
-            <a href="../Text/Currencycodes.html"> <strong> World Currency List </strong></a> .
-            <br>
-
-            
-
-        </div>
-
-
+     
 <br><br>
 <br><br>
 Publications are in preparation.

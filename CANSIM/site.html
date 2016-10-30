@@ -102,20 +102,20 @@
         <p>
 Most publicly economical or financial data services provided by the developed countries show that the households(also other economical entities) are highly leveraged.
  <br> <br>
-Are these leverage ratios optimal in sense that minimize the cost of capital for households without acquiring a high possibility of default during an economic downturn? Or especially if interest rates start to rise again as more debt means higher debt service ratios? </p>
+Are these leverage ratios optimal in sense that minimize the cost of capital for households economical activities, investing in real estate for instance, without acquiring a high possibility of default during an economic downturn? Or especially if interest rates start to rise again as more debt means higher debt service ratios? </p>
  <p>
-In this work, the optimal leverage ratio dynamics are compared to the current leverage ratio dynamics and a statistical assessment is conducted to see if the new indicator related to the debt service ratio is appropriately reflecting an early warning indicator. The methodology, the data inputs and some results are discussed (high-level overview) in the remainder of this essay.  Our numerical results rely as much as possible on the compiled data by the Canadian System of National Accounts and are available through public repositories, <a href="http://www5.statcan.gc.ca/cansim/"> Cansim server</a>.  </p>
+In this work, the optimal leverage ratio dynamics are compared to the current leverage ratio dynamics and a statistical assessment is conducted to see if the new indicator related to the debt service ratio is appropriately reflecting an early warning indicator. The methodology, the data inputs and some results are discussed (high-level overview) in the remainder of this essay.
 
 
 <h3>
  Nomenclature  &amp Definition:
   </h3>
  <p>
-In this essay, the leverage ratio is defined as the "amount" of liability devided by the "amount" of the equity. In financial accounting, see International Financial Reporting Standards - <a href="http://www.ifrs.org/Pages/default.aspx/"> IFRS </a>, a balance sheet covers the assets defined as liabilities plus the ownership equity. The System of National Accounts <a href="http://unstats.un.org/unsd/nationalaccount/sna.asp"> SNA </a> provides formal definition in Chapter 3: Stocks, flows and accounting rules.
+In this essay, the leverage ratio is defined as the "amount" of liability devided by the "amount" of the equity. In financial accounting, see International Financial Reporting Standards - <a href="http://www.ifrs.org/Pages/default.aspx/"> IFRS </a>, a balance sheet covers the assets as liabilities plus the ownership equity. The System of National Accounts <a href="http://unstats.un.org/unsd/nationalaccount/sna.asp"> SNA </a> provides formal definition in Chapter 3: Stocks, flows and accounting rules.
  <br> <br>
 A balance sheet may be understood as a "snapshot" of the financial condition of an economic entity at single point in time, yearly or quarterly as the case of Cansim framework which is following mainly <a href="http://www.ifrs.org/Pages/default.aspx/"> IFRS </a> and The System of National Accounts <a href="http://unstats.un.org/unsd/nationalaccount/sna.asp"> SNA </a> standards for its data preparation.
  <br> <br>
- The debt service ratio-DSR is defined as the ratio of interest payments plus amortisations to income, more details are in <a href="http://www.bis.org/publ/qtrpdf/r_qt1509h.pdf"> DSR </a>. 
+ The debt service ratio-DSR is defined as the ratio of interest payments plus amortisations to income, more details are in this <a href="http://www.bis.org/publ/qtrpdf/r_qt1509h.pdf"> publication </a> of the Bank for International Settlements <a href="http://www.bis.org/"> BIS </a> with a mandate to promote global monetary and financial stability through international cooperation.
  <br> <br>
 Our approximated calculation will mainly affect the level of the feature under consideration rather than its dynamics, by using the same analytical form and input data series over time, it generates a feature having a time series that captures the important dynamical pattern of the feature under consideration. This approximation  is more  useful when a calibration or normalization are used to compare the numerical level values of two similar features. In this work, we use zscore normalization: zscore = (Value –Mean)/sd, where "Value" is the raw numerical value, "Mean" is the average value of the time series and "sd" is the standard deviation, zscore describes where a value is located in the distribution. For instance, a zscore of 0 is at the mean of the distribution and a zscore of 2.0 or beyond is in the tails of the distribution. A negative zscore means that the original score is below the mean and positive is under the mean. For more detail, see <a href="https://en.wikipedia.org/wiki/Standard_score"> Zscore </a>.
  <br> <br>
@@ -134,9 +134,10 @@ This convention is used to represent the Year and its associated Quarter: Year"0
   Our reformulation enbales us to compute the optimal leverage ratio as an inverse problem, i.e. calculating from a set of observations the causal factors that produced them and its numerical implementation is encouraging and simplifies the numerical task considerably as it lessens the need for extra or intermediate level-datasets fully required in the original formulation. 
 <br> <br>
  <h3>
-  Numerics:
+  Data  &amp  Numerics:
   </h3>
 <br>
+  Our numerical results rely as much as possible on the compiled data by the Canadian System of National Accounts and are available through public repositories, <a href="http://www5.statcan.gc.ca/cansim/"> Cansim server</a>.  </p>
         <div>
             <a href="#" class="showcharts">Show Chart Examples</a>
         </div>

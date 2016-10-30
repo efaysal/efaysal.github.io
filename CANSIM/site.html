@@ -104,7 +104,8 @@ Most publicly economical or financial data services provided by the developed co
  <br> <br>
 Are these leverage ratios optimal in sense that minimize the cost of capital for households without acquiring a high possibility of default under an economic downturn? Or especially if interest rates start to rise again as more debt means higher debt service ratios? </p>
  <p>
-In this work using the data from  <a href="http://www5.statcan.gc.ca/cansim/"> Cansim </a>, the optimal leverage ratio dynamics are compared to the current leverage ratio dynamics and a statistical assessment is conducted to see if the new indicator related to the debt service ratio is appropriately reflecting an early warning indicator. The methodology, the data inputs and some results are discussed in the remainder of this essay.  </p>
+In this work using the data from  <a href="http://www5.statcan.gc.ca/cansim/"> Cansim </a>, the optimal leverage ratio dynamics are compared to the current leverage ratio dynamics and a statistical assessment is conducted to see if the new indicator related to the debt service ratio is appropriately reflecting an early warning indicator. The methodology, the data inputs and some results are discussed (high-level overview) in the remainder of this essay.  Our numerical results rely as much as possible on data from Canadian national accounts provided by <a href="http://www5.statcan.gc.ca/cansim/"> Cansim server </a>.  </p>
+
 
 <h3>
  Nomenclature  &amp Definition:
@@ -113,8 +114,14 @@ In this work using the data from  <a href="http://www5.statcan.gc.ca/cansim/"> C
 In this essay, the leverage ratio is defined as the "amount" of liability devided by the "amount" of the equity. In financial accounting, see International Financial Reporting Standards - <a href="http://www.ifrs.org/Pages/default.aspx/"> IFRS </a>, a balance sheet covers the assets defined as liabilities plus the ownership equity. A balance sheet provides a "snapshot" of the financial condition of an economic entity at  single point in time, yearly or quarterly as the case of Cansim which follows mainly <a href="http://www.ifrs.org/Pages/default.aspx/"> IFRS </a> and The System of National Accounts <a href="http://unstats.un.org/unsd/nationalaccount/sna.asp"> SNA </a>.
  <br> <br>
  The debt service ratio-DSR is defined as the ratio of interest payments plus amortisations to income, see  <a href="http://www.bis.org/publ/qtrpdf/r_qt1509h.pdf"> DSR </a>. 
- </p>
+ <br> <br>
+Our approximated calculation will mainly affect the level of the feature under consideration rather than its dynamics, by using the same analytical form and input data series over time, it generates a feature having a time series that captures the important dynamical pattern of the feature under consideration. This approximation  is more  useful when a calibration or normalization  are used to compare two similar features. In this work, we use zscore to compare two similar features: zscore = (Value –Mean)/sd, 
+where "Value" is the raw observed value, "Mean" is the average value of the time series and "sd" is the standard deviation, zscore describes where a value is located in the distribution. For instance, a zscore of 0 is at the mean of the distribution and a zscore of 2.0 or beyond is in the tails of the distribution. A negative zscore means that the original score is below the mean and positive is under the mean. For more detail, see <a href="https://en.wikipedia.org/wiki/Standard_score"> Zscore </a>.
+ <br> <br>
 
+The time series use this convention to make the visualization continuous: Year"00" is quarter Year/Q1, Year"25" is quarter Year/Q2, Year"50" is quarter Year/Q3 and Year"75" is quarter Year/Q4.
+
+<br> <br>
  <h3>
   Methodology:
 </h3>

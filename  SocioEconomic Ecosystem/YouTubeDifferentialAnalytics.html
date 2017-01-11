@@ -1,0 +1,266 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Debt Analytics & Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Realized-Profitability numerics'
++ '<br><br>'
+                + ' Click above:'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+
+    <h1 style="color:black">  YouTube-Differential-Analytics</h1>
+     <h1 style="color:black"> Applied Mathematical Modelling </h1>
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+         <h4>
+       
+
+                This essay is a non-technical overview of some subjects related to my field of research, <a target="alone"  href="http://efaysal.github.io/"> modeling big data using numerics and analytics</a>. you don't have to be a mathematician to read it. If you have any questions or suggestions I'd be glad to hear from you.
+</h4>
+        <p>
+
+          We study the monetization problem faced by YouTube channels that provide a number of videos, presented via a wide
+range of annotations, to viewers that arrive over time. The goal of a channel is to design an optimal policy that maximizes the collected revenue from the enabled monetization process. Our motivation is to discuss a real-time dynamic profitability framework for this kind of on-line platform involving free charged viewer and monetized advertisers for its profitability. 
+
+  <p>
+ <h2>
+            Introduction:
+        </h2>
+        <p>
+Youtube explains "how to earn money from your videos" as completing  three step:
+<ul>
+   <li type="square"> Join the YouTube Partner Program or a 
+    <a target="alone"  href="https://en.wikipedia.org/wiki/Multi-channel_network" style="color:black"> Multi-channel network </a> (MCN).</li> 
+  <li type="square"> Set up an AdSense account for payments.</li>
+   <li type="square"> Choose the videos you want to monetize.</li>
+</ul>
+
+ <h4> What does monetize your video mean?  </h4>
+        <p>
+
+Monetization is a simple process that requires you to agree to YouTube's terms and conditions for advertising. Once you agree to the terms, you can allow ads to run with your videos, and YouTube will share of portion of the ad revenue with you.
+
+Certainly, there are social, cultural and economic determinants for an adequate monetization:
+<ul>
+   <li type="square"> Your YouTube videos has to attract a large audience (serious traffic of users viewing your videos, we called this traffic intensity in our numerical simulation.).</li> 
+  <li type="square">  <a target="alone"  href="https://support.google.com/youtube/answer/2467968?hl=en"> Presence of advertisements on your videos,  </a> (flowing capital or money supply in our numerical simulation.).</li>
+   <li type="square"> Only when YouTube succeeds to charges advertisers then YouTube shares the fees with you, allowing you to make some money from people viewing your videos (do not skip the ads ). For more details see  <a target="alone"  href="https://support.google.com/adsense/answer/190515?hl=en"> AdSense Help: Revenue per thousand impressions (RPM). </a> </li>
+</ul>
+
+ <h4> Some Scenarios </h4>
+        <p>
+  This process to make money sounds like a social casino, no earnings on your monetized videos may be a fact:
+<ul>
+     <li type="square"> No audience means no earning! </li>
+   <li type="square"> Even having a high number of users viewing your videos, no presence of advertisements on your videos means no earning or little! </li>
+   <li type="square"> Large audience not interested by the placed advertisements means no earning or little! </li>
+</ul>  
+
+ <h4> Some Solutions </h4>
+        <p>
+<ul>
+     <li type="square"> YouTube provides the advisers a number of solutions to optimize their adds, <a target="alone"  href="https://storage.googleapis.com/think/docs/youtube-trueview-playbook.pdf"> TrueView Optimization Playbook. </a> </li>
+  <li type="square"> For creator, she/he can become part of a Multi-Channel Networks (“MCNs”) which are third-party service providers that affiliate with multiple YouTube channels to offer services that may include audience development, content programming, creator collaborations, digital rights management and to leverage the monetization.</li>
+
+</ul>  
+
+<br> <br> 
+ <h1> Thinking Mathematically: Numerics &amp Analytics:  </h1>
+        <p>
+The most important point of this essay, it's possible to mathematically model these processes:
+
+<ul>
+   <li type="square"> Traffic Intensity, the presence of viewers to watch videos,</li> 
+  <li type="square">  Flowing Capital, the presence of advertisements on processed videos,</li>
+  <li type="square"> Policy Effect, the presence of tools to leverage the monetization, adequate revenue per thousand impressions (RPM) or simply profitability or earning as long as monetization is more liquid,
+   </a> </li>
+</ul>
+into one unified dynamical system. 
+<br> <br> 
+Although the users, interested by a specific video on YouTube, consist of a number of individuals, their aggregate interactions can be effectively modeled by a dynamical system that involves continuously varying variables related to the anticipated "Revenue per thousand impressions".
+<br> <br> 
+This system of equations describes, the changes over time that occur between the flowing capital and the monetization taking into consideration the users interaction frequency with the content (videos). This system offers a more quantitative, theoretical, and mechanistic approach to explanation and prediction of emergent characteristics generated by the processes:
+<br> <br>
+<ul>
+   <li type="square"> Traffic Intensity, the presence of viewers to watch videos,</li> 
+  <li type="square">  Flowing Capital, the presence of advertisements on processed videos,</li>
+  <li type="square"> Policy Effect, the presence of tools to leverage the monetization, adequate revenue per thousand impressions (RPM) or simply profitability or earning as long as monetization is more liquid,
+   </a> </li>
+</ul>
+This system of equations constitutes a simulation model  to define how a system changes over time, given its current state (initial departure). Unlike analytical models, this simulation model provides the changes of system states ( real time dynamic profitability) that can be observed at any point in time based on specific inputs. This tool provides an insight, i.e. decision support tool to assess the involved processes.
+
+<br> <br> 
+ <h1>  Numerical Results: </h1>
+
+In general, the expected revenue level of capital to be earned by a channel from its proposed videos is time dependent. This time dependent profitability function is generated implicitly by the active viewers on the YouTube platform and the presence of advertisement on viewed or streamed videos. We assume that the channel may experience a revenue loss that may occurs when these source of profitability (advertisement) are not monetized adequately (viewers continually is skipping them). 
+<br> <br> 
+The profitability dynamics modeled by our system of differential equations are not generally solved in closed form. We use  numerical solutions to solve some important scenarios to assess the profitability using a number of traffic intensities representing the "viewer interactions with the channel", considering that the viewer is freely skipping the adds, to model the monetization as is happening accordingly to a well-established expectancy function.
+<br> <br> 
+Our illustrative numerical simulations consider the traffic intensity and policy effect on the dynamics of the profitability.
+The traffic intensity is mainly related to how much the channel is considered by the viewers. The traffic intensity  is a fundamental parameter to monitor the dynamics of the profitability ( when the traffic intensity is equal to zero, the dynamics of the profitability is simply defined as a null function).
+<br> 
+ The policy effect is considered as a two-variables function that is depending on the level of profitability and its first time derivative. We assume that more the channel is appreciated more advertisements are attracted with adequate monetization. The policy effect function is quantified as a decreasing function. More the profitability is higher the perturbation on the future ones is minimized further, future profitability is expected to rise or increase adequately. 
+
+<br> <br> 
+<h2> Qualitative Analysis. </h2>
+
+We reduce our system of differential equations to two independent variables. In two-dimensional models, the temporal evolution of these two variables can be visualized in the so-called phase plane. Our reduced system of differential equations  has two variables, Realized-Profitability and Expected-Profitability.
+
+The <a target="alone"  href="https://en.wikipedia.org/wiki/Nullcline"> nullclines </a> are very informative to conduct a qualitative analysis to answer some questions, questions related to the short/long term behavior of profitability given a number of conditions.
+<br> <br> 
+Plainly, nullcline divides the phase plane in two different regions: one where the rate of change of the respective variable is positive and one where it is negative. Phase portrait of our reduced system of differential equations:
+
+<ul>
+   <li type="square"> The Realized-Profitability-nullcline is always the straight line (diagonal).</li> 
+  <li type="square">  The Expected-Profitability-nullcline is the curved line and dependents on the traffic intensity and the policy effect.</li>
+  <li type="square"> The direction of the arrows indicates the flow ( first time derivative of Realized-Profitability and Expected-Profitability).  </li>
+   <li type="square"> Arrows on the plane show the direction of the flow with short/long length indicating slow/high movement around where the arrow is pointing.  </li>
+     <li type="square"> At some points on the plane, the direction of arrow dependents on the value of the traffic intensity and policy effect.  </li>
+</ul>
+
+<!--  The Realized-Profitability-nullcline is always the straight line (diagonal). The Expected-Profitability-nullcline is the curved line and dependents on the traffic intensity and the policy effect. The direction of the arrows indicates the flow ( first time derivative of Realized-Profitability and Expected-Profitability). Arrows on the plane show the direction of the flow with short/long length indicating slow/high movement around where the arrow is pointing. At some points on the plane, the direction of arrow dependents on the value of the traffic intensity and policy effect. -->
+
+Figure below associated to a fixed policy effect function and variable traffic intensity. 
+<br> <br> 
+<object data="TRAFICINTENSITYN.pdf" type="application/pdf" width="850" height="425">
+<embed src="TRAFICINTENSITYN.pdf" width="850" height="425" type='application/pdf'>
+</object>
+<br> <br> 
+Figure below, for a fixed traffic intensity, we change the parameters related to function policy effect.
+The four policy effect functions are sorted from the more noisy (policy 1)  to less noisy (policy 4).  
+<br> <br> 
+<object data="PolicySelectionN.pdf" type="application/pdf" width="850" height="425">
+<embed src="PolicySelectionN.pdf" width="850" height="425" type='application/pdf'>
+</object>
+<br><br>
+<h2> Quantitative Analysis. </h2>
+We use a number of traffic intensities and using two different policy effect functions. 
+A perfect policy effect function is adding no perturbation on the Expected-Profitability and a noisy effect function which is adding white noise perturbation on the Expected-Profitability. The flowing capital, the presence of advertisements on processed videos, 
+is time variable and grows at a constant rate. The computed Realized-Profitabilities are in:
+        <div>
+            <a href="#" class="showcharts">Show Chart Examples</a>
+        </div>
+         <div class="examplelinks chartlinks" id="example_options">
+               <a href="PROFITABILITYN_.html"> Realized-Profitability using variable traffic intensities under two policy effect functions to monitor the Expected-Profitability.</a> 
+        </div>
+         <br>
+        <div id="show_wrapper"><iframe id="show"></iframe></div>
+        <div id="example_options" style="visibility: visible">
+            <a target="alone" id="showonlythis" href="#"> Click for a view in a new window</a> ;
+        </div>
+
+
+<br><br>
+
+<h3>
+Discussion and Conclusion:
+</h3> 
+Adequate traffic intensity, the presence of viewers to watch videos, with enhanced policy effect, the presence of tools to leverage the monetization, enable substantial realized profitability for a channel in Youtube. Our framework show a mathematical and numerical support to this statement using a number of simulations, general initial conditions and suitable inputs encountered in practice. This tool provides an insight about how specific elements may effect the channel profitability. 
+ 
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+   
+</section>
+</div>
+ 
+</body>
+</html>
+
+
+<!--  
+git add --all
+  git commit -m "Initial commit"
+  git push -u origin master
+ -->
+
+<!-- 
+Calvo’s formulation makes the current contract price a geometrically
+weighted average of future price levels, adjusted for excess demand in the future.
+Denoting the contract price by Vt
+, the price level by Pt
+, and excess demand
+by Et
+,
+V P E e ds t s
+t
+s
+s t = +
+∞
+− − ∫ δ β δ [ ] . ( )
+The price index is a geometrically weighted average of past contract prices,
+P V e ds t s
+t
+t s =
+−∞
+− − ∫ δ δ ( ) .
+The combination of these two makes prices implicitly a mixed forward- and
+backward-looking function of contract prices, similar to Taylor (1980): -->

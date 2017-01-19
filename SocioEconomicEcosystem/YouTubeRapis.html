@@ -1,0 +1,903 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Debt Analytics & Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Realized-Profitability numerics'
++ '<br><br>'
+                + ' Click above:'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+
+    <h1 style="color:black">  YouTube-Channel</h1>
+     <h1 style="color:black"> Aggregated Statistics</h1>
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+         <h4>
+      <a target="alone"  href="https://github.com/soodoku/tuber"> tuber: </a> Access <a target="alone"  href="https://developers.google.com/youtube/v3/"> YouTube API </a>  plus home-made R Software coding to enable more results.
+</h4>
+        <p>
+
+ 
+<table style="border-collapse:collapse;" class=table_taza border=0>
+<col width="100">
+<col width="100">
+<thead>
+<tr style="background-color:#428bca;">
+  <th id="header_1"> </th>
+  <th id="header_2">Channel Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td id="rownames">Title</td>
+  <td id="Channel Features" style="text-align:center;">InstrumenTop</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="rownames">viewCount</td>
+  <td id="Channel Features" style="text-align:center;">91830</td>
+</tr>
+<tr>
+  <td id="rownames">subscriberCount</td>
+  <td id="Channel Features" style="text-align:center;">1032</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="rownames">videoCount</td>
+  <td id="Channel Features" style="text-align:center;">124</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+<table style="border-collapse:collapse;" class=table_taza border=0>
+<col width="100">
+<col width="100">
+<col width="100">
+<col width="100">
+<col width="100">
+<col width="100">
+<col width="100">
+<thead>
+<tr style="background-color:#428bca;">
+  <th id="header_1">VC</th>
+  <th id="header_2">PT</th>
+  <th id="header_3">viewCount</th>
+  <th id="header_4">likeCount</th>
+  <th id="header_5">dislikeCount</th>
+  <th id="header_6">favoriteCount</th>
+  <th id="header_7">commentCount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td id="VC" style="text-align:center;">Nc0SmcuRajY</td>
+  <td id="PT" style="text-align:center;">2016-12-30T03:33:20.000Z</td>
+  <td id="viewCount" style="text-align:center;">9814</td>
+  <td id="likeCount" style="text-align:center;">55</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">2</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">PAYlTSRqCHU</td>
+  <td id="PT" style="text-align:center;">2016-11-23T13:38:48.000Z</td>
+  <td id="viewCount" style="text-align:center;">5815</td>
+  <td id="likeCount" style="text-align:center;">40</td>
+  <td id="dislikeCount" style="text-align:center;">3</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">3</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">P_GK99UWLHo</td>
+  <td id="PT" style="text-align:center;">2016-12-24T04:33:17.000Z</td>
+  <td id="viewCount" style="text-align:center;">1457</td>
+  <td id="likeCount" style="text-align:center;">23</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">0</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">4rVj5HRILEQ</td>
+  <td id="PT" style="text-align:center;">2016-11-05T08:01:34.000Z</td>
+  <td id="viewCount" style="text-align:center;">1303</td>
+  <td id="likeCount" style="text-align:center;">11</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">1</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">3S4zIy0t3Q4</td>
+  <td id="PT" style="text-align:center;">2016-11-03T01:19:30.000Z</td>
+  <td id="viewCount" style="text-align:center;">1223</td>
+  <td id="likeCount" style="text-align:center;">12</td>
+  <td id="dislikeCount" style="text-align:center;">1</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">3</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">ZeYOSdl5LaQ</td>
+  <td id="PT" style="text-align:center;">2016-09-21T02:36:38.000Z</td>
+  <td id="viewCount" style="text-align:center;">856</td>
+  <td id="likeCount" style="text-align:center;">19</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">12</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">Bps5CuxZP-U</td>
+  <td id="PT" style="text-align:center;">2016-10-27T03:01:44.000Z</td>
+  <td id="viewCount" style="text-align:center;">825</td>
+  <td id="likeCount" style="text-align:center;">16</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">2</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">QgGhelfnZaQ</td>
+  <td id="PT" style="text-align:center;">2016-12-28T22:39:12.000Z</td>
+  <td id="viewCount" style="text-align:center;">697</td>
+  <td id="likeCount" style="text-align:center;">16</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">2</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">oIprbrIKXAQ</td>
+  <td id="PT" style="text-align:center;">2016-10-17T04:23:48.000Z</td>
+  <td id="viewCount" style="text-align:center;">687</td>
+  <td id="likeCount" style="text-align:center;">13</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">6</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">Vlh7zHVefbc</td>
+  <td id="PT" style="text-align:center;">2017-01-03T11:03:12.000Z</td>
+  <td id="viewCount" style="text-align:center;">602</td>
+  <td id="likeCount" style="text-align:center;">12</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">0</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">Hk3GZce7_Hc</td>
+  <td id="PT" style="text-align:center;">2016-12-01T00:34:45.000Z</td>
+  <td id="viewCount" style="text-align:center;">528</td>
+  <td id="likeCount" style="text-align:center;">11</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">0</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">Ed0HmPb1EJU</td>
+  <td id="PT" style="text-align:center;">2016-10-26T23:15:57.000Z</td>
+  <td id="viewCount" style="text-align:center;">513</td>
+  <td id="likeCount" style="text-align:center;">11</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">1</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">Cw5Ej93zZhk</td>
+  <td id="PT" style="text-align:center;">2016-10-01T23:00:43.000Z</td>
+  <td id="viewCount" style="text-align:center;">494</td>
+  <td id="likeCount" style="text-align:center;">19</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">4</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">K3IHINp5lB4</td>
+  <td id="PT" style="text-align:center;">2016-11-13T05:53:58.000Z</td>
+  <td id="viewCount" style="text-align:center;">456</td>
+  <td id="likeCount" style="text-align:center;">8</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">0</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">hAB48L7ba6E</td>
+  <td id="PT" style="text-align:center;">2017-01-02T06:20:50.000Z</td>
+  <td id="viewCount" style="text-align:center;">398</td>
+  <td id="likeCount" style="text-align:center;">8</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">4</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">ofIBCP_euo8</td>
+  <td id="PT" style="text-align:center;">2016-12-28T12:28:00.000Z</td>
+  <td id="viewCount" style="text-align:center;">388</td>
+  <td id="likeCount" style="text-align:center;">11</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">0</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">e7WTHj599DA</td>
+  <td id="PT" style="text-align:center;">2016-09-27T04:10:12.000Z</td>
+  <td id="viewCount" style="text-align:center;">360</td>
+  <td id="likeCount" style="text-align:center;">19</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">5</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">Qp-OV3pHcUo</td>
+  <td id="PT" style="text-align:center;">2016-11-05T02:50:13.000Z</td>
+  <td id="viewCount" style="text-align:center;">327</td>
+  <td id="likeCount" style="text-align:center;">10</td>
+  <td id="dislikeCount" style="text-align:center;">2</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">4</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">5wtkePNa-gw</td>
+  <td id="PT" style="text-align:center;">2017-01-02T07:44:05.000Z</td>
+  <td id="viewCount" style="text-align:center;">320</td>
+  <td id="likeCount" style="text-align:center;">6</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">0</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">iLcRaanYyVw</td>
+  <td id="PT" style="text-align:center;">2016-10-03T01:50:59.000Z</td>
+  <td id="viewCount" style="text-align:center;">307</td>
+  <td id="likeCount" style="text-align:center;">17</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">6</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">q516ej0YKUI</td>
+  <td id="PT" style="text-align:center;">2016-10-24T10:02:46.000Z</td>
+  <td id="viewCount" style="text-align:center;">295</td>
+  <td id="likeCount" style="text-align:center;">10</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">1</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">FN2Og7TP5PE</td>
+  <td id="PT" style="text-align:center;">2016-10-23T02:14:13.000Z</td>
+  <td id="viewCount" style="text-align:center;">284</td>
+  <td id="likeCount" style="text-align:center;">11</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">1</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">tkxNq4ZMjd8</td>
+  <td id="PT" style="text-align:center;">2016-09-22T03:43:13.000Z</td>
+  <td id="viewCount" style="text-align:center;">281</td>
+  <td id="likeCount" style="text-align:center;">15</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">4</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">ba8F9U5lBTM</td>
+  <td id="PT" style="text-align:center;">2016-09-27T02:33:00.000Z</td>
+  <td id="viewCount" style="text-align:center;">273</td>
+  <td id="likeCount" style="text-align:center;">18</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">7</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">5iML4nGkHro</td>
+  <td id="PT" style="text-align:center;">2016-12-01T05:34:09.000Z</td>
+  <td id="viewCount" style="text-align:center;">253</td>
+  <td id="likeCount" style="text-align:center;">12</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">1</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">lT4lphHQkKw</td>
+  <td id="PT" style="text-align:center;">2016-12-22T07:51:35.000Z</td>
+  <td id="viewCount" style="text-align:center;">233</td>
+  <td id="likeCount" style="text-align:center;">13</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">2</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">nDV2WZ97Kk8</td>
+  <td id="PT" style="text-align:center;">2016-12-25T08:52:11.000Z</td>
+  <td id="viewCount" style="text-align:center;">201</td>
+  <td id="likeCount" style="text-align:center;">12</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">0</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">WeI9Kdbe3Ng</td>
+  <td id="PT" style="text-align:center;">2016-11-29T03:51:15.000Z</td>
+  <td id="viewCount" style="text-align:center;">199</td>
+  <td id="likeCount" style="text-align:center;">7</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">0</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">64rDDolFxws</td>
+  <td id="PT" style="text-align:center;">2016-10-10T05:26:34.000Z</td>
+  <td id="viewCount" style="text-align:center;">184</td>
+  <td id="likeCount" style="text-align:center;">14</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">0</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">PWu5BnHkPUU</td>
+  <td id="PT" style="text-align:center;">2016-09-21T04:06:18.000Z</td>
+  <td id="viewCount" style="text-align:center;">177</td>
+  <td id="likeCount" style="text-align:center;">13</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">4</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">kT_1Xylo7ME</td>
+  <td id="PT" style="text-align:center;">2016-12-23T04:04:51.000Z</td>
+  <td id="viewCount" style="text-align:center;">169</td>
+  <td id="likeCount" style="text-align:center;">13</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">0</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">_55-9W-nrU4</td>
+  <td id="PT" style="text-align:center;">2016-10-28T02:38:54.000Z</td>
+  <td id="viewCount" style="text-align:center;">165</td>
+  <td id="likeCount" style="text-align:center;">8</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">2</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">G2DsaLSyoyE</td>
+  <td id="PT" style="text-align:center;">2017-01-04T04:27:15.000Z</td>
+  <td id="viewCount" style="text-align:center;">156</td>
+  <td id="likeCount" style="text-align:center;">10</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">1</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">YwvMhlGyuec</td>
+  <td id="PT" style="text-align:center;">2016-10-05T08:52:06.000Z</td>
+  <td id="viewCount" style="text-align:center;">138</td>
+  <td id="likeCount" style="text-align:center;">14</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">3</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">FixIC6ZDW7A</td>
+  <td id="PT" style="text-align:center;">2016-12-26T09:36:04.000Z</td>
+  <td id="viewCount" style="text-align:center;">137</td>
+  <td id="likeCount" style="text-align:center;">11</td>
+  <td id="dislikeCount" style="text-align:center;">1</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">2</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">7ebEKzerO1Q</td>
+  <td id="PT" style="text-align:center;">2017-01-05T01:06:38.000Z</td>
+  <td id="viewCount" style="text-align:center;">123</td>
+  <td id="likeCount" style="text-align:center;">7</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">0</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">37w3qpFEhm0</td>
+  <td id="PT" style="text-align:center;">2017-01-06T14:25:04.000Z</td>
+  <td id="viewCount" style="text-align:center;">118</td>
+  <td id="likeCount" style="text-align:center;">10</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">2</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">WZ_qtRT-ps4</td>
+  <td id="PT" style="text-align:center;">2017-01-06T02:26:09.000Z</td>
+  <td id="viewCount" style="text-align:center;">116</td>
+  <td id="likeCount" style="text-align:center;">9</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">1</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">wNSg0oIkrEk</td>
+  <td id="PT" style="text-align:center;">2017-01-07T10:44:12.000Z</td>
+  <td id="viewCount" style="text-align:center;">112</td>
+  <td id="likeCount" style="text-align:center;">11</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">7</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">zWdIawN2yFM</td>
+  <td id="PT" style="text-align:center;">2017-01-11T05:46:06.000Z</td>
+  <td id="viewCount" style="text-align:center;">107</td>
+  <td id="likeCount" style="text-align:center;">11</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">3</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">azNCIpADq5g</td>
+  <td id="PT" style="text-align:center;">2017-01-11T22:47:50.000Z</td>
+  <td id="viewCount" style="text-align:center;">101</td>
+  <td id="likeCount" style="text-align:center;">9</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">1</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">WNx0b4f8I_c</td>
+  <td id="PT" style="text-align:center;">2017-01-02T04:24:41.000Z</td>
+  <td id="viewCount" style="text-align:center;">83</td>
+  <td id="likeCount" style="text-align:center;">7</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">0</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">098WbJC7tck</td>
+  <td id="PT" style="text-align:center;">2017-01-15T21:03:24.000Z</td>
+  <td id="viewCount" style="text-align:center;">82</td>
+  <td id="likeCount" style="text-align:center;">6</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">0</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">XMglo693e6A</td>
+  <td id="PT" style="text-align:center;">2017-01-09T12:25:56.000Z</td>
+  <td id="viewCount" style="text-align:center;">81</td>
+  <td id="likeCount" style="text-align:center;">8</td>
+  <td id="dislikeCount" style="text-align:center;">1</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">2</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">MYmDtBr6kT0</td>
+  <td id="PT" style="text-align:center;">2017-01-14T07:21:30.000Z</td>
+  <td id="viewCount" style="text-align:center;">77</td>
+  <td id="likeCount" style="text-align:center;">9</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">2</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">BZSi8Iho_Yg</td>
+  <td id="PT" style="text-align:center;">2017-01-08T05:39:24.000Z</td>
+  <td id="viewCount" style="text-align:center;">75</td>
+  <td id="likeCount" style="text-align:center;">8</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">3</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">OydlvxL3Toc</td>
+  <td id="PT" style="text-align:center;">2017-01-13T07:05:17.000Z</td>
+  <td id="viewCount" style="text-align:center;">72</td>
+  <td id="likeCount" style="text-align:center;">7</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">3</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">SfqNKXSufSY</td>
+  <td id="PT" style="text-align:center;">2016-12-14T06:15:39.000Z</td>
+  <td id="viewCount" style="text-align:center;">65</td>
+  <td id="likeCount" style="text-align:center;">10</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">4</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">JC0GVn7h8nE</td>
+  <td id="PT" style="text-align:center;">2017-01-16T01:39:15.000Z</td>
+  <td id="viewCount" style="text-align:center;">50</td>
+  <td id="likeCount" style="text-align:center;">4</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">2</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">Q1mn37I10UU</td>
+  <td id="PT" style="text-align:center;">2017-01-18T01:25:18.000Z</td>
+  <td id="viewCount" style="text-align:center;">23</td>
+  <td id="likeCount" style="text-align:center;">5</td>
+  <td id="dislikeCount" style="text-align:center;">0</td>
+  <td id="favoriteCount" style="text-align:center;">0</td>
+  <td id="commentCount" style="text-align:center;">1</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<table style="border-collapse:collapse;" class=table_taza border=0>
+<col width="100">
+<col width="100">
+<col width="100">
+<thead>
+<tr style="background-color:#428bca;">
+  <th id="header_1">VC</th>
+  <th id="header_2">PT</th>
+  <th id="header_3">TITLE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td id="VC" style="text-align:center;">Nc0SmcuRajY</td>
+  <td id="PT" style="text-align:center;">2016-12-30T03:33:20.000Z</td>
+  <td id="TITLE" style="text-align:center;">New year 2017 cheb khaled live music hall Khaled live new version</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">PAYlTSRqCHU</td>
+  <td id="PT" style="text-align:center;">2016-11-23T13:38:48.000Z</td>
+  <td id="TITLE" style="text-align:center;">R&b love songs - best songs hip hop r&b mix 2016 (new) round-up</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">P_GK99UWLHo</td>
+  <td id="PT" style="text-align:center;">2016-12-24T04:33:17.000Z</td>
+  <td id="TITLE" style="text-align:center;">Yaar Mila De official song by Raees Shah Rukh Khan Mahira Khan Udi Udi Jaye</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">4rVj5HRILEQ</td>
+  <td id="PT" style="text-align:center;">2016-11-05T08:01:34.000Z</td>
+  <td id="TITLE" style="text-align:center;">Arabic House Music 2017 New Club Mix</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">3S4zIy0t3Q4</td>
+  <td id="PT" style="text-align:center;">2016-11-03T01:19:30.000Z</td>
+  <td id="TITLE" style="text-align:center;">Jdid Cheb khaled 2016 Ø§Ø§Ù„Ø´Ø§Ø¨ Ø®Ø§Ù„Ø¯ Ø§Ø¬Ù…Ù„ Ø§ØºÙ†ÙŠØ© jdid</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">ZeYOSdl5LaQ</td>
+  <td id="PT" style="text-align:center;">2016-09-21T02:36:38.000Z</td>
+  <td id="TITLE" style="text-align:center;">haifa wehbe 2016 new song âœ¿ â„’â„´Ñµâ„¯ . . .</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">Bps5CuxZP-U</td>
+  <td id="PT" style="text-align:center;">2016-10-27T03:01:44.000Z</td>
+  <td id="TITLE" style="text-align:center;">Cheb Hasni Matsalounich ila Bkit 3liha algerian music HD</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">QgGhelfnZaQ</td>
+  <td id="PT" style="text-align:center;">2016-12-28T22:39:12.000Z</td>
+  <td id="TITLE" style="text-align:center;">r&b love songs hip hop R&b mix mixtapes Hip Hop Digital 2017</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">oIprbrIKXAQ</td>
+  <td id="PT" style="text-align:center;">2016-10-17T04:23:48.000Z</td>
+  <td id="TITLE" style="text-align:center;">Arabic House Club Arabic music electro house club bar 2016</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">Vlh7zHVefbc</td>
+  <td id="PT" style="text-align:center;">2017-01-03T11:03:12.000Z</td>
+  <td id="TITLE" style="text-align:center;">Hip Hop playlist R&b love songs 2017 Hits new - round-up</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">Hk3GZce7_Hc</td>
+  <td id="PT" style="text-align:center;">2016-12-01T00:34:45.000Z</td>
+  <td id="TITLE" style="text-align:center;">Wonderful Arabic Music Romantic Egyptian coffee time</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">Ed0HmPb1EJU</td>
+  <td id="PT" style="text-align:center;">2016-10-26T23:15:57.000Z</td>
+  <td id="TITLE" style="text-align:center;">Cheb khaled, instrumental, c'est la vie Cover+Lyrics.</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">Cw5Ej93zZhk</td>
+  <td id="PT" style="text-align:center;">2016-10-01T23:00:43.000Z</td>
+  <td id="TITLE" style="text-align:center;">Arabic traditional music very soothing rum Lebanon officially</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">K3IHINp5lB4</td>
+  <td id="PT" style="text-align:center;">2016-11-13T05:53:58.000Z</td>
+  <td id="TITLE" style="text-align:center;">Romantic love instrumental Italian songs - Italian music songs hits all time âœ¿ â„’â„´Ñµâ„¯ . . .</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">hAB48L7ba6E</td>
+  <td id="PT" style="text-align:center;">2017-01-02T06:20:50.000Z</td>
+  <td id="TITLE" style="text-align:center;">2000's hip hop and r&b mix R&b/hip-hop songs - year-end soul & r&b urban Da Tooby</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">ofIBCP_euo8</td>
+  <td id="PT" style="text-align:center;">2016-12-28T12:28:00.000Z</td>
+  <td id="TITLE" style="text-align:center;">Playlist Black Rap Remix 2017 Top r&B Love Songs Hip-Hop Capital Music Hits</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">e7WTHj599DA</td>
+  <td id="PT" style="text-align:center;">2016-09-27T04:10:12.000Z</td>
+  <td id="TITLE" style="text-align:center;">cheb khaled - aicha mix of honey (Official song )</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">Qp-OV3pHcUo</td>
+  <td id="PT" style="text-align:center;">2016-11-05T02:50:13.000Z</td>
+  <td id="TITLE" style="text-align:center;">Muslim hip hop 2016 Ø¥Ø³ØªÙ…Ø¹ Ø§Ù„Ù‰ Ø§ÙŽØ®Ø± Ø§ØºÙ†ÙŠØ© Ù„Ù„Ù…ØºÙ†ÙŠ Ø§Ù„ÙƒØ¨ÙŠØ± Ù…Ø³Ù„Ù…</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">5wtkePNa-gw</td>
+  <td id="PT" style="text-align:center;">2017-01-02T07:44:05.000Z</td>
+  <td id="TITLE" style="text-align:center;">cheb khaled - rouhi ya wahrane - new version live 2017</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">iLcRaanYyVw</td>
+  <td id="PT" style="text-align:center;">2016-10-03T01:50:59.000Z</td>
+  <td id="TITLE" style="text-align:center;">BEST ì•„í”„ë¦¬ì¹´ ëŒ„ìŠ¤ ìŒì•… ë¼ìš´ì§€ ì£¼ìœ„ ë¹„ë””ì˜¤ ë¯¹ìŠ¤ 2016 AFRICAN</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">q516ej0YKUI</td>
+  <td id="PT" style="text-align:center;">2016-10-24T10:02:46.000Z</td>
+  <td id="TITLE" style="text-align:center;">Sofiane Boufal â€¢ Skills & Goals â€¢ Southampton Fc 2016/2017</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">FN2Og7TP5PE</td>
+  <td id="PT" style="text-align:center;">2016-10-23T02:14:13.000Z</td>
+  <td id="TITLE" style="text-align:center;">cheb khaled laziza vancouver - Ø§Ù„Ø´Ø§Ø¨ Ø®Ø§Ù„Ø¯</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">tkxNq4ZMjd8</td>
+  <td id="PT" style="text-align:center;">2016-09-22T03:43:13.000Z</td>
+  <td id="TITLE" style="text-align:center;">Hindi Bollywood 90s Romantic song Hindi song best ever</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">ba8F9U5lBTM</td>
+  <td id="PT" style="text-align:center;">2016-09-27T02:33:00.000Z</td>
+  <td id="TITLE" style="text-align:center;">tupac instrumental memories</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">5iML4nGkHro</td>
+  <td id="PT" style="text-align:center;">2016-12-01T05:34:09.000Z</td>
+  <td id="TITLE" style="text-align:center;">Amazigh music silent fantastic Ballotar-Ù…ÙˆØ³ÙŠÙ‚Ù‰ ØµØ§Ù…ØªØ© Ø±Ø§Ø¦Ø¹Ø© Ø¨Ø§Ù„Ù„ÙˆØªØ§Ø±</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">lT4lphHQkKw</td>
+  <td id="PT" style="text-align:center;">2016-12-22T07:51:35.000Z</td>
+  <td id="TITLE" style="text-align:center;">Hard Beat Instrumental Bass Boost Hip Hop Trap Beat 2016 Download Free</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">nDV2WZ97Kk8</td>
+  <td id="PT" style="text-align:center;">2016-12-25T08:52:11.000Z</td>
+  <td id="TITLE" style="text-align:center;">NEW ANTHEM (230+ songs Pop & EDM mashup) - 2017 Mashup Kingdom community</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">WeI9Kdbe3Ng</td>
+  <td id="PT" style="text-align:center;">2016-11-29T03:51:15.000Z</td>
+  <td id="TITLE" style="text-align:center;">Top 10 Most Popular African Music Singles B2C TOKIGEZA b2c official video</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">64rDDolFxws</td>
+  <td id="PT" style="text-align:center;">2016-10-10T05:26:34.000Z</td>
+  <td id="TITLE" style="text-align:center;">Workout Music Source // Rock Your Body Workout Mix (Hip-Hop and R&B)</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">PWu5BnHkPUU</td>
+  <td id="PT" style="text-align:center;">2016-09-21T04:06:18.000Z</td>
+  <td id="TITLE" style="text-align:center;">Arabic Top Remix extended deep house mix 2017</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">kT_1Xylo7ME</td>
+  <td id="PT" style="text-align:center;">2016-12-23T04:04:51.000Z</td>
+  <td id="TITLE" style="text-align:center;">Arabic Jewish Moroccan Gitano Flamenco song & dance Al-Andalus</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">_55-9W-nrU4</td>
+  <td id="PT" style="text-align:center;">2016-10-28T02:38:54.000Z</td>
+  <td id="TITLE" style="text-align:center;">algerian music CHEB HASNI â™« NTI POUR MOI SAYER â™« Ø§Ù„Ø´Ø§Ø¨ Ø­Ø³Ù†ÙŠ</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">G2DsaLSyoyE</td>
+  <td id="PT" style="text-align:center;">2017-01-04T04:27:15.000Z</td>
+  <td id="TITLE" style="text-align:center;">Relax Chillout Music Arabic 2017  CafÃ© MediterrÃ¡neo  Wonderful</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">YwvMhlGyuec</td>
+  <td id="PT" style="text-align:center;">2016-10-05T08:52:06.000Z</td>
+  <td id="TITLE" style="text-align:center;">Meditation Music: 1 Hour Healing Music, Positive Motivating Energy</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">FixIC6ZDW7A</td>
+  <td id="PT" style="text-align:center;">2016-12-26T09:36:04.000Z</td>
+  <td id="TITLE" style="text-align:center;">dance drbakh music eastern Habibi. dancer Belly Dance - drum drbakh</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">7ebEKzerO1Q</td>
+  <td id="PT" style="text-align:center;">2017-01-05T01:06:38.000Z</td>
+  <td id="TITLE" style="text-align:center;">Mariah Carey's Lip Sync Fail! 2016-2017 NYC NYE</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">37w3qpFEhm0</td>
+  <td id="PT" style="text-align:center;">2017-01-06T14:25:04.000Z</td>
+  <td id="TITLE" style="text-align:center;">1 HOUR VERSION! (+100 Songs) Music NEW Mashup songs 2017</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">WZ_qtRT-ps4</td>
+  <td id="PT" style="text-align:center;">2017-01-06T02:26:09.000Z</td>
+  <td id="TITLE" style="text-align:center;">Salsa Music, for beginners cuban Dance 2017</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">wNSg0oIkrEk</td>
+  <td id="PT" style="text-align:center;">2017-01-07T10:44:12.000Z</td>
+  <td id="TITLE" style="text-align:center;">View of Traditional South Korean performance with music 2017 ë…„ í•œêµ­ ì „í†µ ìŒì•… ê³µì—°ë³´ê¸°</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">zWdIawN2yFM</td>
+  <td id="PT" style="text-align:center;">2017-01-11T05:46:06.000Z</td>
+  <td id="TITLE" style="text-align:center;">latest Kenyan music Mombasa African union new song</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">azNCIpADq5g</td>
+  <td id="PT" style="text-align:center;">2017-01-11T22:47:50.000Z</td>
+  <td id="TITLE" style="text-align:center;">R&B Love Songs Best Songs Hip Hop R&B Mix 2017 Best English Love Songs Collection</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">WNx0b4f8I_c</td>
+  <td id="PT" style="text-align:center;">2017-01-02T04:24:41.000Z</td>
+  <td id="TITLE" style="text-align:center;">2000s Hip Hop, Hopeful - R&b love song hip hop ever Up To Me</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">098WbJC7tck</td>
+  <td id="PT" style="text-align:center;">2017-01-15T21:03:24.000Z</td>
+  <td id="TITLE" style="text-align:center;">Hip Hop love (R&B, Hip-Hop & Rap Hits songs one of the most talented rappers</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">XMglo693e6A</td>
+  <td id="PT" style="text-align:center;">2017-01-09T12:25:56.000Z</td>
+  <td id="TITLE" style="text-align:center;">Pop sensation Elijah Elias Naslin songs - released his first full length album</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">MYmDtBr6kT0</td>
+  <td id="PT" style="text-align:center;">2017-01-14T07:21:30.000Z</td>
+  <td id="TITLE" style="text-align:center;">Popular modern pop music best pop songs of all time Best Vocals of 2017</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">BZSi8Iho_Yg</td>
+  <td id="PT" style="text-align:center;">2017-01-08T05:39:24.000Z</td>
+  <td id="TITLE" style="text-align:center;">Niklas AhlstrÃ¶m - The Remix songs 2017</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">OydlvxL3Toc</td>
+  <td id="PT" style="text-align:center;">2017-01-13T07:05:17.000Z</td>
+  <td id="TITLE" style="text-align:center;">Gus knows what he wants Try not to laugh cute cats Hilarious funny moments video 2017</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">SfqNKXSufSY</td>
+  <td id="PT" style="text-align:center;">2016-12-14T06:15:39.000Z</td>
+  <td id="TITLE" style="text-align:center;">` Ù†ÙˆÙƒÙ„ Ø¹Ù„ÙŠÙ‡Ù… Ø±Ø¨ÙŠ Ø¬Ø¯ÙŠØ¯ Ù„Ø·ÙÙŠ Ø¯ÙˆØ¨Ù„ ÙƒØ§Ù†Ùˆ LOTFI DK 2016 _ N A R ( Clip song)+Les Paroles - Lyrics</td>
+</tr>
+<tr>
+  <td id="VC" style="text-align:center;">JC0GVn7h8nE</td>
+  <td id="PT" style="text-align:center;">2017-01-16T01:39:15.000Z</td>
+  <td id="TITLE" style="text-align:center;">Nicest and most beautiful Korean Girl voice Singing Hindi song the highest voice</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="VC" style="text-align:center;">Q1mn37I10UU</td>
+  <td id="PT" style="text-align:center;">2017-01-18T01:25:18.000Z</td>
+  <td id="TITLE" style="text-align:center;">traditional ugandan music uganda traditional music and Africa, pearl</td>
+</tr>
+</tbody>
+</table>
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com </a>
+    <br> 
+    Copyright 1994-2017, Numerics&Analytics, All Rights Reserved.
+     </div> 
+   
+</section>
+</div>
+ 
+</body>
+</html>
+
+
+<!--  
+git add --all
+  git commit -m "Initial commit"
+  git push -u origin master
+ -->
+
+<!-- 
+Calvo’s formulation makes the current contract price a geometrically
+weighted average of future price levels, adjusted for excess demand in the future.
+Denoting the contract price by Vt
+, the price level by Pt
+, and excess demand
+by Et
+,
+V P E e ds t s
+t
+s
+s t = +
+∞
+− − ∫ δ β δ [ ] . ( )
+The price index is a geometrically weighted average of past contract prices,
+P V e ds t s
+t
+t s =
+−∞
+− − ∫ δ δ ( ) .
+The combination of these two makes prices implicitly a mixed forward- and
+backward-looking function of contract prices, similar to Taylor (1980): -->

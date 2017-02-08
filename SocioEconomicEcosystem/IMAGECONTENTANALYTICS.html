@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Debt Analytics & Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Bursting Velocity'
++ '<br><br>'
+                + ' Click above: Category or Video'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+
+    <h1 style="color:black">  Image Content Analytics </h1>
+     <h1 style="color:black">  Using Discrepancy Learning Process  </h1>
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+        
+ <h1> Motivation </h1>
+The importance of data and knowledge extraction in data science is growing rapidly. Fields as diverse as
+scientific &amp engineering research, financial &amp economic analysis and advertising &amp marketing communications management are facing an exponentially increasing volume of available data with very complex structure defined by different experimental conditions. With this quantitative data researchers hope an access to many levels of information, as grouping together elements ( pixels in case of an image)  with similar measurements (RGB colors) or with significant discrepancy in their measurements(RGB colors). This knowledge will help researchers to gain insight into inter-connexions and associations between elements in a given data (image).
+<br>   <br> 
+This essay is mainly motivated to answer the following questions, content-based image retrieval related, given a data-image:
+<br>   <br> 
+<ul>
+   <li type="square">  <p><big>Q1: How different is a given pixel from the rest of pixels?</big></p> </li>
+   <li type="square">  <p><big>Q2: Is a given pixel an insider or an outlier?</big></p> </li>
+</ul>
+<h1>  Discrepancy Learning Process  </h1>
+Our first framework in <a target="alone"  href="http://www.siam.org/meetings/sdm06/workproceed/Scientific%20Datasets/Elkhettabi.pdf"> data content detection using the framework of the discrepancy analytics</a> is reformulated as an image content analytics framework  to assess these questions.
+<br>   <br> 
+ We use the mathematical framework of discrepancy to establish a data-image structure analysis. Essentially, discrepancy gives a global indication about the non-uniformity of the distribution of RGB colors in the image. The usage of the mathematical framework of discrepancy provides a discrepancy learning process for image analytics that is able to give insight about color distribution of the pixels and to allow access to many levels of information about image content. This discrepancy learning process is simple to numerically implement. The results showed that this discrepancy learning process captured the reflected pattern in the image with more insights  about the color spatial distribution where the pixel colors are either clumped or scarce. The captured pattern by the discrepancy learning process is called L2 Discrepancy Channel.
+ <br>   <br> 
+<h1>  Numerical Reality   </h1>
+The implementation of the algorithm using the known programming language ( Java,C++,C#, R) is very straightforward. One way to describe a digital color image is to declare its contents using picture element(pixel) position and their associated RGB colors, each image pixel is represented by 3 coordinates, Red Channel, Green Channel, Blue Channel. Our  Discrepancy Learning Process provides the forth channel called called L2 Discrepancy Channel, see images below.
+<br>   <br> 
+The L2 Discrepancy Channel is considered as an holistic histogram for the RGB colors in the image, it allows the interpreter to objectively identify the image content levels:
+<br>   <br> 
+<ul>
+   <li type="square">  <p><big>Dark Grey is meaning that the color of the pixel is scarce in the image content.</big></p> </li>
+   <li type="square">  <p><big>White Grey is meaning that the color of the pixel is dominating in the image content.</big></p> </li>
+</ul>
+<div class="image12">
+    <div class="imgContainer">
+      <center>  <img src="./DISCREIMAGES/t1soft.jpg" alt="Channel" /></center>
+    </div>
+    <div class="imgContainer">
+      <center>   <img class="middle-img" src="./DISCREIMAGES/t1softRGBD.jpg" alt="Channel" /></center>
+    </div>
+</div>
+
+<div class="image12">
+    <div class="imgContainer">
+      <center>  <img src="./DISCREIMAGES/Lenna.jpg" alt="Channel" style="width:200px;height:200px;"/></center>
+    </div>
+    <div class="imgContainer">
+      <center>   <img class="middle-img" src="./DISCREIMAGES/LennaRGBD.jpg" alt="Channel" /></center>
+    </div>
+</div>
+
+<!-- <center><img src="./DISCREIMAGES/t1softRGBD.jpg" alt="Channel" /></center>
+
+<center><img src="./DISCREIMAGES/LennaRGBD.jpg" alt="Channel" /></center>
+
+<div class="image12">
+    <div class="imgContainer">
+      <center>  <img src="./DISCREIMAGES/t1soft.jpg" alt="Channel" /></center>
+        <p>RGB Image  One</p>
+    </div>
+    <div class="imgContainer">
+      <center>   <img class="middle-img" src="./DISCREIMAGES/Lenna.jpg" alt="Channel" /></center>
+         <p>RGB Image Two</p>
+    </div>
+</div> -->
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com </a>
+    <br> 
+    Copyright 1994-2017, Numerics&Analytics, All Rights Reserved.
+     </div> 
+   
+</section>
+</div>
+ 
+</body>
+</html>
+
+
+<!--  
+git add --all
+  git commit -m "Initial commit"
+  git push -u origin master
+ -->
+
+<!-- 
+Calvo???s formulation makes the current contract price a geometrically
+weighted average of future price levels, adjusted for excess demand in the future.
+Denoting the contract price by Vt
+, the price level by Pt
+, and excess demand
+by Et
+,
+V P E e ds t s
+t
+s
+s t = +
+???
+??? ??? ??? ?? ?? ?? [ ] . ( )
+The price index is a geometrically weighted average of past contract prices,
+P V e ds t s
+t
+t s =
+??????
+??? ??? ??? ?? ?? ( ) .
+The combination of these two makes prices implicitly a mixed forward- and
+backward-looking function of contract prices, similar to Taylor (1980): -->

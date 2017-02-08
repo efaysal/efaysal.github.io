@@ -85,18 +85,23 @@
 The importance of data and knowledge extraction in data science is growing rapidly. Fields as diverse as
 scientific &amp engineering research, financial &amp economic analysis and advertising &amp marketing communications management are facing an exponentially increasing volume of available data with very complex structure defined by different experimental conditions
 and specially the ones enabled by the <a target="alone"  href="site.html">
-IT socio-economic ecosystem platforms</a>. With this quantitative data researchers hope an access to many levels of information, as grouping together elements ( pixels in case of an image)  with similar measurements (RGB colors) or with significant discrepancy in their measurements(RGB colors). This knowledge will help researchers to gain insight into inter-connexions and associations between elements in a given data (image).
+IT socio-economic ecosystem platforms</a>. With this quantitative data researchers hope an access to many levels of information, as grouping together elements ( pixels in case of an image)  with similar measurements (RGB colors) or with significant discrepancy in their measurements(RGB colors). This knowledge will help researchers to gain insights into the inter-connexions and associations between elements in a given data (image).
 <br>   <br> 
-This essay is mainly motivated to answer the following questions, content-based image retrieval related, given a data-image:
+This essay is mainly motivated to answer the following questions, given a data-image:
 <br>   <br> 
 <ul>
    <li type="square">  <p><big>Q1: How different is a given pixel from the rest of pixels?</big></p> </li>
    <li type="square">  <p><big>Q2: Is a given pixel an insider or an outlier?</big></p> </li>
 </ul>
+
+These questions with others are very relevant in the context of content-based image retrieval. 
+<br>   <br> 
 <h1>  Discrepancy Learning Process  </h1>
 Our first framework in <a target="alone"  href="http://www.siam.org/meetings/sdm06/workproceed/Scientific%20Datasets/Elkhettabi.pdf"> data content detection using the framework of the discrepancy analytics</a> is reformulated as an image content analytics framework  to assess these questions.
 <br>   <br> 
- We use the mathematical framework of discrepancy to establish a data-image structure analysis. Essentially, discrepancy gives a global indication about the non-uniformity of the distribution of RGB colors in the image. The usage of the mathematical framework of discrepancy provides a discrepancy learning process for image analytics that is able to give insight about color distribution of the pixels and to allow access to many levels of information about image content. This discrepancy learning process is simple to numerically implement. The results showed that this discrepancy learning process captured the reflected pattern in the image with more insights  about the color spatial distribution where the pixel colors are either clumped or scarce. The captured pattern by the discrepancy learning process is called L2 Discrepancy Channel.
+ We use the mathematical framework of discrepancy to establish a data-image structure analysis. Essentially, discrepancy gives a global indication about the non-uniformity of the distribution of RGB colors in the image. The usage of the mathematical framework of discrepancy provides a discrepancy learning process for image analytics that is able to give insights about RGB colors distribution of the pixels and to allow access to many levels of information about image content. This discrepancy learning process is simple to numerically implement. The results showed that this discrepancy learning process captured the reflected pattern in the image with more insights  about the colors spatial distribution where the pixel colors are either clumped or scarce. The captured pattern by the discrepancy learning process is called L2 Discrepancy Channel.
+<br>   <br>
+ We are in process to explore the usefulness of this discrepancy learning process in the key problem of feature design in computer vision and machine learning as it can largely determine the performance of a vision system to discover content. Informative features capture the essence of an image pattern and reliable feature extraction facilitates a wide range of tasks such as detection, matching, recognition, tracking, and more generally any learning task in the image domain. 
  <br>   <br> 
 <h1>  Numerical Reality   </h1>
 The implementation of the algorithm using the known programming language ( Java,C++,C#, R) is very straightforward. One way to describe a digital color image is to declare its contents using picture element(pixel) position and their associated RGB colors, each image pixel is represented by 3 coordinates, Red Channel, Green Channel, Blue Channel. Our  Discrepancy Learning Process provides the forth channel called called L2 Discrepancy Channel, see images below.

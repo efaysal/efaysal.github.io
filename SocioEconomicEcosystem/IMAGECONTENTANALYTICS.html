@@ -67,7 +67,7 @@
 
 <header>
     <body style="background-color:lightgrey;">
-    <h1 style="color:black">  Image Content Analytics </h1>
+    <h1 style="color:black">  Image Content Analytics &amp Information Capture </h1>
      <h1 style="color:black">  Using Discrepancy Learning Process </h1>
     <div>
     <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
@@ -101,6 +101,8 @@ Our first framework in <a target="alone"  href="http://www.siam.org/meetings/sdm
  We use the mathematical framework of discrepancy to establish a data-image structure analysis. Essentially, discrepancy gives a global indication about the non-uniformity of the distribution of RGB colors in the image. The usage of the mathematical framework of discrepancy provides a discrepancy learning process for image analytics that is able to give insights about RGB colors distribution of the pixels and to allow access to many levels of information about image content. This discrepancy learning process is simple to numerically implement without assuming any parametric form in the data. The results showed that this discrepancy learning process captured the reflected pattern in the image with more insights  about the colors spatial distribution where the pixel colors are either clumped or scarce. The captured pattern by the discrepancy learning process is called L2 Discrepancy Channel.
 <br>   <br>
  We are in process to explore the usefulness of this discrepancy learning process in the key problem of feature design in computer vision and machine learning as it can largely determine the performance of a vision system to discover content. Informative features capture the essence of an image pattern and reliable feature extraction facilitates a wide range of tasks such as detection, matching, recognition, tracking, and more generally any learning task in the image domain. 
+ <br>   <br>
+ A totally new era of thought for Image Content Analytics &amp Information Capture.
  <br>   <br> 
 <h1>  Numerical Reality   </h1>
 The implementation of the algorithm using the known programming language ( Java,C++,C#, R) is very straightforward. One way to describe a digital color image is to declare its contents using picture element(pixel) position and their associated RGB colors, each image pixel is represented by 3 coordinates, Red Channel, Green Channel, Blue Channel. Our  Discrepancy Learning Process provides the forth channel called called L2 Discrepancy Channel, see images below.
@@ -111,6 +113,17 @@ The L2 Discrepancy Channel is considered as an holistic histogram for the RGB co
    <li type="square">  <p><big>Dark Grey is meaning that the color of the pixel is scarce in the image content.</big></p> </li>
    <li type="square">  <p><big>White Grey is meaning that the color of the pixel is dominating in the image content.</big></p> </li>
 </ul>
+
+<h2>  Acquiring Global Insights </h2>
+<div class="image12">
+    <div class="imgContainer">
+      <center>  <img src="./DISCREIMAGES/Lenna.jpg" alt="Channel" style="width:200px;height:200px;"/></center>
+    </div>
+    <div class="imgContainer">
+      <center>   <img class="middle-img" src="./DISCREIMAGES/LennaRGBD.jpg" alt="Channel" /></center>
+    </div>
+</div>
+
 <div class="image12">
     <div class="imgContainer">
       <center>  <img src="./DISCREIMAGES/t1soft.jpg" alt="Channel" /></center>
@@ -119,13 +132,52 @@ The L2 Discrepancy Channel is considered as an holistic histogram for the RGB co
       <center>   <img class="middle-img" src="./DISCREIMAGES/t1softRGBD.jpg" alt="Channel" /></center>
     </div>
 </div>
+<h2> Deep Learning: Acquiring Detailed Insights From Croped Images </h2>
+<br>   <br>
+<div class="image12">
+    <div class="imgContainer">
+      <center>  <img src="./DISCREIMAGES/t1soft.jpg" alt="Channel" /></center>
+    </div>
+    <div class="imgContainer">
+      <center>  <img src="./PROCESSED/t1soft_boltCROP2.jpg" alt="Channel" /></center>
+    </div>
+    <div class="imgContainer">
+      <center>   <img class="middle-img" src="./PROCESSED/DC_t1soft_boltCROP2.jpg" alt="Channel" /></center>
+    </div>
+</div>
+<div class="image12">
+    <div class="imgContainer">
+      <center>  <img src="./PROCESSED/_94006997_bd80a3ef-04b3-4ae9-89dd-c6b2ec69713b.jpg" alt="Channel" /></center>
+    </div>
+    <div class="imgContainer">
+      <center>   <img class="middle-img" src="./PROCESSED/DESERTTREE.jpg" alt="Channel" /></center>
+    </div>
+    <div class="imgContainer">
+      <center>   <img class="middle-img" src="./PROCESSED/DC_DESERTTREE.jpg" alt="Channel" /></center>
+    </div>
+</div>
 
 <div class="image12">
     <div class="imgContainer">
-      <center>  <img src="./DISCREIMAGES/Lenna.jpg" alt="Channel" style="width:200px;height:200px;"/></center>
+      <center>  <img src="./PROCESSED/_90355790_mediaitem90355789.jpg" alt="Channel" /></center>
     </div>
     <div class="imgContainer">
-      <center>   <img class="middle-img" src="./DISCREIMAGES/LennaRGBD.jpg" alt="Channel" /></center>
+      <center>   <img class="middle-img" src="./PROCESSED/NOWHERE.jpg" alt="Channel" /></center>
+    </div>
+    <div class="imgContainer">
+      <center>   <img class="middle-img" src="./PROCESSED/DC_NOWHERE.jpg" alt="Channel" /></center>
+    </div>
+</div>
+
+<div class="image12">
+    <div class="imgContainer">
+      <center>  <img src="./PROCESSED/2d00156.jpg" alt="Channel" /></center>
+    </div>
+    <div class="imgContainer">
+      <center>   <img class="middle-img" src="./PROCESSED/FLOWERLINKEDIN.jpg" alt="Channel" /></center>
+    </div>
+    <div class="imgContainer">
+      <center>   <img class="middle-img" src="./PROCESSED/DC_FLOWERLINKEDIN.jpg" alt="Channel" /></center>
     </div>
 </div>
 

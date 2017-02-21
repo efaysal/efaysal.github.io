@@ -1,0 +1,198 @@
+
+
+<!-- 
+git add --all
+git commit -m "Initial commit"
+ git push -u origin master
+
+ -->
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Debt Analytics & Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Bursting Velocity'
++ '<br><br>'
+                + ' Click above: Category or Video'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+    <h1 style="color:black">  Ranking Potential Stocks for Investment</h1>
+     <h1 style="color:black">  Using Ensemble Neural Network Models </h1>
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+        
+ <h1> Capital Formation </h1>
+Given a trading stock S in a financial market:
+<ul>
+   <li type="square">  <p><big>Q1: can a trader become infinitely rich immediately after reaching a point in time?</big></p> </li>
+</ul> 
+Theoretically yes, practically is not always simple to achieve.
+<br> <br> 
+An intuitive investing strategy is to buy when the stock price is low and sell later when the price is high. For instance in a continuous time set up, when the stock price S(t) follows the geometrical Brownian motion with drift µ and volatility σ, there is always an investing strategy depending on the direction of a price process (“ups” and “downs”) that can achieve a theoretically capital process approximatively equivalent to:
+<center>
+<p class=MsoNormal><span style="mso-spacerun: yes"></span><span
+style='color:blue'> Capital(t) = Exp( µ <sup>2 </sup>*t /2σ<sup>2</sup><o:p></o:p>).</span></p>
+</center>
+In practice ( not necessary continuous time) it's too hard for the trader to know the optimum move between two successive trading times.
+<br>
+These movements (“ups” and “downs”) are determined only by the market and may act in a certain sense that the theoretical exponential capital formation can not be achieved without risking a potential bankruptcy.
+<br><br>
+
+<ul>
+   <li type="square">  <p><big>Q2: how a trader has to design an investing strategy with good reasons to prevent big losses?</big></<li type="square">  <p><big>Q3:  how a trader has to select a stock to apply an investing strategy with good reasons to prevent  big losses?</big></
+    p> </li>
+</ul> 
+The Capital Asset Pricing Model may be used to handle these questions, except that this theory has to make assumptions about the beliefs or preferences of the trader, stock return is determined by a stochastic process and so on. A discussion is in    <a target="alone"  href="http://efaysal.github.io/Text/text.html"> EQUITY RESEARCH-REPORT ESSENTIALS.</a>
+<br><br>
+<h1> Capital Formation via Neural Network Models </h1>
+Recently, new approaches have been studies without excessive modeling assumptions. In this essay we use the work in <a target="alone"  href="https://arxiv.org/abs/1002.2265"> Sequential optimizing investing strategy with neural networks </a> that directly consider investing strategies for financial time series based on neural network models and idea to formulate the process of capital formation as the trader is betting against the Market. At each round, n, 
+the trader capital, K(n) = K(n−1)(1 + α(n)x(n)), where α(n) is the ratio of trader’s investment to his previous accumulated capital K(n−1). The investing ratio, α(n),  at round n is function of the previous market's moves, x(n-1),x(n-2),x(n-3),x(n-4) ... 
+<br>
+The work used neural network models to analytically define the function, α(n), by using the gradient descent method to solve the problem of maximization where the non-linear "activation function" is tanh. The process is an unsupervised neural network and is a 
+sequential optimization of parameter values of the network, these values estimate the function, α(n).
+<br><br>
+Indeed, it has a drawback, and that probably is regarded as a serious concern, the iterative process needs to start with an initial guess for the function, α(n), values and after sufficient times of iteration the estimated α(n) converges to a local maximum and not necessary reaching the adequate capital accumulation.
+<br><br>
+In this essay we use the work to assess historical stock data and to calculate the capital gain that can be fostered by using the unsupervised neural network "investing strategy". Given a number of stocks, we use this capital gain to rank the stocks, potentially good for investment.  
+<br><br>
+<h1> Competitive Stocks for Investments: Numerical Testing </h1>
+
+The constructed network has three-layered neural network models. The input layer has L neurons and they just distribute the previous L moves to every neuron in the hidden layer (M neurons). As it is difficult to specify (L,M) in advance. We test an ensemble of values assigned to (L,M). 
+<br><br>
+These Ensemble Neural Network Models(ENNM) results are mined to find hidden meaning and insight in huge volumes of data related to a number of stocks. This knowledge offers compelling and differentiated information about the stock data interrelation with the investing strategies provided by the ENNM to identify opportunities about the most competitive stocks for investments.
+<br><br>
+Our numerical testing used the daily stock price data of listed stocks in the Dow Jones Industrial Average plus couple of stocks.
+The investing period is from February-24-2016 to February-21-2017 for all strategies using L=(5,10,15) and M=(10,15,20,30).
+
+   <br>     <br> 
+<!-- <embed src="leftPOTENTIALSECTORSINVESTEMENT.pdf" width="850" height="425" type='application/pdf'>
+ <br>
+
+<object data="leftPOTENTIALSECTORSINVESTEMENT.pdf" type="application/pdf" width="850" height="425">
+  alt : <a href="leftPOTENTIALSECTORSINVESTEMENT.pdf">Potential Sectors for Investment</a>
+</object> -->
+  <div>
+<object data="./DOWCAPITALNEURALNETWORK/PotentialStocksInvestement.pdf" type="application/pdf" width="850" height="425">
+<embed src="./DOWCAPITALNEURALNETWORK/PotentialStocksInvestement.pdf" width="850" height="425" type='application/pdf'>
+</object>
+
+</div>
+
+
+<br><br>
+
+
+
+
+
+
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com </a>
+    <br> 
+    Copyright 1994-2017, Numerics&Analytics, All Rights Reserved.
+     </div> 
+   
+</section>
+</div>
+ 
+</body>
+</html>
+
+
+<!--  
+git add --all
+  git commit -m "Initial commit"
+  git push -u origin master
+ -->
+
+<!-- 
+Calvo???s formulation makes the current contract price a geometrically
+weighted average of future price levels, adjusted for excess demand in the future.
+Denoting the contract price by Vt
+, the price level by Pt
+, and excess demand
+by Et
+,
+V P E e ds t s
+t
+s
+s t = +
+???
+??? ??? ??? ?? ?? ?? [ ] . ( )
+The price index is a geometrically weighted average of past contract prices,
+P V e ds t s
+t
+t s =
+??????
+??? ??? ??? ?? ?? ( ) .
+The combination of these two makes prices implicitly a mixed forward- and
+backward-looking function of contract prices, similar to Taylor (1980): -->

@@ -115,7 +115,7 @@ Our first framework in <a target="alone"  href="http://www.siam.org/meetings/sdm
 in the image-data content.
  <br>   <br> 
 <h1>  Numerical Reality   </h1>
-The implementation of the algorithm using the known programming languages ( Java,C++,C#, R) is very straightforward. One way to describe a digital color image is to declare its contents using picture element(pixel) position and their associated RGB colors, each image pixel is represented by 3 coordinates, Red Channel, Green Channel, Blue Channel. Our  Discrepancy Learning Process provides the forth channel called called L2 Discrepancy Channel, see images below.
+The implementation of the algorithm using the known programming languages ( Java,C++,C#, R) is very straightforward. One way to describe a digital color image is to declare its contents using picture element(pixel) position and their associated RGB colors, each image pixel is represented by 3 coordinates, Red Channel, Green Channel, Blue Channel. Our  Discrepancy Learning Process provides the forth channel called L2 Discrepancy Channel, see images below.
 <br>   <br> 
 The L2 Discrepancy Channel is considered as an holistic histogram for the RGB colors in the image, it allows the interpreter to objectively identify the image content levels:
 <br>   <br> 
@@ -123,6 +123,7 @@ The L2 Discrepancy Channel is considered as an holistic histogram for the RGB co
    <li type="square">  <p><big>Dark Grey is meaning that the color of the pixel is scarce in the image content.</big></p> </li>
    <li type="square">  <p><big>White Grey is meaning that the color of the pixel is dominating in the image content.</big></p> </li>
 </ul>
+
 
 <h2>  Acquiring Global Insights </h2>
 <div class="image12">
@@ -142,7 +143,15 @@ The L2 Discrepancy Channel is considered as an holistic histogram for the RGB co
       <center>   <img class="middle-img" src="./DISCREIMAGES/t1softRGBD.jpg" alt="Channel" /></center>
     </div>
 </div>
-<h2> Deep Learning: Acquiring Detailed Insights From Cropping Images & Multi-Channel Discrepancies </h2>
+<h2> Deep Learning: Acquiring Detailed Insights From Cropping Images & Multi-Channel Discrepancies.</h2>
+The Discrepancy Image is formed by the Discrepancy Learning Process as:
+<br>   <br> 
+<ul>
+   <li type="square">  <p><big>  1-) Considering (Red Channel, Green Channel). The obtained channel is called Discrepancy Channel RG. </big></p> </li>
+     <li type="square">  <p><big> 2-) Considering (Green Channel, Blue Channel). The obtained channel is called Discrepancy Channel GB. </big></p> </li>
+         <li type="square">  <p><big> 3-) Considering  (Red Channel , Blue Channel ). The obtained channel is called Discrepancy Channel RB. </big></p> </li>
+              <li type="square">  <p><big> The Discrepancy Image is the image formed by (Discrepancy Channel RG, Discrepancy Channel GB, Discrepancy Channel RB). </big></p> </li>
+</ul>
 <br>   <br>
 <div class="image12">
     <div class="imgContainer">
@@ -218,8 +227,9 @@ The L2 Discrepancy Channel is considered as an holistic histogram for the RGB co
 </div>
 
 
-
-
+ <br>   <br> 
+For an application to Fluorescence Imaging Analysis: <a target="alone"  href="http://efaysal.github.io/SocioEconomicEcosystem/FLOURESCENCEIMAGECONTENTANALYTICS.html"> Using Deep Discrepancy Learning Process. </a>
+ <br>   <br> 
 <!-- <center><img src="./DISCREIMAGES/t1softRGBD.jpg" alt="Channel" /></center>
 
 <center><img src="./DISCREIMAGES/LennaRGBD.jpg" alt="Channel" /></center>

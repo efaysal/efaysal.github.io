@@ -103,7 +103,7 @@ In this essay, we provide solutions to this limitation of fluorescent imaging mi
 This Discrepancy Image assesses how colors are spatially distributed in the regions of interest of an image, i.e. able to recover the spatial color distribution where the individual regions of interest are either clumped or scarce in the space of colors of the sampled image.
 <br>   <br> 
 The Discrepancy Image is a companion to the given fluorescence image that provide further quantification (on measurement quality) of the scarcity &amp abundance and distribution of the fluorescence contents in specified regions of interest(ROIs).
-<br>   <br> 
+<br>   <br>  
 <h2>  Discrepancy Learning Process  </h2>
 
 Our first framework in <a target="alone"  href="http://www.siam.org/meetings/sdm06/workproceed/Scientific%20Datasets/Elkhettabi.pdf"> data content detection using the framework of the discrepancy analytics</a> is reformulated as an image content analytics framework to assess the question.
@@ -113,7 +113,8 @@ Our first framework in <a target="alone"  href="http://www.siam.org/meetings/sdm
 <br>   <br> 
 <h1>  Numerical Discrepancy Scanners Using Deep Discrepancy Learning Process </h2>
 
-The implementation of the algorithm using the known programming languages ( Java,C++,C#, R) is very straightforward. One way to describe a digital color image is to declare its contents using picture element(pixel) position and their associated RGB colors, each image pixel is represented by 3 coordinates, Red Channel, Green Channel, Blue Channel. Our  Discrepancy Learning Process provides the forth channel called Discrepancy Channel, see images below.
+The implementation of the algorithm using the known programming languages ( Java,C++,C#, R) is very straightforward. One way to describe a digital color image is to declare its contents using picture element(pixel) position and their associated channels.
+Let's assume a RGB colors, each image pixel is represented by 3 coordinates, Red Channel, Green Channel, Blue Channel. Our  Discrepancy Learning Process provides the forth channel called Discrepancy Channel, see images below.
 <br>   <br> 
 The Discrepancy Channel is considered as an holistic histogram for the considered colors in the image, it allows the interpreter to objectively identify the image content levels:
 <br>   <br> 

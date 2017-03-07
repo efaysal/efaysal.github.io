@@ -76,10 +76,10 @@ git commit -m "Initial commit"
 
 <header>
     <body style="background-color:lightgrey;">
-    <h2 style="color:black">  Imaging Flow Cytometry </h2>
+    <h2 style="color:black">  Imaging Flow Cytometry (IFC) </h2>
     <h4 style="color:green">   Sensitivity Resolution  Image Quality  </h4>
     <h4 style="color:green">   CCD Camera in Time-Delay Integration  </h4>
-     <h2 style="color:black">  Using Deep Discrepancy Learning Process </h2>
+     <h2 style="color:black">  Using Deep Discrepancy Learning Process (DDLP) </h2>
     <div>
     <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
      </div> 
@@ -90,9 +90,18 @@ git commit -m "Initial commit"
         <ul></ul>
     </nav>
     <section>
-  <h1> Iterpretation of <a target="alone"  href=" "> Imaging Flow Cytometry Using Deep Discrepancy Learning Process  </a> </a> </h1>      
-
-    <a target="alone"  href="http://pubs.rsc.org/en/content/articlehtml/2016/lc/c6lc01063f?page=search">  Imaging Flow Cytometry </a>  
+  <h1> Iterpretation of <a target="alone"  href=" "> IFC Using DDLP </a> </a> </h1>      
+  The <a target="alone"  href="http://www.emdmillipore.com/CA/en/life-science-research/cell-analysis/amnis-imaging-flow-cytometers/how-it-works/ccd-camera-in-time-delay-integration/2zGb.qB.RYEAAAFLaDkp.zIG,nav">  CCD Camera in Time-Delay Integration</a> is able to empower the detection sensitivity to preserves the resolution and image quality in fast-moving objects. 
+  The cell is flowing as a 3D object, the instrument is able to adjust the speed of the cell with its internal velocity detection and as the cell is moving fast, the chance to spin during that short period of time is really minimal. Thus the instrument is able to map a three-dimensional object to a two-dimensional plane (the obtained image) by focusing on one side of the cell, as long as the cell does not spin, during its passage  and the process of image acquisition. 
+ <br>   <br> 
+ By using a dedicated marker to stain the membrane of the cell  and a second marker to stain the nucleus. The instrument is able to construct an image of the cell as a 2D image where the areas(cytoplasm) between the membrane and nucleus are represented in an overlapping fashion. 
+ <br>   <br>
+  Our Deep Discrepancy Learning Process is typically used to locate objects and boundaries in the obtained image. More precisely, the process assigns to every pixel in the image a kind of score if the pixel shares certain characteristics or discrepancies, i.e. the pixel colors are either uniformly, clumped or scarce. 
+ <br>   <br>
+  This framework was able to give insight about color distribution of the pixels and to allow access to many levels of information about image content. The results showed that the discrepancy framework captured the reflected pattern in the 2D image data 
+  and to provide a set of segments that collectively cover the entire image, or a set of contours extracted from the image, background, membrane, cytoplasm and nucleus. 
+ <br>   <br>
+  Each of the pixels in a region are similar with respect to some characteristic in the image data and show some discrepancies to other pixels, i.e. able to define adjacent regions. The discrepancy framework is an image segmentation of the primary image and are used to create 2D reconstruction of the flowing cell, see Figures with label "Rebuilt Discrepancy Image" as illustration.
 
 <br>   <br> 
  <h1> <a target="alone"  href="http://www.emdmillipore.com/CA/en/life-science-research/cell-analysis/amnis-imaging-flow-cytometers/applications/cell-signaling/nmab.qB..j4AAAFLJUcp.zYi,nav">  Cell Signaling </a> </h1>
@@ -150,8 +159,6 @@ Molecular trans-location of transcription factors from the cytoplasm to the nucl
     </div>
 </div>
 <br>   <br> 
-
-
  <h1> <a target="alone"  href="http://www.emdmillipore.com/CA/en/life-science-research/cell-analysis/amnis-imaging-flow-cytometers/applications/morphology/EKKb.qB.XQEAAAFL5XQp.zYt,nav"> Morphology Analysis</a> </h1>
 Distinguishing cells based on their morphologic differences is useful in the study of stem cell differentiation, hematology and oncology, and chemokine-induced shape change ... 
 <div class="image12">

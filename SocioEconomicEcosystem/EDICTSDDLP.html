@@ -94,7 +94,7 @@ git commit -m "Initial commit"
      <a target="alone"  href="https://www.youtube.com/watch?v=YyBGiZZSslY">
       Stimulated emission depletion (STED) microscopy images</a>.
   <br>  
-  Our motivation to illustrate is related to this recent work <a target="alone"  href="http://www.nature.com/articles/srep39406">"Optical High Content Nanoscopy of Epigenetic Marks Decodes Phenotypic Divergence in Stem Cells"</a> that demonstrated a new way to identify the state and fate of individual stem cells earlier than previously possible.  <a target="alone"  href="https://stemcells.nih.gov/"> Stem cells </a>  
+  We are motivated by an illustration on this interesting recently published work <a target="alone"  href="http://www.nature.com/articles/srep39406">"Optical High Content Nanoscopy of Epigenetic Marks Decodes Phenotypic Divergence in Stem Cells"</a> that demonstrated a new way to identify the state and fate of individual stem cells earlier than previously possible.  <a target="alone"  href="https://stemcells.nih.gov/"> Stem cells </a>  
   can develop into different cell types. They may offer a renewable source of replacement cells to treat diseases, conditions, and disabilities, i.e. serving as building blocks for the various tissues and organs of the body to cure or reduce the severity in case of a disease or disorder. Stem cell and regenerative medicine research holds a great deal of promise. Understanding and accurately defining a stem cell phenotypic divergence is essential for using them in life saving therapies, improve  overall health and quality of life.
  <br>   <br> 
  The approach in the cited work is called EDICTS (Epi-mark Descriptor Imaging of Cell Transitional States), the work used the optical
@@ -108,8 +108,7 @@ The work also quasi-postulated that the observed changes in the collected lights
  <br>   <br> 
 The constructed images have the following characteristics:
  <ul>
-   <li type="square"> 
-   </li> The red color represents H3K27me3, the green color represents H3K4me3 and the blue color is redundant in the color-spaces of the image. 
+   <li type="square"> The red color represents H3K27me3, the green color represents H3K4me3 and the blue color is redundant in the color-spaces of the image.  </li> 
      <li type="square"> The resolution of single pixel units correspond to the occupation of 1–4 nucleosomes.
    </li>
 </ul>
@@ -126,7 +125,7 @@ This Deep Discrepancy Learning Process (DDLP) is scalable and makes use of the t
 <br>   <br> 
 
  The DDLP defines image information content as a set of descriptors/covariantes of the primary image color-spaces structures. 
- Two levels of descriptors are provided: 
+ Many levels of descriptors are provided: 
 
  <ul>
    <li type="square"> Pixel-level descriptors, the colors spatial distribution where the pixel colors are either clumped or scarce. 
@@ -144,11 +143,14 @@ These descriptors are used to assess the sensitivity/resolution and image qualit
 
  <h2> Some Nomenclature </h2> 
     </li>
+     <li type="square"> The spatial coordinates(2D) of the pixel are designed by XY.</li>
+    <li type="square"> The color coordinates(3D) of the pixel are designed by RGB.</li>
  <li type="square"> R is only for  Red color, G is only for Green color and B is only for blue color. </li>
 <li type="square"> RG descriptors are obtained when only the two channels R and G are used. </li>
 <li type="square"> GB descriptors are obtained when only the two channels G and B are used.</li>
 <li type="square"> RB descriptors are obtained when only the two channels R and B are used. </li>
 <li type="square"> RGB Discrepancy Image is the companion to the primary RGB Image and is formed as (RG ,GB ,RB ) descriptors.</li>
+<li type="square"> XY means that the spatial coordinates of the pixel are added in the calculation of the considered descriptors.</li>
 </ul> 
  <h1> Sensitivity & Resolution & Image Quality </h1>  
 

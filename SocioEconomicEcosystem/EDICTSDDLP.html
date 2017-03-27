@@ -76,8 +76,8 @@ git commit -m "Initial commit"
 
 <header>
     <body style="background-color:lightgrey;">
+      <h2 style="color:black">  Combining Nanoscopy Epi-Mark Imaging &amp Deep Discrepancy Learning Process </h2>
     <h2 style="color:black">  Predicting Lineage Progression of Stem Cells </h2>
-     <h2 style="color:black">  Combining Nanoscopy Epi-Mark Imaging &amp Deep Discrepancy Learning Process </h2>
     <div>
     <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
      </div> 
@@ -88,26 +88,39 @@ git commit -m "Initial commit"
         <ul></ul>
     </nav>
     <section>
-  <h1> Motivation </h1>      
-  A recent work <a target="alone"  href="http://www.nature.com/articles/srep39406">"Optical High Content Nanoscopy of Epigenetic Marks Decodes Phenotypic Divergence in Stem Cells"</a> demonstrated a new way to identify the state and fate of individual stem cells earlier than previously possible.  <a target="alone"  href="https://stemcells.nih.gov/"> Stem cells </a>  
+    <h1>  Aim and Motivation </h1>  
+
+     Our aim is to illustrate how to use our <a target="alone"  href="http://efaysal.github.io/SocioEconomicEcosystem/FLOURESCENCEIMAGECONTENTANALYTICS.html">Discrepancy Imaging Analytics</a> to analyze 
+     <a target="alone"  href="https://www.youtube.com/watch?v=YyBGiZZSslY">
+      Stimulated emission depletion (STED) microscopy images</a>.
+  <br>  
+  Our motivation to illustrate is related to this recent work <a target="alone"  href="http://www.nature.com/articles/srep39406">"Optical High Content Nanoscopy of Epigenetic Marks Decodes Phenotypic Divergence in Stem Cells"</a> that demonstrated a new way to identify the state and fate of individual stem cells earlier than previously possible.  <a target="alone"  href="https://stemcells.nih.gov/"> Stem cells </a>  
   can develop into different cell types. They may offer a renewable source of replacement cells to treat diseases, conditions, and disabilities, i.e. serving as building blocks for the various tissues and organs of the body to cure or reduce the severity in case of a disease or disorder. Stem cell and regenerative medicine research holds a great deal of promise. Understanding and accurately defining a stem cell phenotypic divergence is essential for using them in life saving therapies, improve  overall health and quality of life.
  <br>   <br> 
  The approach in the cited work is called EDICTS (Epi-mark Descriptor Imaging of Cell Transitional States), the work used the optical
-high content nanoscopy of histone epigenetic marks (epi-marks) in stem cells to classify emergent cell states, i.e. involves imaging the labeled epigenetic modifications using microscopes capable of super resolution imaging.
+high content nanoscopy of histone epigenetic marks (epi-marks) in stem cells to classify emergent cell states, i.e. involves imaging the labeled epigenetic modifications using microscopes capable of super resolution imaging as <a target="alone"  href="https://www.youtube.com/watch?v=YyBGiZZSslY"> Stimulated emission depletion (STED) microscopy images</a>.
 <br>   <br> 
 The main hypothesis in this EDICTS, " the phenotypic divergence in stem cells can be linked to the perturbation
 of gene organizational domains within the nucleus, which can be detected and parametrized to the extent that the
 derived parameters can forecast a specific lineage choice."
 <br>   <br> 
-The work quasi-postulated that the observed changes in the collected lights during a number of time-periods are faithful representation of histone epigenetic marks modifications (chromatin reorganizations) and not fully biased by the cell-living/nucleus dynamics(imaged sides due to 3D-rotation, for instance) during the process of images acquisition. 
+The work also quasi-postulated that the observed changes in the collected lights during a number of time-periods are faithful representation of histone epigenetic marks modifications (chromatin reorganizations) and not fully biased by the cell-living/nucleus dynamics(imaged side changes due to 3D-rotation and shifts, for instance) during the process of recording/sampling spots(small groups of individual nucleosomes) to construct the images. 
  <br>   <br> 
+The constructed images have the following characteristics:
+ <ul>
+   <li type="square"> 
+   </li> The red color represents H3K27me3, the green color represents H3K4me3 and the blue color is redundant in the color-spaces of the image. 
+     <li type="square"> The resolution of single pixel units correspond to the occupation of 1–4 nucleosomes.
+   </li>
+</ul>
  The authors combined their super-resolution imaging of single cell organizational features of epi-marks with "second order" texture calculations based on the Grey Level Co-occurrence Matrices (GLCMs) to derive insights about the stem cell's fate evolution. 
  The "second order" texture calculations consider mainly the relationship between two close pixels in the primary image to derive a number of descriptors derived from  GLCMs sensitive to the organizational distribution of neighboring pixel values.
  <br>   <br> 
+
  In this essay, we are mainly motivated to test and assess the utility of our recent developed software <a target="alone"  href="http://efaysal.github.io/SocioEconomicEcosystem/FLOURESCENCEIMAGECONTENTANALYTICS.html">Fluorescence Imaging Analysis Using Deep Discrepancy Learning Process </a> to automatically quantify the most informative and relevant features contained in the primary image generated by EDICTS. 
 <br>   <br> 
 We consider our recent developed software as a practical way of looking at third order texture. Our framework is based on the
-mathematical formulation of L2 discrepancy that measures the pixel-colors presence in all multiresolution-subrectangles (more than just neighboring, all kind of windows are used.) defining the color-spaces(captured lights in the image) and is providing an indication, without loss of information,  related to how the pixel-colors are globally scattered in the color-spaces. The L2 discrepancy value captures the global degree of discrepancies in color-spaces and enables the formulation of a Deep Discrepancy Learning Process. 
+mathematical formulation of L2 discrepancy that measures the pixel-colors presence in all multiresolution-subrectangles (more than just neighboring, all kind of windows are used.) defining the color-spaces(captured lights in the image) and is providing an indication, without loss of spatial information,  related to how the pixel-colors are globally scattered in the color-spaces. The L2 discrepancy value captures the global degree of discrepancies in color-spaces and enables the formulation of a Deep Discrepancy Learning Process. 
 <br>   <br> 
 This Deep Discrepancy Learning Process (DDLP) is scalable and makes use of the totality or partially the provided channels in the primary images and is simple to numerically implement without assuming any parametric form in the primary image data contents. The results showed that it captured the reflected pattern in the image with more insights about the colors spatial distribution where the pixel colors are either clumped or scarce, see  <a target="alone"  href="http://efaysal.github.io/SocioEconomicEcosystem/IMAGECFLOWCYTOMETRYCONTENTANALYTICS.html"> IFC Using DDLP</a>.
 <br>   <br> 
@@ -119,19 +132,46 @@ This Deep Discrepancy Learning Process (DDLP) is scalable and makes use of the t
    <li type="square"> Pixel-level descriptors, the colors spatial distribution where the pixel colors are either clumped or scarce. 
 Hence creating one histogram for multi-variable data, i.e. a plot to discover, and show, the underlying frequency distribution of a set of continuous data (RGB colors). We refer to these Pixel-level descriptors as Sensitivity Descriptors.
    </li>
+ <li type="square"> New companion Discrepancy Images to the primary image are formed using Pixel-level descriptors. See <a target="alone"  href="http://efaysal.github.io/SocioEconomicEcosystem/FLOURESCENCEIMAGECONTENTANALYTICS.html">Fluorescence Imaging Analysis Using Deep Discrepancy Learning Process </a>
+   </li>
      <li type="square"> Global level parameters outlining the entire light scattering proprieties  in the primary image color-spaces structures. 
    </li>
 </ul>
 
-These two levels of descriptors are used to discern the difference between a number of given primary images augmented 
- for instance by Kolmogorov-Smirnov test to calculate the pvalues supporting or not the differences statistically. 
- The Kolmogorov-Smirnov test the quality of being the same (similarity) of two independent continuous distributions. 
-
-
+These descriptors are used to assess the sensitivity/resolution and image quality and can be used to discern the difference between a number of given primary images.
+<!--  augmented  for instance by Kolmogorov-Smirnov test to calculate the pvalues supporting or not the differences statistically. The Kolmogorov-Smirnov test the quality of being the same (similarity) of two independent continuous distributions.  -->
 <br>   <br> 
-  <h1> Numerical Validation </h1>  
-  R is for Red color, B is for blue color and G for Green color.
 
+ <h2> Some Nomenclature </h2> 
+    </li>
+ <li type="square"> R is only for  Red color, G is only for Green color and B is only for blue color. </li>
+<li type="square"> RG descriptors are obtained when only the two channels R and G are used. </li>
+<li type="square"> GB descriptors are obtained when only the two channels G and B are used.</li>
+<li type="square"> RB descriptors are obtained when only the two channels R and B are used. </li>
+<li type="square"> RGB Discrepancy Image is the companion to the primary RGB Image and is formed as (RG ,GB ,RB ) descriptors.</li>
+</ul> 
+ <h1> Sensitivity & Resolution & Image Quality </h1>  
+
+<div class="image12">
+    <div class="imgContainer">
+      <div class="imgContainer">
+      <center>  <img src="./STEMCELLS/XYRGBtwotwohm_stemcell_photo_a.jpg" alt="Channel" /></center>
+    </div>
+      <center>  <img src="./STEMCELLS/XYDCtwotwohm_stemcell_photo_a.jpg" alt="Channel" height="800" width="800" /></center>
+    </div>
+</div>
+<br>   <br> 
+<div class="image12">
+    <div class="imgContainer">
+      <div class="imgContainer">
+      <center>  <img src="./STEMCELLS/RGBtwotwohm_stemcell_photo_a.jpg" alt="Channel" /></center>
+    </div>
+      <center>  <img src="./STEMCELLS/DCtwotwohm_stemcell_photo_a.jpg" alt="Channel" height="800" width="800" /></center>
+    </div>
+</div>
+<br>   <br> 
+
+  <h1> Numerical Validation </h1>  
 
 <br>   <br> 
 <table style="border-collapse:collapse;" class=table_round(DISR, 2) border=0>

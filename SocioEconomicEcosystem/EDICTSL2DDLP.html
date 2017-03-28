@@ -144,16 +144,6 @@ These descriptors are used to assess the sensitivity/resolution and image qualit
 <!--  augmented  for instance by Kolmogorov-Smirnov test to calculate the pvalues supporting or not the differences statistically. The Kolmogorov-Smirnov test the quality of being the same (similarity) of two independent continuous distributions.  -->
 <br>   <br> 
 
- <h2> Some Nomenclature </h2> 
-    </li>
-    <li type="square"> The color coordinates (3D) of the pixel are designed by RGB. The values are supposed in [R0,R1]x[G0,G1]x[B0,B1].</li>
- <li type="square"> R is only for  Red color [R0,R1], G is only for Green color [G0,G1] and B is only for blue color [B0,B1]. </li>
-<li type="square"> RG descriptors are obtained when only the two channels R and G are used [R0,R1]x[G0,G1]. </li>
-<li type="square"> GB descriptors are obtained when only the two channels G and B are used [G0,G1]x[B0,B1].</li>
-<li type="square"> RB descriptors are obtained when only the two channels R and B are used [R0,R1]x[B0,B1]. </li>
-<li type="square"> RGB Discrepancy Image is the companion to the primary RGB Image and is formed as (RG ,GB ,RB ).</li>
-</ul> 
-<br>   <br> 
  <h1> Temporal Sensitivity & Resolution </h1> 
 
  The L2 DDLP provides the Sensitivity Descriptors for the red color and green color in the image content as: 
@@ -229,6 +219,16 @@ For an illustrative purpose,  we extracted the associated images directly from t
 </div>
 <br>
 
+<br> <br> 
+<h2> Some Nomenclature </h2> 
+    </li>
+    <li type="square"> The color coordinates (3D) of the pixel are designed by RGB. The values are supposed in [R0,R1]x[G0,G1]x[B0,B1].</li>
+ <li type="square"> R is only for  Red color [R0,R1], G is only for Green color [G0,G1] and B is only for blue color [B0,B1]. </li>
+<li type="square"> RG descriptors are obtained when only the two channels R and G are used [R0,R1]x[G0,G1]. </li>
+<li type="square"> GB descriptors are obtained when only the two channels G and B are used [G0,G1]x[B0,B1].</li>
+<li type="square"> RB descriptors are obtained when only the two channels R and B are used [R0,R1]x[B0,B1]. </li>
+<li type="square"> RGB Discrepancy Image is the companion to the primary RGB Image and is formed as (RG ,GB ,RB ).</li>
+</ul> 
 <br> <br> 
 <h2> Separating color-spaces at Time 1 and at Time 2  </h2> 
 Two Discrepancy Images are presented, one for Time 1 and the second for Time 2.

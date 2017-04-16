@@ -92,9 +92,23 @@ git commit -m "Initial commit"
     </nav>
     <section>
     <!--   Under Construction and Review! -->
-    <h6> This essay explains the principles of lifetime models with numerical assessment of lifetime models with censoring.</h6> 
-  <h5> The words infusion and transplant have related meaning, i.e. infusion is the actual transplant process in which specific cells are infused into the recipient. After the infusion, the recipient is monitored for signs of any side effects from the treatment and to evaluate his medical status. The information related to this infusion process and to the subsequent follow up are recorded in a database with recipient &amp disease characteristics.</h5>  
+    <h6> This essay explains the principles of lifetime models with numerical assessment of lifetime models with censoring, competing risks and multi-state data. The applied statistical analysis is focusing on Cellular Therapy Observational Research Database.</h6> 
 
+<h3> Introduction </h3> 
+The words infusion and transplant have related meaning, i.e. infusion is the actual transplant process in which specific cells are infused into the recipient. After the infusion, the recipient is monitored for signs of any side effects from the treatment and to evaluate his medical status. The information related to this infusion process and to the subsequent follow up are recorded in a database with recipient &amp disease characteristics.
+ <br> 
+   Observational Research Database for research are formed. The database includes recipient baseline and outcome data for related and unrelated allogeneic transplants from any cell source, and for autologous transplants. The follow up information may report the following time depending events:
+
+ <ul>
+   <li type="square"> survival status of the recipient.  </li> 
+   <li type="square">  recipient died. </li> 
+   <li type="square">  additional cellular infusions performed for the same disease. </li>  
+   <li type="square">  response to the cellular therapy. </li>  
+   <li type="square">  development of second or new malignancies. </li> 
+   <li type="square">  development and severity of cytokine release syndrome and neurotoxicity. </li> 
+   <li type="square">  recipient simply is out or reach(not available for any contact).</li>    
+</ul>
+<h3> CIBMTR </h3> 
 A number of databases related to cellular therapies(Center for International Blood and Marrow Transplant
 Research-CIBMTR, for instance) are maintained around the world to facilitate research into the outcomes of these therapies, i.e outcome of the performed therapy, including information on recipients and survivors followed since the start of the treatment(pre-infusion treatment). These databases may have key elements to answer essential questions related to cellular therapy outcomes. 
 The outcomes are affected by recipient characteristics such as (age, gender, lifestyle) and disease factors such as (disease stage, prior therapies), as well as infusion dependent factors such as used cell source and infusion mode using autologous or allogeneic and son on.
@@ -112,7 +126,10 @@ Two possible scenarios can be considered:
    <li type="square"> Absence of physical contact with the physician because the recipient died( may be related or not to the infusion), moved elsewhere(never to be seen again), or the recipient not interested to contact the physician because of unknown reasons.
  <br>
     This is a censored observation that contains only partial information about the variable of interest, date of first contact to evaluate medical status. 
-   </li>   
+   </li>  
+     <li type="square"> The event Death can be considered as competing risk, i.e. a competing risk is an event whose occurrence
+precludes the occurrence of the primary event of interest. Or the event Death can be included into the censoring! 
+   </li>  
 </ul>
 The result of censoring has an important effect on data analysis and could lead to grossly erroneous conclusions.
 Censoring may be “non-informative” when recipients drop out because of reasons unrelated to the cellular therapy infusion. Informative censoring occurs when recipients are not willing to contact the physician due to reasons related to cellular therapy infusion.
@@ -159,7 +176,10 @@ Times are sampled from mixture distributions:
       with a specific rate parameter.
 </li>   
 </ul>
- We use R Software to generate/analyze this database. R is a software environment for statistical computing and graphics supported by the <a target="alone" href="https://www.r-project.org/" > R Foundation for Statistical Computing </a>. 
+ We use R Software to generate/analyze this database. R is a software environment for statistical computing and graphics supported by the <a target="alone" href="https://www.r-project.org/" > R Foundation for Statistical Computing </a>. R performs
+many statistical analyses needed in practical applications: linear and generalized linear models, nonlinear regression
+models, time-series analysis, parametric and nonparametric tests, clustering, smoothing and survival analysis. R also
+provides additional packages for specific purposes.
 <br> <br>
 "NA" means the recipient has no data entry for that particular field.
 

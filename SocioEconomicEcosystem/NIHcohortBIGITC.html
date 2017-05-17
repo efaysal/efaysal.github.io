@@ -1,0 +1,224 @@
+
+
+<!-- 
+git add --all
+git commit -m "Initial commit"
+ git push -u origin master
+
+ -->
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Analytics & Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Bursting Velocity'
++ '<br><br>'
+                + ' Click above: Category or Video'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+      <h2 style="color:black">  Longitudinal Data-Cohort &amp Research Analysis Tools  </h2>
+    <h2 style="color:black">   Specificity-Sensitivity-Prevalence </h2>
+    <h3 style="color:black"> Difference in the survival of two Prognostic Subgroups at a Given Time</h3>
+     
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+      <h2>   Introduction  </h2>
+   Joint efforts with well-established health-care research institutions, Bio-Medical and High Technology industries have been formed 
+   to develop ways to design and build landmark longitudinal data-cohorts for precision medicine research:
+<ul>
+  <li type="square"> Diseases/Cancers, to improve our ability to understand better, prevent and treat disease based on individual differences in lifestyle, environment and genetics. </li>
+  <li type="square"> Health/Wellness, to increase an individual’s chances of remaining healthy throughout life. </li>
+</ul>
+The entities in these joint efforts will engage, organize a number of participants from a single survival population into data sub-cohorts
+with a scientific goal to shape efficient predictive models in order to develop a well-defined references "healthy" and "not-healthy"
+or to find two sub-groups, one with better and the other with worse survival prognoses, for instance. 
+<br> <br>  
+The characterization of these sub-groups will be facilitated by using a number of tests based on features associated to clinical, molecular, imaging, sensor, self-reported, behavioral, psychological, environmental and genetic/genemics and so on. 
+A score from a regression of these potential factors or some other model to characterize the sub-groups can also be used as
+one unified feature/marker. 
+<br> <br> 
+When well-integrated, the preprocessed data related to these tests is expected to provide difference in the survival of two prognostic subgroups at any given time. We call the two groups as positive and negative.
+<br> <br> 
+ <h2> Difference in the Survival and the Specificity-Sensitivity-Prevalence Impacts  </h2>
+Mathematically and statistically, this difference in the survival depends directly on how well the two groups are separated by the tests. The two measures that are commonly used to evaluate the performance of screening tests are the sensitivity and specificity of the test. The sensitivity of the test reflects the probability that the screening test will be positive among those who are in positive group. In contrast, the specificity of the test reflects the probability that the screening test will be negative among those who, in fact, are in negative group. 
+<br> <br> 
+The standard definitions of sensitivity and specificity considers disease status and marker value for sample as <b> time-independent </b>(firmly fixed). Interestingly enough, both the disease status and marker value may change over time, samples considered as disease-free earlier may develop the disease later due to longer study follow-up, and also their marker value may change from baseline during follow-up.
+<br> <br> 
+We comprehensively review the definitions of sensitivity and specificity for prognostic modeling is in <a target="alone"  href="./NIHcohortBIGITC0.html"> time-dependent medical status.</a>
+<br> <br> 
+A potential third parameter, that may be involved under specific cases related to the magnitude of the sensitivity and specificity, is the rates of the negative and positive patients in the single survival population. This third parameter is called “Prevalence” and numerically defined as the proportion of positive/negative samples in the overall sample pool. Note that the sensitivity and specificity values are not necessary related to the prevalence rates.
+<br>   <br> 
+ <h3> Our research questions: </h3>
+
+<ul>
+  <li type="square"> What are the the magnitude of the sensitivity and specificity values that make the difference in the survival not explicitly depending on the prevalence?  </li>
+  <li type="square">  Highlight specific contour levels of the difference in the survival, i.e. its intrinsic formulation to the variables( Specificity & Sensitivity ) and parameter(Prevalence).</li>
+</ul>
+<h3> Mathematical/Statistical  Models  </h3>
+
+The Mathematical/Statistical  models in this  <a target="alone"  href="https://arxiv.org/pdf/1611.01480.pdf"> interesting work </a>
+are used to describe the difference in the survival of two prognostic subgroups at any given time in terms of equations involving variables( Specificity &amp Sensitivity ) and parameter(Prevalence) representing the main aspects of the difference in the survival. 
+We comprehensively review this  <a target="alone"  href="https://arxiv.org/pdf/1611.01480.pdf"> interesting work </a> in the companion of this essay <a target="alone"  href="./NIHcohortBIGITC0.html"> time-dependent medical status.</a>
+<br> <br> 
+Importantly enough, in this essay we will address the concern of the Author about how the prevalence affects the difference  in the survival and to what extent? 
+<br> <br> 
+The analytical form of the difference in the survival(DiS) is given by:
+<center>
+<p class=MsoNormal><span style="mso-spacerun: yes"></span><span
+style='color:blue'> DiS = A / (B*C)      ... (*)
+</center>
+where 
+<center>
+<p class=MsoNormal><span style="mso-spacerun: yes"></span><span
+style='color:blue'> A = prevalence*(1-prevalence)*(specificity+sensitivity-1)
+</center>
+<center>
+<p class=MsoNormal><span style="mso-spacerun: yes"></span><span
+style='color:blue'> B = sensitivity*prevalence+(1-specificity)*(1-prevalence)
+</center>
+<center>
+<p class=MsoNormal><span style="mso-spacerun: yes"></span><span
+style='color:blue'> C = (1-sensitivity)*prevalence+specificity*(1-prevalence)
+</center>
+This formulation shows that the prevalence is to play a role in the bias of many outcome measures
+for test performance. For highly skewed prevalence rates, adequate sample sizes in the
+true positive and negative groups are needed for reliable estimates of the sensitivity and specificity values.
+<br> <br> 
+<h4> It is remarkable that when the magnitude of the sensitivity and specificity values are higher to one,  
+ the difference  in the survival can be well-approximated as:</h4>
+ <center>
+ <p class=MsoNormal><span style="mso-spacerun: yes"></span><span
+style='color:blue'> ~(specificity+sensitivity-1)/(specificity*sensitivity)    ... (**)
+</center>
+An important observation, the function DiS is differential and its simplified form in (**), has an unique maximum attainable  at (specificity=1,sensitivity=1). The maximum is attainable when the prediction is established beyond doubt. We call this new simplified difference in the survival formula, <b>"Verily index"</b>:
+ <center>
+ <p class=MsoNormal><span style="mso-spacerun: yes"></span><span
+style='color:blue'> Vi = (specificity+sensitivity-1)/(specificity*sensitivity)
+</center>
+The  <b>"Verily index"</b> can be considered as a scaled/calibrated' quantity of the index known under the name of <a target="alone"  href="https://en.wikipedia.org/wiki/Youden%27s_J_statistic"> Youden index:</a>
+ <center>
+ <p class=MsoNormal><span style="mso-spacerun: yes"></span><span
+style='color:blue'> Yi = specificity+sensitivity-1
+</center>
+'This scaling(calibration) is promoting firm conviction that good or bad performance of a diagnostic test is the case. 
+<!-- is known by the name of <a target="alone"  href="https://en.wikipedia.org/wiki/Youden%27s_J_statistic"> Youden index.</a> -->
+<br> <br> 
+Given a test high in specificity and high in sensitivity helps to 
+achieve a higher or adequate difference in the survival not explicitly depending on the prevalence. 
+The maximum of the function DiS is equal to one which is attainable when the magnitude of the sensitivity and specificity values are close to one. The <a target="alone"  href="https://en.wikipedia.org/wiki/Youden%27s_J_statistic"> Youden index</a> and <b>"Verily index"</b> values are comparable.
+<br> <br> 
+
+<h3> Informatics Solution </h3>
+
+A numerical simulation is conducted to study the numerical behavior of the function DiS in (*), as in most nonlinear formulations to assess min/max proprieties, using a number values related to the variables( Specificity &amp Sensitivity ) and parameter(Prevalence).
+This computer simulation is used to explore and gain new insights into the impact of the variables( Specificity &amp Sensitivity ) and parameter(Prevalence) and to estimate and highlight specific contour levels of the function DiS as result of its nonlinear formulation to the the variables( Specificity &amp Sensitivity ) and parameter(Prevalence). For visualization purpose, the DiS negative values are replaced by zero.
+<br> <br>
+<div class="image12">
+    <div class="imgContainer">
+      <center>  <img src="./SENSSPECPREVALENCE/SENSSPECPREVALENCE.jpg" alt="Channel" /></center>
+    </div>
+   <div class="imgContainer">
+      <center>   <img class="middle-img" src="./SENSSPECPREVALENCE/LEVELSENSSPECPREVALENCE.jpg" alt="Channel" /></center>
+    </div>
+</div>
+<br>   <br>  
+<h3> Discussion &amp Conclusion </h3>
+
+As long as the used test to separate the two groups from a single survival population has both higher specificity and sensitivity values, 
+an adequate difference in the survival of these two prognostic subgroups is attainable and not explicitly depending on the prevalence. In this case, comparing survival curves between two prognostic subgroups is not misleading as the misclassification is minimal. 
+<br> <br> 
+As for the scalability of the difference in the survival  where the rates of of the specificity and sensitivity values deteriorate, the magnitude of the difference in the survival surely deteriorate as well and specially when the prevalence rate becomes close to zero or to one. 
+<br> <br> 
+Using poor tests in longitudinal data-subCohorts from a single survival population specially when the prevalence rate becomes close to zero or to one affect baldly, and in a nonlinear relationships, the precision of the study. 
+<br> <br> 
+It is essential to combine this information with research analysis tools, i.e. to improve specificity &amp sensitivity by developing suitable Quality Control and Quality Assurance for the tools used in the designed tests that are much preferred and encouraged by these joint efforts to foster a landmark longitudinal data-cohorts for precision medicine research.
+<br> <br> 
+<h3> Future Work </h3>
+Impact of censoring on the used formulations to estimate the sensitivity and specificity values and by consequent on the difference in survival. Click on <a target="alone"  href="./NIHcohortBIGITC0.html"> difference  in the survival in the presence of censoring. </a>
+<br> <br> 
+
+<h4>   Author scientific profile:  </h4>
+Statistics and Applied Mathematics for Data Analytics, Identify opportunities to apply Mathematical Statistics, Numerical Methods, Machine Learning and Pattern Recognition to investigate and implement solutions to the field of Data Content Analytics. Data prediction via computational methods to predict from massive amounts of data (Big Data Content). These methods included clustering, regression, survival analysis, neural network, classification , ranking, deep discrepancy learning .
+ <br>   <br> 
+ <!--   Under Construction and Review! -->
+   
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com , Living in Vancouver, BC, Canada.</a>
+    <br> 
+   The MIT License (MIT) Copyright 1994-2017, Faysal El Khettabi, Numerics&Analytics, All Rights Reserved.
+     </div> 
+   
+</section>
+</div>
+ 
+</body>
+</html>

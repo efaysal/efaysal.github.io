@@ -143,59 +143,8 @@ The sensitivity and specificity quantities are used to evaluate:
     <li type="square">  the survival of negative  group  at time t, SurvNegative(t).</li>
     <li type="square">  the difference in survival   at time t, SurvNegative(t) - SurvPositive(t).</li>
 </ul>
-These survival quantities can be computed using a number of probability formulations that only hold valid in the absence of censoring. The presence of censoring may affect badly the accuracy of the estimated survival quantities.
-<br> <br> 
- <h3>   Terminology  </h3>
-Given a specific marker and a given cut off to define negative/positive groups, we define for a time-point t:
-
-<!-- , following the <a target="alone"  href="https://arxiv.org/pdf/1611.01480.pdf"> the terminology in this work </a> -->
-<br> <br> 
-<ul>
-   <li type="square"> True Negatives (TN) as patients in negative group who did not experienced the event before time point t.</li> 
-<li type="square">   False Negatives (FN) as patients in negative group who experienced the event before time point t.</li>
-<br> 
-      <li type="square"> True Positive (TP) as patients in positive group who experienced the event before time point t.</li> 
-<li type="square"> False Positive (FP) as patients in positive group who did not experienced the event before time point t.</li>
-</ul>
-
-The clinicians are only interested to interpret test results on the basis of tested population, i.e crucially important, the predictive values of the test:
-
-<br><br>
-<ul>
-<li type="square"> Positive predictive value is the probability that subjects with a positive screening test truly have the disease.</li> 
-<li type="square"> Negative predictive value is the probability that subjects with a negative screening test truly don't have the disease.</li>
-
-</ul>
-
-<br><br>
-
-With this simple diagnostic/prognostic test in absence of censoring, the calculations of the sensitivity and specificity are straightforward.
-The values of positive predictive value (PPV) and negative predictive value (NPV) with the knowledge of prevalence* are computed using the sensitivity and specificity values. 
-<br><br>
-*The prevalence is the proportion of positive patients in the
-population, also known as the prior probability of being positive. It is a measure
-independent of the validation dataset. In longitudinal study, the survival rates of the single survival population at time, t,  is function of the prevalence.
-<!-- <br> <br>
-<a target="alone"  href="https://www.med.uottawa.ca/sim/data/Sensitivity_e.htm"> General introduction: </a>.
-<div class="image12">
-    <div class="imgContainer">
-      <center>  <img src="./SENSSPECPREVALENCE/Sen_spec.gif" alt="Channel" /></center>
-    </div>
-</div> -->
-<br>   <br>  
-
-
- <h3> Using the fundamental rules relating marginal probabilities to conditional probabilities, the survival of positive and negative patients are evaluated  at time t  as: </h3>
-<ul>
-   <li type="square">  SurvPositive(t) = 1-PPV(t)
-<li type="square">    SurvNegative(t) = NPV(t)
-</ul>
-The difference  in the survival is given by:
-<center>
-    <p class=MsoNormal><span style="mso-spacerun: yes"></span><span
-style='color:blue'> DiS(t)=SurvNegative(t)-SurvPositive(t) </p>
-</center>
-Its analytical form is 
+These survival quantities can be computed using a number of probability formulations that only hold valid in the absence of censoring. The presence of censoring may affect badly the accuracy of the estimated survival quantities. 
+The analytical form of the difference  in the survival is derived in this  <a target="alone"  href="https://arxiv.org/pdf/1611.01480.pdf"> interesting work</a>.
 <center>
 <p class=MsoNormal><span style="mso-spacerun: yes"></span><span
 style='color:blue'> DiS(t) = A(t) / (B(t)*C(t)) </p>

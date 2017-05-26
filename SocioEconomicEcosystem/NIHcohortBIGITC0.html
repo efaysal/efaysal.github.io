@@ -174,7 +174,7 @@ The values of positive predictive value (PPV) and negative predictive value (NPV
 <br><br>
 *The prevalence is the proportion of positive patients in the
 population, also known as the prior probability of being positive. It is a measure
-independent of the validation dataset. In longitudinal study, the survival rates of the population at a given time is function of the prevalence.
+independent of the validation dataset. In longitudinal study, the survival rates of the single survival population at time, t,  is function of the prevalence.
 <!-- <br> <br>
 <a target="alone"  href="https://www.med.uottawa.ca/sim/data/Sensitivity_e.htm"> General introduction: </a>.
 <div class="image12">
@@ -198,22 +198,22 @@ style='color:blue'> DiS(t)=SurvNegative(t)-SurvPositive(t) </p>
 Its analytical form is 
 <center>
 <p class=MsoNormal><span style="mso-spacerun: yes"></span><span
-style='color:blue'> DiS = A / (B*C) </p>
+style='color:blue'> DiS(t) = A(t) / (B(t)*C(t)) </p>
 </center>
 where 
 <center>
 <p class=MsoNormal><span style="mso-spacerun: yes"></span><span
-style='color:blue'> A = prevalence*(1-prevalence)*(specificity+sensitivity-1)
+style='color:blue'> A(t) = prevalence(t)*(1-prevalence(t))*(specificity(t)+sensitivity(t)-1)
 </center>
 <center>
 <p class=MsoNormal><span style="mso-spacerun: yes"></span><span
-style='color:blue'> B = sensitivity*prevalence+(1-specificity)*(1-prevalence)
+style='color:blue'> B(t) = sensitivity(t)*prevalence(t)+(1-specificity(t))*(1-prevalence(t))
 </center>
 <center>
 <p class=MsoNormal><span style="mso-spacerun: yes"></span><span
-style='color:blue'> C = (1-sensitivity)*prevalence+specificity*(1-prevalence)
+style='color:blue'> C(t) = (1-sensitivity(t))*prevalence(t)+specificity(t)*(1-prevalence(t))
 </center>
-
+ <h4>  (t) is to indicate that these quantities are calculated at time, t.  </h4>
 <br> <br> 
 For a detailed evaluation/analysis of this formulation, see the 
  <a target="alone"  href="./NIHcohortBIGITC.html"> difference  in the survival in the absence of censoring. </a>

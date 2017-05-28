@@ -167,17 +167,15 @@ style='color:blue'> C(t) = (1-sensitivity(t))*prevalence(t)+specificity(t)*(1-pr
 For a detailed evaluation/analysis of this formulation, see the 
  <a target="alone"  href="./NIHcohortBIGITC.html"> difference  in the survival in the absence of censoring. </a>
 <br> <br>  
- <h3> Censoring is always a Fact. </h3>
+<h4>   Numerical Simulation Scenarios  </h4>
+Informatics Solution can be made to predict almost any outcome. It would also generate primordial insights to reassess the cohort formation and consider new ideas about how to improve the cohort formation when chalenges are faced as censoring.
+<br> <br> 
 A realistic dataset has always censored data and it is not possible to build a cohort standing always with perfect accuracy. We investigate simulation scenarios using datasets that mimic realistic dataset. We consider that the marker is a mixture of two Normal distributions, we assess the following points:
 <ul>
   <li type="square"> Simulation/Visualization as an effective way to show the results given a number of values for the variables and parameters.</li>
 <li type="square"> Estimating the numerical values associated to the difference in survival given a number of cut-points.</li>
 <li type="square">  Feasibility to identify the best cut-point and so on.</li>  
 </ul>
-`
-<h4>   Numerical Simulation Scenarios  </h4>
-
-Informatics Solution can be made to predict almost any outcome. It would also generate primordial insights to reassess the cohort formation and consider new ideas about how to improve the cohort formation.
 <br> <br>
 The Time To Event is generated according to a parametric exponential model. Given cut point m at time t, the probabilities associated to the sensitivity, ~Sen(m,t), and the specificity, ~Spe (m,t), are calculated using Bayes formulas and estimated through the non-parametric Kaplan-Meier estimator. The presence of censoring has an impact on the accuracy of the estimated values and dependents on its time distribution, i.e. early stage censoring or late stage censoring. The Kaplan–Meier estimator has a variance that can be computed using Greenwood's formula which is too sensitive to the censoring time distribution( early or late ). Some analyzed simulation scenarios are summarized in the listed examples. 
 <h4>   Example 0 </h4>

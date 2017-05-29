@@ -106,10 +106,15 @@ margin:auto;
         <ul></ul>
     </nav>
     <section>
-    <h4> Definition: statistical power is the probability of demonstrating statistical significance if the hypothesis of the study is true. </h4> 
+    <h5> Definitions: 
+      <br>
+      Statistical power is the probability of demonstrating statistical significance if the hypothesis of the study is true. 
+     <br>
+     We assume a continuous diagnostic test(biomarker) to discriminate between non-diseased(negative) and diseased(positive) individuals. For clinical reason, it is useful to select an appropriate discrimination threshold(cut-point) that defines negative and positive test results. 
+   </h5> 
 
       <h2> Aim &amp Motivation  </h2> 
-  Enrolling a number of participants into a cohort with an adequate statistical power leads to an accurate and reliable process to discover biological markers to signal increased or decreased risk of developing specific diseases. These biological markers provide accurate and reliable predictions to empower study participants or new ones with information to improve their own health. By taking into account individual differences in lifestyle, environment, and biology, these biological markers are the focus of the personalized medicine. The personalized medicine aims to extract a comprehensive scientific knowledge to be tailored to the individual patient using cohort studies with goal to foster understanding of health and disease.
+  Enrolling a number of participants into a cohort with an adequate statistical power leads to an accurate and reliable process to discover biological markers to signal increased or decreased risk of developing specific diseases. These biological markers provide accurate and reliable predictions to empower study participants or new ones with information to improve their own health. By taking into account individual differences in lifestyle, environment, and biology, these biological markers are the focus of the personalized/precision medicine. The personalized/precision medicine aims to extract a comprehensive scientific knowledge to be tailored to the individual patient using cohort studies with goal to foster understanding of health and disease.
  <br>  <br>
  In this essay, we consider that the collected cohort has a number of participants from a single survival population that can be separated into two sub-cohorts one with better(healthy state) and the other with worse(developing a non-healthy state) survival prognoses using an hypothetic biological marker that needs to be discovered and assessed during the study.
  <br>
@@ -121,9 +126,9 @@ We provide an Informatics Solution with the potential to mimic a real cohort col
   
   We are interested by this problem where a medical status, D, is supposed to be positively correlated with a marker M. 
    <br> 
- The first group called positive ( where D=1 ) is expected to have the following condition, M >= m where m is a specific cut off. 
+ The first group called positive ( where D=1 ) is expected to have the following condition, M >= m where m is a specific cut-point. 
   <br> 
-The second group called negative ( where D=0 ) is expected to have the following condition, M < m where m is a specific cut off. 
+The second group called negative ( where D=0 ) is expected to have the following condition, M < m where m is a specific cut-point. 
  <br>  <br> 
 As a realistic  project, we consider the cumulative approach: the marker of interest is measured at baseline and the project is interested in the prognostic properties of the marker up to a specific period of time t, i.e. D(t) == 1 or D(t) == 0.
  <br> <br>
@@ -141,7 +146,8 @@ The sensitivity and specificity quantities are used to evaluate:
 <ul>
    <li type="square">  the survival of positive  group  at time t, SurvPositive(t).</li>
     <li type="square">  the survival of negative  group  at time t, SurvNegative(t).</li>
-    <li type="square">  the difference in survival   at time t, SurvNegative(t) - SurvPositive(t).</li>
+    <li type="square">  the difference in the survival   at time t, SurvNegative(t) - SurvPositive(t).</li>
+    <li type="square">  <a target="alone"  href="./CohortBIGITC.html"> this difference in the survival is the most appropriate in a clinical setting.</a> </li>
 </ul>
 These survival quantities can be computed using a number of probability formulations that only hold valid in the absence of censoring. The presence of censoring may affect badly the accuracy of the estimated survival quantities. 
 The analytical form of the difference  in the survival is derived in this  <a target="alone"  href="https://arxiv.org/pdf/1611.01480.pdf"> interesting work</a>:
@@ -164,7 +170,7 @@ style='color:blue'> C(t) = (1-sensitivity(t))*prevalence(t)+specificity(t)*(1-pr
 </center>
  <h4>  (t) is to indicate that these quantities are calculated at time, t.  </h4>
 For a detailed evaluation/analysis of this formulation, see the 
- <a target="alone"  href="./NIHcohortBIGITC.html"> difference  in the survival in the absence of censoring. </a>
+ <a target="alone"  href="./CohortBIGITC.html"> difference  in the survival in the absence of censoring. </a>
 <br> <br>  
 <h3>  Realistic Scenarios &amp  Numerical Simulation </h3>
 Informatics Solution can be made to predict almost any outcome. It would also generate primordial insights to reassess the cohort formation and consider new ideas about how to improve the cohort formation when chalenges are faced as censoring.
@@ -172,7 +178,7 @@ Informatics Solution can be made to predict almost any outcome. It would also ge
 A realistic dataset has always censored data and it is not possible to build a cohort standing always with perfect accuracy. We investigate simulation scenarios using datasets that mimic realistic dataset. We consider that the marker is a mixture of two Normal distributions, we assess the following points:
 <ul>
   <li type="square"> Simulation/Visualization as an effective way to show the results given a number of values for the variables and parameters.</li>
-<li type="square"> Estimating the numerical values associated to the difference in survival given a number of cut-points.</li>
+<li type="square"> Estimating the numerical values associated to the difference in the survival given a number of cut-points.</li>
 <li type="square">  Feasibility to identify the best cut-point and so on.</li>  
 </ul>
 The Time To Event is generated according to a parametric exponential model. Given cut point m at time t, the probabilities associated to the sensitivity, ~Sen(m,t), and the specificity, ~Spe (m,t), are calculated using Bayes formulas and estimated through the non-parametric Kaplan-Meier estimator. The presence of censoring has an impact on the accuracy of the estimated values and dependents on its time distribution, i.e. early stage censoring or late stage censoring. The Kaplan–Meier estimator has a variance that can be computed using Greenwood's formula which is too sensitive to the censoring time distribution( early or late ). Some analyzed simulation scenarios are summarized in the listed examples. 

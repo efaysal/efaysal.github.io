@@ -124,8 +124,9 @@ We comprehensively review the definitions of sensitivity and specificity for pro
 <br> <br> 
 A potential third parameter, that may be explicitly/directly involved under specific cases related to the magnitude of the sensitivity and specificity, is the rates of the negative and positive patients in the single survival population. This third parameter is called “Prevalence” and numerically defined as the proportion of positive/negative samples in the overall single survival population. In longitudinal study, the survival rates of the single survival population at a given time is function of the prevalence. 
 <br>   <br> 
-Note that the sensitivity and specificity values are not necessary related to the prevalence rates, specially if the sensitivity and specificity values are computed/estimated from an ad hoc cohort study. These estimated sensitivity and specificity values are used to estimate the actual difference in the survival of two prognostic subgroups in the single survival population taking into consideration the prevalence of the disease in this single survival population. Then only when the prevalence is defined perfectly, an estimation of the actual difference in the survival of two prognostic subgroups can be calculated or evaluated.
-
+Note that the sensitivity and specificity values are not necessary related to the prevalence rates, specially if the sensitivity and specificity values are computed/estimated from an ad hoc cohort study (assuming not inherently biased**). These estimated sensitivity and specificity values are used to estimate the actual difference in the survival of two prognostic subgroups in the single survival population taking into consideration the prevalence of the disease in this single survival population. Then only when the prevalence is defined perfectly, an estimation of the actual difference in the survival of two prognostic subgroups can be calculated or evaluated.
+<br>   <br> 
+**The estimated sensitivity and specificity values from an inherently biased cohort study will just provide a biased evaluation to the actual difference in the survival.
 <br>   <br> 
  <h3> Our research questions: </h3>
 
@@ -159,7 +160,11 @@ style='color:blue'> B = sensitivity*prevalence+(1-specificity)*(1-prevalence)
 <p class=MsoNormal><span style="mso-spacerun: yes"></span><span
 style='color:blue'> C = (1-sensitivity)*prevalence+specificity*(1-prevalence)
 </center>
-This formulation shows that the prevalence is to play a role in the bias of many outcome measures
+
+This quantity (*) was also derived and called "Predictive Summary Index" in this seminal work, 
+<a target="alone"  href="https://epi-perspectives.biomedcentral.com/articles/10.1186/1742-5573-3-11"> New patient-oriented summary measure of net total gain in certainty for dichotomous diagnostic tests.</a> Hence, this comprehensive measure was consistently formulated using algebraic equations related to the diagnostic approach or to the survival modeling. 
+<br> <br> 
+Its formulation shows that the prevalence is to play a role in the bias of many outcome measures
 for test performance. For highly skewed prevalence rates, adequate sample sizes in the
 true positive and negative groups are needed for reliable estimates of the sensitivity and specificity values.
 <br> <br> 
@@ -194,6 +199,8 @@ This computer simulation is used to explore and gain new insights into the impac
 
 As long as the prevalence is not very low/high and the used test to separate the two groups from a single survival population has both higher specificity and sensitivity values, an adequate difference in the survival of these two prognostic subgroups is attainable and not explicitly depending on the prevalence. In this case, comparing survival curves between two prognostic subgroups is not misleading as the misclassification is minimal. 
 <br> <br> 
+
+<br> <br>
 As for the scalability of the difference in the survival  where the rates of the specificity and sensitivity values deteriorate, the magnitude of the difference in the survival surely deteriorates as well and specially when the prevalence rate becomes low or high. 
 <br> <br> 
 Using poor tests** in longitudinal data-sub-cohorts from a single survival population, specially when the prevalence rate becomes low or high, affect baldly and in a nonlinear relationships the precision of the study. ** The tests(toys) failed to understand that the biological case of the study is substantially complex. Or the tools used to collect, organize, pre/post processing data contents are just messy to help shaping tests that can discern or to predict.<!--  Our system biology is immensely complex and may be less predictable by just insisting on using policies and engineered methods that succeeded in the field of computers/Internet!
@@ -201,7 +208,7 @@ Using poor tests** in longitudinal data-sub-cohorts from a single survival popul
 <br> <br> 
 It is essential to combine this information with research analysis tools, i.e. to improve specificity &amp sensitivity by developing suitable Quality Control and Quality Assurance for the tools used in the designed diagnostic/prognostic tests.
 <br> <br> 
-The personalized/precision medicine to be efficient needs sound approach to clinical trials and Informatics Solution. Our system biology is immensely complex and may be less predictable by just insisting on replicating policies and engineered methods that succeeded in the other fields as computer sciences/internet search and so on!
+The personalized/precision medicine to be efficient needs sound approach to clinical trials and Informatics Solution. Our system biology is immensely complex and may be less predictable by just insisting on replicating blindly policies and engineered methods that succeeded in the other fields as computer sciences/internet search and so on!
 <br> <br> 
 <h3> Future Work </h3>
 Impact of censoring on the used formulations to estimate the sensitivity and specificity values and by consequent on the difference  in the survival, is in <a target="alone"  href="./NIHcohortBIGITC0.html"> difference  in the survival in the presence of censoring. </a>

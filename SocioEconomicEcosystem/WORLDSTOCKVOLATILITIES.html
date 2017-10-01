@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Debt Analytics & Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Numerics'
++ '<br><br>'
+                + ' Click Above:'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+
+
+<header>
+    <body style="background-color:lightgrey;">
+    <h3 style="color:black"> Learning Depth Volatility Patterns</h3>
+    <h3 style="color:black"> In Major World Stock Market Indices</h3>
+    <h3 style="color:black"> Using Algorithmic Data Driven Analytics </h3>
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+<!-- <div id="banner">
+    <div>
+        <span id="logo"></span>
+
+        <a href="https://github.com/nvd3-community/nvd3" target="github" class="button fork"><strong>GitHub</strong></a>
+        <a href="site.html" class="button fork docs selected"><strong>Examples</strong></a>
+        <a href="documentation.html" class="button fork docs"><strong>Documentation</strong></a>
+        <div class="downloads">
+            <span>Downloads:</span>
+            <ul>
+                <li><a href="https://github.com/nvd3-community/nvd3/zipball/master" class="button">ZIP</a></li>
+                <li><a href="https://github.com/nvd3-community/nvd3/tarball/master" class="button">TAR</a></li>
+            </ul>
+        </div>
+    </div>
+</div><!-- end banner --> 
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+<h3> Introduction: </h3>
+The stock market volatility clustering, excess and “long memory” behavior are recognized as stylized properties present in most financial time series from stock market data. 
+<br> <br>
+Various modeling methods have been proposed to highlight and provide insights about these volatility characteristics in terms of economical conditions, behavior of market participants and the news event process, these methods were focused on estimating the stock volatility not necessary well-calibrated, the estimated volatilities of a number of different stocks may not be comparable.
+<br> <br>
+ An essential element in the computational process is to provide comparable numerical quantities. Given a number of different stock markets, the quantified volatility characteristics as tendencies & trends should be calculated using a modeling process of reducing measurements to a "neutral" or "standard" scale, i.e important parameters in the learning process should have the same scale for a "fair" comparison between these different stock markets. 
+ <br> <br>
+Its implementation can be built up gradually over time and in response to specific social & economical conditions(events), the parameters identification and its quantification are feasible or releasable, i.e. the magnitude of the change in the volatility should be binding to these events and is required to be an accurate quantification of thier impact ( less biased).
+<br> <br>
+Our Algorithmic Data Driven Analytics(ADDA) takes a descriptive approach to studying properties of a stock market that follow from empirical observations(data) to score the stock volatility tendencies & trends under a "neutral" or "standard" scale. The numerical results related to major World stock market indices, since 1995 up to recently, are presented in this <a href="http://efaysal.github.io/SocioEconomicEcosystem/WORLDSTOCKMARKET/LearningDepthVolatility.html">Interactive Chart</a>, (a double click on a stock shows its depth volatility score curve).
+<br> <br>
+﻿Upward spikes in volatility are mainly associated to sharp stock market sell-offs. Declines in volatility are associated to steady gains in the market and tend to unfold slowly. This cyclic volatility starts to be extraordinarily visible after the Financial crisis of 2007–2008. The policy of quantitative easing around the world may be lurked in depth volatility patterns in major World stock market indices?
+<br> <br>
+<h1> Implementation:</h1>
+The insight analysis uses R programming language to process the results ( R is a software environment for statistical computing
+and graphics supported by the <a target="alone" href="https://www.r-project.org/" > R Foundation for Statistical Computing </a>). The interactive data visualizations in web browsers uses the <a target="alone"  href="http://nvd3.org/"> NVD3 data visualization library</a>.
+
+<br> <br>
+ <a href="http://efaysal.github.io/SocioEconomicEcosystem/WORLDSTOCKMARKET/LearningDepthVolatility.html"> Click Numerical Results</a>.
+
+             <br>   <br> 
+              
+     <h4>   Author scientific profile:  </h4>
+Statistics and Applied Mathematics for Data Analytics, Identify opportunities to apply Mathematical Statistics, Numerical Methods, Machine Learning and Pattern Recognition to investigate and implement solutions to the field of Data Content Analytics. Data prediction via computational methods to predict from massive amounts of data (Big Data Content). These methods included clustering, regression, survival analysis, neural network, classification , ranking, deep discrepancy learning .
+ <br>   <br> 
+
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com , Living in Vancouver, BC, Canada.</a>
+    <br> 
+   The MIT License (MIT) Copyright 1994-2017, Faysal El Khettabi, Numerics&Analytics, All Rights Reserved.
+     </div> 
+   
+
+</section>
+</div>
+ 
+
+ 
+</body>
+</html>
+
+
+<!--  
+git add --all
+  git commit -m "Initial commit"
+  git push -u origin master
+ -->

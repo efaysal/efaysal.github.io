@@ -23,21 +23,21 @@
   </head>
   <body >
     
-    <div id = 'chart2d8f22acc1cb' class = 'rChart nvd3'></div>    
+    <div id = 'chart2d8f47e93ab1' class = 'rChart nvd3'></div>    
     <script type='text/javascript'>
  $(document).ready(function(){
-      drawchart2d8f22acc1cb()
+      drawchart2d8f47e93ab1()
     });
-    function drawchart2d8f22acc1cb(){  
+    function drawchart2d8f47e93ab1(){  
       var opts = {
- "dom": "chart2d8f22acc1cb",
+ "dom": "chart2d8f47e93ab1",
 "width":   1000,
 "height":    600,
 "x": "date",
 "y": "value",
 "group": "variable",
 "type": "lineChart",
-"id": "chart2d8f22acc1cb" 
+"id": "chart2d8f47e93ab1" 
 },
         data = [
  {
@@ -150229,7 +150229,7 @@
           
         chart.xAxis
   .tickFormat(
-      function(d) {return d3.time.format('%Y-%m-%d')(new Date(d*1000*3600*24));}
+      function(d) {return d3.time.format('%Y-%m-%d')(new Date((1+d)*1000*3600*24));}
     )
   .rotateLabels(   -10)
   .axisLabel("Time: Raw Volatility Patterns  in Major World Indices (Faysal El Khettabi Processing)")

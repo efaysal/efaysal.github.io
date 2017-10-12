@@ -106,20 +106,23 @@
 
 The stock market volatility clustering, excess and “long memory” behavior are recognized as stylized properties present in most financial time series from stock market datasets. A clear introductory to volatility definitions is here <a href="http://www.probabilityandfinance.com/articles/47.pdf"> "What causes volatility?"</a>.
 <br> <br> 
-Various modeling methods have been proposed to highlight and provide insights about these volatility characteristics in terms of stock settings as economical conditions, behavior of market participants and the news event process, these methods were focused on estimating the stock volatility not necessary well-calibrated, the estimated volatilities of a number of different stocks may not be necessary comparable:
+Various modeling methods have been proposed to highlight and provide insights about these volatility characteristics in terms of stock settings as economical conditions, behavior of market participants and the news event process, these methods were focused on estimating the stock volatility not necessary well-calibrated, the estimated volatilities of a number of different stocks may not be necessary comparable. Since the range of values of the estimated volatilities  varies widely, a machine learning algorithm to work properly needs standardization/normalization.
 <br> <br> 
 <ul>
     <li type="square"> <strong> Due to variation in stock settings, such as the used trading strategies, the quotes change 
-across stocks accordingly. The measurement of volatility/uncertainty through standard deviation could be misleading to compare two stocks, i.e., the standard deviation is proportional to the mean. For consistent comparison of different stocks, a standardized volatility has to be used in place of the raw estimated volatility.  This can be useful
+across stocks accordingly. The measurement of volatility/uncertainty through standard deviation could be misleading for comparing two specific stock markets, i.e., the standard deviation is proportional to the mean. For consistent comparison of different stocks, a standardized volatility has to be used in place of the raw estimated volatility.  This can be useful
 in measuring variation in a stock in relative terms(not in absolute).</strong></li> 
 </ul>
 
+<!--  A <strong> negative </strong> stock market return with a standard deviation equal to 1% can not be compared to a stock market with similar standard deviation and <strong>  positive </strong> return.  -->
 <br> 
 <h3> Research Points: </h3>
 
 <ul>
     <li type="square"> An essential element in the computational process is to provide comparable numerical quantities. Given a number of different stock markets, the quantified volatility characteristics as tendencies & trends should be calculated using a modeling process of reducing measurements to a "neutral" or "standard" scale, i.e. important parameters in the learning process should have the same scale for a "fair" comparison between these different stock markets, trade-off between “fairness” and "efficiency" in the conducted comparison. </li> 
-     <li type="square"> To propose a time-frequency analysis approach, where volatility is decomposed into adaptive oscillatory processes which occur accordingly to different origins and mechanisms and are reversible processes, the direction can be "reversed". These adaptive oscillatory processes help to derive directional volatility measurements, indicating the direction in which volatility is situated, moving, or developing. This  provides summary measures beyond the stock market quality that includes binding event effects. 
+    <br>
+     <li type="square"> To propose a time-frequency analysis approach, where volatility is decomposed into adaptive oscillatory processes which occur accordingly to different origins and mechanisms and are reversible processes, the direction can be "reversed". These adaptive oscillatory processes help to derive directional volatility measurements, indicating the direction in which volatility is situated, moving, or developing. This  provides summary measures beyond the stock market quality that includes binding event effects.</li>  
+      <br>
      <li type="square"> Its implementation can be built up gradually over time and in response to specific social & economical conditions(events), the parameters identification and its quantification are feasible or releasable, i.e. the magnitude of the change in the volatility should be binding to these events and is required to be an accurate quantification of their impact ( less biased).</li> 
 </ul>
 <h3> Developmental Data Driven Analytics: </h3>

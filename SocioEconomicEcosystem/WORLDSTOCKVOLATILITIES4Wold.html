@@ -1,0 +1,1279 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title> Analytics &amp Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script language="JavaScript">
+<!--
+function autoResize(id){
+    var newheight;
+    var newwidth;
+
+    if(document.getElementById){
+        newheight=document.getElementById(id).contentWindow.document .body.scrollHeight;
+        newwidth=document.getElementById(id).contentWindow.document .body.scrollWidth;
+    }
+
+    document.getElementById(id).height= (newheight) + "px";
+    document.getElementById(id).width= (newwidth) + "px";
+}
+//-->
+</script>
+
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Numerics'
++ '<br><br>'
+                + ' Click Above:'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+
+
+<header>
+    <body style="background-color:lightgrey;">
+    <h3 style="color:black"> Learning Depth Volatility Patterns In Major World Stock Market Indices</h3>
+    <h3 style="color:black"> Using Algorithmic Data Driven Analytics 
+    <!--     in The New Era </h3>
+    <h4 style="color:black"> Accommodative Monetary Policy &amp Financial Market Exchanges  </h4>
+    <h4 style="color:black">  Quantitative EasingTightening  &amp <a target="alone"  href="https://www.youtube.com/watch?v=s-g8EYqL6lc">  Volatility Control Mechanisms </a>< --></h3>
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+<!-- <div id="banner">
+    <div>
+        <span id="logo"></span>
+
+        <a href="https://github.com/nvd3-community/nvd3" target="github" class="button fork"><strong>GitHub</strong></a>
+        <a href="site.html" class="button fork docs selected"><strong>Examples</strong></a>
+        <a href="documentation.html" class="button fork docs"><strong>Documentation</strong></a>
+        <div class="downloads">
+            <span>Downloads:</span>
+            <ul>
+                <li><a href="https://github.com/nvd3-community/nvd3/zipball/master" class="button">ZIP</a></li>
+                <li><a href="https://github.com/nvd3-community/nvd3/tarball/master" class="button">TAR</a></li>
+            </ul>
+        </div>
+    </div>
+</div><!-- end banner --> 
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+<!-- <h6> 
+<strong>"When men are in close touch with each other, they no longer decide randomly and independently of each other, they each react to the others. Multiple causes come into play which trouble them and pull them from side to side, but there is one thing that these influences cannot destroy and that is their tendency to behave like Panurge’s sheep. And it is that which is preserved" </strong> <a href="https://fr.wikipedia.org/wiki/Science_et_M%C3%A9thode"> Henri Poincare in Science & Methode</a>. 
+</h6> -->
+
+
+<h6> 
+  <strong> Prologue: </strong> 
+   <br> 
+ <!--    <br> 
+Assuming that the nature of financial world is stochastic(barely, hardly and scarcely deterministic) is not any more an adequate  assumption to price/evaluate derivatives. The nature of financial world is now under the Accommodative Monetary Policy &amp Financial Market Exchanges: Quantitative EasingTightening &amp Volatility Control Mechanisms. They are considered very important steps to stabilize financial markets. However, this new era needs a "rethinking financial scientific computation framework" (not really scarcely deterministic), it should be quasi-deterministic research points. , i.e. the fundamental contribution is to link stochastic
+processes to deterministic solutions. Importantly enough, to establish a connection between probability theory, numerical analysis and machine learning, three disciplines that have evolved largely separately. This connection is to foster great efficiency and success in this "rethinking financial scientific computation framework".  In essence, this paradigm is to create a controllable model that represents how this financial world has to behave rather than to explain how it does behave. Building a safer financial world with trust.
+</strong> 
+<br>   -->
+<strong>  In this work, the used numerical datasets are for informational use only and with an only purpose to illustrate numerically our research points. Most of these research points have been inspired by our seminal work in: <a href="http://www.sciencedirect.com/science/article/pii/S0885064X99905095"> Quasi-Monte Carlo Simulation of Diffusion</a>, in a way that can be directly applied to Stock Market Volatility Calculations.
+  </strong> </h5>
+
+<h6> 
+Terms: A security is a tradable asset in a financial market, this term refers to any form of financial instrument. 
+In financial stock market, security is termed as stock, asset, equity or share. In this essay, stock is used to refer to security. Also, we consider that the stock settings are the ones that are causing the emergence of its volatility and its return. </h6>
+</h6> 
+<!-- <h6> 
+It's not often practical to restate Mathematical formulations in plain English. 
+Our best effort will be exercised to skip the burden of technicalities and to state in words the meaning of each important definition, idea and result.
+</h6>  -->
+
+<h3> Introduction: </h3>
+
+The stock market volatility clustering, excess and “long memory” behavior are recognized as stylized properties present in most financial time series from stock market datasets(stock returns). A clear introductory to volatility definitions is here <a href="http://www.probabilityandfinance.com/articles/47.pdf"> "What causes volatility?"</a>.
+<br> <br> 
+Various modeling methods have been proposed to highlight and provide insights about these volatility characteristics in terms of stock settings as economical conditions, behavior of market participants and the news event process, these methods were focused on estimating the stock volatility that is not necessary well-calibrated for meaningful comparison, the estimated volatilities of a number of different stocks may not be necessary comparable. Since the range of values of the estimated volatilities varies widely, a machine learning algorithm needs a standardization/normalization treatment to this wildness in order to reduce the prediction error.
+<br> <br> 
+<ul>
+    <li type="square"> <strong> Due to variation in stock settings, such as the used trading strategies, the quotes change 
+across stocks accordingly. The measurement of volatility/uncertainty through standard deviation could be also misleading for comparing two specific stock markets, i.e. the standard deviation is proportional to the mean and must always be understood in the context of the mean of the data. For consistent comparison of different stocks, a standardized volatility has to be used in place of the raw estimated volatility.  This can be useful in measuring variation in a stock in relative terms(not in absolute).</strong></li> 
+</ul>
+
+<!--  A <strong> negative </strong> stock market return with a standard deviation equal to 1% can not be compared to a stock market with similar standard deviation and <strong>  positive </strong> return.  -->
+<br> 
+<h3> Research Points: </h3>
+
+<ul>
+    <li type="square"> An essential element in the computational process is to provide comparable numerical quantities. Given a number of different stock markets, the quantified volatility characteristics as tendencies &amp trends should be calculated using a modeling process of reducing measurements to a "neutral" or "standard" scale, i.e. important parameters in the learning process should have the same scale for a "fair" comparison between these different stock markets, trade-off between “fairness” and "efficiency" in the conducted comparison. </li> 
+    <br>
+     <li type="square"> To propose a time-frequency analysis approach, where volatility is decomposed into adaptive oscillatory processes which occur accordingly to different origins and mechanisms and are reversible processes, the direction can be "reversed". These adaptive oscillatory processes help to derive directional volatility measurements, indicating the direction in which volatility is situated, moving, or developing. This  provides summary measures beyond the stock market quality that includes binding event effects.</li>  
+      <br>
+     <li type="square"> Its implementation can be built up gradually over time and in response to specific social and economical conditions(events), the parameters identification and its quantification are feasible or releasable, i.e. the magnitude of the change in the volatility should be binding to these events and is required to be an accurate quantification of their impact ( less biased).</li> 
+      <br>
+     <li type="square"> The temporal patterns that will be characterized by these oscillatory processes are called the "Depth Volatility Patterns".</li> 
+</ul>
+<h3> Developmental Data Driven Analytics: </h3>
+Algorithmic Data Driven Analytics(ADDA) takes a descriptive approach to studying properties of a stock market volatility that follow from empirical observations(realized quotes), i.e. to infer historical volatility structures from data and to score the stock volatility tendencies &amp trends under a "neutral" or "standard" scale. The historical volatility is decomposed into two oscillatory processes which occur accordingly to different origins and mechanisms. <!-- The patterns that will be characterized by these oscillatory processes are called the "Depth Volatility Patterns". -->
+<br> 
+This certainly is a sufficient motivation for the fact that, in this work, we consider these type of oscillatory processes for modeling the historical volatility and to assess if these oscillatory processes are the results of the stock settings and the used process for "Volatility Control Mechanism" in the considered financial market. 
+<br> <br>
+The numerical results related to major <strong> World </strong> stock market indices, since 2000 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+<br> <br>
+<ul>
+    <strong> World: </strong>
+    <li type="square">  <a href= "./WORLDSTOCKMARKET/RawVolatility_WORLD_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_WORLD_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_WORLD_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_WORLD_Y_4W_.html"> Oscillatory Process II. </a> </li>
+ 
+</ul>
+<br> 
+The numerical results related to major <strong> Swiss </strong> stock market indices, since 2001 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+<br> <br>
+<ul>
+    <strong> Swiss: </strong>
+    <li type="square">  <a href= "./WORLDSTOCKMARKET/RawVolatility_SWISS_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_SWISS_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_SWISS_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_SWISS_Y_4W_.html"> Oscillatory Process II. </a> </li>
+ 
+</ul>
+
+
+The numerical results related to major <strong> France </strong> stock market indices, since 2001 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+<br> <br>
+<ul>  <strong>  France:  </strong>
+    <li type="square">  <a href= "./WORLDSTOCKMARKET/RawVolatility_FRANCE_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_FRANCE_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_FRANCE_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_FRANCE_Y_4W_.html"> Oscillatory Process II. </a> </li>
+ 
+</ul>
+
+The numerical results related to major <strong> Spain </strong> stock market indices, since 2001 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+<br> <br>
+<ul>  <strong>  Spain:  </strong>
+    <li type="square">  <a href= "./WORLDSTOCKMARKET/RawVolatility_SPAIN_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_SPAIN_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_SPAIN_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_SPAIN_Y_4W_.html"> Oscillatory Process II. </a> </li>
+ 
+</ul>
+
+The numerical results related to major <strong> UK </strong> stock market indices, since 2001 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+<br> <br>
+<ul>  <strong>  UK:  </strong>
+    <li type="square">  <a href= "./WORLDSTOCKMARKET/RawVolatility_UK_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_UK_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_UK_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_UK_Y_4W_.html"> Oscillatory Process II. </a> </li>
+ 
+</ul>
+
+The numerical results related to major <strong> Germany </strong> stock market indices, since 2001 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+<br> <br>
+<ul>  <strong>  Germany:  </strong>
+    <li type="square">  <a href= "./WORLDSTOCKMARKET/RawVolatility_GERMANY_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_GERMANY_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_GERMANY_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_GERMANY_Y_4W_.html"> Oscillatory Process II. </a> </li>
+ 
+</ul>
+
+The numerical results related to major <strong> Canada </strong> stock market indices, since 2001 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+<br> <br>
+<ul>  <strong>  Canada:  </strong>
+    <li type="square">  <a href= "./WORLDSTOCKMARKET/RawVolatility_CANADA_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_CANADA_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_CANADA_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_CANADA_Y_4W_.html"> Oscillatory Process II. </a> </li>
+ 
+</ul>
+
+
+ The numerical results related to major <strong>  China </strong> stock market indices, since 2000 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+ <br> <br>
+<ul>
+
+   <strong>  China(HKEX): </strong>
+    <li type="square">  <a href= "./WORLDSTOCKMARKET/RawVolatility_CHINAHK_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_CHINAHK_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_CHINAHK_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_CHINAHK_Y_4W_.html"> Oscillatory Process II. </a> </li>
+ 
+</ul>
+
+
+The numerical results related to major <strong>  Singapore </strong> stock market indices, since 2000 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+ <br> <br>
+<ul>
+
+   <strong>  Singapore: </strong>
+    <li type="square">  <a href= "./WORLDSTOCKMARKET/RawVolatility_SINGAPORE_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_SINGAPORE_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_SINGAPORE_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_SINGAPORE_Y_4W_.html"> Oscillatory Process II. </a> </li>
+ 
+</ul>
+The numerical results related to major <strong>  India </strong> stock market indices, since 2000 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+ <br> <br>
+ <ul>
+   <strong>  India(NSE): </strong>
+    <li type="square">  <a href= "./WORLDSTOCKMARKET/RawVolatility_INDIA_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_INDIA_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_INDIA_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_INDIA_Y_4W_.html"> Oscillatory Process II. </a> </li>
+ 
+</ul>
+
+The numerical results related to major <strong>  Bank </strong> stock market indices, since 2000 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+ <br> <br>
+<ul>
+   <strong>  Bank: </strong>
+    <li type="square">  <a href= "./WORLDSTOCKMARKET/RawVolatility_WORLDBANKS_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_WORLDBANKS_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_WORLDBANKS_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_WORLDBANKS_Y_4W_.html"> Oscillatory Process II. </a> </li>
+</ul>
+
+
+The numerical results related to major <strong>  Pharmaceutical </strong> stock market indices, since 2000 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+ <br> <br>
+<ul>
+
+   <strong>  Pharmaceutical: </strong>
+    <li type="square">  <a href= "./WORLDSTOCKMARKET/RawVolatility_PHARMACEUTICAL_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_PHARMACEUTICAL_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_PHARMACEUTICAL_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_PHARMACEUTICAL_Y_4W_.html"> Oscillatory Process II. </a> </li>
+ 
+</ul>
+
+
+The Interactive Chart displays data related to a number of stocks in ways that are meaningful for comparison. 
+Straight line is used along the horizontal axis for a stock not having available quotes.
+
+This is the historical volatility  calculated from known past returns of a security. Implied volatility, a forward-looking and subjective measure, differs from historical volatility because the latter is calculated from known past returns of a security.
+
+
+<br> <br>
+<h3> Some Observations: </h3>
+﻿﻿Upward spikes in volatility tendencies &amp trends are mainly associated to sharp stock market sell-offs. Declines in volatility are associated to steady gains in the market and tend to unfold with irregular bursts with a more or less random sequence of patterns, this was before the year 2007. After, our numerical result is showing cyclical volatility tendencies &amp trends in various ways, see
+<a href= "./WORLDSTOCKMARKET/LearningDepthVolatility_WORLD_X_4W_.html"> Oscillatory Process I. </a> 
+<br> 
+This cyclic volatility starts to be extraordinarily visible after the Financial crisis of 2007–2008. Whether across time, or across World stock markets, there is a strikingly high correlation between the depth volatility patterns over a period of 10 years. 
+Yet signs of friction in different parts of Major World Stock Markets raise many questions about how long this recently realized  streak of low volatility can continue, and point to the challenges that World Economy to face in a rising volatility era.
+<br> <br>  
+The healthiest stock markets should express a volatility commensurate with genuine fundamental economic factors and their 
+inherited uncertainties. The moves in the stock markets are always accompanied by increased volatility if bad events are affecting the fundamental economic factors (crisis 2007-2008, for instance). If they are just showing a steady low-volatility streak, something needs to be investigated, not to be ignored till the next crisis.
+<br> <br> 
+<h2>   Investigating Volatility Network Using Machine Learning to Detect Communities: </h2>
+ 
+<!-- <ul>
+   <strong> (_oio_) :  </strong>
+    <li type="square"> 
+<a href="./LEARNINGVOLATILITIES/_DOW_D4W_WORLD_.pdf" download="newfilename">World.</a>
+ </li>
+   <strong> (_oio_) :  </strong>
+    <li type="square"> 
+<a href="./LEARNINGVOLATILITIES/HSISSECHC_D4W_CHINAHK_.pdf" download="newfilename">China(KHEX).</a>
+ </li>
+   <strong> (_oio_) :  </strong>
+    <li type="square"> 
+<a href="./LEARNINGVOLATILITIES/_FTSE_D4W_UK_.pdf" download="newfilename">UK.</a>
+ </li>
+   <strong> (_oio_) :  </strong>
+    <li type="square"> 
+<a href="./LEARNINGVOLATILITIES/_GSPT_D4W_CANADA_.pdf" download="newfilename">Canada.</a>
+ </li>
+ </ul>
+</ul> -->
+
+<ul>
+   <strong> World:  </strong>
+    <li type="square">  
+      <object data="./LEARNINGVOLATILITIES/DOW_D4W_WORLD_.pdf" type="application/pdf" width="800" height="600">
+      <a href="./LEARNINGVOLATILITIES/DOW_D4W_WORLD_.pdf">Communities Using Calibrated Volatilities</a>
+    </object>
+ </li>
+<strong>  China(HKEX): </strong>
+    <li type="square">  
+      <object data="./LEARNINGVOLATILITIES/HSISSECHC_D4W_CHINAHK_.pdf" type="application/pdf" width="800" height="600">
+      <a href="./LEARNINGVOLATILITIES/HSISSECHC_D4W_CHINAHK_.pdf">Communities Using Calibrated Volatilities</a>
+    </object>
+ </li>
+ <strong>  UK: </strong>
+    <li type="square">  
+      <object data="./LEARNINGVOLATILITIES/FTSE_D4W_UK_.pdf" type="application/pdf" width="800" height="600">
+      <a href="./LEARNINGVOLATILITIES/FTSE_D4W_UK_.pdf">Communities Using Calibrated Volatilities</a>
+    </object>
+ </li>
+ <strong>  Canada: </strong>
+    <li type="square">  
+      <object data="./LEARNINGVOLATILITIES/GSPT_D4W_CANADA_.pdf" type="application/pdf" width="800" height="600">
+      <a href="./LEARNINGVOLATILITIES/GSPT_D4W_CANADA_.pdf">Communities Using Calibrated Volatilities</a>
+    </object>
+ </li>
+
+ 
+ <strong>  Singapore: </strong>
+    <li type="square">  
+      <object data="./LEARNINGVOLATILITIES/STI_D4W_SINGAPORE .pdf" type="application/pdf" width="800" height="600">
+      <a href="./LEARNINGVOLATILITIES/STI_D4W_SINGAPORE .pdf">Communities Using Calibrated Volatilities</a>
+    </object>
+ </li>
+
+
+ <strong>  PHARMACEUTICAL: </strong>
+    <li type="square">  
+      <object data="./LEARNINGVOLATILITIES/PHARMACEUTICAL_D4W_PHARMACEUTICAL_.pdf" type="application/pdf" width="800" height="600">
+      <a href="./LEARNINGVOLATILITIES/PHARMACEUTICAL_D4W_PHARMACEUTICAL_.pdf">Communities Using Calibrated Volatilities</a>
+    </object>
+ </li>
+</ul>
+
+
+ <br>
+
+<h4> Implementation:</h4>
+The insight analysis uses R programming language to process the results ( R is a software environment for statistical computing
+and graphics supported by the <a target="alone" href="https://www.r-project.org/" > R Foundation for Statistical Computing </a>). The interactive data visualizations in web browsers uses the <a target="alone"  href="http://nvd3.org/"> NVD3 data visualization library</a>.
+<br> <br>       
+     <h4>   Author scientific profile:  </h4>
+Statistics and Applied Mathematics for Data Analytics, Identify opportunities to apply Mathematical Statistics, Numerical Methods, Machine Learning and Pattern Recognition to investigate and implement solutions to the field of Data Content Analytics. Data prediction via computational methods to predict from massive amounts of data (Big Data Content). These methods included clustering, regression, survival analysis, neural network, classification , ranking, deep discrepancy learning .
+ <br>   <br> 
+
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com</a>
+    <br> 
+   The MIT License (MIT) Copyright 1994-2017, Faysal El Khettabi, Numerics &amp Analytics, All Rights Reserved.
+     </div> 
+   
+
+</section>
+</div>
+ 
+
+ 
+</body>
+</html>
+
+
+<!--  
+git add --all
+  git commit -m "Initial commit"
+  git push -u origin master
+ -->
+
+<!-- 
+
+<table class="font8c">
+<tbody>
+<tr class="fontb">
+<td class="tdr" style="width: 35px;">Rank</td>
+<td class="tdr" style="width: 205px;">Bank</td>
+<td class="tdr" style="width: 90px;">Country</td>
+<td class="tdr" style="width: 205px;">Total assets, US$b</td>
+<td class="tdr" style="width: 140px;">Balance sheet</td>
+</tr>
+<tr>
+<td class="tdr">1</td>
+<td class="tdr" style="text-align: left;">Industrial & Commercial Bank of China</td>
+<td class="tdr">China</td>
+<td class="tdr">3,764.27</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">2</td>
+<td class="tdr" style="text-align: left;">China Construction Bank Corp</td>
+<td class="tdr">China</td>
+<td class="tdr">3,200.38</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">3</td>
+<td class="tdr" style="text-align: left;">Agricultural Bank of China</td>
+<td class="tdr">China</td>
+<td class="tdr">3,035.37</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">4</td>
+<td class="tdr" style="text-align: left;">Bank of China</td>
+<td class="tdr">China</td>
+<td class="tdr">2,866.05</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">5</td>
+<td class="tdr" style="text-align: left;">Mitsubishi UFJ Financial Group</td>
+<td class="tdr">Japan</td>
+<td class="tdr">2,713.60</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">6</td>
+<td class="tdr" style="text-align: left;">JPMorgan Chase & Co</td>
+<td class="tdr">USA</td>
+<td class="tdr">2,563.17</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">7</td>
+<td class="tdr" style="text-align: left;">HSBC Holdings</td>
+<td class="tdr">UK</td>
+<td class="tdr">2,492.44</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">8</td>
+<td class="tdr" style="text-align: left;">BNP Paribas</td>
+<td class="tdr">France</td>
+<td class="tdr">2,447.84</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">9</td>
+<td class="tdr" style="text-align: left;">Bank of America</td>
+<td class="tdr">USA</td>
+<td class="tdr">2,254.53</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">10</td>
+<td class="tdr" style="text-align: left;">China Development Bank</td>
+<td class="tdr">China</td>
+<td class="tdr">2,080.27</td>
+<td class="tdr">12/31/2016</td>
+</tr>
+<tr>
+<td class="tdr">11</td>
+<td class="tdr" style="text-align: left;">Credit Agricole Group</td>
+<td class="tdr">France</td>
+<td class="tdr">1,989.22</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">12</td>
+<td class="tdr" style="text-align: left;">Wells Fargo</td>
+<td class="tdr">USA</td>
+<td class="tdr">1,930.87</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">13</td>
+<td class="tdr" style="text-align: left;">Japan Post Bank</td>
+<td class="tdr">Japan</td>
+<td class="tdr">1,875.43</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">14</td>
+<td class="tdr" style="text-align: left;">Citigroup Inc</td>
+<td class="tdr">USA</td>
+<td class="tdr">1,864.06</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">15</td>
+<td class="tdr" style="text-align: left;">Sumitomo Mitsui Financial Group</td>
+<td class="tdr">Japan</td>
+<td class="tdr">1,800.60</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">16</td>
+<td class="tdr" style="text-align: left;">Deutsche Bank</td>
+<td class="tdr">Germany</td>
+<td class="tdr">1,791.92</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">17</td>
+<td class="tdr" style="text-align: left;">Mizuho Financial Group</td>
+<td class="tdr">Japan</td>
+<td class="tdr">1,789,67</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">18</td>
+<td class="tdr" style="text-align: left;">Banco Santander</td>
+<td class="tdr">Spain</td>
+<td class="tdr">1,650.88</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">19</td>
+<td class="tdr" style="text-align: left;">Societe Generale</td>
+<td class="tdr">France</td>
+<td class="tdr">1,542.32</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">20</td>
+<td class="tdr" style="text-align: left;">Barclays PLC</td>
+<td class="tdr">UK</td>
+<td class="tdr">1,476.10</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">21</td>
+<td class="tdr" style="text-align: left;">Groupe BPCE</td>
+<td class="tdr">France</td>
+<td class="tdr">1,414.42</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">22</td>
+<td class="tdr" style="text-align: left;">Bank of Communications</td>
+<td class="tdr">China</td>
+<td class="tdr">1,317.63</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">23</td>
+<td class="tdr" style="text-align: left;">Postal Savings Bank of China</td>
+<td class="tdr">China</td>
+<td class="tdr">1,260.53</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">24</td>
+<td class="tdr" style="text-align: left;">Lloyds Banking Group</td>
+<td class="tdr">UK</td>
+<td class="tdr">1,059.53</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">25</td>
+<td class="tdr" style="text-align: left;">Royal Bank of Scotland Group</td>
+<td class="tdr">UK</td>
+<td class="tdr">1,017.58</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">26</td>
+<td class="tdr" style="text-align: left;">Norinchukin Bank</td>
+<td class="tdr">Japan</td>
+<td class="tdr">1,001.72</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">27</td>
+<td class="tdr" style="text-align: left;">ING Groep NV</td>
+<td class="tdr">Netherlands</td>
+<td class="tdr">984.695</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">28</td>
+<td class="tdr" style="text-align: left;">UniCredit S.p.A.</td>
+<td class="tdr">Italy</td>
+<td class="tdr">944.804</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">29</td>
+<td class="tdr" style="text-align: left;">Industrial Bank Co. Ltd</td>
+<td class="tdr">China</td>
+<td class="tdr">941.973</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">30</td>
+<td class="tdr" style="text-align: left;">UBS Group AG</td>
+<td class="tdr">Switzerland</td>
+<td class="tdr">930.246</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">31</td>
+<td class="tdr" style="text-align: left;">Toronto-Dominion Bank</td>
+<td class="tdr">Canada</td>
+<td class="tdr">926.084</td>
+<td class="tdr">07/31/2017</td>
+</tr>
+<tr>
+<td class="tdr">32</td>
+<td class="tdr" style="text-align: left;">Royal Bank of Canada</td>
+<td class="tdr">Canada</td>
+<td class="tdr">925.056</td>
+<td class="tdr">07/31/2017</td>
+</tr>
+<tr>
+<td class="tdr">33</td>
+<td class="tdr" style="text-align: left;">China Merchants Bank</td>
+<td class="tdr">China</td>
+<td class="tdr">914.684</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">34</td>
+<td class="tdr" style="text-align: left;">Goldman Sachs Group</td>
+<td class="tdr">USA</td>
+<td class="tdr">906.518</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">35</td>
+<td class="tdr" style="text-align: left;">Credit Mutuel</td>
+<td class="tdr">France</td>
+<td class="tdr">906.391</td>
+<td class="tdr">12/31/2016</td>
+</tr>
+<tr>
+<td class="tdr">36</td>
+<td class="tdr" style="text-align: left;">Intesa Sanpaolo</td>
+<td class="tdr">Italy</td>
+<td class="tdr">900.129</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">37</td>
+<td class="tdr" style="text-align: left;">Agricultural Development Bank of China</td>
+<td class="tdr">China</td>
+<td class="tdr">873.419</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">38</td>
+<td class="tdr" style="text-align: left;">Shanghai Pudong Development Bank</td>
+<td class="tdr">China</td>
+<td class="tdr">872.740</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">39</td>
+<td class="tdr" style="text-align: left;">China Minsheng Banking Corp</td>
+<td class="tdr">China</td>
+<td class="tdr">850.877</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">40</td>
+<td class="tdr" style="text-align: left;">Morgan Stanley</td>
+<td class="tdr">USA</td>
+<td class="tdr">841.016</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">41</td>
+<td class="tdr" style="text-align: left;">China CITIC Bank Corp</td>
+<td class="tdr">China</td>
+<td class="tdr">833.763</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">42</td>
+<td class="tdr" style="text-align: left;">Credit Suisse Group</td>
+<td class="tdr">Switzerland</td>
+<td class="tdr">818.073</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">43</td>
+<td class="tdr" style="text-align: left;">BBVA</td>
+<td class="tdr">Spain</td>
+<td class="tdr">802.364</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">44</td>
+<td class="tdr" style="text-align: left;">Commonwealth Bank of Australia</td>
+<td class="tdr">Australia</td>
+<td class="tdr">750.392</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">45</td>
+<td class="tdr" style="text-align: left;">Nordea</td>
+<td class="tdr">Sweden</td>
+<td class="tdr">734.201</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">46</td>
+<td class="tdr" style="text-align: left;">Rabobank Group</td>
+<td class="tdr">Netherlands</td>
+<td class="tdr">711.859</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">47</td>
+<td class="tdr" style="text-align: left;">Bank of Nova Scotia</td>
+<td class="tdr">Canada</td>
+<td class="tdr">698.064</td>
+<td class="tdr">07/31/2017</td>
+</tr>
+<tr>
+<td class="tdr">48</td>
+<td class="tdr" style="text-align: left;">Australia & New Zealand Banking Group</td>
+<td class="tdr">Australia</td>
+<td class="tdr">689.014</td>
+<td class="tdr">03/31/2017</td>
+</tr>
+<tr>
+<td class="tdr">49</td>
+<td class="tdr" style="text-align: left;">Standard Chartered Plc</td>
+<td class="tdr">UK</td>
+<td class="tdr">657.638</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">50</td>
+<td class="tdr" style="text-align: left;">European Investment Bank</td>
+<td class="tdr">Luxembourg</td>
+<td class="tdr">654.749</td>
+<td class="tdr">12/31/2016</td>
+</tr>
+<tr>
+<td class="tdr">51</td>
+<td class="tdr" style="text-align: left;">Westpac Banking Corp</td>
+<td class="tdr">Australia</td>
+<td class="tdr">645.577</td>
+<td class="tdr">03/31/2017</td>
+</tr>
+<tr>
+<td class="tdr">52</td>
+<td class="tdr" style="text-align: left;">National Australia Bank</td>
+<td class="tdr">Australia</td>
+<td class="tdr">607.329</td>
+<td class="tdr">03/31/2017</td>
+</tr>
+<tr>
+<td class="tdr">53</td>
+<td class="tdr" style="text-align: left;">China Everbright Bank</td>
+<td class="tdr">China</td>
+<td class="tdr">595.097</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">54</td>
+<td class="tdr" style="text-align: left;">DZ Bank AG</td>
+<td class="tdr">Germany</td>
+<td class="tdr">586.393</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">55</td>
+<td class="tdr" style="text-align: left;">KfW Group</td>
+<td class="tdr">Germany</td>
+<td class="tdr">567.366</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">56</td>
+<td class="tdr" style="text-align: left;">Sumitomo Mitsui Trust Holdings</td>
+<td class="tdr">Japan</td>
+<td class="tdr">565.334</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">57</td>
+<td class="tdr" style="text-align: left;">Commerzbank</td>
+<td class="tdr">Germany</td>
+<td class="tdr">556.582</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">58</td>
+<td class="tdr" style="text-align: left;">Danske Bank</td>
+<td class="tdr">Denmark</td>
+<td class="tdr">548.795</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">59</td>
+<td class="tdr" style="text-align: left;">Bank of Montreal</td>
+<td class="tdr">Canada</td>
+<td class="tdr">545.783</td>
+<td class="tdr">07/31/2017</td>
+</tr>
+<tr>
+<td class="tdr">60</td>
+<td class="tdr" style="text-align: left;">State Bank of India</td>
+<td class="tdr">India</td>
+<td class="tdr">514.649</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">61</td>
+<td class="tdr" style="text-align: left;">The Export-Import Bank of China (Eximbank)</td>
+<td class="tdr">China</td>
+<td class="tdr">491.888</td>
+<td class="tdr">12/31/2016</td>
+</tr>
+<tr>
+<td class="tdr">62</td>
+<td class="tdr" style="text-align: left;">Cassa Depositi e Prestiti (CDP)</td>
+<td class="tdr">Italy</td>
+<td class="tdr">474.042</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">63</td>
+<td class="tdr" style="text-align: left;">U.S. Bancorp</td>
+<td class="tdr">USA</td>
+<td class="tdr">463.844</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">64</td>
+<td class="tdr" style="text-align: left;">ABN AMRO Group NV</td>
+<td class="tdr">Netherlands</td>
+<td class="tdr">461.270</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">65</td>
+<td class="tdr" style="text-align: left;">Ping An Bank</td>
+<td class="tdr">China</td>
+<td class="tdr">456.184</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">66</td>
+<td class="tdr" style="text-align: left;">Resona Holdings</td>
+<td class="tdr">Japan</td>
+<td class="tdr">437.514</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">67</td>
+<td class="tdr" style="text-align: left;">Banco do Brasil SA</td>
+<td class="tdr">Brazil</td>
+<td class="tdr">437.059</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">68</td>
+<td class="tdr" style="text-align: left;">Sberbank of Russia</td>
+<td class="tdr">Russia</td>
+<td class="tdr">434.749</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">69</td>
+<td class="tdr" style="text-align: left;">CaixaBank</td>
+<td class="tdr">Spain</td>
+<td class="tdr">432.559</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">70</td>
+<td class="tdr" style="text-align: left;">Canadian Imperial Bank of Commerce</td>
+<td class="tdr">Canada</td>
+<td class="tdr">432.019</td>
+<td class="tdr">07/31/2017</td>
+</tr>
+<tr>
+<td class="tdr">71</td>
+<td class="tdr" style="text-align: left;">Itau Unibanco Holding SA</td>
+<td class="tdr">Brazil</td>
+<td class="tdr">411.545</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">72</td>
+<td class="tdr" style="text-align: left;">Nomura Holdings</td>
+<td class="tdr">Japan</td>
+<td class="tdr">396.734</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">73</td>
+<td class="tdr" style="text-align: left;">Caixa Economica Federal</td>
+<td class="tdr">Brazil</td>
+<td class="tdr">387.367</td>
+<td class="tdr">03/31/2017</td>
+</tr>
+<tr>
+<td class="tdr">74</td>
+<td class="tdr" style="text-align: left;">PNC Financial Services Group</td>
+<td class="tdr">USA</td>
+<td class="tdr">372.190</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">75</td>
+<td class="tdr" style="text-align: left;">KB Financial Group</td>
+<td class="tdr">South Korea</td>
+<td class="tdr">368.645</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">76</td>
+<td class="tdr" style="text-align: left;">Shinkin Central Bank (SCB)</td>
+<td class="tdr">Japan</td>
+<td class="tdr">365.447</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">77</td>
+<td class="tdr" style="text-align: left;">Shinhan Financial Group</td>
+<td class="tdr">South Korea</td>
+<td class="tdr">361.365</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">78</td>
+<td class="tdr" style="text-align: left;">Banco Bradesco SA</td>
+<td class="tdr">Brazil</td>
+<td class="tdr">359.513</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">79</td>
+<td class="tdr" style="text-align: left;">Hua Xia Bank</td>
+<td class="tdr">China</td>
+<td class="tdr">357.497</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">80</td>
+<td class="tdr" style="text-align: left;">Bank of New York Mellon Corp</td>
+<td class="tdr">USA</td>
+<td class="tdr">354.815</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">81</td>
+<td class="tdr" style="text-align: left;">DBS Group Holdings</td>
+<td class="tdr">Singapore</td>
+<td class="tdr">353.323</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">82</td>
+<td class="tdr" style="text-align: left;">Capital One Financial Corporation</td>
+<td class="tdr">USA</td>
+<td class="tdr">350.593</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">83</td>
+<td class="tdr" style="text-align: left;">Svenska Handelsbanken</td>
+<td class="tdr">Sweden</td>
+<td class="tdr">350.231</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">84</td>
+<td class="tdr" style="text-align: left;">KBC Group NV</td>
+<td class="tdr">Belgium</td>
+<td class="tdr">338.659</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">85</td>
+<td class="tdr" style="text-align: left;">NongHyup Financial Group</td>
+<td class="tdr">South Korea</td>
+<td class="tdr">333.156</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">86</td>
+<td class="tdr" style="text-align: left;">Bank of Beijing</td>
+<td class="tdr">China</td>
+<td class="tdr">330.360</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">87</td>
+<td class="tdr" style="text-align: left;">Skandinaviska Enskilda Banken</td>
+<td class="tdr">Sweden</td>
+<td class="tdr">328.454</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">88</td>
+<td class="tdr" style="text-align: left;">DNB</td>
+<td class="tdr">Norway</td>
+<td class="tdr">324.948</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">89</td>
+<td class="tdr" style="text-align: left;">OCBC Bank (Oversea-Chinese Banking Corp)</td>
+<td class="tdr">Singapore</td>
+<td class="tdr">311.872</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">90</td>
+<td class="tdr" style="text-align: left;">Hana Financial Group</td>
+<td class="tdr">South Korea</td>
+<td class="tdr">304.734</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">91</td>
+<td class="tdr" style="text-align: left;">China Guangfa Bank (CGB)</td>
+<td class="tdr">China</td>
+<td class="tdr">302.156</td>
+<td class="tdr">12/31/2016</td>
+</tr>
+<tr>
+<td class="tdr">92</td>
+<td class="tdr" style="text-align: left;">Nationwide Building Society</td>
+<td class="tdr">UK</td>
+<td class="tdr">297.609</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">93</td>
+<td class="tdr" style="text-align: left;">Landesbank Baden-Wurttemberg</td>
+<td class="tdr">Germany</td>
+<td class="tdr">291.336</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">94</td>
+<td class="tdr" style="text-align: left;">Swedbank</td>
+<td class="tdr">Sweden</td>
+<td class="tdr">286.955</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">95</td>
+<td class="tdr" style="text-align: left;">Cathay Financial Holding</td>
+<td class="tdr">Taiwan</td>
+<td class="tdr">278.273</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">96</td>
+<td class="tdr" style="text-align: left;">Woori Bank</td>
+<td class="tdr">South Korea</td>
+<td class="tdr">275.941</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">97</td>
+<td class="tdr" style="text-align: left;">Brazilian Development Bank (BNDES)</td>
+<td class="tdr">Brazil</td>
+<td class="tdr">267.155</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">98</td>
+<td class="tdr" style="text-align: left;">La Banque Postale</td>
+<td class="tdr">France</td>
+<td class="tdr">266.114</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">99</td>
+<td class="tdr" style="text-align: left;">Bank of Jiangsu</td>
+<td class="tdr">China</td>
+<td class="tdr">254.822</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">100</td>
+<td class="tdr" style="text-align: left;">Bank of Shanghai</td>
+<td class="tdr">China</td>
+<td class="tdr">252.497</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">101</td>
+<td class="tdr" style="text-align: left;">Bayerische Landesbank</td>
+<td class="tdr">Germany</td>
+<td class="tdr">252.385</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">102</td>
+<td class="tdr" style="text-align: left;">United Overseas Bank (UOB)</td>
+<td class="tdr">Singapore</td>
+<td class="tdr">250.030</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">103</td>
+<td class="tdr" style="text-align: left;">Erste Group Bank AG</td>
+<td class="tdr">Austria</td>
+<td class="tdr">249.193</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">104</td>
+<td class="tdr" style="text-align: left;">Banco Sabadell</td>
+<td class="tdr">Spain</td>
+<td class="tdr">248.396</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">105</td>
+<td class="tdr" style="text-align: left;">State Street Corp</td>
+<td class="tdr">USA</td>
+<td class="tdr">238.274</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">106</td>
+<td class="tdr" style="text-align: left;">Raiffeisen Schweiz</td>
+<td class="tdr">Switzerland</td>
+<td class="tdr">238.243</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">107</td>
+<td class="tdr" style="text-align: left;">Korea Development Bank</td>
+<td class="tdr">South Korea</td>
+<td class="tdr">238.201</td>
+<td class="tdr">12/31/2016</td>
+</tr>
+<tr>
+<td class="tdr">108</td>
+<td class="tdr" style="text-align: left;">Dexia</td>
+<td class="tdr">Belgium</td>
+<td class="tdr">227.762</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">109</td>
+<td class="tdr" style="text-align: left;">Industrial Bank of Korea</td>
+<td class="tdr">South Korea</td>
+<td class="tdr">224.794</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">110</td>
+<td class="tdr" style="text-align: left;">BB&T Corporation</td>
+<td class="tdr">USA</td>
+<td class="tdr">221.192</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">111</td>
+<td class="tdr" style="text-align: left;">Charles Schwab Corp</td>
+<td class="tdr">USA</td>
+<td class="tdr">220.601</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">112</td>
+<td class="tdr" style="text-align: left;">Fubon Financial Holding</td>
+<td class="tdr">Taiwan</td>
+<td class="tdr">216.495</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">113</td>
+<td class="tdr" style="text-align: left;">China Zheshang Bank (CZB)</td>
+<td class="tdr">China</td>
+<td class="tdr">214.414</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">114</td>
+<td class="tdr" style="text-align: left;">VTB Bank</td>
+<td class="tdr">Russia</td>
+<td class="tdr">212.843</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">115</td>
+<td class="tdr" style="text-align: left;">Nykredit Group</td>
+<td class="tdr">Denmark</td>
+<td class="tdr">211.932</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">116</td>
+<td class="tdr" style="text-align: left;">Qatar National Bank</td>
+<td class="tdr">Qatar</td>
+<td class="tdr">210.974</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">117</td>
+<td class="tdr" style="text-align: left;">Desjardins Group</td>
+<td class="tdr">Canada</td>
+<td class="tdr">209.484</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">118</td>
+<td class="tdr" style="text-align: left;">Suntrust Banks</td>
+<td class="tdr">USA</td>
+<td class="tdr">207.223</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">119</td>
+<td class="tdr" style="text-align: left;">Bankia</td>
+<td class="tdr">Spain</td>
+<td class="tdr">206.618</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+<tr>
+<td class="tdr">120</td>
+<td class="tdr" style="text-align: left;">Belfius</td>
+<td class="tdr">Belgium</td>
+<td class="tdr">196.058</td>
+<td class="tdr">06/30/2017</td>
+</tr>
+</tbody>
+</table>
+
+
+

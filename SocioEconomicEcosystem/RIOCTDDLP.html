@@ -1,0 +1,358 @@
+
+
+<!-- 
+git add --all
+git commit -m "Initial commit"
+ git push -u origin master
+
+ -->
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title> Analytics & Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Bursting Velocity'
++ '<br><br>'
+                + ' Click above: Category or Video'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+    <h2 style="color:black">  Retinal Optical Coherence Tomography Imaging  </h2>
+    <h4 style="color:green">   Sensitivity Resolution  Image Quality  </h4>
+     <h2 style="color:black">  Using Deep Discrepancy Learning Process (DDLP) </h2>
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+ <!--   Under Construction and Review! -->
+
+    <h1>  Aim and Motivation: Convert Data-Lights into Meaningful Insights.</h1>  
+
+     This essay is focusing on how to use our <a target="alone"  href="http://efaysal.github.io/SocioEconomicEcosystem/FLOURESCENCEIMAGECONTENTANALYTICS.html">Discrepancy Imaging Analytics</a> to analyze 
+     <a target="alone"  href="http://www.opsweb.org/?page=RetinalOCT">
+      Retinal Optical Coherence Tomography Imaging Data Content</a>.
+  <br>   <br> 
+The retina is a layer of tissue in the back of the eye that senses light and sends that collected light to the brain for more processing(to see around). In the center of this nerve tissue is the macula. It provides the sharp, central vision needed for reading, driving and seeing fine detail. Serious eye diseases as well as systemic diseases manifest themselves in the retina.
+Retinal disorders affect the normal functionality of the eye. They can affect someone vision, and some can be serious enough to cause blindness.
+<br>   <br>   
+The emerging imaging modality Optical Coherence Tomography (OCT**), widely used in the field of biomedical imaging, helped to image the retinal microvasculature and blood flow and three dimensional images of living cone photoreceptors respectively. The photoreceptors are one of the key components of the retinal images, which act as an indicator to detect or monitor retinal diseases. A review is in  <a target="alone"  href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3131209/">Retinal Imaging and Image Analysis.</a>
+<br>   <br> 
+**OCT is used to gain informations about the light scattering properties of a sample by
+illuminating it with some short laser pulse and measuring the backscattered light.
+For more precise measurements, the backscattered light is first superimposed with the original laser pulse( called reference) and then the intensity of this interference pattern(coherence of these two light beams) is measured through a photon detector /spectrometer. Many variants of the OCT have been considered accordingly to the nature and collected measurements.
+<br>   <br> 
+For instance, without loss of generality, the Spectral domain-optical coherence tomography (SD-OCT) images form a cross-sectional volumetric
+images of the tissues which can be used for analysis of tissue structure and properties of the retina. 
+The resolution which can be defined as the capability of distinguishing between two separate but adjacent layers  
+suffer from the formation of irregular granular pattern due to the underlying physics and the computational process to reconstruct the images from the detected forward /backward measurements(intensity peaks).
+<br>   <br> 
+As the resolution of an image is how small details of the actual sample can be resolved or detected. The
+number of pixels(sampling frequency) in an image determines the limit of spatial resolution. One striking fact in SD-OCT is a high sampling frequency does not necessarily foster high image resolution. The sample usually contains layers with different refractive indices and only under perfect conditions the photo detector may be able to detect accurately the interference associated to those 
+refractive indices(tissue layers). Instability during image acquisition/reconstruction can grossly affect image quality.
+The instrument sensitivity, the optics of the microscope, the wavelength of light source and the photon detector, also influence the tissue layers resolution. 
+<br>   <br> 
+The reconstructed image has a color space content not enough to reconstruct fully the sample. This suddenly discontinued color content presents a real challenge to properly interpret the reconstructed image. Therefore, the first step in SD-OCT image processing needs an assessment of the color space content characteristics, i.e. automatically quantify the most informative and relevant features contained in the collected lights. This assessment may help to address the following concerns to adjust the instrument toward efficient sensitivity and resolution:
+<ul>
+    <li type="square"> How much of the noise and artifact in the reconstructed image can be avoided by reviewing the image acquisition/reconstruction?
+   </li>
+    <li type="square"> How much can the image quality be improved by further image processing software to highlight actual micro-structures(layers) in the reconstructed image?
+   </li>
+   </li>
+</ul>
+
+The current standard image processing techniques provide answers to most questions when it comes to a uniformly regular color space content. However, to locate segments(layer) in a image experiencing a suddenly discontinued color space content, these tools start facing  cumbersome situations hindering their known  intrinsic  efficiency, see <a target="alone"  href="http://efaysal.github.io/SocioEconomicEcosystem/EDICTSL2DDLP.html"> Combining Nanoscopy Epi-Mark Imaging & Deep Discrepancy Learning Process Predicting Lineage Progression of Stem Cells.</a>
+<br>   <br> 
+ In this essay, we are mainly motivated to test and assess the utility of our recent developed software <a target="alone"  href="http://efaysal.github.io/SocioEconomicEcosystem/FLOURESCENCEIMAGECONTENTANALYTICS.html">Fluorescence Imaging Analysis Using Deep Discrepancy Learning Process </a> to automatically quantify the most informative and relevant features contained in the primary image generated by Retinal Optical Coherence Tomography Imaging. 
+<br>   <br> 
+We consider our recent developed software as a practical way of looking at third order texture. The framework is based on the
+mathematical formulation of L2 discrepancy that measures the pixel-colors presence in all multiresolution-subrectangles defining the color-space, i.e. captured lights in the image and is providing an indication, without loss of spatial information,  related to how the pixel-colors are globally scattered in the color-space. The L2 discrepancy value captures the global degree of discrepancies in color-space and enables the formulation of a Deep Discrepancy Learning Process. 
+<br>   <br> 
+This Deep Discrepancy Learning Process (DDLP) is scalable and makes use of the totality or partially the provided channels in the primary image and is simple to numerically implement without assuming any parametric form in the primary image data contents. The results showed that it captured the reflected pattern in the image with more insights about the colors spatial distribution where the pixel colors are either clumped or scarce, see Section "Numerical Illustrations".
+<br>   <br> 
+
+ The DDLP defines image information content as a set of descriptors/covariantes of the primary image color-space structures. 
+ Many levels of descriptors are provided: 
+
+ <ul>
+   <li type="square"> Pixel-level descriptors, the colors spatial distribution where the pixel colors are either clumped or scarce. 
+Hence creating one histogram for multi-variable data, i.e. a plot to discover, and show, the underlying frequency distribution of a set of continuous data (RGB colors). We refer to these Pixel-level descriptors as Sensitivity Descriptors.
+   </li>
+ <li type="square"> New companion Discrepancy Images to the primary image are formed using Pixel-level descriptors. See <a target="alone"  href="http://efaysal.github.io/SocioEconomicEcosystem/FLOURESCENCEIMAGECONTENTANALYTICS.html">Fluorescence Imaging Analysis Using Deep Discrepancy Learning Process</a> or <a target="alone"  href="http://efaysal.github.io/SocioEconomicEcosystem/EDICTSL2DDLP.html"> 
+Combining Nanoscopy Epi-Mark Imaging & Deep Discrepancy Learning Process
+Predicting Lineage Progression of Stem Cells.</a>
+   </li>
+     <li type="square"> Global level parameters outlining the entire light scattering proprieties  in the primary image color-space structures. 
+   </li>
+</ul>
+
+These descriptors are used to assess the sensitivity/resolution and image quality and can be used to discern the difference between a number of given primary images(different image acquisition/reconstruction processes).
+<!--  augmented  for instance by Kolmogorov-Smirnov test to calculate the pvalues supporting or not the differences statistically. The Kolmogorov-Smirnov test the quality of being the same (similarity) of two independent continuous distributions.  -->
+<br>   <br> 
+ <h1> Numerical Illustrations </h1> 
+
+ The L2 DDLP provides the Sensitivity Descriptors for the red color, green color and blue color in the image color space content as: 
+
+</li>
+<li type="square">  Univariate distribution, called Rd. </li>
+ <li type="square"> Univariate distribution, called Gd. </li>
+  <li type="square"> Univariate distribution, called Gb. </li>
+<li type="square">  Bivariate distribution representing both the X-color and Y-color, called XYd.</li>
+<li type="square">  three-variate distribution representing the RGB-colors, called RGBd.</li>
+</ul> 
+<br> 
+
+ The Discrepancy Image has the color-space defined by combining these Sensitivity Descriptors. The L2 DDLP generates all possible combinations to form all Discrepancy Images. The colors and texture in the Discrepancy Image provide insights about the 
+ distribution of specific colors(via their associated Sensitivity Descriptors ) around specific regions of interest (ROI) in the primary image.
+ <br>   <br>
+ The results show that the discrepancy images captured the reflected pattern in the image data and provides a set of segments that collectively cover the entire image. Each of the pixels in a region are similar with respect to some characteristic in the image data and show some discrepancies to other pixels, i.e. able to define adjacent regions. This discrepancy framework provides a quantitative segmentation of the primary image and highlights where the pixel colors are uniform, clumped or scarce and also gives quantitative indication about the co-occurrence of two specific colors in RGB color space content.
+ <br>   <br>
+All the images used in this essay were selected from Internet. Nevertheless, our illustration can be conducted on the original high resolution images in the same manner and to enable the L2 DDLP to capture more refined information. Handling 3D data is also straightforward as this L2 DDLP was originally formulated to handle multi-dimensional datasets(this high-content OCT imaging, for instance).
+
+<br>   <br>
+
+
+ <div class="image12">
+     <h4> RGB Color Space Content </h4>
+    <div class="imgContainer">
+      <center>  <img src="./OCTRI/crop095_RO0611_CMQA/RGBcolor_crop095_RO0611_CMQA.jpg" alt="Channel" height="700" width="700" /></center>
+    </div>
+     <h4> Co-Occurrence of R-G colors </h4>
+       <div class="imgContainer">
+      <center>  <img src="./OCTRI/crop095_RO0611_CMQA/RGcolor_crop095_RO0611_CMQA.jpg" alt="Channel" height="700" width="700" /></center>
+    </div>
+     <h4> Co-Occurrence of G-B colors </h4>
+    <div class="imgContainer">
+      <center>  <img src="./OCTRI/crop095_RO0611_CMQA/GBcolor_crop095_RO0611_CMQA.jpg" alt="Channel" height="700" width="700"  /></center>
+    </div>
+      <h4> Co-Occurrence of R-B colors </h4>
+     <div class="imgContainer">
+      <center>  <img src="./OCTRI/crop095_RO0611_CMQA/RBcolor_crop095_RO0611_CMQA.jpg" alt="Channel" height="700" width="700" /></center>
+    </div>
+</div>
+<br>
+
+<div class="image12">
+     <h4> RGB Color Space Content </h4>
+    <div class="imgContainer">
+      <center>  <img src="./OCTRI/Optical-Coherence-Tomography-3-300x168/RGBcolor_Optical-Coherence-Tomography-3-300x168.jpg" alt="Channel" height="700" width="700" /></center>
+    </div>
+     <h4> Co-Occurrence of R-G colors </h4>
+       <div class="imgContainer">
+      <center>  <img src="./OCTRI/Optical-Coherence-Tomography-3-300x168/RGcolor_Optical-Coherence-Tomography-3-300x168.jpg" alt="Channel" height="700" width="700" /></center>
+    </div>
+     <h4> Co-Occurrence of G-B colors </h4>
+    <div class="imgContainer">
+      <center>  <img src="./OCTRI/Optical-Coherence-Tomography-3-300x168/GBcolor_Optical-Coherence-Tomography-3-300x168.jpg" alt="Channel" height="700" width="700"  /></center>
+    </div>
+      <h4> Co-Occurrence of R-B colors </h4>
+     <div class="imgContainer">
+      <center>  <img src="./OCTRI/Optical-Coherence-Tomography-3-300x168/RBcolor_Optical-Coherence-Tomography-3-300x168.jpg" alt="Channel" height="700" width="700" /></center>
+    </div>
+</div>
+<div class="image12">
+     <h4> RGB Color Space Content </h4>
+    <div class="imgContainer">
+      <center>  <img src="./OCTRI/Xlob/RGBcolor_Xlob.jpg" alt="Channel" height="700" width="700" /></center>
+    </div>
+     <h4> Co-Occurrence of R-G colors </h4>
+       <div class="imgContainer">
+      <center>  <img src="./OCTRI/Xlob/RGcolor_Xlob.jpg" alt="Channel" height="700" width="700" /></center>
+    </div>
+     <h4> Co-Occurrence of G-B colors </h4>
+    <div class="imgContainer">
+      <center>  <img src="./OCTRI/Xlob/GBcolor_Xlob.jpg" alt="Channel" height="700" width="700"  /></center>
+    </div>
+      <h4> Co-Occurrence of R-B colors </h4>
+     <div class="imgContainer">
+      <center>  <img src="./OCTRI/Xlob/RBcolor_Xlob.jpg" alt="Channel" height="700" width="700" /></center>
+    </div>
+</div>
+
+<div class="image12">
+     <h4> RGB Color Space Content </h4>
+    <div class="imgContainer">
+      <center>  <img src="./OCTRI/OCT_AMD/RGBcolor_OCT_AMD.jpg" alt="Channel" height="700" width="700" /></center>
+    </div>
+     <h4> Co-Occurrence of R-G colors </h4>
+       <div class="imgContainer">
+      <center>  <img src="./OCTRI/OCT_AMD/RGcolor_OCT_AMD.jpg" alt="Channel" height="700" width="700" /></center>
+    </div>
+     <h4> Co-Occurrence of G-B colors </h4>
+    <div class="imgContainer">
+      <center>  <img src="./OCTRI/OCT_AMD/GBcolor_OCT_AMD.jpg" alt="Channel" height="700" width="700"  /></center>
+    </div>
+      <h4> Co-Occurrence of R-B colors </h4>
+     <div class="imgContainer">
+      <center>  <img src="./OCTRI/OCT_AMD/RBcolor_OCT_AMD.jpg" alt="Channel" height="700" width="700" /></center>
+    </div>
+</div>
+<div class="image12">
+     <h4> RGB Color Space Content </h4>
+    <div class="imgContainer">
+      <center>  <img src="./OCTRI/Fig0102/RGBcolor_Fig0102.jpg" alt="Channel" height="700" width="700" /></center>
+    </div>
+     <h4> Co-Occurrence of R-G colors </h4>
+       <div class="imgContainer">
+      <center>  <img src="./OCTRI/Fig0102/RGcolor_Fig0102.jpg" alt="Channel" height="700" width="700" /></center>
+    </div>
+     <h4> Co-Occurrence of G-B colors </h4>
+    <div class="imgContainer">
+      <center>  <img src="./OCTRI/Fig0102/GBcolor_Fig0102.jpg" alt="Channel" height="700" width="700"  /></center>
+    </div>
+      <h4> Co-Occurrence of R-B colors </h4>
+     <div class="imgContainer">
+      <center>  <img src="./OCTRI/Fig0102/RBcolor_Fig0102.jpg" alt="Channel" height="700" width="700" /></center>
+    </div>
+</div>
+<div class="image12">
+     <h4> RGB Color Space Content </h4>
+    <div class="imgContainer">
+      <center>  <img src="./OCTRI/xyxyx/RGBcolor_xyxyx.jpg" alt="Channel" height="700" width="700" /></center>
+    </div>
+     <h4> Co-Occurrence of R-G colors </h4>
+       <div class="imgContainer">
+      <center>  <img src="./OCTRI/xyxyx/RGcolor_xyxyx.jpg" alt="Channel" height="700" width="700" /></center>
+    </div>
+     <h4> Co-Occurrence of G-B colors </h4>
+    <div class="imgContainer">
+      <center>  <img src="./OCTRI/xyxyx/GBcolor_xyxyx.jpg" alt="Channel" height="700" width="700"  /></center>
+    </div>
+      <h4> Co-Occurrence of R-B colors </h4>
+     <div class="imgContainer">
+      <center>  <img src="./OCTRI/xyxyx/RBcolor_xyxyx.jpg" alt="Channel" height="700" width="700" /></center>
+    </div>
+</div>
+<br>   <br> 
+
+
+For an application to an ordinary RGB-Imaging Analysis:
+
+<br>   <br> 
+<div class="image12">
+    <div class="imgContainer">
+      <center>  <img src="./FLOURESPICS/aaa.jpg" alt="Channel" /></center>
+    </div>
+     <div class="imgContainer">
+      <center>  <img src="./CCDTDIDDLP/COLORMAPaaa.jpg" alt="Channel" /></center>
+    </div>
+   <div class="imgContainer">
+      <center>   <img class="middle-img" src="./FLOURESPICS/RGBtwotwoaaa.jpg" alt="Channel" /></center>
+    </div>
+       <div class="imgContainer">
+      <center>   <img class="middle-img" src="./FLOURESPICS/RGGBtwotwoaaa.jpg" alt="Channel" /></center>
+    </div>
+       <div class="imgContainer">
+      <center>   <img class="middle-img" src="./FLOURESPICS/GBRBtwotwoaaa.jpg" alt="Channel" /></center>
+    </div>
+       <div class="imgContainer">
+      <center>   <img class="middle-img" src="./FLOURESPICS/RGRBtwotwoaaa.jpg" alt="Channel" /></center>
+    </div>
+   <div class="imgContainer">
+      <center>   <img class="middle-img" src="./FLOURESPICS/DCtwotwoaaa.jpg" alt="Channel" /></center>
+    </div>
+</div>
+<br>   <br> 
+
+<h4>  Note  </h4>
+The theoretical part of this work was  done when the author was in his PhD thesis (1994-1998), at the University of Savoie, Department of Mathematics, France. The work was shaped toward real applications accordingly to the learned scientific experience. 
+<br>   <br> 
+Previous Essays:
+
+ <ul>
+      <li type="square">  <a target="alone"  href="http://efaysal.github.io/SocioEconomicEcosystem/EDICTSL2DDLP.html"> 
+Combining Nanoscopy Epi-Mark Imaging & Deep Discrepancy Learning Process
+Predicting Lineage Progression of Stem Cells </a>
+   </li> 
+       <li type="square">  <a target="alone"  href="http://efaysal.github.io/SocioEconomicEcosystem/IFCCDTDIDDLP.html"> 
+Imaging Flow Cytometry (IFC), Sensitivity Resolution  Image Quality, CCD Camera in Time-Delay Integration Using Deep Discrepancy Learning Process (DDLP) </a>
+   </li>  
+    <li type="square">  <a target="alone"  href="http://efaysal.github.io/SocioEconomicEcosystem/IMAGECFLOWCYTOMETRYCONTENTANALYTICS.html"> Imaging Flow Cytometry Using Deep Discrepancy Learning Process.</a>
+   </li>
+   <li type="square"> <a target="alone"  href="http://efaysal.github.io/SocioEconomicEcosystem/FLOURESCENCEIMAGECONTENTANALYTICS.html">Fluorescence Imaging Analysis Using Deep Discrepancy Learning Process </a>
+   </li>
+  <li  <li type="square"> <a target="alone"  href="http://efaysal.github.io/SocioEconomicEcosystem/IMAGECONTENTANALYTICS.html"> Image Analytics Using Deep Discrepancy Learning Process. </a>
+   </li>
+</ul>
+
+ <br>   <br> 
+<h4>   Author scientific profile:  </h4>
+Statistics and Applied Mathematics for Data Analytics, Identify opportunities to apply Mathematical Statistics, Numerical Methods, Machine Learning and Pattern Recognition to investigate and implement solutions to the field of Data Content Analytics. Data prediction via computational methods to predict from massive amounts of data (Big Data Content). These methods included clustering, regression, survival analysis, neural network, classification , ranking, deep discrepancy learning .
+ <br>   <br> 
+
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com , Living in Vancouver, BC, Canada.</a>
+    <br> 
+   The MIT License (MIT) Copyright 1994-2017, Faysal El Khettabi, Numerics&Analytics, All Rights Reserved.
+     </div> 
+   
+</section>
+</div>
+ 
+</body>
+</html>

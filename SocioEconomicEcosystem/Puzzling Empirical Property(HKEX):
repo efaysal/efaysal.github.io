@@ -1,0 +1,41 @@
+Puzzling Empirical Property(HKEX):
+Volatility tends to be negatively correlated with the underlying stock price, marginal volatility(change in the volatility over change in the underlying stock price) tends to be negative specially during turning points(New evidence using Oscillatory Processes).
+-:
+Volatility in Major World Stock Market Indexes Using Algorithmic Data Driven Analytics:
+Raw Historical Volatility (Not Calibrated):
+efaysal.github.io/SocioEconomicEcosystem/TORVANSTOCKS/RawVolatility_CHINA(HKEX)_4W_.html
+Calibrated Historical Volatility as function of two Oscillatory Processes I & II:
+efaysal.github.io/SocioEconomicEcosystem/TORVANSTOCKS/LearningDepthVolatility_CHINA(HKEX)_Z_4W_.html
+Oscillatory Process I:
+efaysal.github.io/SocioEconomicEcosystem/TORVANSTOCKS/LearningDepthVolatility_CHINA(HKEX)_X_4W_.html
+Oscillatory Process II:
+efaysal.github.io/SocioEconomicEcosystem/TORVANSTOCKS/RawVolatility_CHINA(HKEX)_4W_.html
+Diverging Volatility Control Mechanism versus Global Calibrated Volatility:
+efaysal.github.io/SocioEconomicEcosystem/TORVANSTOCKS/DivergingVCM_CHINA(HKEX)_Y_4W_.html
+:-
+o: High Sampling Rates.
+In this work, the used numerical datasets are for informational use only and with an only purpose to illustrate numerically our research points. Most of these research points have been inspired by our seminal work in: Quasi-Monte Carlo Simulation of Diffusion:
+https://lnkd.in/efjsKhc
+, in a way that can be directly applied to Stock Market Volatility Calculations.
+
+
+
+Puzzling Empirical Property(Swiss):
+Volatility tends to be negatively correlated with the underlying stock price, marginal volatility(change in the volatility over change in the underlying stock price) tends to be negative specially during turning points(New evidence using Oscillatory Processes).
+-:
+Volatility in Major Swiss Stock Market Indexes Using Algorithmic Data Driven Analytics:
+Raw Historical Volatility (Not Calibrated):
+http://efaysal.github.io/SocioEconomicEcosystem/TORVANSTOCKS/RawVolatility_SWISS_4W_.html
+Calibrated Historical Volatility as function of two Oscillatory Processes I & II:
+http://efaysal.github.io/SocioEconomicEcosystem/TORVANSTOCKS/LearningDepthVolatility_SWISS_Z_4W_.html
+Oscillatory Process I:
+http://efaysal.github.io/SocioEconomicEcosystem/TORVANSTOCKS/LearningDepthVolatility_SWISS_X_4W_.html
+Oscillatory Process II:
+http://efaysal.github.io/SocioEconomicEcosystem/TORVANSTOCKS/LearningDepthVolatility_SWISS_Y_4W_.html
+Diverging Volatility Control Mechanism versus Global Calibrated Volatility:
+http://efaysal.github.io/SocioEconomicEcosystem/TORVANSTOCKS/DivergingVCM_SWISS_Y_4W_.html
+:-
+o: High Sampling Rates.
+In this work, the used numerical datasets are for informational use only and with an only purpose to illustrate numerically our research points. Most of these research points have been inspired by our seminal work in: Quasi-Monte Carlo Simulation of Diffusion:
+https://lnkd.in/efjsKhc
+, in a way that can be directly applied to Stock Market Volatility Calculations.

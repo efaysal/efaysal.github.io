@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title> Analytics &amp Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script language="JavaScript">
+<!--
+function autoResize(id){
+    var newheight;
+    var newwidth;
+
+    if(document.getElementById){
+        newheight=document.getElementById(id).contentWindow.document .body.scrollHeight;
+        newwidth=document.getElementById(id).contentWindow.document .body.scrollWidth;
+    }
+
+    document.getElementById(id).height= (newheight) + "px";
+    document.getElementById(id).width= (newwidth) + "px";
+}
+//-->
+</script>
+
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Numerics'
++ '<br><br>'
+                + ' Click Above:'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+
+
+<header>
+    <body style="background-color:lightgrey;">
+    <h3 style="color:black"> Learning Volatility Community Structure </h3>
+     <h3 style="color:black"> Given a Number of Stocks In a Financial Exchange </h3>
+    <h3 style="color:black"> Using Algorithmic Data Driven Analytics </h3>
+    <!--     in The New Era </h3>
+    <h4 style="color:black"> Accommodative Monetary Policy &amp Financial Market Exchanges  </h4>
+    <h4 style="color:black">  Quantitative EasingTightening  &amp <a target="alone"  href="https://www.youtube.com/watch?v=s-g8EYqL6lc">  Volatility Control Mechanisms </a>< --> 
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+<!-- <div id="banner">
+    <div>
+        <span id="logo"></span>
+
+        <a href="https://github.com/nvd3-community/nvd3" target="github" class="button fork"><strong>GitHub</strong></a>
+        <a href="site.html" class="button fork docs selected"><strong>Examples</strong></a>
+        <a href="documentation.html" class="button fork docs"><strong>Documentation</strong></a>
+        <div class="downloads">
+            <span>Downloads:</span>
+            <ul>
+                <li><a href="https://github.com/nvd3-community/nvd3/zipball/master" class="button">ZIP</a></li>
+                <li><a href="https://github.com/nvd3-community/nvd3/tarball/master" class="button">TAR</a></li>
+            </ul>
+        </div>
+    </div>
+</div><!-- end banner --> 
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+<h6> 
+  <strong> -: </strong> 
+   <br> 
+<strong>  In this work, the used numerical datasets are for informational use only and with an only purpose to illustrate numerically our research points. Most of these research points have been inspired by our seminal work in: <a href="http://www.sciencedirect.com/science/article/pii/S0885064X99905095"> Quasi-Monte Carlo Simulation of Diffusion</a>, in a way that can be directly applied to Stock Market Volatility Calculations.
+  </strong> </h5>
+<h6> 
+Terms: A security is a tradable asset in a financial market, this term refers to any form of financial instrument. 
+In financial stock market, security is termed as stock, asset, equity or share. In this essay, stock is used to refer to security.
+The degree by which its price fluctuates can be termed as volatility. 
+</h6>
+
+  <h4> Motivation:</h4>
+This work explores suitable analytical forms to calculate volatility of a given stock based on oscillatory processes, i.e, 
+ the derivation of these processes uses the stochastic assumptions in the conventional stochastic financial framework to reformulate the problem as a quasi-deterministic framework highlighting and providing insights about the volatility characteristics in terms of stock settings. These oscillatory processes take into consideration the fact that the real world may follow a Jump-Diffusion process.
+When the new information arrives, the stock value may jump discontinuously(Jump Process) or will not differ significantly from the last value and the new information inflow has only a differential impact(Diffusion Process).
+<br><br> 
+ <h4> Empirical Analysis:</h4>
+  We are not providing here an extensive coverage of all the technicalities of this framework. Our aim is to provide a numerical illustration of our framework to survey depth volatility patterns in a given number of stocks traded in a specific financial stock market(stock exchange). A stock exchange can be considered as a socio-economic mirror where the important changes in the socio-economical features are reflected in the stocks price volatilities, i.e, any increase or decrease in the prices of stocks indicates the boom or bust time period of the economy respectively which may provide a barometer of economic prospects, social movements, and social mood.
+<br><br>
+ A more effective application of this quasi-deterministic framework, based on these oscillatory processes, is to assess
+both qualitatively and quantitatively the price volatilities of a number of specific stocks in a given financial stock exchange subject to a well-established regulatory environment***, corporate governance requirements and so on.
+<br><br>
+Understanding the price-volatility dynamic via the historical relationship between directional changes of the underlying price and directional changes in volatility in stock markets is an essential retrospective task to assess how this recently installed policy called Volatility Control Mechanism (VCM) is performing. VCM is  a measure designed to protect market integrity by preventing extreme price volatility arising from major trading errors and other unusual incidents.
+<br><br>
+(*) For instance, the Investment Industry Regulatory Organization of Canada (IIROC) published guidance on the establishment and operation of price thresholds by Canadian marketplaces to further reduce short-term, unexplained price volatility and address risks arising from electronic trading. The <a href="http://docs.iiroc.ca/DisplayDocument.aspx?DocumentID=8C9A8FABA8C44F57B0EB0C2BCB0BD6CE&Language=en"> guidance </a> took effect on August 25, 2016.
+<br><br>
+
+ <h4> Volatility Community Structure(VCS):</h4>
+
+ The derived numerical features for each stock help to build a volatility network between all the considered stocks traded in the considered stock exchange. Unsupervised Machine Learning methods are used for the detection and identification of communities in this complex volatility network. This community structure groups sets of stocks such that each set of stocks is volatility-connected internally. Each community structure is assigned the averaged features that are computed from the features of stocks belonging to this community structure.
+
+<br><br>
+ <h4> Real Data &amp Numerical Results:</h4>
+The numerical results related to major <strong> Canada </strong> stock market indices, since 2001 up to recently, are presented in these Interactive Charts: <strong>(a double click on a Volatility Community Structure(VCS) shows its associated curve) </strong>
+<br> <br>
+<ul>  <strong>  Canadian Stocks <a target="alone" href="http://www.iiroc.ca/industry/rulebook/Pages/SSC-Breakers.aspx/" > <strong>subject to Single Stock Circuit Breakers(SSCB)</strong></a></strong>: 
+    <li type="square">  <a href= "./TORVANSTOCKS/AveragedRawVolatility_SSCB_Canada_3W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./TORVANSTOCKS/AveragedCalibratedVolatility_SSCB_Canada_3W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I & II. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/AveragedOscillatoryProcessesI_SSCB_Canada_3W_.html"> Oscillatory Process I. </a> </li>
+   <li type="square">  <a href= "./TORVANSTOCKS/AveragedDivergenceVolatilityControlMechanisms_SSCB_Canada_3W_.html"> Diverging Volatility Control Mechanism. </a> </li>
+    <strong>  Assigned Community Membership as a File (csv) </strong>: 
+   <li type="square">   <a href="./TORVANSTOCKS/ SSCB_Canada _Membership_RESULTS_SSCB.csv" download="logo.png">Volatility Community Structures</a>  </li>
+
+
+</ul>
+
+
+<h4> Implementation:</h4>
+The insight analysis uses R programming language to process the results ( R is a software environment for statistical computing
+and graphics supported by the <a target="alone" href="https://www.r-project.org/" > R Foundation for Statistical Computing </a>). The interactive data visualizations in web browsers uses the <a target="alone"  href="http://nvd3.org/"> NVD3 data visualization library</a>.
+<br> <br>       
+    <h4>   Author scientific profile:  </h4>
+Statistics and Applied Mathematics for Data Analytics, Identify opportunities to apply Mathematical Statistics, Numerical Methods, Machine Learning and Pattern Recognition to investigate and implement solutions to the field of Data Content Analytics. Data prediction via computational methods to predict from massive amounts of data (Big Data Content). These methods included clustering, regression, survival analysis, neural network, classification , ranking, deep discrepancy learning .
+ <br>   <br> 
+
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com</a>
+    <br> 
+   The MIT License (MIT) Copyright 1994-2017, Faysal El Khettabi, Numerics &amp Analytics, All Rights Reserved.
+     </div> 
+   
+
+</section>
+</div>
+ 
+
+ 
+</body>
+</html>

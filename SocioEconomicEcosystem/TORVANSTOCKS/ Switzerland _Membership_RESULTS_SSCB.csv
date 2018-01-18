@@ -1,292 +1,292 @@
-"","Tick_2000-11-09_To_2001-06-21","Membership_2000-11-09_To_2001-06-21"
-"1","SCMN.VX",1
-"2","GEBN.VX",1
-"3","UHR.VX",1
-"4","ZURN.VX",1
-"5","GIVN.VX",1
-"6","SIN.SW",1
-"7","BARN.SW",1
-"8","EDHN.SW",1
-"9","BCHN.SW",1
-"10","MOZN.SW",1
-"11","BVZN.SW",1
-"12","IFCN.SW",1
-"13","SCHP.VX",1
-"14","VET.SW",1
-"15","CALN.SW",1
-"16","ALLN.SW",1
-"17","PSPN.SW",1
-"18","MOBN.SW",1
-"19","SCHN.SW",1
-"20","VW.SW",1
-"21","GE.SW",1
-"22","CPHN.SW",1
-"23","LEHN.SW",1
-"24","BAS.SW",1
-"25","KARN.SW",1
-"26","HLEE.SW",1
-"27","VILN.SW",1
-"28","SFZN.SW",1
-"29","DKSH.SW",1
-"30","FHZN.SW",1
-"31","TECN.SW",1
-"32","CFR.VX",2
-"33","LHN.VX",2
-"34","UBSG.VX",2
-"35","CSGN.VX",2
-"36","ISN.SW",2
-"37","INRN.SW",2
-"38","EVE.SW",2
-"39","ROL.SW",2
-"40","EFGN.SW",2
-"41","LLY.SW",2
-"42","UHRN.SW",2
-"43","VATN.SW",2
-"44","NEV.SW",2
-"45","GAM.SW",2
-"46","SCR.SW",2
-"47","SIK.VX",3
-"48","ALPH.SW",3
-"49","RLD.SW",3
-"50","CASNE.SW",3
-"51","JFN.SW",3
-"52","ODHN.SW",3
-"53","IMPN.SW",3
-"54","F.SW",3
-"55","PEAN.SW",3
-"56","LUKN.SW",3
-"57","GAV.SW",3
-"58","ORON.SW",3
-"59","HOCN.SW",3
-"60","BBN.SW",3
-"61","STRN.SW",3
-"62","ARYN.VX",3
-"63","BSLN.SW",3
-"64","BAYN.SW",3
-"65","SNBN.SW",4
-"66","BKW.SW",4
-"67","BLKB.SW",4
-"68","YPSN.SW",4
-"69","ADENE.SW",4
-"70","HBMNE.SW",4
-"71","AEVS.SW",4
-"72","ADVN.SW",4
-"73","OFN.SW",4
-"74","GEBNE.SW",4
-"75","STLN.SW",4
-"76","MMM.SW",4
-"77","VBSN.SW",4
-"78","NEM.SW",4
-"79","FTON.SW",4
-"80","VW-V.SW",4
-"81","BPDG.SW",4
-"82","CADN.SW",4
-"83","LEON.SW",4
-"84","BC.SW",4
-"85","GOLI.SW",4
-"86","GBMN.SW",4
-"87","ABBV.SW",4
-"88","MCHN.SW",4
-"89","CL.SW",4
-"90","BCJ.SW",4
-"91","PEHN.SW",4
-"92","BSKP.SW",4
-"93","PM.SW",4
-"94","CPEN.SW",4
-"95","METN.SW",4
-"96","ZUGN.SW",4
-"97","SPCE.SW",4
-"98","BANB.SW",4
-"99","LECN.SW",4
-"100","NBEN.SW",4
-"101","CPENE.SW",4
-"102","TOHN.SW",4
-"103","MYRN.SW",4
-"104","WKBN.SW",4
-"105","ZEHN.SW",4
-"106","CICN.SW",4
-"107","COTN.SW",4
-"108","ZG.SW",4
-"109","ABX.SW",4
-"110","NEWN.SW",4
-"111","DCN.SW",4
-"112","SFPN.SW",4
-"113","EPH.SW",4
-"114","BCGE.SW",4
-"115","BEKN.SW",4
-"116","NOVN.VX",5
-"117","SGSN.VX",5
-"118","ROG.VX",5
-"119","^SSMI",5
-"120","NESN.VX",5
-"121","RO.SW",5
-"122","EMMN.SW",5
-"123","LISP.SW",5
-"124","EMSN.SW",5
-"125","BRKN.SW",5
-"126","PORTFO",5
-"127","CSCO.SW",6
-"128","TK.SW",6
-"129","FPE3.SW",6
-"130","RNO.SW",6
-"131","NOVOB.SW",6
-"132","ISP.SW",6
-"133","DTE.SW",6
-"134","DESN.SW",6
-"135","DBK.SW",6
-"136","CS.SW",6
-"137","SPSN.SW",6
-"138","RDN.SW",6
-"139","GSK.SW",6
-"140","BION.SW",6
-"141","ZUBN.SW",6
-"142","VLRT.SW",6
-"143","FP.SW",6
-"144","SANN.SW",6
-"145","LIN.SW",6
-"146","FME.SW",6
-"147","ZBH.SW",6
-"148","DAI.SW",6
-"149","IFX.SW",6
-"150","KO.SW",6
-"151","EOAN.SW",6
-"152","PRFN.SW",6
-"153","WARN.SW",6
-"154","ASML.SW",6
-"155","LHA.SW",6
-"156","BP.SW",6
-"157","DAN.SW",6
-"158","IBM.SW",6
-"159","MSFT.SW",6
-"160","AMS.SW",6
-"161","TOYMO.SW",6
-"162","GMI.SW",6
-"163","XOM.SW",6
-"164","SAHN.SW",6
-"165","EI.SW",6
-"166","MO.SW",6
-"167","BLT.SW",6
-"168","STGN.SW",6
-"169","GOOGL.SW",6
-"170","INTC.SW",6
-"171","JNJ.SW",6
-"172","ESUN.SW",6
-"173","TOSH.SW",6
-"174","NHY.SW",6
-"175","MCD.SW",6
-"176","MUV2.SW",6
-"177","COPN.SW",6
-"178","ADS.SW",6
-"179","MC.SW",6
-"180","RDSA.SW",6
-"181","BB.SW",6
-"182","SGKN.SW",6
-"183","LINN.SW",6
-"184","AAPL.SW",6
-"185","SAP.SW",6
-"186","BMW.SW",6
-"187","RUS.SW",6
-"188","ALPN.SW",6
-"189","BOSN.SW",6
-"190","LONN.VX",7
-"191","PHI.SW",7
-"192","UBXN.SW",7
-"193","VZN.SW",7
-"194","VIE.SW",7
-"195","HBMN.SW",7
-"196","PEDU.SW",7
-"197","AUTN.SW",7
-"198","UCG.SW",7
-"199","ELMN.SW",7
-"200","BOBNN.SW",7
-"201","WMN.SW",7
-"202","VAHN.SW",7
-"203","AMGN.SW",7
-"204","MRK.SW",7
-"205","PG.SW",7
-"206","ADXN.SW",7
-"207","ALSN.SW",7
-"208","RIGN.SW",7
-"209","MBTN.SW",7
-"210","STL.SW",7
-"211","T.SW",7
-"212","GRKP.SW",7
-"213","CA.SW",7
-"214","TIBN.SW",7
-"215","BA.SW",7
-"216","UG.SW",7
-"217","SOFB.SW",7
-"218","RWE.SW",7
-"219","SAN.SW",7
-"220","HEN3.SW",7
-"221","BLIN.SW",7
-"222","SONC.SW",7
-"223","BELL.SW",7
-"224","GUR.SW",7
-"225","AXP.SW",7
-"226","GLE.SW",7
-"227","HUE.SW",7
-"228","HREN.SW",7
-"229","STMN.SW",7
-"230","MIKN.SW",7
-"231","AAM.SW",7
-"232","CMBN.SW",7
-"233","GOB.SW",7
-"234","DOKA.SW",7
-"235","CAT.SW",7
-"236","SLHN.VX",8
-"237","ABBN.VX",8
-"238","ADEN.VX",8
-"239","BAER.VX",8
-"240","SREN.VX",8
-"241","OERL.SW",8
-"242","SUN.SW",8
-"243","VONN.SW",8
-"244","NWRN.SW",8
-"245","AIRN.SW",8
-"246","CLTN.SW",8
-"247","KNIN.VX",8
-"248","KOMN.SW",8
-"249","CFT.SW",8
-"250","TAMN.SW",8
-"251","BEAN.SW",8
-"252","ALTN.SW",8
-"253","SLB.SW",8
-"254","CASN.SW",8
-"255","LISN.SW",8
-"256","DAE.SW",8
-"257","BUCN.SW",8
-"258","TEMN.SW",8
-"259","CLN.VX",8
-"260","KUD.SW",8
-"261","PWTN.SW",8
-"262","CPGN.SW",8
-"263","COM.SW",8
-"264","ASCN.SW",8
-"265","SHLTN.SW",8
-"266","BALN.VX",8
-"267","VALN.SW",8
-"268","HUBN.SW",8
-"269","BCVN.SW",8
-"270","FORN.SW",8
-"271","HELN.SW",8
-"272","PARG.SW",8
-"273","DUFN.VX",8
-"274","CLXN.SW",8
-"275","SOON.VX",8
-"276","LIFE.SW",8
-"277","SQN.SW",8
-"278","HBLN.SW",8
-"279","SWTQ.SW",8
-"280","RIEN.SW",8
-"281","PMI.SW",8
-"282","APGN.SW",8
-"283","ZWM.SW",9
-"284","CIE.SW",9
-"285","DPW.SW",10
-"286","ALV.SW",10
-"287","RIOP.SW",10
-"288","BARC.SW",10
-"289","AIRE.SW",10
-"290","BATS.SW",10
-"291","NOKIA.SW",10
+"","Tick_2000-11-21_To_2001-07-03","Membership_2000-11-21_To_2001-07-03","Name_2000-11-21_To_2001-07-03","Exchange_2000-11-21_To_2001-07-03","Category.Name_2000-11-21_To_2001-07-03"
+"1","SCMN.VX",1,"Swisscom AG","EBS",""
+"2","GEBN.VX",1,"Geberit AG","EBS",""
+"3","ABBN.VX",1,"ABB Ltd","EBS",""
+"4","GIVN.VX",1,"Givaudan SA","EBS",""
+"5","BARN.SW",1,"Barry Callebaut AG","EBS",""
+"6","SIN.SW",1,"Siemens Aktiengesellschaft","EBS",""
+"7","FHZN.SW",1,"Flughafen Zürich AG","EBS",""
+"8","LEHN.SW",1,"LEM Holding SA","EBS",""
+"9","EDHN.SW",1,"Energiedienst Holding AG","EBS",""
+"10","GE.SW",1,"General Electric Company","EBS",""
+"11","MOBN.SW",1,"Mobimo Holding AG","EBS",""
+"12","SCHP.VX",1,"Schindler Holding AG","EBS",""
+"13","IFCN.SW",1,"INFICON Holding AG","EBS",""
+"14","SCHN.SW",1,"Schindler Holding AG","EBS",""
+"15","KARN.SW",1,"Kardex AG","EBS",""
+"16","MOZN.SW",1,"mobilezone holding ag","EBS",""
+"17","BVZN.SW",1,"BVZ Holding AG","EBS",""
+"18","DKSH.SW",1,"DKSH Holding Ltd.","EBS",""
+"19","ALLN.SW",1,"Allreal Holding AG","EBS",""
+"20","VW.SW",1,"Volkswagen Aktiengesellschaft","EBS",""
+"21","BAS.SW",1,"BASF SE","EBS",""
+"22","TECN.SW",1,"Tecan Group Ltd.","EBS",""
+"23","PSPN.SW",1,"PSP Swiss Property AG","EBS",""
+"24","SFZN.SW",1,"Siegfried Holding AG","EBS",""
+"25","MMM.SW",1,"3M Company","EBS",""
+"26","UHR.VX",2,"The Swatch Group AG","EBS",""
+"27","UBSG.VX",2,"UBS Group AG","EBS",""
+"28","UBXN.SW",2,"u-blox Holding AG","EBS",""
+"29","UG.SW",2,"Peugeot S.A.","EBS",""
+"30","AMGN.SW",2,"Amgen Inc.","EBS",""
+"31","MCD.SW",2,"McDonald's Corporation","EBS",""
+"32","BLIN.SW",2,"BFW Liegenschaften AG","EBS",""
+"33","VLRT.SW",2,"Valartis Group AG","EBS",""
+"34","AUTN.SW",2,"Autoneum Holding AG","EBS",""
+"35","PHI.SW",2,"Koninklijke Philips N.V.","EBS",""
+"36","PG.SW",2,"The Procter & Gamble Company","EBS",""
+"37","AXP.SW",2,"American Express Company","EBS",""
+"38","SAN.SW",2,"Sanofi","EBS",""
+"39","GAM.SW",2,"GAM Holding AG","EBS",""
+"40","CS.SW",2,"AXA SA","EBS",""
+"41","VAHN.SW",2,"Vaudoise Assurances Holding SA","EBS",""
+"42","RWE.SW",2,"RWE I","EBS",""
+"43","GOB.SW",2,"Compagnie de Saint-Gobain S.A.","EBS",""
+"44","SOFB.SW",2,"SoftBank Group Corp.","EBS",""
+"45","ADENE.SW",2,"Adecco Group AG","EBS",""
+"46","GLE.SW",2,"Societe Generale Group","EBS",""
+"47","T.SW",2,"AT&T","EBS",""
+"48","MRK.SW",2,"Merck & Co., Inc.","EBS",""
+"49","WMN.SW",2,"Walter Meier AG","EBS",""
+"50","BA.SW",2,"The Boeing Company","EBS",""
+"51","NEV.SW",2,"New Venturetec AG","EBS",""
+"52","ROL.SW",2,"Von Roll Holding AG","EBS",""
+"53","AAM.SW",2,"Anglo American plc","EBS",""
+"54","CPHN.SW",2,"CPH Chemie + Papier Holding AG","EBS",""
+"55","RIGN.SW",2,"Transocean Ltd.","EBS",""
+"56","BION.SW",2,"BB Biotech AG","EBS",""
+"57","MBTN.SW",2,"Meyer Burger Technology AG","EBS",""
+"58","SPCE.SW",2,"Spice Private Equity AG","EBS",""
+"59","UCG.SW",2,"UniCredit S.p.A.","EBS",""
+"60","STL.SW",2,"Statoil ASA","EBS",""
+"61","VZN.SW",2,"VZ Holding AG","EBS",""
+"62","HEN3.SW",2,"Henkel AG & Co. KGaA","EBS",""
+"63","BELL.SW",2,"Bell Food Group AG","EBS",""
+"64","GRKP.SW",2,"Graubündner Kantonalbank","EBS",""
+"65","VILN.SW",2,"Villars Holding S.A.","EBS",""
+"66","CICN.SW",2,"Cicor Technologies Ltd.","EBS",""
+"67","HBMN.SW",2,"HBM Healthcare Investments AG","EBS",""
+"68","ELMN.SW",2,"Elma Electronic AG","EBS",""
+"69","CALN.SW",2,"Calida Holding AG","EBS",""
+"70","BCHN.SW",2,"Burckhardt Compression Holding AG","EBS",""
+"71","CA.SW",2,"Carrefour SA","EBS",""
+"72","LONN.VX",3,"Lonza Group Ltd","EBS",""
+"73","SNBN.SW",3,"Swiss National Bank","EBS",""
+"74","SIK.VX",3,"Sika AG","EBS",""
+"75","ADVN.SW",3,"Adval Tech Holding AG","EBS",""
+"76","BANB.SW",3,"Bachem Holding AG","EBS",""
+"77","BCGE.SW",3,"Banque Cantonale de GenÃ¨ve SA","EBS",""
+"78","BSKP.SW",3,"Basler Kantonalbank","EBS",""
+"79","MCHN.SW",3,"MCH Group AG","EBS",""
+"80","ZG.SW",3,"Zuger Kantonalbank","EBS",""
+"81","ODHN.SW",3,"Orascom Development Holding AG","EBS",""
+"82","NEM.SW",3,"Newmont Mining Corporation","EBS",""
+"83","BEKN.SW",3,"Berner Kantonalbank AG","EBS",""
+"84","PEAN.SW",3,"Peach Property Group AG","EBS",""
+"85","PEDU.SW",3,"Perrot Duval Holding S.A.","EBS",""
+"86","AEVS.SW",3,"Aevis Victoria SA","EBS",""
+"87","LECN.SW",3,"Leclanché SA","EBS",""
+"88","CMBN.SW",3,"Cembra Money Bank AG","EBS",""
+"89","ALSN.SW",3,"ALSO Holding AG","EBS",""
+"90","BLKB.SW",3,"Basellandschaftliche Kantonalbank","EBS",""
+"91","GOLI.SW",3,"Gold Fields Limited","EBS",""
+"92","GAV.SW",3,"Carlo Gavazzi Holding AG","EBS",""
+"93","ZUGN.SW",3,"Zug Estates Holding AG","EBS",""
+"94","SAHN.SW",3,"Schaffner Holding AG","EBS",""
+"95","DCN.SW",3,"Datacolor AG","EBS",""
+"96","ADXN.SW",3,"Addex Therapeutics Ltd","EBS",""
+"97","BKW.SW",3,"BKW AG","EBS",""
+"98","TOHN.SW",3,"Tornos Holding AG","EBS",""
+"99","CPEN.SW",3,"Castle Private Equity AG","EBS",""
+"100","HREN.SW",3,"Romande Energie Holding SA","EBS",""
+"101","SLB.SW",3,"Schlumberger Limited","EBS",""
+"102","ABBV.SW",3,"AbbVie Inc.","EBS",""
+"103","CAT.SW",3,"Caterpillar Inc.","EBS",""
+"104","STGN.SW",3,"Starrag Group Holding AG","EBS",""
+"105","RDN.SW",3,"Randstad Holding NV","EBS",""
+"106","OFN.SW",3,"Orell Füssli Holding AG","EBS",""
+"107","MIKN.SW",3,"Mikron Holding AG","EBS",""
+"108","STLN.SW",3,"Schmolz + Bickenbach AG","EBS",""
+"109","AMS.SW",3,"ams AG","EBS",""
+"110","BC.SW",3,"Bank Cler AG","EBS",""
+"111","HUE.SW",3,"Hügli Holding AG","EBS",""
+"112","YPSN.SW",3,"Ypsomed Holding AG","EBS",""
+"113","SONC.SW",3,"Sony Corporation","EBS",""
+"114","VBSN.SW",3,"IVF Hartmann Holding AG","EBS",""
+"115","HBMNE.SW",3,"HBM N 2. LINIE","EBS",""
+"116","PEHN.SW",3,"Private Equity Holding AG","EBS",""
+"117","GBMN.SW",3,"Goldbach Group AG","EBS",""
+"118","BOBNN.SW",3,"Bobst Group SA","EBS",""
+"119","TIBN.SW",3,"Bergbahnen Engelberg-Trübsee-Titlis AG","EBS",""
+"120","GEBNE.SW",3,"GEBERIT N 2. LINIE","EBS",""
+"121","CPENE.SW",3,"CASTLE PRIVATE N 2. LINIE","EBS",""
+"122","BOSN.SW",3,"Bossard Holding AG","EBS",""
+"123","LEON.SW",3,"Leonteq AG","EBS",""
+"124","STMN.SW",3,"Straumann Holding AG","EBS",""
+"125","ABX.SW",3,"Barrick Gold Corporation","EBS",""
+"126","FTON.SW",3,"Feintool International Holding AG","EBS",""
+"127","METN.SW",3,"Metall Zug AG","EBS",""
+"128","GUR.SW",3,"Gurit Holding AG","EBS",""
+"129","MYRN.SW",3,"Myriad Group AG","EBS",""
+"130","IBM.SW",4,"International Business Machines Corporation","EBS",""
+"131","DBK.SW",4,"Deutsche Bank Aktiengesellschaft","EBS",""
+"132","DTE.SW",4,"Deutsche Telekom AG","EBS",""
+"133","LHA.SW",4,"Deutsche Lufthansa Aktiengesellschaft","EBS",""
+"134","TK.SW",4,"ThyssenKrupp AG","EBS",""
+"135","CSCO.SW",4,"Cisco Systems, Inc.","EBS",""
+"136","MO.SW",4,"Altria Group, Inc.","EBS",""
+"137","SCR.SW",4,"SCOR SE","EBS",""
+"138","FME.SW",4,"Fresenius Medical C","EBS",""
+"139","FPE3.SW",4,"Fuchs Petrolub SE","EBS",""
+"140","BB.SW",4,"BlackBerry Limited","EBS",""
+"141","XOM.SW",4,"Exxon Mobil Corporation","EBS",""
+"142","RIOP.SW",4,"Rio Tinto plc","EBS",""
+"143","NOKIA.SW",4,"Nokia Corporation","EBS",""
+"144","LIN.SW",4,"Linde Aktiengesellschaft","EBS",""
+"145","RNO.SW",4,"Renault SA","EBS",""
+"146","IFX.SW",4,"Infineon Technolog","EBS",""
+"147","BARC.SW",4,"Barclays PLC","EBS",""
+"148","ALV.SW",4,"Allianz SE","EBS",""
+"149","RDSA.SW",4,"Royal Dutch Shell plc","EBS",""
+"150","TOSH.SW",4,"Toshiba Corporation","EBS",""
+"151","AIRE.SW",4,"Airesis SA","EBS",""
+"152","ADS.SW",4,"Adidas AG","EBS",""
+"153","NOVOB.SW",4,"Novo Nordisk A/S","EBS",""
+"154","BLT.SW",4,"BHP Billiton plc","EBS",""
+"155","ASML.SW",4,"ASML Holding N.V.","EBS",""
+"156","ZBH.SW",4,"Zimmer Biomet Holdings, Inc.","EBS",""
+"157","NHY.SW",4,"Norsk Hydro ASA","EBS",""
+"158","GSK.SW",4,"GlaxoSmithKline plc","EBS",""
+"159","PRFN.SW",4,"Perfect Holding SA","EBS",""
+"160","BATS.SW",4,"Brit Amer Tobacco","EBS",""
+"161","MSFT.SW",4,"Microsoft Corporation","EBS",""
+"162","GOOGL.SW",4,"Alphabet Inc.","EBS",""
+"163","KO.SW",4,"The Coca-Cola Company","EBS",""
+"164","DPW.SW",4,"Deutsche Post","EBS",""
+"165","BMW.SW",4,"BMW I","EBS",""
+"166","BP.SW",4,"BP p.l.c.","EBS",""
+"167","MUV2.SW",4,"Muenchener Rueckver","EBS",""
+"168","WKBN.SW",4,"Banque Cantonale du Valais","EBS",""
+"169","FP.SW",4,"Total","EBS",""
+"170","GMI.SW",4,"Groupe Minoteries SA","EBS",""
+"171","SPSN.SW",4,"Swiss Prime Site AG","EBS",""
+"172","EOAN.SW",4,"E.ON SE","EBS",""
+"173","INTC.SW",4,"Intel Corporation","EBS",""
+"174","ISP.SW",4,"Intesa Sanpaolo S.p.A.","EBS",""
+"175","MC.SW",4,"LVMH Moët Hennessy Louis Vuitton S.E.","EBS",""
+"176","TOYMO.SW",4,"Toyota Motor Corporation","EBS",""
+"177","DAI.SW",4,"Daimler AG","EBS",""
+"178","VIE.SW",4,"Veolia Environnement S.A.","EBS",""
+"179","COTN.SW",4,"Comet Holding AG","EBS",""
+"180","JNJ.SW",4,"Johnson & Johnson","EBS",""
+"181","SAP.SW",4,"SAP SE","EBS",""
+"182","SANN.SW",4,"Santhera Pharmaceuticals Holding AG","EBS",""
+"183","ZUBN.SW",4,"Züblin Immobilien Holding AG","EBS",""
+"184","LINN.SW",4,"Bank Linth LLB AG","EBS",""
+"185","AAPL.SW",4,"Apple Inc.","EBS",""
+"186","ALPN.SW",5,"Alpine Select AG","EBS",""
+"187","F.SW",5,"Ford Motor Company","EBS",""
+"188","EI.SW",5,"Essilor Intl","EBS",""
+"189","SGKN.SW",5,"St. Galler Kantonalbank AG","EBS",""
+"190","CL.SW",5,"Colgate-Palmolive Company","EBS",""
+"191","HLEE.SW",5,"Highlight Event and Entertainment AG","EBS",""
+"192","ORON.SW",5,"ORIOR AG","EBS",""
+"193","BAYN.SW",5,"Bayer Aktiengesellschaft","EBS",""
+"194","RUS.SW",5,"ENR Russia Invest SA","EBS",""
+"195","WARN.SW",5,"Warteck Invest AG","EBS",""
+"196","DAN.SW",5,"Danone","EBS",""
+"197","ALPH.SW",5,"Alpiq Holding AG","EBS",""
+"198","COPN.SW",5,"Cosmo Pharmaceuticals N.V.","EBS",""
+"199","CASNE.SW",5,"Castle Alternative Invest AG","EBS",""
+"200","ARYN.VX",5,"ARYZTA AG","EBS",""
+"201","DESN.SW",5,"Dottikon Es Holding AG","EBS",""
+"202","LUKN.SW",5,"Luzerner Kantonalbank AG","EBS",""
+"203","STRN.SW",5,"Schlatter Industries AG","EBS",""
+"204","HOCN.SW",5,"Hochdorf Holding AG","EBS",""
+"205","JFN.SW",5,"Jungfraubahn Holding AG","EBS",""
+"206","DOKA.SW",5,"dormakaba Holding AG","EBS",""
+"207","ESUN.SW",5,"Edisun Power Europe AG","EBS",""
+"208","SLHN.VX",6,"Swiss Life Holding AG","EBS",""
+"209","ADEN.VX",6,"Adecco Group AG","EBS",""
+"210","BAER.VX",6,"Julius Baer Group Ltd.","EBS",""
+"211","SREN.VX",6,"Swiss Re Ltd","EBS",""
+"212","DAE.SW",6,"Dätwyler Holding Inc.","EBS",""
+"213","ZEHN.SW",6,"Zehnder Group AG","EBS",""
+"214","KNIN.VX",6,"Kuehne + Nagel International AG","EBS",""
+"215","KUD.SW",6,"Kudelski SA","EBS",""
+"216","CASN.SW",6,"Castle Alternative Invest AG","EBS",""
+"217","TAMN.SW",6,"Tamedia AG","EBS",""
+"218","SOON.VX",6,"Sonova Holding AG","EBS",""
+"219","NBEN.SW",6,"nebag ag","EBS",""
+"220","DUFN.VX",6,"Dufry AG","EBS",""
+"221","OERL.SW",6,"OC Oerlikon Corporation AG","EBS",""
+"222","KOMN.SW",6,"Komax Holding AG","EBS",""
+"223","BPDG.SW",6,"Banque Profil de Gestion SA","EBS",""
+"224","TEMN.SW",6,"Temenos Group AG","EBS",""
+"225","LISN.SW",6,"Chocoladefabriken Lindt & Sprüngli AG","EBS",""
+"226","CFT.SW",6,"Compagnie Financière Tradition SA","EBS",""
+"227","PWTN.SW",6,"Panalpina World Transport (Holding) Ltd.","EBS",""
+"228","BALN.VX",6,"Bâloise Holding AG","EBS","Property & Casualty Insurance"
+"229","LIFE.SW",6,"LifeWatch AG","EBS",""
+"230","VATN.SW",6,"Valiant Holding AG","EBS",""
+"231","HBLN.SW",6,"Hypothekarbank Lenzburg AG","EBS",""
+"232","ALTN.SW",6,"Altin AG","EBS",""
+"233","FORN.SW",6,"Forbo Holding AG","EBS",""
+"234","CLTN.SW",6,"COLTENE Holding AG","EBS",""
+"235","CLXN.SW",6,"CREALOGIX Holding AG","EBS",""
+"236","CADN.SW",6,"Sociedad Comercial del Plata S.A.","EBS",""
+"237","SHLTN.SW",6,"SHL Telemedicine Ltd.","EBS",""
+"238","VW-V.SW",6,"Volkswagen Aktiengesellschaft","EBS",""
+"239","SFPN.SW",6,"Swiss Finance & Property Investment AG","EBS",""
+"240","RLD.SW",6,"Edmond de Rothschild (Suisse) S.A.","EBS",""
+"241","SUN.SW",6,"Sulzer Ltd","EBS",""
+"242","VONN.SW",6,"Vontobel Holding AG","EBS",""
+"243","BUCN.SW",6,"Bucher Industries AG","EBS",""
+"244","HELN.SW",6,"Helvetia Holding AG","EBS",""
+"245","APGN.SW",6,"APG|SGA SA","EBS",""
+"246","SQN.SW",6,"Swissquote Group Holding Ltd","EBS",""
+"247","BCVN.SW",6,"Banque Cantonale Vaudoise","EBS",""
+"248","SWTQ.SW",6,"Schweiter Technologies AG","EBS",""
+"249","NWRN.SW",6,"Newron Pharmaceuticals S.p.A.","EBS",""
+"250","ASCN.SW",6,"Ascom Holding AG","EBS",""
+"251","PARG.SW",6,"Pargesa Holding SA","EBS",""
+"252","COM.SW",6,"COMMERZBANK I","EBS",""
+"253","CPGN.SW",6,"Cham Paper Group Holding AG","EBS",""
+"254","RIEN.SW",6,"Rieter Holding AG","EBS",""
+"255","HUBN.SW",6,"Huber+Suhner AG","EBS",""
+"256","CLN.VX",6,"Clariant AG","EBS",""
+"257","VALN.SW",6,"Valora Holding AG","EBS",""
+"258","PMI.SW",6,"Philip Morris International Inc.","EBS",""
+"259","AIRN.SW",6,"Airopack Technology Group AG","EBS",""
+"260","BEAN.SW",6,"Belimo Holding AG","EBS",""
+"261","PM.SW",6,"Phoenix Mecano AG","EBS",""
+"262","NOVN.VX",7,"Novartis AG","EBS",""
+"263","SGSN.VX",7,"SGS SA","EBS",""
+"264","ROG.VX",7,"Roche Holding AG","EBS",""
+"265","^SSMI",7,"245","245","245"
+"266","NESN.VX",7,"Nestlé S.A.","EBS",""
+"267","EMSN.SW",7,"EMS-Chemie Holding AG","EBS",""
+"268","BRKN.SW",7,"Burkhalter Holding AG","EBS",""
+"269","LISP.SW",7,"Chocoladefabriken Lindt & Sprüngli AG","EBS",""
+"270","EMMN.SW",7,"Emmi AG","EBS",""
+"271","RO.SW",7,"Roche Holding AG","EBS",""
+"272","PORTFO",7,"204","204","204"
+"273","NEWN.SW",8,"New Value AG","EBS",""
+"274","EPH.SW",8,"Eastern Property Holdings Limited","EBS",""
+"275","CIE.SW",8,"Compagnie Internationale pour la Communication","EBS",""
+"276","EVE.SW",8,"Evolva Holding SA","EBS",""
+"277","BCJ.SW",8,"Banque Cantonale du Jura","EBS",""
+"278","ZWM.SW",8,"Zwahlen & Mayr SA","EBS",""
+"279","LLY.SW",8,"Eli Lilly and Company","EBS",""
+"280","CFR.VX",9,"Compagnie Financière Richemont SA","EBS",""
+"281","ZURN.VX",9,"Zurich Insurance Group AG","EBS",""
+"282","LHN.VX",9,"LafargeHolcim Ltd","EBS",""
+"283","CSGN.VX",9,"Credit Suisse Group AG","EBS",""
+"284","VET.SW",9,"Vetropack Holding AG","EBS",""
+"285","EFGN.SW",9,"EFG International AG","EBS",""
+"286","UHRN.SW",9,"The Swatch Group AG","EBS",""
+"287","ISN.SW",9,"Intershop Holding AG","EBS",""
+"288","INRN.SW",9,"Interroll Holding AG","EBS",""
+"289","BBN.SW",10,"Bellevue Group AG","EBS",""
+"290","BSLN.SW",10,"Basilea Pharmaceutica AG","EBS",""
+"291","IMPN.SW",10,"Implenia AG","EBS",""

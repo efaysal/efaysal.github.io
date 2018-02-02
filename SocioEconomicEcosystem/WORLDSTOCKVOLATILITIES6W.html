@@ -1,0 +1,304 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title> Analytics &amp Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script language="JavaScript">
+<!--
+function autoResize(id){
+    var newheight;
+    var newwidth;
+
+    if(document.getElementById){
+        newheight=document.getElementById(id).contentWindow.document .body.scrollHeight;
+        newwidth=document.getElementById(id).contentWindow.document .body.scrollWidth;
+    }
+
+    document.getElementById(id).height= (newheight) + "px";
+    document.getElementById(id).width= (newwidth) + "px";
+}
+//-->
+</script>
+
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Numerics'
++ '<br><br>'
+                + ' Click Above:'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+
+
+<header>
+    <body style="background-color:lightgrey;">
+   
+   <h3 style="color:black"> Empirical   Assessment of Volatility Transmission in Major World Stock Market Exchanges </h3>
+    <h4 style="color:black"> Learning Volatility Community Structure </h4>
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+<!-- <div id="banner">
+    <div>
+        <span id="logo"></span>
+
+        <a href="https://github.com/nvd3-community/nvd3" target="github" class="button fork"><strong>GitHub</strong></a>
+        <a href="site.html" class="button fork docs selected"><strong>Examples</strong></a>
+        <a href="documentation.html" class="button fork docs"><strong>Documentation</strong></a>
+        <div class="downloads">
+            <span>Downloads:</span>
+            <ul>
+                <li><a href="https://github.com/nvd3-community/nvd3/zipball/master" class="button">ZIP</a></li>
+                <li><a href="https://github.com/nvd3-community/nvd3/tarball/master" class="button">TAR</a></li>
+            </ul>
+        </div>
+    </div>
+</div><!-- end banner --> 
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+<h6> 
+  <strong> -: </strong> 
+   <br> 
+<strong>  In this work, the used numerical datasets are for informational use only and with an only purpose to illustrate numerically our research points. Most of these research points have been inspired by our seminal work in: <a href="http://www.sciencedirect.com/science/article/pii/S0885064X99905095"> Quasi-Monte Carlo Simulation of Diffusion</a>, in a way that can be directly applied to Stock Market Volatility Calculations.
+  </strong> </h5>
+<h6> 
+Terms: A security is a tradable asset in a financial market, this term refers to any form of financial instrument. 
+In financial stock market, security is termed as stock, asset, equity or share. In this essay, stock is used to refer to security.
+The degree by which its price fluctuates can be termed as volatility. Volatility Contagion refers to the fact that stock returns in interconnected stock markets manifest anomalous patterns of correlation during turning points(crisis). Specially, during the last global financial crisis period, the affected asset markets induced a financial contagion effects that got spread out globally to other asset markets.
+</h6>
+
+<h1> 
+    Aims and Objectives
+</h1>
+Volatility transmission among major World stock market exchanges is empirically studied. Daily closing prices of all major equity indices from a number of countries are examined by applying numerical analysis, machine learning and analytic estimations to a mathematical model based on oscillatory processes. The derivation of these oscillatory processes uses the stochastic assumptions in the conventional stochastic financial framework. This analytical framework provides numerical values that are capable of being <a href="WORLDSTOCKVOLATILITIES4W.html"> compared and calibrated </a> to capture key stylized facts of historical data from Worldwide equity markets and to characterize empirically the volatility spillovers and contagion.
+<br> <br> 
+As an effective application of this analytical framework, we assess the price volatilities of a number of specific stocks in a given financial stock exchange subject to a well-established regulatory environment, the recently installed policies after the crisis 2007-2008 around the World stock markets as “Marketplace Thresholds" or "Volatility Control Mechanism"(VCM). VCM is a measure designed to protect market integrity by preventing extreme price volatility arising from major trading errors and other unusual incidents.
+<br> <br> 
+ Volatility Community Structure(VCS): the derived numerical features for each stock help to build a volatility network between all the considered stocks traded in the considered stock exchange. Unsupervised Machine Learning methods are used for the detection and identification of communities in this complex volatility network. This community structure groups sets of stocks such that each set of stocks is volatility-connected internally. Each community structure is assigned the averaged features that are computed from the features of stocks belonging to this community structure.
+<br> <br> 
+Numerical Comparisons between pre-crisis and post-crisis volatility are provided to assess the impact of these reform measures and changes in financial markets micro-structure during the crisis period on volatility spillover?
+<br><br>
+
+ <h1> Real Data(Yahoo!) &amp Numerical Results:</h1>
+The numerical results related to major World stock market indices, since 2001 up to recently, are provided to empirically assess the existence of any evidence for volatility transmission or volatility spillover in the major World stock market exchanges.
+<br><br>
+ The volatility transmission is found to have time varying nature, showing higher volatility spillover during
+global financial crisis. Also the domestic financial contagion is of equal importance in inducing volatility spillover especially 
+during internal shocks related to investors and policy makers decisions, asset markets in the economy gets affected and showed diverging volatility control mechanisms around these turning points.  
+<br><br>
+These numerical results are presented in the following Interactive Charts: 
+<br> 
+<strong>
+(a double click on a Volatility Community Structure(VCS) shows its associated curve) </strong>
+<br> <br>
+<strong>  Major World Stock Market Indexes </strong>: 
+<ul>  <strong>  On Sampled Stocks </strong>: 
+    <li type="square">  <a href= "./Y2018STOCKMARKET/RawVolatility_MWSTOCKMARKETS_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/LearningDepthVolatility_MWSTOCKMARKETS_Z_4W_.html"> Calibrated Historical Volatility as function of Oscillatory Processes. </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/DivergingVCM_MWSTOCKMARKETS_Y_4W_.html"> Diverging Volatility Control Mechanism. </a> </li>
+      <strong>  On Learned Volatility Community Structures </strong>:
+     <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedRawVolatility_MWSTOCKMARKETS_3W_.html"> Raw Historical Volatility (Not Calibrated).  </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedCalibratedVolatility_MWSTOCKMARKETS_3W_.html"> Calibrated Historical Volatility as function of Oscillatory Processes. </a> </li>
+   <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedDivergenceVolatilityControlMechanisms_MWSTOCKMARKETS_3W_.html"> Diverging Volatility Control Mechanism. </a> </li>
+</ul>
+
+<strong>  Major World Banks </strong>: 
+<ul>  <strong>  On Sampled Stocks </strong>: 
+    <li type="square">  <a href= "./Y2018STOCKMARKET/RawVolatility_MWBANK_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/LearningDepthVolatility_MWBANK_Z_4W_.html"> Calibrated Historical Volatility as function of Oscillatory Processes. </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/DivergingVCM_MWBANK_Y_4W_.html"> Diverging Volatility Control Mechanism. </a> </li>
+      <strong>  On Learned Volatility Community Structures </strong>:
+     <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedRawVolatility_MWBANK_3W_.html"> Raw Historical Volatility (Not Calibrated).  </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedCalibratedVolatility_MWBANK_3W_.html"> Calibrated Historical Volatility as function of Oscillatory Processes. </a> </li>
+   <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedDivergenceVolatilityControlMechanisms_MWBANK_3W_.html"> Diverging Volatility Control Mechanism. </a> </li>
+</ul>
+
+
+<strong> Switzerland </strong>: 
+<ul>  <strong>  On Sampled Stocks </strong>: 
+    <li type="square">  <a href= "./Y2018STOCKMARKET/RawVolatility_Switzerland_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/LearningDepthVolatility_Switzerland_Z_4W_.html"> Calibrated Historical Volatility as function of Oscillatory Processes. </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/DivergingVCM_Switzerland_Y_4W_.html"> Diverging Volatility Control Mechanism. </a> </li>
+      <strong>  On Learned Volatility Community Structures </strong>:
+     <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedRawVolatility_Switzerland_3W_.html"> Raw Historical Volatility (Not Calibrated).  </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedCalibratedVolatility_Switzerland_3W_.html"> Calibrated Historical Volatility as function of Oscillatory Processes. </a> </li>
+   <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedDivergenceVolatilityControlMechanisms_Switzerland_3W_.html"> Diverging Volatility Control Mechanism. </a> </li>
+</ul>
+
+<strong> SSCB_Canada </strong>: 
+<ul>  <strong>  On Sampled Stocks </strong>: 
+    <li type="square">  <a href= "./Y2018STOCKMARKET/RawVolatility_SSCB_Canada_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/LearningDepthVolatility_SSCB_Canada_Z_4W_.html"> Calibrated Historical Volatility as function of Oscillatory Processes. </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/DivergingVCM_SSCB_Canada_Y_4W_.html"> Diverging Volatility Control Mechanism. </a> </li>
+      <strong>  On Learned Volatility Community Structures </strong>:
+     <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedRawVolatility_SSCB_Canada_3W_.html"> Raw Historical Volatility (Not Calibrated).  </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedCalibratedVolatility_SSCB_Canada_3W_.html"> Calibrated Historical Volatility as function of Oscillatory Processes. </a> </li>
+   <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedDivergenceVolatilityControlMechanisms_SSCB_Canada_3W_.html"> Diverging Volatility Control Mechanism. </a> </li>
+</ul>
+
+
+<strong> France </strong>: 
+<ul>  <strong>  On Sampled Stocks </strong>: 
+    <li type="square">  <a href= "./Y2018STOCKMARKET/RawVolatility_France_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/LearningDepthVolatility_France_Z_4W_.html"> Calibrated Historical Volatility as function of Oscillatory Processes. </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/DivergingVCM_France_Y_4W_.html"> Diverging Volatility Control Mechanism. </a> </li>
+      <strong>  On Learned Volatility Community Structures </strong>:
+     <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedRawVolatility_France_3W_.html"> Raw Historical Volatility (Not Calibrated).  </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedCalibratedVolatility_France_3W_.html"> Calibrated Historical Volatility as function of Oscillatory Processes. </a> </li>
+   <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedDivergenceVolatilityControlMechanisms_France_3W_.html"> Diverging Volatility Control Mechanism. </a> </li>
+</ul>
+
+<strong> Germany </strong>: 
+<ul>  <strong>  On Sampled Stocks </strong>: 
+    <li type="square">  <a href= "./Y2018STOCKMARKET/RawVolatility_Germany_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/LearningDepthVolatility_Germany_Z_4W_.html"> Calibrated Historical Volatility as function of Oscillatory Processes. </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/DivergingVCM_Germany_Y_4W_.html"> Diverging Volatility Control Mechanism. </a> </li>
+      <strong>  On Learned Volatility Community Structures </strong>:
+     <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedRawVolatility_Germany_3W_.html"> Raw Historical Volatility (Not Calibrated).  </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedCalibratedVolatility_Germany_3W_.html"> Calibrated Historical Volatility as function of Oscillatory Processes. </a> </li>
+   <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedDivergenceVolatilityControlMechanisms_Germany_3W_.html"> Diverging Volatility Control Mechanism. </a> </li>
+</ul>
+
+<strong> United Kingdom </strong>: 
+<ul>  <strong>  On Sampled Stocks </strong>: 
+    <li type="square">  <a href= "./Y2018STOCKMARKET/RawVolatility_United Kingdom_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/LearningDepthVolatility_United Kingdom_Z_4W_.html"> Calibrated Historical Volatility as function of Oscillatory Processes. </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/DivergingVCM_United Kingdom_Y_4W_.html"> Diverging Volatility Control Mechanism. </a> </li>
+      <strong>  On Learned Volatility Community Structures </strong>:
+     <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedRawVolatility_United Kingdom_3W_.html"> Raw Historical Volatility (Not Calibrated).  </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedCalibratedVolatility_United Kingdom_3W_.html"> Calibrated Historical Volatility as function of Oscillatory Processes. </a> </li>
+   <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedDivergenceVolatilityControlMechanisms_United Kingdom_3W_.html"> Diverging Volatility Control Mechanism. </a> </li>
+</ul>
+
+<strong> Spain </strong>: 
+<ul>  <strong>  On Sampled Stocks </strong>: 
+    <li type="square">  <a href= "./Y2018STOCKMARKET/RawVolatility_Spain_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/LearningDepthVolatility_Spain_Z_4W_.html"> Calibrated Historical Volatility as function of Oscillatory Processes. </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/DivergingVCM_Spain_Y_4W_.html"> Diverging Volatility Control Mechanism. </a> </li>
+      <strong>  On Learned Volatility Community Structures </strong>:
+     <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedRawVolatility_Spain_3W_.html"> Raw Historical Volatility (Not Calibrated).  </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedCalibratedVolatility_Spain_3W_.html"> Calibrated Historical Volatility as function of Oscillatory Processes. </a> </li>
+   <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedDivergenceVolatilityControlMechanisms_Spain_3W_.html"> Diverging Volatility Control Mechanism. </a> </li>
+</ul>
+
+<strong> India </strong>: 
+<ul>  <strong>  On Sampled Stocks </strong>: 
+    <li type="square">  <a href= "./Y2018STOCKMARKET/RawVolatility_India_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/LearningDepthVolatility_India_Z_4W_.html"> Calibrated Historical Volatility as function of Oscillatory Processes. </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/DivergingVCM_India_Y_4W_.html"> Diverging Volatility Control Mechanism. </a> </li>
+      <strong>  On Learned Volatility Community Structures </strong>:
+     <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedRawVolatility_India_3W_.html"> Raw Historical Volatility (Not Calibrated).  </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedCalibratedVolatility_India_3W_.html"> Calibrated Historical Volatility as function of Oscillatory Processes. </a> </li>
+   <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedDivergenceVolatilityControlMechanisms_India_3W_.html"> Diverging Volatility Control Mechanism. </a> </li>
+</ul>
+
+<strong> South Korea </strong>: 
+<ul>  <strong>  On Sampled Stocks </strong>: 
+    <li type="square">  <a href= "./Y2018STOCKMARKET/RawVolatility_South Korea_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/LearningDepthVolatility_South Korea_Z_4W_.html"> Calibrated Historical Volatility as function of Oscillatory Processes. </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/DivergingVCM_South Korea_Y_4W_.html"> Diverging Volatility Control Mechanism. </a> </li>
+      <strong>  On Learned Volatility Community Structures </strong>:
+     <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedRawVolatility_South Korea_3W_.html"> Raw Historical Volatility (Not Calibrated).  </a> </li>
+       <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedCalibratedVolatility_South Korea_3W_.html"> Calibrated Historical Volatility as function of Oscillatory Processes. </a> </li>
+   <li type="square">  <a href= "./Y2018STOCKMARKET/AveragedDivergenceVolatilityControlMechanisms_South Korea_3W_.html"> Diverging Volatility Control Mechanism. </a> </li>
+</ul>
+
+<h4> Implementation:</h4>
+The insight analysis uses R programming language to process the results ( R is a software environment for statistical computing
+and graphics supported by the <a target="alone" href="https://www.r-project.org/" > R Foundation for Statistical Computing </a>). The interactive data visualizations in web browsers uses the <a target="alone"  href="http://nvd3.org/"> NVD3 data visualization library</a>.
+<br> <br>       
+    <h4>   Author scientific profile:  </h4>
+Statistics and Applied Mathematics for Data Analytics, Identify opportunities to apply Mathematical Statistics, Numerical Methods, Machine Learning and Pattern Recognition to investigate and implement solutions to the field of Data Content Analytics. Data prediction via computational methods to predict from massive amounts of data (Big Data Content). These methods included clustering, regression, survival analysis, neural network, classification , ranking, deep discrepancy learning .
+ <br>   <br> 
+
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com</a>
+    <br> 
+   The MIT License (MIT) Copyright 1994-2017, Faysal El Khettabi, Numerics &amp Analytics, All Rights Reserved.
+     </div> 
+   
+
+</section>
+</div>
+ 
+
+ 
+</body>
+</html>
+
+<!-- 
+Volatility spillover/transmission among major World stock market exchanges is empirically studied. Daily closing prices of all major equity indices from a number of countries are examined by applying numerical analysis, machine learning and analytic estimations to a mathematical model based on oscillatory processes. The derivation of these oscillatory processes uses the stochastic assumptions in the conventional stochastic financial framework. This analytical framework provides numerical values that are capable of being compared and calibrated to capture key stylized facts of historical data from Worldwide equity markets and to characterize empirically the volatility spillovers and contagion.
+
+Also as an effective application of this analytical framework, we assess the price volatilities of a number of specific stocks in a given financial stock exchange subject to a well-established regulatory environment, as the recently installed policies after the crisis 2007-2008 around the World stock markets as “Marketplace Thresholds" or "Volatility Control Mechanism"(VCM). VCM is a measure designed to protect market integrity by preventing extreme price volatility arising from major trading errors and other unusual incidents.
+
+ Volatility Community Structure(VCS): the derived numerical features for each stock help to build a volatility network between all the considered stocks traded in the considered stock exchange. Unsupervised Machine Learning methods are used for the detection and identification of communities in this complex volatility network. This community structure groups sets of stocks such that each set of stocks is volatility-connected internally. Each community structure is assigned the averaged features that are computed from the features of stocks belonging to this community structure.
+
+Numerical Comparisons between pre-crisis and post-crisis volatility are provided to assess the impact of these reform measures and changes in financial markets microstructure during the crisis period on volatility spillover?
+
+The numerical results provide empirical evidence for volatility transmission or volatility spillover in the major World stock market exchanges.
+
+
+ -->
+
+

@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Socio-Econometrica:  Analytics & Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Numerics'
++ '<br><br>'
+                + ' Click Above:'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+    <h3 style="color:black"> USA - Macro-Micro-Economic Indicators</h3>
+    <h3 style="color:black"> Their Inherent Predictability in FRED's Historical Data</h3>
+    <h3 style="color:black"> Using Mathematical Modeling &amp Machine Learning Tools </h3>
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+<!-- <div id="banner">
+    <div>
+        <span id="logo"></span>
+
+        <a href="https://github.com/nvd3-community/nvd3" target="github" class="button fork"><strong>GitHub</strong></a>
+        <a href="site.html" class="button fork docs selected"><strong>Examples</strong></a>
+        <a href="documentation.html" class="button fork docs"><strong>Documentation</strong></a>
+        <div class="downloads">
+            <span>Downloads:</span>
+            <ul>
+                <li><a href="https://github.com/nvd3-community/nvd3/zipball/master" class="button">ZIP</a></li>
+                <li><a href="https://github.com/nvd3-community/nvd3/tarball/master" class="button">TAR</a></li>
+            </ul>
+        </div>
+    </div>
+</div><!-- end banner --> 
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+<h3> Main Results: </h3>
+
+Motivated by a simple application of sound machine learning tools with graph theory approach to assess the predictive power of popular time series economic variables representing the macro and micro state of an economy. When applied to USA-FRED data during the last 100 weeks(or last two years), a Macro/Micro economic indicators network(see the posted image) is formed to calculate its stationary distribution that ranks the indicators from more predictive to less. We find that Net Percentage of Domestic Banks Tightening Standards for Commercial and Industrial Loans to Large and Middle-Market Firms (DRTSCILM) with Velocity of M2 Money Stock (M2V) are the most predictive. Followed by other indicators as depicted in this plot:
+/home/faysal/efaysal.github.io/SocioEconomicEcosystem/TREASURIESUS/FREDMACROINDICATORESSTATDISTRNETWORKEDRATESFRED.pdf
+The temporal dynamics of the most 20 predictive indicators are in:
+
+The used machine learning tools are modeled in a general manner, free from any economical assumptions.
+
+
+
+<br> <br>  
+An important question is how much trust can be placed on such "target for the overnight rate" or "discount rate" to influence really interest rates in an economy?
+<br> <br> 
+<!-- A complementary question is are the observed interest rates playing a prominent role in the determination of monetary policy "target for the overnight rate" or "discount rate"?
+<br> <br>  -->
+Our quantitative analysis uses a set of mathematical models to evaluate the historical interest rates in public databases for patterns that help to answer the question in terms of numerical values. These numerical values are presented into a form guided by this statement "Translating and analyzing big data using charts, graphics, and images is becoming more and more necessary for decision-making." </strong>  promoted by the  <a href="http://apdu.org/"> Association of Public Data Users.</a>  
+<br> <br> 
+We provide:
+<ul>
+    <li type="square">  <strong> Interactive Charting </strong> features the temporal dynamics of the considered interest rates in this work and to facilitate their comparisons. To find out more about the temporal dynamic of a specific interest rate, a double click on its name in the legend creates
+its associated curve and then add up for multiple comparisons.</li> 
+    <br>
+     <li type="square"> <strong> Interest Rates Network  </strong>  is the results of our mathematical modeling and subsequent computation to study the numerical behavior of these interest rates. The obtained numerical values are used to explore and gain new insights into the impact of the temporal decision that determined them and to estimate and highlight specific interconnection levels between them. If there exist groups of interest rates highly interconnected but with few links to other interest rates. This kind of structure carry out much information about the network to answer our question quantitatively.
+     </li>  
+      <br>
+     <li type="square"> <strong> Random Walks on Interest Rates Network</strong>, by considering the interest rates network as a Graph (discrete mathematics), the theory of random walk on this graph help to extract basic properties determined by the <a href="http://jgaa.info/accepted/2006/PonsLatapy2006.10.2.pdf"> spectrum of the graph </a> as its community structures and stationary distribution.
+     </li>
+</ul>
+<h4> Interpretation of stationary distribution values</h4>
+More the stationary distribution value of a given interest rate is higher more this interest rate is affecting significantly the values of the considered interest rates. The interest rates in the lowest stationary distribution class have more difficulty to influence significantly other interest rates values than the interest rates in the highest stationary distribution class.
+
+<ul>
+     <li type="square"> In the case of USA, the medium term interest rates( 3 months, 6 months, 1 to 3 years) are more influence-able  than the effective Federal Funds Rate(FF), FF is moderately influencing other interest rates. The second surprising fact, the interest rates related to Moody's AAA/BAA Bond are blunt and are mathematically just a derivation of the other interest rates.
+     </li>  
+      <br>
+     <li type="square"> While in Canada, the Bank Rate and Target Rate have less-prominent role to influence significantly the interest rates than the medium term interest rates, one year to 5 years.
+     </li>
+</ul>
+ <br>
+<h2> Detailed Numerical Results </h2>
+<h4>  United States of America's  interest rates from  <a href="https://fred.stlouisfed.org/series/">  | FRED | St. Louis Fed </a> </h4>
+<ul>  <strong>  Interactive Charting: </strong>
+    <li type="square">  <a href= "./TREASURIESUS/TREASURIESUSFRED.html"> Raw Historical USA Interest Rates. </a> </li>
+</ul>
+<ul>  <strong>  Interest Rates Network: </strong>
+<div class="image12">
+    <div class="imgContainer">
+      <center>  <img class="middle-img" src="./TREASURIESUS/NOTCALIBRATEDNETWORKEDRATESFRED.jpeg" alt="Channel" /></center>
+    </div>
+</div>
+</ul>
+<ul>  <strong>  Random Walks on Interest Rates Network: </strong>
+<div class="image12">
+    <div class="imgContainer">
+      <center>  <img class="middle-img" src="./TREASURIESUS/STATDISTRNETWORKEDRATESFRED.jpeg" alt="Channel" /></center>
+    </div>
+</div>
+</ul>
+<h4>   Canada's interest rates from <a href="http://www5.statcan.gc.ca/cansim/"> CANSIM-Table 176-0048, BoC-money market and other interest rates </a> </h4>
+<ul>  <strong>  Interactive Charting: </strong>
+    <li type="square">  <a href= "./OhCanada/APPLYMonthlyRateCANSIM1760048.html"> Raw Historical BoC Interest Rates. </a> </li>
+</ul>
+<ul>  <strong>  Interest Rates Network: </strong>
+<div class="image12">
+    <div class="imgContainer">
+      <center>  <img class="middle-img" src="./OhCanada/NOTCALNETWORKCANSIMTable1760048BBY.jpeg" alt="Channel" /></center>
+    </div>
+</div>
+</ul>
+<ul>  <strong>  Random Walks on Interest Rates Network: </strong>
+<div class="image12">
+    <div class="imgContainer">
+      <center>  <img class="middle-img" src="./OhCanada/CSTATDISTRCANSIMTable1760048BBY.jpeg" alt="Channel" /></center>
+    </div>
+</div>
+</ul>
+
+<h1> Implementation:</h1>
+The insight analysis uses R programming language to process the results ( R is a software environment for statistical computing
+and graphics supported by the <a target="alone" href="https://www.r-project.org/" > R Foundation for Statistical Computing </a>). The interactive data visualizations in web browsers uses the <a target="alone"  href="http://nvd3.org/"> NVD3 data visualization library. </a>
+
+
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com</a>
+    <br> 
+   The MIT License (MIT) Copyright 1994-2050, Faysal El Khettabi, Numerics &amp Analytics, All Rights Reserved.
+     </div> 
+   
+
+
+</section>
+</div>
+ 
+
+ 
+</body>
+</html>
+
+
+<!--  
+git add --all
+  git commit -m "Initial commit"
+  git push -u origin master
+ -->

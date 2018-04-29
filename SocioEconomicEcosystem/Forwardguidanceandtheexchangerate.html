@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Socio-Econometrica:  Analytics & Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Numerics'
++ '<br><br>'
+                + ' Click Above:'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+    <h3 style="color:black"> Forward Guidance and Exchange Rate</h3>
+    <h3 style="color:black"> Using Mathematical Modeling &amp Machine Learning Tools </h3>
+<h6 style="color:black"> Automated Numerical Reasoning Framework for Major World Currencies</h6>
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+<!-- <div id="banner">
+    <div>
+        <span id="logo"></span>
+
+        <a href="https://github.com/nvd3-community/nvd3" target="github" class="button fork"><strong>GitHub</strong></a>
+        <a href="site.html" class="button fork docs selected"><strong>Examples</strong></a>
+        <a href="documentation.html" class="button fork docs"><strong>Documentation</strong></a>
+        <div class="downloads">
+            <span>Downloads:</span>
+            <ul>
+                <li><a href="https://github.com/nvd3-community/nvd3/zipball/master" class="button">ZIP</a></li>
+                <li><a href="https://github.com/nvd3-community/nvd3/tarball/master" class="button">TAR</a></li>
+            </ul>
+        </div>
+    </div>
+</div><!-- end banner --> 
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+
+  <h3> 
+This work is inspired by the work of Prof. Jordi Gali: <a target="alone"  href="https://econ-papers.upf.edu/papers/1600.pdf" > Forward Guidance and the Exchange Rate</a>.
+</h3>
+
+Question: Prof. Jordi Gali considers the asset pricing equations to derive important results in Equation (3) assuming similar stochastic discount factor for both Equation (1) and (2). This assumption is very questionable as the the stochastic discount factor
+is a random variable that may depend on the utility function considered by each central bank and importantly, on the probability that is postulated to define the likelihood on the possible outcomes in the economy given the initial state of the economy?
+<br> <br>
+Using one-time-period framework and finite states-of-the-world, one can derive a formulation of the stochastic discount factor via expected utility maximization that is specific to the considered economy(in preparation). 
+<br> <br>
+The aim of this work is to provide some empirical evidence to this related question: 
+<br> 
+How to identify patterns & classifications* in currency time series data provided by central banks?
+<br> <br>
+One is mainly interested by detecting the most depreciated, appreciated and cyclic during a given period of time. Most time series analysis techniques consider some form of statistical assumptions(questionable) and filtering out noise(what is noise?) in order to make the pattern more salient. 
+<br> <br>
+Using new technique based on Machine Learning/Graph Theory, not necessary depending on unrealistic assumptions, provides more robust solutions. Importantly, this technique provides insights about their temporal inter-connexions as a graph(see posted image) with an associated stationary distribution.
+<br> <br>
+
+
+
+<h3>  <a href="https://blog.quandl.com/api-for-currency-data/">  EURO Exchange Rates (ECB) </a> </h3>
+<ul>  <strong>  Temporal Dynamics (All Currencies): </strong>
+    <li type="square">  <a href= "./CURRENCY/ALLECBEURO.html"> EURO Exchange Rates (ECB). </a> </li>
+</ul>
+
+<ul>  <strong>  Temporal Dynamics (Most 15 depreciated or appreciated founded by the ML technique): </strong>
+    <li type="square">  <a href= "./CURRENCY/ECBEURO.html"> EURO Exchange Rates (ECB). </a> </li>
+</ul>
+
+<ul>  <strong>  EURO Exchange Rates (Network Graph): </strong>
+ <div class="image12">
+       <div>
+    <object data="./CURRENCY/ECBInterConnectedMajorWorldCurrenciesNETWORKEDRATES.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./CURRENCY/ECBInterConnectedMajorWorldCurrenciesNETWORKEDRATES.pdf"> Community Structure Network </a>
+    </object>
+    </div>
+</div>
+</ul>
+<ul>  <strong>  EURO Exchange Rates (Stationary Distribution) </strong>
+ <div class="image12">
+     <div>
+    <object data="./CURRENCY/ECBInterConnectedMajorWorldCurrenciesSTATDISTRNETWORKEDRATES.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./CURRENCY/FECBInterConnectedMajorWorldCurrenciesSTATDISTRNETWORKEDRATES.pdf"> Stationary Distribution </a>
+    </object>
+    </div>
+</div>
+</ul>
+
+
+<h3>  <a href="https://blog.quandl.com/api-for-currency-data/">  Great British Pound Exchange Rates (BoE/Quandl) </a> </h3>
+
+
+<ul>  <strong>  Temporal Dynamics (All Currencies): </strong>
+    <li type="square">  <a href= "./CURRENCY/ALLBOEGBP.html"> Great British Pound Exchange Rates. </a> </li>
+</ul>
+
+<ul>  <strong>  Temporal Dynamics (Most 10 depreciated or appreciated founded by the ML technique): </strong>
+    <li type="square">  <a href= "./CURRENCY/BOEGBP.html"> Great British Pound Exchange Rates. </a> </li>
+</ul>
+
+<ul>  <strong>  Great British Pound Exchange Rates (Network Graph): </strong>
+ <div class="image12">
+       <div>
+    <object data="./CURRENCY/BOEGBPInterConnectedMajorWorldCurrenciesNETWORKEDRATES.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./CURRENCY/BOEGBPInterConnectedMajorWorldCurrenciesNETWORKEDRATES.pdf"> Community Structure Network </a>
+    </object>
+    </div>
+</div>
+</ul>
+<ul>  <strong>  Great British Pound Exchange Rates (Stationary Distribution) </strong>
+ <div class="image12">
+     <div>
+    <object data="./CURRENCY/BOEGBPInterConnectedMajorWorldCurrenciesSTATDISTRNETWORKEDRATES.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./CURRENCY/BOEGBPInterConnectedMajorWorldCurrenciesSTATDISTRNETWORKEDRATES.pdf"> Stationary Distribution </a>
+    </object>
+    </div>
+</div>
+</ul>
+
+
+<h3>  <a href="https://blog.quandl.com/api-for-currency-data/">  US$ Exchange Rates (BoE/Quandl) </a> </h3>
+
+
+<ul>  <strong>  Temporal Dynamics (All Currencies): </strong>
+    <li type="square">  <a href= "./CURRENCY/ALLBOEUSA.html"> US$ Exchange Rates. </a> </li>
+</ul>
+
+<ul>  <strong>  Temporal Dynamics (Most 10 depreciated or appreciated founded by the ML technique): </strong>
+    <li type="square">  <a href= "./CURRENCY/BOEUSA.html"> US$ Exchange Rates. </a> </li>
+</ul>
+
+<ul>  <strong>  US$ Exchange Rates (Network Graph): </strong>
+ <div class="image12">
+       <div>
+    <object data="./CURRENCY/BOEUSAInterConnectedMajorWorldCurrenciesNETWORKEDRATES.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./CURRENCY/BOEUSAInterConnectedMajorWorldCurrenciesNETWORKEDRATES.pdf"> Community Structure Network </a>
+    </object>
+    </div>
+</div>
+</ul>
+<ul>  <strong>  US$ Exchange Rates (Stationary Distribution) </strong>
+ <div class="image12">
+     <div>
+    <object data="./CURRENCY/BOEUSAInterConnectedMajorWorldCurrenciesSTATDISTRNETWORKEDRATES.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./CURRENCY/BOEUSAInterConnectedMajorWorldCurrenciesSTATDISTRNETWORKEDRATES.pdf"> Stationary Distribution </a>
+    </object>
+    </div>
+</div>
+</ul>
+
+
+
+
+<h3>  <a href="https://blog.quandl.com/api-for-currency-data/">  US$ Exchange Rates (FRED) </a> </h3>
+
+
+<ul>  <strong>  Temporal Dynamics (All Currencies): </strong>
+    <li type="square">  <a href= "./CURRENCY/ALLFREDUSA.html"> US$ Exchange Rates (FRED). </a> </li>
+</ul>
+
+<ul>  <strong>  Temporal Dynamics (Most 15 depreciated or appreciated founded by the ML technique): </strong>
+    <li type="square">  <a href= "./CURRENCY/FREDUSA.html"> US$ Exchange Rates (FRED). </a> </li>
+</ul>
+
+<ul>  <strong>  US$ Exchange Rates (Network Graph): </strong>
+ <div class="image12">
+       <div>
+    <object data="./CURRENCY/FREDInterConnectedMajorWorldCurrenciesNETWORKEDRATES.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./CURRENCY/FREDInterConnectedMajorWorldCurrenciesNETWORKEDRATES.pdf"> Community Structure Network </a>
+    </object>
+    </div>
+</div>
+</ul>
+<ul>  <strong>  US$ Exchange Rates (Stationary Distribution) </strong>
+ <div class="image12">
+     <div>
+    <object data="./CURRENCY/FREDInterConnectedMajorWorldCurrenciesSTATDISTRNETWORKEDRATES.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./CURRENCY/FREDInterConnectedMajorWorldCurrenciesSTATDISTRNETWORKEDRATES.pdf"> Stationary Distribution </a>
+    </object>
+    </div>
+</div>
+</ul>
+
+
+
+
+
+<h1> Implementation:</h1>
+The insight analysis uses R programming language to process the results ( R is a software environment for statistical computing
+and graphics supported by the <a target="alone" href="https://www.r-project.org/" > R Foundation for Statistical Computing </a>). The interactive data visualizations in web browsers uses the <a target="alone"  href="http://nvd3.org/"> NVD3 data visualization library. </a>
+
+
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com</a>
+    <br> 
+   The MIT License (MIT) Copyright 1994-2050, Faysal El Khettabi, Numerics &amp Analytics, All Rights Reserved.
+     </div> 
+   
+
+
+</section>
+</div>
+ 
+
+ 
+</body>
+</html>
+
+
+<!--  
+git add --all
+  git commit -m "Initial commit"
+  git push -u origin master
+ -->

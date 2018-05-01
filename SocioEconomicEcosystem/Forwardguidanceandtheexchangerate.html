@@ -103,20 +103,33 @@
 This work is inspired by the work of Prof. Jordi Gali: <a target="alone"  href="https://econ-papers.upf.edu/papers/1600.pdf" > Forward Guidance and the Exchange Rate</a>.
 </h3>
 
-Question: Prof. Jordi Gali considers the asset pricing equations to derive important results in Equation (3) assuming similar stochastic discount factor for both Equation (1) and (2). This assumption is very questionable as the the stochastic discount factor
-is a random variable that may depend on the utility function considered by each central bank and importantly, on the probability that is postulated to define the likelihood on the possible outcomes in the economy given the initial state of the economy?
-<br> <br>
-Using one-time-period framework and finite states-of-the-world, one can derive a formulation of the stochastic discount factor via expected utility maximization that is specific to the considered economy(in preparation). 
-<br> <br>
-The aim of this work is to provide some empirical evidence to this related question: 
-<br> 
-How to identify patterns & classifications* in currency time series data provided by central banks?
-<br> <br>
-One is mainly interested by detecting the most depreciated, appreciated and cyclic during a given period of time. Most time series analysis techniques consider some form of statistical assumptions(questionable) and filtering out noise(what is noise?) in order to make the pattern more salient. 
-<br> <br>
-Using new technique based on Machine Learning/Graph Theory, not necessary depending on unrealistic assumptions, provides more robust solutions. Importantly, this technique provides insights about their temporal inter-connexions as a graph(see posted image) with an associated stationary distribution.
+Question_A: Prof. Jordi Gali considers the asset pricing equations to derive important results in Equation (3) assuming similar stochastic discount factor for both Equations (1) and (2). This assumption is very questionable as the stochastic discount factor
+is a random variable that may depend on the utility function considered by each Central Bank and importantly, on the probability that is postulated to define the likelihood on the possible outcomes in the economy given the initial state of the economy?
 <br> <br>
 
+ <h3> 
+Determinants of Exchange Rates
+</h3>
+Using one-time-period framework and finite states-of-the-world, one can derive a formulation of the stochastic discount factor via expected utility maximization that is specific to the considered economy. Using this formulation as in the work <a target="alone"  href="https://econ-papers.upf.edu/papers/1600.pdf" > Forward Guidance and the Exchange Rate</a>, the ratio [E_(t+1)/E_(t)]* can be expressed 
+approximatively as the product of two fundamental factors, one is representing the ration between the interest rates of the two considered Central Banks and the second is related to the marginal utilities and deflators  between two Central Banks(to be published). 
+<br> <br>
+*E_(t) is the exchange rate at time t.
+<br> <br>
+The aim of this work is to provide some empirical evidence to the Question_A by conducting a Machine Learning Analysis of the observed exchange rate time series in four well-established Central Banks. This analysis is to assess also this related question:
+<br> 
+How to identify patterns & classifications in currency time series data provided by Central Banks?
+<br> <br>
+One is mainly interested by detecting the most depreciated, appreciated and cyclic during a given period of time. 
+<br>
+Most time series analysis techniques consider some form of statistical assumptions(questionable) and filtering out noise(what is noise?) in order to make the pattern more salient. 
+<br> <br>
+Using new technique based on Machine Learning/Graph Theory, not necessary depending on unrealistic assumptions, provides more robust solutions. Importantly, this technique provides insights about their temporal inter-connexions as a graph(see posted image) with an associated stationary distribution.
+
+The numerical analysis "Using Raw  Exchange Rate Time Series: E_(t)"  and "Using Ratio Exchange Rate Time Series: [E_(t+1)/E_(t)]"  uses data from Central Bank of Europe, Central Bank of England, FRED and Central Bank of Canada.
+
+<br> <br>
+<h1>  Using Raw  Exchange Rate Time Series: E_(t) </h1>
+<br> <br>
 
 
 <h3>  <a href="https://blog.quandl.com/api-for-currency-data/">  EURO Exchange Rates (ECB) </a> </h3>
@@ -237,6 +250,134 @@ Using new technique based on Machine Learning/Graph Theory, not necessary depend
      <div>
     <object data="./CURRENCY/FREDInterConnectedMajorWorldCurrenciesSTATDISTRNETWORKEDRATES.pdf" type="application/pdf" width="700" height="700">
         alt : <a href="./CURRENCY/FREDInterConnectedMajorWorldCurrenciesSTATDISTRNETWORKEDRATES.pdf"> Stationary Distribution </a>
+    </object>
+    </div>
+</div>
+</ul>
+
+<br> <br>
+<h1>  Using Ratio Exchange Rate Time Series: [E_(t+1)/E_(t)] </h1>
+<br> <br>
+
+
+<h3>  <a href="https://blog.quandl.com/api-for-currency-data/">  EURO Exchange Rates (ECB) </a> </h3>
+<ul>  <strong>  Temporal Dynamics (All Currencies): </strong>
+    <li type="square">  <a href= "./CURRENCY/ratioALLECBEURO.html"> EURO Exchange Rates (ECB). </a> </li>
+</ul>
+
+<ul>  <strong>  Temporal Dynamics (Most 15 depreciated or appreciated founded by the ML technique): </strong>
+    <li type="square">  <a href= "./CURRENCY/ratioECBEURO.html"> EURO Exchange Rates (ECB). </a> </li>
+</ul>
+
+<ul>  <strong>  EURO Exchange Rates (Network Graph): </strong>
+ <div class="image12">
+       <div>
+    <object data="./CURRENCY/ratioECBInterConnectedMajorWorldCurrenciesNETWORKEDRATES.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./CURRENCY/ratioECBInterConnectedMajorWorldCurrenciesNETWORKEDRATES.pdf"> Community Structure Network </a>
+    </object>
+    </div>
+</div>
+</ul>
+<ul>  <strong>  EURO Exchange Rates (Stationary Distribution) </strong>
+ <div class="image12">
+     <div>
+    <object data="./CURRENCY/ratioECBInterConnectedMajorWorldCurrenciesSTATDISTRNETWORKEDRATES.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./CURRENCY/ratioECBInterConnectedMajorWorldCurrenciesSTATDISTRNETWORKEDRATES.pdf"> Stationary Distribution </a>
+    </object>
+    </div>
+</div>
+</ul>
+
+
+<h3>  <a href="https://blog.quandl.com/api-for-currency-data/">  Great British Pound Exchange Rates (BoE/Quandl) </a> </h3>
+
+
+<ul>  <strong>  Temporal Dynamics (All Currencies): </strong>
+    <li type="square">  <a href= "./CURRENCY/ratioALLBOEGBP.html"> Great British Pound Exchange Rates. </a> </li>
+</ul>
+
+<ul>  <strong>  Temporal Dynamics (Most 15 depreciated or appreciated founded by the ML technique): </strong>
+    <li type="square">  <a href= "./CURRENCY/ratioBOEGBP.html"> Great British Pound Exchange Rates. </a> </li>
+</ul>
+
+<ul>  <strong>  Great British Pound Exchange Rates (Network Graph): </strong>
+ <div class="image12">
+       <div>
+    <object data="./CURRENCY/ratioBOEGBPInterConnectedMajorWorldCurrenciesNETWORKEDRATES.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./CURRENCY/ratioBOEGBPInterConnectedMajorWorldCurrenciesNETWORKEDRATES.pdf"> Community Structure Network </a>
+    </object>
+    </div>
+</div>
+</ul>
+<ul>  <strong>  Great British Pound Exchange Rates (Stationary Distribution) </strong>
+ <div class="image12">
+     <div>
+    <object data="./CURRENCY/ratioBOEGBPInterConnectedMajorWorldCurrenciesSTATDISTRNETWORKEDRATES.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./CURRENCY/ratioBOEGBPInterConnectedMajorWorldCurrenciesSTATDISTRNETWORKEDRATES.pdf"> Stationary Distribution </a>
+    </object>
+    </div>
+</div>
+</ul>
+
+
+<h3>  <a href="https://blog.quandl.com/api-for-currency-data/">  US$ Exchange Rates (BoE/Quandl) </a> </h3>
+
+
+<ul>  <strong>  Temporal Dynamics (All Currencies): </strong>
+    <li type="square">  <a href= "./CURRENCY/ratioALLBOEUSA.html"> US$ Exchange Rates. </a> </li>
+</ul>
+
+<ul>  <strong>  Temporal Dynamics (Most 15 depreciated or appreciated founded by the ML technique): </strong>
+    <li type="square">  <a href= "./CURRENCY/ratioBOEUSA.html"> US$ Exchange Rates. </a> </li>
+</ul>
+
+<ul>  <strong>  US$ Exchange Rates (Network Graph): </strong>
+ <div class="image12">
+       <div>
+    <object data="./CURRENCY/ratioBOEUSAInterConnectedMajorWorldCurrenciesNETWORKEDRATES.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./CURRENCY/ratioBOEUSAInterConnectedMajorWorldCurrenciesNETWORKEDRATES.pdf"> Community Structure Network </a>
+    </object>
+    </div>
+</div>
+</ul>
+<ul>  <strong>  US$ Exchange Rates (Stationary Distribution) </strong>
+ <div class="image12">
+     <div>
+    <object data="./CURRENCY/ratioBOEUSAInterConnectedMajorWorldCurrenciesSTATDISTRNETWORKEDRATES.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./CURRENCY/ratioBOEUSAInterConnectedMajorWorldCurrenciesSTATDISTRNETWORKEDRATES.pdf"> Stationary Distribution </a>
+    </object>
+    </div>
+</div>
+</ul>
+
+
+
+
+<h3>  <a href="https://blog.quandl.com/api-for-currency-data/">  US$ Exchange Rates (FRED) </a> </h3>
+
+
+<ul>  <strong>  Temporal Dynamics (All Currencies): </strong>
+    <li type="square">  <a href= "./CURRENCY/ratioALLFREDUSA.html"> US$ Exchange Rates (FRED). </a> </li>
+</ul>
+
+<ul>  <strong>  Temporal Dynamics (Most 10 depreciated or appreciated founded by the ML technique): </strong>
+    <li type="square">  <a href= "./CURRENCY/ratioFREDUSA.html"> US$ Exchange Rates (FRED). </a> </li>
+</ul>
+
+<ul>  <strong>  US$ Exchange Rates (Network Graph): </strong>
+ <div class="image12">
+       <div>
+    <object data="./CURRENCY/ratioFREDInterConnectedMajorWorldCurrenciesNETWORKEDRATES.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./CURRENCY/ratioFREDInterConnectedMajorWorldCurrenciesNETWORKEDRATES.pdf"> Community Structure Network </a>
+    </object>
+    </div>
+</div>
+</ul>
+<ul>  <strong>  US$ Exchange Rates (Stationary Distribution) </strong>
+ <div class="image12">
+     <div>
+    <object data="./CURRENCY/ratioFREDInterConnectedMajorWorldCurrenciesSTATDISTRNETWORKEDRATES.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./CURRENCY/ratioFREDInterConnectedMajorWorldCurrenciesSTATDISTRNETWORKEDRATES.pdf"> Stationary Distribution </a>
     </object>
     </div>
 </div>

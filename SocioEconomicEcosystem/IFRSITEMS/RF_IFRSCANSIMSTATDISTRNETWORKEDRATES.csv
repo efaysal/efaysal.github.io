@@ -1,59 +1,59 @@
 "Item","IteminPlot","StationaryDistributionValue"
-"Retained earnings (x 1,000,000)","Retainedearnings",0.0468039188995065
-"Inventories (x 1,000,000)","Inventories",0.0463222278763619
-"Interest and dividend revenue (x 1,000,000)","Interestanddividendrevenue",0.043158748140202
-"Future income tax (x 1,000,000)","Futureincometax",0.0415271988289152
-"Share capital (x 1,000,000)","Sharecapital",0.0340408693784572
-"Interest expense on borrowing (x 1,000,000)","Interestexpenseonborrowing",0.0337333914633249
-"Other operating revenue (x 1,000,000)","Otheroperatingrevenue",0.0314573749113914
-"Borrowings (x 1,000,000)","Borrowings",0.0312486921767419
-"Investments and accounts with affiliates (x 1,000,000)","Investmentsandaccountswithaffiliates",0.0299956310974122
-"Capital assets, net (x 1,000,000)","Capitalassetsnet",0.0268102863688266
-"Sales of goods and services (x 1,000,000)","Salesofgoodsandservices",0.0258943243375658
-"Cash and deposits (x 1,000,000)","Cashanddeposits",0.0258199664223504
-"Contributed surplus and other (x 1,000,000)","Contributedsurplusandother",0.02562209221013
-"Depreciation, depletion and amortization (x 1,000,000)","Depreciationdepletionandamortization",0.0253760419896415
-"Loans and accounts with affiliates (x 1,000,000)","Loansandaccountswithaffiliates",0.0252798073563054
-"Accounts payable and accrued liabilities (x 1,000,000)","Accountspayableandaccruedliabilities",0.025050450498643
-"Loans and other borrowings (x 1,000,000)","Loansandotherborrowings",0.0238456606028288
-"Income tax (x 1,000,000)","Incometax",0.0231226078554877
-"Total, equity (x 1,000,000)","Totalequity",0.0230739084294113
-"Bonds and debentures (x 1,000,000)","Bondsanddebentures",0.0229361387808109
-"Net profit (x 1,000,000)","Netprofit",0.0227950575174951
-"Profit before income tax (x 1,000,000)","Profitbeforeincometax",0.0223809963269465
-"Accounts receivable and accrued revenue (x 1,000,000)","Accountsreceivableandaccruedrevenue",0.0220374145235261
-"Operating profit or loss (x 1,000,000)","Operatingprofitorloss",0.0218421375409251
-"Profit before extraordinary gains (x 1,000,000)","Profitbeforeextraordinarygains",0.0218359081459604
-"Total liabilities (x 1,000,000)","Totalliabilities",0.0197483748650172
-"Bankers' acceptances and paper (x 1,000,000)","Bankersacceptancesandpaper",0.019381666915892
-"Mortgages (x 1,000,000)","Mortgages",0.0182574575827019
-"Allowance for losses on investments and loans (x 1,000,000)","Allowanceforlossesoninvestmentsandloans",0.0171236358328556
-"Operating expenses (x 1,000,000)","Operatingexpenses",0.0164987100242707
-"Operating revenue (x 1,000,000)","Operatingrevenue",0.0163595982348279
-"Comprehensive income (x 1,000,000)","Comprehensiveincome",0.0138650395807475
-"Other liabilities (x 1,000,000)","Otherliabilities",0.0136539834389395
-"Portfolio investments (x 1,000,000)","Portfolioinvestments",0.0136479199260598
-"Other operating expenses (x 1,000,000)","Otheroperatingexpenses",0.0129126672221083
-"Mortgage (x 1,000,000)","Mortgage",0.0128640244908572
-"Loans (x 1,000,000)","Loans",0.0127669979857001
-"Non-mortgage (x 1,000,000)","Nonmortgage",0.0110371196929671
-"Total assets (x 1,000,000)","Totalassets",0.0108800141922045
-"Interest revenue, operating (x 1,000,000)","Interestrevenueoperating",0.0108569998726067
-"Deposits (x 1,000,000)","Deposits",0.0107088800399164
-"Interest expense, operating (x 1,000,000)","Interestexpenseoperating",0.00804595248830237
-"Other assets (x 1,000,000)","Otherassets",0.00526020615920341
-"Annuity considerations (x 1,000,000)","Annuityconsiderations",0.00395058436766016
-"Insurers' premiums (x 1,000,000)","Insurerspremiums",0.00393803967006834
-"Actuarial liabilities of insurers (x 1,000,000)","Actuarialliabilitiesofinsurers",0.00390635132604481
-"Annuity claims incurred (x 1,000,000)","Annuityclaimsincurred",0.00384353367046912
-"Insurance claims incurred (x 1,000,000)","Insuranceclaimsincurred",0.0037021031930512
-"Equity in affiliates' earnings (x 1,000,000)","Equityinaffiliatesearnings",0.00360526833866432
-"LeverageAssetLiability","LeverageAssetLiability",0.00290564250255138
-"LeverageEquityLiability","LeverageEquityLiability",0.00289170485002496
-"Dividend revenue, operating (x 1,000,000)","Dividendrevenueoperating",0.00205425754216928
-"Accumulated other comprehensive income (x 1,000,000)","Accumulatedothercomprehensiveincome",0.00129397980246767
-"Normal increase in actuarial liabilities (x 1,000,000)","Normalincreaseinactuarialliabilities",0.000863517271029764
-"Gains or losses on sale of securities and other assets (x 1,000,000)","Gainsorlossesonsaleofsecuritiesandotherassets",0.000452679191558751
-"Gains or losses (x 1,000,000)","Gainsorlosses",0.000433046539137239
-"Other comprehensive income (x 1,000,000)","Othercomprehensiveincome",0.000179560145383067
-"Extraordinary gains or losses (x 1,000,000)","Extraordinarygainsorlosses",9.96313653739311e-05
+"Inventories (x 1,000,000)","Inventories",0.0484670309559524
+"Retained earnings (x 1,000,000)","Retainedearnings",0.0445795552012678
+"Future income tax (x 1,000,000)","Futureincometax",0.0431839723421019
+"Interest and dividend revenue (x 1,000,000)","Interestanddividendrevenue",0.0425372647470631
+"Share capital (x 1,000,000)","Sharecapital",0.0347294189954547
+"Interest expense on borrowing (x 1,000,000)","Interestexpenseonborrowing",0.03439847319569
+"Borrowings (x 1,000,000)","Borrowings",0.0311319421641426
+"Other operating revenue (x 1,000,000)","Otheroperatingrevenue",0.0302295966133187
+"Investments and accounts with affiliates (x 1,000,000)","Investmentsandaccountswithaffiliates",0.0284125309858778
+"Capital assets, net (x 1,000,000)","Capitalassetsnet",0.0272661779601774
+"Sales of goods and services (x 1,000,000)","Salesofgoodsandservices",0.0266951323251512
+"Cash and deposits (x 1,000,000)","Cashanddeposits",0.0265823219384277
+"Depreciation, depletion and amortization (x 1,000,000)","Depreciationdepletionandamortization",0.0256267388933018
+"Accounts payable and accrued liabilities (x 1,000,000)","Accountspayableandaccruedliabilities",0.0256218617297214
+"Contributed surplus and other (x 1,000,000)","Contributedsurplusandother",0.0253568426922895
+"Loans and accounts with affiliates (x 1,000,000)","Loansandaccountswithaffiliates",0.0250183473787276
+"Loans and other borrowings (x 1,000,000)","Loansandotherborrowings",0.0246917730008435
+"Income tax (x 1,000,000)","Incometax",0.0245022348331954
+"Profit before income tax (x 1,000,000)","Profitbeforeincometax",0.0234181053923928
+"Accounts receivable and accrued revenue (x 1,000,000)","Accountsreceivableandaccruedrevenue",0.0232256064980005
+"Bonds and debentures (x 1,000,000)","Bondsanddebentures",0.0226250396589606
+"Net profit (x 1,000,000)","Netprofit",0.0223488105225914
+"Operating profit or loss (x 1,000,000)","Operatingprofitorloss",0.0222735245872293
+"Total, equity (x 1,000,000)","Totalequity",0.0221463083486682
+"Profit before extraordinary gains (x 1,000,000)","Profitbeforeextraordinarygains",0.0217909306368759
+"Total liabilities (x 1,000,000)","Totalliabilities",0.0198110029344243
+"Bankers' acceptances and paper (x 1,000,000)","Bankersacceptancesandpaper",0.0196297214424945
+"Allowance for losses on investments and loans (x 1,000,000)","Allowanceforlossesoninvestmentsandloans",0.0168880999595052
+"Mortgages (x 1,000,000)","Mortgages",0.0168579953702992
+"Operating expenses (x 1,000,000)","Operatingexpenses",0.0162637460392062
+"Operating revenue (x 1,000,000)","Operatingrevenue",0.0157576831972191
+"Comprehensive income (x 1,000,000)","Comprehensiveincome",0.0140840542072164
+"Other liabilities (x 1,000,000)","Otherliabilities",0.0140659473211392
+"Other operating expenses (x 1,000,000)","Otheroperatingexpenses",0.0131142575571287
+"Portfolio investments (x 1,000,000)","Portfolioinvestments",0.0130274351871609
+"Loans (x 1,000,000)","Loans",0.012875224295496
+"Mortgage (x 1,000,000)","Mortgage",0.0125205685206077
+"Total assets (x 1,000,000)","Totalassets",0.0115901722599789
+"Non-mortgage (x 1,000,000)","Nonmortgage",0.0106586980286519
+"Deposits (x 1,000,000)","Deposits",0.0104597165738226
+"Interest revenue, operating (x 1,000,000)","Interestrevenueoperating",0.0099361745645963
+"Interest expense, operating (x 1,000,000)","Interestexpenseoperating",0.00816510263097246
+"Other assets (x 1,000,000)","Otherassets",0.00534608511604862
+"Annuity considerations (x 1,000,000)","Annuityconsiderations",0.00381569195270561
+"Annuity claims incurred (x 1,000,000)","Annuityclaimsincurred",0.00362625410684901
+"Insurers' premiums (x 1,000,000)","Insurerspremiums",0.00359849552817909
+"Insurance claims incurred (x 1,000,000)","Insuranceclaimsincurred",0.00358480474801302
+"Actuarial liabilities of insurers (x 1,000,000)","Actuarialliabilitiesofinsurers",0.00352474726696708
+"Equity in affiliates' earnings (x 1,000,000)","Equityinaffiliatesearnings",0.00295401499906968
+"LeverageAssetLiability","LeverageAssetLiability",0.00287230543276105
+"LeverageEquityLiability","LeverageEquityLiability",0.0028582769512392
+"Dividend revenue, operating (x 1,000,000)","Dividendrevenueoperating",0.00205721470136037
+"Accumulated other comprehensive income (x 1,000,000)","Accumulatedothercomprehensiveincome",0.00126588513526293
+"Normal increase in actuarial liabilities (x 1,000,000)","Normalincreaseinactuarialliabilities",0.000764714751773712
+"Gains or losses on sale of securities and other assets (x 1,000,000)","Gainsorlossesonsaleofsecuritiesandotherassets",0.000471919609154333
+"Gains or losses (x 1,000,000)","Gainsorlosses",0.000422431046216899
+"Other comprehensive income (x 1,000,000)","Othercomprehensiveincome",0.000176575350743408
+"Extraordinary gains or losses (x 1,000,000)","Extraordinarygainsorlosses",9.54416163134703e-05

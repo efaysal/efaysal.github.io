@@ -68,8 +68,10 @@
 <header>
     <body style="background-color:lightgrey;">
     <h3 style="color:black"> 
-Characterization of Country ETFs Stochastic Discount Factor Models  </h3>
+Characterization of ETFs Stochastic Discount Factor Models  </h3>
     <h3 style="color:black"> Using Machine Learning Perspective </h3>
+     <h5 style="color:black"> Limiting Fund Exposure Kernel Index </h5>
+    
 <div>
     <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
      </div> 
@@ -108,12 +110,17 @@ For international diversification, ETFs tracking foreign equity indexes, are the
 Various factors may hinder the efficiency of this creation and redemption mechanism and its actionable arbitrage process. Factors affecting these processes, such as expectations about monetary policy, inflation, macroeconomic, sentiment and politico-economic factors.The exposure to these risk factors may be analyzed in a risk–return portfolio context, using Stochastic Discount Factor Models (Pricing Kernels) evaluated under a Machine Learning Perspective. 
 <br> <br> 
 
-In this work, an empirical analysis is conducted using the <a target="alone" href="https://www.blackrock.com/ca/intermediaries/en/products/product-list#!type=iSharesETFCA&tab=overview&view=list" > iShares funds issued by BlackRock </a>, called country ETFs, i.e. tracking foreign MSCI indexes. The main objective is to automatically segment these country ETFs with respect to major world cap-weighted indexes to gain insights about their international diversification characteristics. 
+In this work, an empirical analysis is conducted using the following Datasets:
+
+<br> <br> 
+<h3> A) Country ETFs vs. Major World Indexes </h3>
+
+ <a target="alone" href="https://www.blackrock.com/ca/intermediaries/en/products/product-list#!type=iSharesETFCA&tab=overview&view=list" > iShares funds issued by BlackRock </a>, called country ETFs, i.e. tracking foreign MSCI indexes. The main objective is to automatically segment these country ETFs with respect to major world cap-weighted indexes to gain insights about their international diversification characteristics. A limiting financial exposure index (LFEKI) is calculated  using the stationary distribution.
 <br> 
 Importantly enough, these country ETFs are all traded in US markets, among probable risk factors affecting them are fluctuations in foreign/US indexes and the currency gross rate of changes. Moreover, US investors are relying more on the sentiment and information in the home markets, which could lead to more changes into the country ETF's fund flow dynamics. 
 
 <br> <br>
-<h2> Empirical Pricing Kernels </h2>
+<h3> Empirical Pricing Kernels </h3>
 <ul>  <strong>  Network </strong>
  <div class="image12">
      <div>
@@ -137,10 +144,12 @@ All numerical results are in this  <a href="
 ./FrGrSwRETURNVOLATILITY/BISRETURNCOEFFQBMONTECARLOWeeklyMemSD_ETFiSharesMSCI_MajorWorldIndexes.csv"> CSV-file.</a>
 <br> <br>
 
-<h2>  Fund Flow Dynamics in the obtained Kernels and in the Higher Stationary Distribution Values </h2> 
+<h3>  Fund Flow Dynamics in the obtained Kernels and in the Higher Stationary Distribution Values </h3> 
 To allow meaningful comparison, the price is divided by the maximum observed price during the considered period.
 "DoubleClick" on a tick will show its curve and add more by "SingleClick" on the rest.
 <br> <br>
+
+<h4>  A Limiting Fund Exposure Kernel Index (LFEKI) is calculated using the network's proprieties. </h4> 
 <ul>  <strong>  Fund Flow Dynamics : </strong>
     <li type="square">  <a href= "./FrGrSwRETURNVOLATILITY/BISRETURNCOEFFPRICESETFiSharesMSCI_MajorWorldIndexes.html"> Ticks with  Higher Stationary Distribution Values. </a> </li>
      <li type="square">  <a href= "./FrGrSwRETURNVOLATILITY/WS_BISRETURNCOEFF_PRICESMEMBERSHI_1_ETFiSharesMSCI_MajorWorldIndexes_.html"> Ticks in Kernel 1 . </a> </li>
@@ -155,12 +164,47 @@ To allow meaningful comparison, the price is divided by the maximum observed pri
 
 
 
+<h3> B) Mixture of ETFs vs. US, TSX &amp European Indexes </h3>
+Automatically segmenting these TFs with respect to US, TSX & European cap-weighted indexes to gain insights about their hedging characteristics.
+<br> <br>
+<h3> Empirical Pricing Kernels </h3>
+<ul>  <strong>  Network </strong>
+ <div class="image12">
+     <div>
+    <object data="./FrGrSwRETURNVOLATILITY/BISRETURNCOEFFQBMONTECARLODaysVCMETF_CAD_EUR_US.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./FrGrSwRETURNVOLATILITY/BISRETURNCOEFFQBMONTECARLODaysVCMETF_CAD_EUR_US.pdf"> Network </a>
+    </object>
+    </div>
+</div>
+</ul>
+<ul>  <strong>  Stationary Distribution </strong>
+ <div class="image12">
+     <div>
+    <object data="./FrGrSwRETURNVOLATILITY/BISRETURNCOEFFQBMONTECARLOWeeklyCSTATDISTRETF_CAD_EUR_US.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./FrGrSwRETURNVOLATILITY/BISRETURNCOEFFQBMONTECARLOWeeklyCSTATDISTRETF_CAD_EUR_US.pdf"> Stationary Distribution </a>
+    </object>
+    </div>
+</div>
+</ul>
+<br>
+All numerical results are in this  <a href="
+./FrGrSwRETURNVOLATILITY/BISRETURNCOEFFQBMONTECARLOWeeklyMemSD_ETF_CAD_EUR_US.csv"> CSV-file.</a>
+<br> <br>
 
+<h3>  Fund Flow Dynamics in the obtained Kernels and in the Higher Stationary Distribution Values </h3> 
+To allow meaningful comparison, the price is divided by the maximum observed price during the considered period.
+"DoubleClick" on a tick will show its curve and add more by "SingleClick" on the rest.
+<br> <br>
 
-
-
-
-
+<h4>  A Limiting Fund Exposure Kernel Index (LFEKI) is calculated using the network's proprieties. </h4> 
+<ul>  <strong>  Fund Flow Dynamics : </strong>
+    <li type="square">  <a href= "./FrGrSwRETURNVOLATILITY/BISRETURNCOEFFPRICESETF_CAD_EUR_US.html"> Ticks with  Higher Stationary Distribution Values. </a> </li>
+     <li type="square">  <a href= "./FrGrSwRETURNVOLATILITY/WS_BISRETURNCOEFF_PRICESMEMBERSHI_1_ETF_CAD_EUR_US_.html"> Ticks in Kernel 1 . </a> </li>
+    <li type="square">  <a href= "./FrGrSwRETURNVOLATILITY/WS_BISRETURNCOEFF_PRICESMEMBERSHI_2_ETF_CAD_EUR_US_.html"> Ticks in Kernel 2 . </a> </li>
+    <li type="square">  <a href= "./FrGrSwRETURNVOLATILITY/WS_BISRETURNCOEFF_PRICESMEMBERSHI_3_ETF_CAD_EUR_US_.html"> Ticks in Kernel 3 . </a> </li>
+    <li type="square">  <a href= "./FrGrSwRETURNVOLATILITY/WS_BISRETURNCOEFF_PRICESMEMBERSHI_4_ETF_CAD_EUR_US_.html"> Ticks in Kernel 4 . </a> </li>
+    <li type="square">  <a href= "./FrGrSwRETURNVOLATILITY/WS_BISRETURNCOEFF_PRICESMEMBERSHI_5_ETF_CAD_EUR_US_.html"> Ticks in Kernel 5 . </a> </li>
+</ul>
 
 <br> <br>
 <h1> Implementation:</h1>

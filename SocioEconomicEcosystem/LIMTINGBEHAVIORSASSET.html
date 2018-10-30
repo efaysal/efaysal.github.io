@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Socio-Econometrica:  Analytics & Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Numerics'
++ '<br><br>'
+                + ' Click Above:'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+    <h3 style="color:black">  Multi-Assets Portfolios and Limit Behavior Analysis </h3>
+    <h4 style="color:black"> Using Machine Learning Perspective </h4>
+     <h4 style="color:black"> Based on Stochastic Discounting Factor Models  </h4>
+    
+<div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+<!-- <div id="banner">
+    <div>
+        <span id="logo"></span>
+
+        <a href="https://github.com/nvd3-community/nvd3" target="github" class="button fork"><strong>GitHub</strong></a>
+        <a href="site.html" class="button fork docs selected"><strong>Examples</strong></a>
+        <a href="documentation.html" class="button fork docs"><strong>Documentation</strong></a>
+        <div class="downloads">
+            <span>Downloads:</span>
+            <ul>
+                <li><a href="https://github.com/nvd3-community/nvd3/zipball/master" class="button">ZIP</a></li>
+                <li><a href="https://github.com/nvd3-community/nvd3/tarball/master" class="button">TAR</a></li>
+            </ul>
+        </div>
+    </div>
+</div><!-- end banner --> 
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+<h1> Introduction &amp Motivation </h1>
+The aim of this short introduction about equilibrium prices is to get across the essential modeling elements necessary to formalise them more carefully into economic dynamic concepts that are used to treat their condition of stability to understand their exhibiting oscillatory behaviour.
+<br> <br>
+In general, equilibrium price is established when demand equals supply when the determination of equilibrium conditions are relied on choices made by agents as investors, firms, households, central banks and so on. A discussion about the existence of this equilibrium price in a  competitive economy is in the work of <a href="http://links.jstor.org/sici?sici=0012-9682%28195407%2922%3A3%3C265%3AEOAEFA%3E2.0.CO%3B2-B"> Kenneth J. Arrow and Gerard Debreu</a>. 
+<br> <br>
+A modern elaboration of this work for financial asset pricing is called Stochastic Discounting Factor Models when the no-arbitrage condition is assumed to secure the existence of security market equilibrium in an economy where all agents have access to the same information set.
+<br> <br>
+<h1> Stochastic Discounting Factor Models </h1>
+This modern asset pricing theory is mainly focusing at understanding the prices of future claims that are subject to
+future uncertainty. In the presence of any payoff uncertainty when undertaking an investment venture, investors will typically ask for risk compensation, and thus for some investment-specific return, which will discount the expected future payoff stream.
+Importantly enough, the valuation process that investors undergo for investments with uncertain payoff typically depends on their statistical views on possible future outcomes, preferences as their attitudes toward risk, and, of course, the payoff structure itself.
+<br> <br>
+The equilibrium price is then an averaging discounting payoffs under different "states of affairs" and weighing them according to the investors's probabilities and marginal preference structures. The equilibrium prices of multi-assets portfolios serve also to identify the fundamental differences in risk premia patterns between them that give rise to differences in their average returns via the variances and covariance operators, which captures the risk adjustment for risky assets in multi-assets portfolios. 
+<br> <br>
+The challenge in this modern asset pricing theory lies on the adequate identification of the investor’s probability and marginal preference structures and risk factors that are able to model empirically the actual Stochastic Discounting Factor Models (SDFm) from a given market data-sets. In practice it is presumably infeasible to capture simultaneously all influencing factors in the actual SDFm from the data. Usually, a parametrization of SDFm is expressed as a function of the marginal rate of substitution of consumption of the investors. But most elementary parametrization stop at this point. 
+<br> <br>
+<h1> Machine Learning Perspective </h1>
+Equilibrium prices of multi-assets portfolios are stochastic processes represented by time series exhibiting oscillatory behaviors. It is useful for financial and economic purposes to have a convenient way of summarizing the "average" behavior of such processes over time, see the work of <a href="https://lnkd.in/ehcJVrC"> Carl Futia</a>.
+<br> <br>
+The starting point of this analysis is a set of economic states(system) representing a number of multi-assets portfolios. The dynamics of this system are stochastic, governed by transition probabilities derived via a Machine Learning perspective* to characterise the SDFm, either due to intrinsic randomness in the equilibrium prices of the system or to the unpredictable influence of choices made by agents.
+<br> <br>
+(*) An essential role that Machine Learning perspective can play in this modern asset pricing theory is to identify automatically from market data-sets the fundamental differences in risk premia patterns between multi-assets portfolios that give rise to differences in their average returns. For instance, to deduce similar correlated assets to the actual pricing structure of SDFm that may help to assess how the exposures of these assets to major intervention in the economy, as unconventional monetary policy, macroeconomic shocks, new trading strategies, new policies and so on, are priced.
+<br> 
+Using non-linear Machine Learning modeling is to take into consideration higher order terms that are important when analysing equilibrium prices and related financial variables as risk premia or asset returns. Also in order to characterize non discernible SDF without committing to a particular asset pricing model, i.e., a marked departure from the statistical artifact hypothesis.
+<br> <br>
+Therefore, the aim is to use machine learning as an integrative part of the modern asset pricing theory, offering automated procedures for the characterization of Stochastic Discount Factor Models based on past market data-sets observations, unraveling
+underlying patterns in equilibrium prices data and providing insights about the problem of asset pricing under uncertainty as transition probabilities that are governing the dynamics of the system representing a number of multi-assets portfolios.
+<h1> Limiting Behaviors </h1>
+The system is determined by a set of time-dependent parameters, which may be thought of as a set of indicators of its macroscopic aspect summarising the dynamic behaviour implied by transition probabilities. 
+<br> <br>
+The initial knowledge of the system is characterized by some limiting stationary distribution  of the transition probability as an equilibrium where the system settles down and, once there, there is no reason for the system to move. However, the financial assets still interact in an unknown way, exhibiting new equilibrium prices, .i.e, change in the entries of the corresponding transition probability, resulting in structural changes in the underlying pricing processes of the financial assets and vice versa. Therefore the system again temporally evolves stochastically into new transition probabilities with new limiting stationary distributions.
+<br> <br>
+This comparative statics using equilibrium prices to derive transition probabilities and to estimate the limiting stationary distributions is a financial model to assess nonlinear relationships between the crucial elements of the financial assets system one is interested in. An important attention is to know what happens to the transition probabilities and their associated sequence of entropy over time. 
+<br> <br>
+ 
+Given finite number of financial assets, this empirical analysis(EA) is to assess these limiting stationary distribution behaviors of consecutive perturbed transition probability  matrices obtained by using Machine Learning perspectives based on the Stochastic Discount Factor Models. 
+<br> 
+Considering the last 252 days where each day is representing a perturbed transition probability matrix. This EA determines how the limiting stationary distributions and their associated entropies change through daily perturbation:
+
+<h3> B) Mixture of ETFs vs. US, TSX &amp European Indexes </h3>
+Automatically segmenting these TFs with respect to US, TSX & European cap-weighted indexes to gain insights about their hedging characteristics.
+<br> <br>
+<h3> Empirical Pricing Kernels </h3>
+<ul>  <strong>  Network </strong>
+ <div class="image12">
+     <div>
+    <object data="./FrGrSwRETURNVOLATILITY/BISRETURNCOEFFQBMONTECARLODaysVCMETF_CAD_EUR_US.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./FrGrSwRETURNVOLATILITY/BISRETURNCOEFFQBMONTECARLODaysVCMETF_CAD_EUR_US.pdf"> Network </a>
+    </object>
+    </div>
+</div>
+</ul>
+<ul>  <strong>  Stationary Distribution </strong>
+ <div class="image12">
+     <div>
+    <object data="./FrGrSwRETURNVOLATILITY/BISRETURNCOEFFQBMONTECARLOWeeklyCSTATDISTRETF_CAD_EUR_US.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./FrGrSwRETURNVOLATILITY/BISRETURNCOEFFQBMONTECARLOWeeklyCSTATDISTRETF_CAD_EUR_US.pdf"> Stationary Distribution </a>
+    </object>
+    </div>
+</div>
+</ul>
+<br>
+All numerical results are in this  <a href="
+./FrGrSwRETURNVOLATILITY/BISRETURNCOEFFQBMONTECARLOWeeklyMemSD_ETF_CAD_EUR_US.csv"> CSV-file.</a>
+<br> <br>
+
+<h3>  Fund Flow Dynamics in the obtained Kernels and in the Higher Stationary Distribution Values </h3> 
+To allow meaningful comparison, the price is divided by the maximum observed price during the considered period.
+"DoubleClick" on a tick will show its curve and add more by "SingleClick" on the rest.
+<br> <br>
+
+<h4>  A Limiting Fund Exposure Kernel Index (LFEKI) is calculated using the network's properties. </h4> 
+<ul>  <strong>  Fund Flow Dynamics : </strong>
+    <li type="square">  <a href= "./FrGrSwRETURNVOLATILITY/BISRETURNCOEFFPRICESETF_CAD_EUR_US.html"> Ticks with  Higher Stationary Distribution Values. </a> </li>
+     <li type="square">  <a href= "./FrGrSwRETURNVOLATILITY/WS_BISRETURNCOEFF_PRICESMEMBERSHI_1_ETF_CAD_EUR_US_.html"> Ticks in Kernel 1 . </a> </li>
+    <li type="square">  <a href= "./FrGrSwRETURNVOLATILITY/WS_BISRETURNCOEFF_PRICESMEMBERSHI_2_ETF_CAD_EUR_US_.html"> Ticks in Kernel 2 . </a> </li>
+    <li type="square">  <a href= "./FrGrSwRETURNVOLATILITY/WS_BISRETURNCOEFF_PRICESMEMBERSHI_3_ETF_CAD_EUR_US_.html"> Ticks in Kernel 3 . </a> </li>
+    <li type="square">  <a href= "./FrGrSwRETURNVOLATILITY/WS_BISRETURNCOEFF_PRICESMEMBERSHI_4_ETF_CAD_EUR_US_.html"> Ticks in Kernel 4 . </a> </li>
+    <li type="square">  <a href= "./FrGrSwRETURNVOLATILITY/WS_BISRETURNCOEFF_PRICESMEMBERSHI_5_ETF_CAD_EUR_US_.html"> Ticks in Kernel 5 . </a> </li>
+</ul>
+
+<br> <br>
+<h1> Implementation:</h1>
+The insight analysis uses R programming language to process the results ( R is a software environment for statistical computing
+and graphics supported by the <a target="alone" href="https://www.r-project.org/" > R Foundation for Statistical Computing </a>). The interactive data visualizations in web browsers uses the <a target="alone"  href="http://nvd3.org/"> NVD3 data visualization library. </a>
+
+
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com</a>
+    <br> 
+   The MIT License (MIT) Copyright 1994-2050, Faysal El Khettabi, Numerics &amp Analytics, All Rights Reserved.
+     </div> 
+   
+
+
+</section>
+</div>
+ 
+
+ 
+</body>
+</html>
+
+
+<!--  
+git add --all
+  git commit -m "Initial commit"
+  git push -u origin master
+ -->

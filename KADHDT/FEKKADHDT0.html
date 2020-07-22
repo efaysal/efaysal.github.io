@@ -1,0 +1,173 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title> Distributed Hash Table in the Era of Internet of the Things </title>
+    <link rel="stylesheet" href="../Numerics/stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #CCC; font-family: arial; font-size: 14px; font-weight:bold;">'
+                + 'Click the links above to load the example here'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+    <h1 style="color:black"> Distributed Hash Table in the Era of Internet of the Things </h1>
+  <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>  
+         <h3>
+Kademlia's Bucket Dilemma When the Address Space Size is Large ( for instance 512 ). <br>
+Click on this link for the <a target="alone"  href="FEKKADHDT1.html" style="color:green"> companion site</a>
+ </h3>
+
+<h2>
+Aim:  
+</h2>
+
+<p>
+New projects are designing a peer to peer network for Internet of the things with a structured perspective, to be  reasonably  /& sufficiently adaptive and secure by exploiting all potentiality in cryptography hashes and distributed hash tables. The distributed hash tables (DHTs) are required:
+<br><br>
+
+To enable nodes forming a structured overlay network ( fully decentralized).<br>
+To be secure against faulty participants.<br>
+To be reliable against churn ( nodes continuously joining, leaving, and failing).<br>
+To be scalable and should function efficiently even with thousands, millions or billions of peers.<br><br>
+The DHTs are not only used to distribute and retrieve  a content between the peers but also if possible to enable secure consensus to send automatically messages between peer endpoints  and meshing a secure peer to peer network between all endpoints for a specific business purpose.
+
+<br><br>
+The Kademlia DHT uses an algorithm to define the closest peer IDs to a given peer ID accordingly to XOR distance.  
+<br><br>
+Kademlia routing tables based on the concept of buckets over XOR space. The nodes IDs sharing a number of bits with a target ID are stored in the associated bucket.  When the address space size is large, this concept of bucket begins to be very blurred. 
+For instance when the address space size is 512, half of the peer IDs will be in bucket 511, bucket 510 will have 1/4, bucket 509  will have 1/8 and so on.
+<br><br>
+So the probability to have a peer ID  in bucket "M"is 2^(M-512), when M is small, this probability  is quasi-zero. Many buckets are just empty.  Taking the traditional set-up for each k-bucket having k=20 peers only, the Kademlia's DHT will provide a routing table less than the maximum number 511*20 ~ 10220 peers for each given peer. Numerical simulation showed using 50000 peers that only the first 10 buckets are slightly filled by around  or less than 200 peer IDs.
+<br><br>
+This Bin representation for measuring the closest  peer IDs to a given  peer ID is blunt  when the address space size is large. We need a clear-eyed process regarding the real spatial distribution of values than lumping the values into a Logbins framework.
+<br><br>
+We need to investigate new representation of XOR distance to successfully be used in the arising applications of HDTs, especially in Internet of the things.
+<br><br>
+ This work focuses on quality measures of  XOR distance when address space size is large, for instance 512.
+<br><br>
+ We measure the quality by using the concept of the discrepancy.  We perform computational investigations to compare the performance of the random  numbers with that of the sets of  XOR distances. The investigation enables us to better understand the distributional properties of XOR values and throws new light on when and why  using directly the values from XOR distance can have a better (or no better) performance than bin Kademlia concept( Buckets).
+<br><br>
+We provide a numerical analysis of Kademlia when the address space size is 512 ( many recent interesting projects related to the Internet of the things are based on keys in the XOR space having an address space size 512).
+<br><br>
+Main Operation is FindNode: Find K closest peer IDs to a given peer ID (Key)
+<br><br>
+Given a peer ID (A0)  and a number of peer IDs ( A1,A2,A3, ... An) ,  we study the propriety of the sequence XOR(A0,Ai) when  (1<= i <=N) and XOR(A0,Ai) are considered a sequence of numerical values, big Endian numbers.
+<br><br>
+How well are their values distributed?
+<br><br>
+Statistically, when the IDs are randomly selected, the sequence  XOR(A0,Ai) , 1<= i <= N follows an uniformly distribution.
+<br><br>
+Dispersion and Discrepancy in XOR Sequence:
+<br><br>
+We are interested by the following problem:
+
+<br><br>
+
+Is XOR sequence a  low-discrepancy sequence?
+<br><br>
+Note that ordinary uniform random numbers and low discrepancy sequences both generate  uniformly distributed sequences. 
+<br><br>
+ A uniform random source will generate outcome that each run has the same probability on equal sub-intervals. In general uniform random source may experience clumped or uncorrelated outcomes.
+A low discrepancy sequence are subject to low-discrepancy requirement. 
+<br><br>
+The L2 discrepancy value captures the global degree of isolation of the sequence of numbers in the given domain ( for instance (0,1)) which means that the higher the value of the L2 discrepancy is, the scarcer the numbers become in some parts of the domain. 
+<br><br>
+For instance, if the values obtained from the XOR distance are tightly coupled, they will tend to occupy a small region of space and as a consequence, L2 discrepancy will be a higher value.
+<br><br>
+However, if the values obtained from the XOR distance are loosely coupled then, they are scattered over a large region of the domain. Thus, the L2 discrepancy will be a small value.
+<br><br>
+Figure below shows the results when a peer ID target was XORed by a number of peer IDs. 
+
+</p>
+
+<br><br>
+
+<img align="middle" src="L2discrepancy_1.jpg" style="width:70%;height:70%;" alt="" />
+
+<p>
+    Each value from XOR distance will be represented by the value of the L2 Discrepancy sensitivity function, If the sensitivity is positive, the value from XOR distance is an insider otherwise it is an outlier. The sensitivity function is able to recover the spatial distribution of the values of XOR distance and their visibility, i.e. whether the values are uniform, clumped or scarce region, see Figure below.
+</p>
+
+<br><br>
+<img align="middle" src="L2discrepancy_2.jpg" style="width:70%;height:70%;" alt="" />
+ 
+<br><br>
+ <a> Implementation used  a modified version of Ethereum C++ to extract public keys or their Hash3. Hardware is a Laptop with i3-core-CPU-2.10 GHz- 4GB-RAM and 64-bit-Ubuntu 13-10 . </a>
+<br><br>
+Click on this link for the <a target="alone"  href="FEKKADHDT1.html" style="color:green"> companion site</a>
+<br><br>
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+
+ </section>
+</div>
+
+</body>
+</html>

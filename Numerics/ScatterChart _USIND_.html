@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="../build/nv.d3.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js" charset="utf-8"></script>
+    <script src="../build/nv.d3.js"></script>
+
+    <style>
+        text {
+            font: 12px sans-serif;
+        }
+        svg {
+            display: block;
+        }
+        html, body, #test1, svg {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="test1" class='with-3d-shadow with-transitions'>
+    <svg></svg>
+</div>
+
+<script>
+
+var datax=[{"NAME":"Advertising","ARTH":0.00509372610342246,"LOGLOG":1.69344868766729,"LINEAR":4.03827207773108,"NumberStocks":28},{"NAME":"Aerospace","ARTH":0.00367546206327566,"LOGLOG":1.91496806211938,"LINEAR":4.0886795690435,"NumberStocks":15},{"NAME":"Agricultural_Chemicals","ARTH":0.000844293488429165,"LOGLOG":1.56319774349298,"LINEAR":3.82181506204137,"NumberStocks":16},{"NAME":"Air_Freight/Delivery_Services","ARTH":0.00274401709336817,"LOGLOG":1.97323808583715,"LINEAR":3.64272992407524,"NumberStocks":22},{"NAME":"Apparel","ARTH":0.00291428709747787,"LOGLOG":1.71590120809335,"LINEAR":3.66075892786179,"NumberStocks":33},{"NAME":"Auto_Manufacturing","ARTH":1.38783895751123e-05,"LOGLOG":2.5677611832878,"LINEAR":3.9968204928107,"NumberStocks":17},{"NAME":"Automotive_Aftermarket","ARTH":2.46064570831794e-05,"LOGLOG":1.46875660843475,"LINEAR":3.69540757542303,"NumberStocks":24},{"NAME":"Auto_Parts:O.E.M.","ARTH":0.00162634476509201,"LOGLOG":2.0604464248881,"LINEAR":3.99937180404579,"NumberStocks":38},{"NAME":"Banks","ARTH":-0.00134199307109191,"LOGLOG":1.27068609267104,"LINEAR":3.60703112448942,"NumberStocks":25},{"NAME":"Biotechnology:_Commercial_Physical_&_Biological_Resarch","ARTH":-0.00498518145366267,"LOGLOG":2.18350196720876,"LINEAR":3.54014044886407,"NumberStocks":24},{"NAME":"Biotechnology:_Electromedical_&_Electrotherapeutic_Apparatus","ARTH":0.00194152231070516,"LOGLOG":2.38167648592102,"LINEAR":4.01834167375811,"NumberStocks":36},{"NAME":"Biotechnology:_In_Vitro_&_In_Vivo_Diagnostic_Substances","ARTH":-0.00282396253519408,"LOGLOG":1.19734465027723,"LINEAR":3.56873205075626,"NumberStocks":21},{"NAME":"Biotechnology:_Laboratory_Analytical_Instruments","ARTH":0.0017128287589988,"LOGLOG":1.61447804092419,"LINEAR":3.88958387373162,"NumberStocks":21},{"NAME":"Broadcasting","ARTH":-0.00485323538298921,"LOGLOG":1.32292675423108,"LINEAR":3.39039254947346,"NumberStocks":29},{"NAME":"Building_Materials","ARTH":0.0097618475212303,"LOGLOG":3.87305071888075,"LINEAR":4.31404756298236,"NumberStocks":14},{"NAME":"Building_Products","ARTH":0.00478972039501282,"LOGLOG":3.28941694558321,"LINEAR":3.99928341028863,"NumberStocks":12},{"NAME":"Business_Services","ARTH":0.00140359298227709,"LOGLOG":1.56970816837357,"LINEAR":3.87697620562397,"NumberStocks":136},{"NAME":"Catalog/Specialty_Distribution","ARTH":0.00260082341861722,"LOGLOG":2.47391525773129,"LINEAR":4.04822307727076,"NumberStocks":18},{"NAME":"Clothing/Shoe/Accessory_Stores","ARTH":0.000503928381081416,"LOGLOG":1.40035625078652,"LINEAR":3.49142124201604,"NumberStocks":37},{"NAME":"Coal_Mining","ARTH":0.0156181613346758,"LOGLOG":9.16791025400132,"LINEAR":4.16295000446882,"NumberStocks":12},{"NAME":"Commercial_Banks","ARTH":0.00442023738187953,"LOGLOG":1.79294866601096,"LINEAR":3.93086744940734,"NumberStocks":46},{"NAME":"Computer_Communications_Equipment","ARTH":-0.00144357345820413,"LOGLOG":1.37686455880815,"LINEAR":3.70200680916485,"NumberStocks":18},{"NAME":"Computer_Manufacturing","ARTH":0.00235160808997443,"LOGLOG":1.5089688301866,"LINEAR":3.71720026000086,"NumberStocks":14},{"NAME":"Computer_peripheral_equipment","ARTH":-0.00486672708589763,"LOGLOG":2.21774331644828,"LINEAR":3.77235082552354,"NumberStocks":18},{"NAME":"Computer_Software:_Prepackaged_Software","ARTH":-0.00142191978706063,"LOGLOG":2.00939320045342,"LINEAR":4.02468567567627,"NumberStocks":141},{"NAME":"Computer_Software:_Programming__Data_Processing","ARTH":-0.00387202088853163,"LOGLOG":1.06067138941355,"LINEAR":3.66845718883836,"NumberStocks":40},{"NAME":"Construction/Ag_Equipment/Trucks","ARTH":0.00746009127731985,"LOGLOG":2.39228159744521,"LINEAR":4.06942605205824,"NumberStocks":13},{"NAME":"Consumer_Electronics/Appliances","ARTH":0.00618419168296492,"LOGLOG":2.45017677502833,"LINEAR":4.04717238222604,"NumberStocks":16},{"NAME":"Consumer_Specialties","ARTH":0.000331091618302488,"LOGLOG":1.45594098368356,"LINEAR":3.72193686770355,"NumberStocks":12},{"NAME":"Containers/Packaging","ARTH":0.00314108690939002,"LOGLOG":1.51722311541182,"LINEAR":3.98541573897033,"NumberStocks":21},{"NAME":"Department/Specialty_Retail_Stores","ARTH":0.00324059846484961,"LOGLOG":1.35287732292193,"LINEAR":3.71506615531545,"NumberStocks":22},{"NAME":"Diversified_Commercial_Services","ARTH":0.00251131749337377,"LOGLOG":1.86524672517862,"LINEAR":3.97840757875313,"NumberStocks":31},{"NAME":"EDP_Services","ARTH":3.39331126237649e-05,"LOGLOG":1.41962460595771,"LINEAR":3.88782063764462,"NumberStocks":130},{"NAME":"Electrical_Products","ARTH":0.00518388771056761,"LOGLOG":1.67870813544455,"LINEAR":4.01888385473268,"NumberStocks":53},{"NAME":"Electric_Utilities:_Central","ARTH":0.00533029848510925,"LOGLOG":1.52403186326306,"LINEAR":3.73267019324031,"NumberStocks":78},{"NAME":"Electronic_Components","ARTH":-0.00254384784292638,"LOGLOG":0.991740544662427,"LINEAR":3.49578979967653,"NumberStocks":32},{"NAME":"Engineering_&_Construction","ARTH":-0.00222806181189577,"LOGLOG":2.15823131503548,"LINEAR":3.97407532569051,"NumberStocks":14},{"NAME":"Environmental_Services","ARTH":0.00118770038009262,"LOGLOG":1.27050624489102,"LINEAR":3.79061143926505,"NumberStocks":13},{"NAME":"Farming/Seeds/Milling","ARTH":0.00487188680663539,"LOGLOG":1.56153152154467,"LINEAR":3.95491551555109,"NumberStocks":28},{"NAME":"Finance:_Consumer_Services","ARTH":-0.00015627216265186,"LOGLOG":1.39588739724427,"LINEAR":3.90355649521228,"NumberStocks":76},{"NAME":"Food_Chains","ARTH":-0.00257223894366534,"LOGLOG":0.92077429085817,"LINEAR":3.61566282513293,"NumberStocks":17},{"NAME":"Food_Distributors","ARTH":0.00574659852277195,"LOGLOG":1.37716702791533,"LINEAR":3.85188769872284,"NumberStocks":13},{"NAME":"Forest_Products","ARTH":0.00866622497567893,"LOGLOG":3.10921512145583,"LINEAR":4.17035770080027,"NumberStocks":11},{"NAME":"GLOBALHFs","ARTH":0.00210895461529983,"LOGLOG":1.32140058741687,"LINEAR":3.95509523053221,"NumberStocks":4849},{"NAME":"Homebuilding","ARTH":0.0027352514376021,"LOGLOG":1.50686256399351,"LINEAR":3.64420345669927,"NumberStocks":35},{"NAME":"Home_Furnishings","ARTH":0.00342202156065306,"LOGLOG":1.40591831285761,"LINEAR":3.93055796365181,"NumberStocks":26},{"NAME":"Hospital/Nursing_Management","ARTH":0.00400943627149238,"LOGLOG":2.43290960866382,"LINEAR":4.15872891572897,"NumberStocks":32},{"NAME":"Hotels/Resorts","ARTH":0.00448922387555173,"LOGLOG":1.97123350886285,"LINEAR":3.8469064574304,"NumberStocks":35},{"NAME":"Industrial_Machinery/Components","ARTH":0.00436249518397201,"LOGLOG":1.62613454585493,"LINEAR":4.07393813020633,"NumberStocks":168},{"NAME":"Industrial_Specialties","ARTH":0.00529379021787201,"LOGLOG":2.18956390338313,"LINEAR":4.14397855763044,"NumberStocks":48},{"NAME":"Integrated_oil_Companies","ARTH":-0.00637526369922128,"LOGLOG":1.48222310736806,"LINEAR":3.67397034541701,"NumberStocks":28},{"NAME":"Investment_Bankers/Brokers/Service","ARTH":0.00244044621400055,"LOGLOG":1.28975078643047,"LINEAR":3.85400545191747,"NumberStocks":70},{"NAME":"Investment_Managers","ARTH":-0.000154472923901324,"LOGLOG":1.51608733259183,"LINEAR":3.90190354015215,"NumberStocks":41},{"NAME":"Life_Insurance","ARTH":-0.000209007114939739,"LOGLOG":1.2409708071927,"LINEAR":3.85969842897725,"NumberStocks":36},{"NAME":"Major_Banks","ARTH":0.000917236816749524,"LOGLOG":1.61467880936805,"LINEAR":3.86027157011581,"NumberStocks":350},{"NAME":"Major_Chemicals","ARTH":0.00588528283798894,"LOGLOG":2.11492712007806,"LINEAR":4.16666391825884,"NumberStocks":69},{"NAME":"Major_Pharmaceuticals","ARTH":-0.012440374250922,"LOGLOG":2.02251706030255,"LINEAR":3.52698816073579,"NumberStocks":370},{"NAME":"Marine_Transportation","ARTH":0.00340979468319434,"LOGLOG":2.06841478050979,"LINEAR":4.12220248305713,"NumberStocks":74},{"NAME":"Medical/Dental_Instruments","ARTH":0.00301729491888796,"LOGLOG":1.70867766996943,"LINEAR":4.0095816624621,"NumberStocks":95},{"NAME":"Medical/Nursing_Services","ARTH":-0.000863473709253282,"LOGLOG":1.93279632445561,"LINEAR":3.91363655626986,"NumberStocks":23},{"NAME":"Medical_Specialities","ARTH":0.00155846069697184,"LOGLOG":1.25670509158617,"LINEAR":3.86612363433303,"NumberStocks":38},{"NAME":"Metal_Fabrications","ARTH":0.00844396704760384,"LOGLOG":2.84672575440821,"LINEAR":4.22288740012606,"NumberStocks":61},{"NAME":"Military/Government/Technical","ARTH":0.00264027649770765,"LOGLOG":1.45320975217159,"LINEAR":4.00305985652741,"NumberStocks":36},{"NAME":"Miscellaneous","ARTH":0.00386456084126589,"LOGLOG":2.08627441252135,"LINEAR":4.03863476876084,"NumberStocks":4},{"NAME":"Miscellaneous_manufacturing_industries","ARTH":0.0021298304764919,"LOGLOG":1.16204307493897,"LINEAR":3.78860146967184,"NumberStocks":7},{"NAME":"Movies/Entertainment","ARTH":0.00752100409404665,"LOGLOG":3.95805840965762,"LINEAR":3.85125726641665,"NumberStocks":13},{"NAME":"Multi-Sector_Companies","ARTH":0.00303190941180197,"LOGLOG":1.33619812072406,"LINEAR":3.68013650227604,"NumberStocks":20},{"NAME":"Natural_Gas_Distribution","ARTH":0.00621330791616594,"LOGLOG":3.59594728330114,"LINEAR":4.23641129099269,"NumberStocks":65},{"NAME":"Newspapers/Magazines","ARTH":0.00173388447134651,"LOGLOG":1.34139397764731,"LINEAR":3.8832049057783,"NumberStocks":14},{"NAME":"Office_Equipment/Supplies/Services","ARTH":0.0076928769580571,"LOGLOG":2.28899921257533,"LINEAR":4.09905963696882,"NumberStocks":15},{"NAME":"Oilfield_Services/Equipment","ARTH":0.00607306469344085,"LOGLOG":4.42596792371699,"LINEAR":4.12918912292618,"NumberStocks":24},{"NAME":"Oil_&_Gas_Production","ARTH":0.0116353753679295,"LOGLOG":4.66983915425105,"LINEAR":4.21507464257358,"NumberStocks":193},{"NAME":"Oil/Gas_Transmission","ARTH":0.00671951545086174,"LOGLOG":1.48618359303634,"LINEAR":3.8535828720221,"NumberStocks":15},{"NAME":"Oil_Refining/Marketing","ARTH":0.00364979891576254,"LOGLOG":1.89643495455881,"LINEAR":4.05927188729593,"NumberStocks":25},{"NAME":"Other_Consumer_Services","ARTH":0.00291259851613073,"LOGLOG":1.46625238986875,"LINEAR":3.87723454984001,"NumberStocks":60},{"NAME":"Other_Specialty_Stores","ARTH":0.00312089633251524,"LOGLOG":1.29257634240054,"LINEAR":3.80599233019749,"NumberStocks":43},{"NAME":"Packaged_Foods","ARTH":0.0065378809548719,"LOGLOG":1.71738158127417,"LINEAR":3.917550920484,"NumberStocks":39},{"NAME":"Package_Goods/Cosmetics","ARTH":0.00628361553298654,"LOGLOG":1.53609906119527,"LINEAR":3.89292470007539,"NumberStocks":17},{"NAME":"Paper","ARTH":0.00298852071917654,"LOGLOG":2.49925498586127,"LINEAR":4.18426476170708,"NumberStocks":13},{"NAME":"Plastic_Products","ARTH":0.00336922052401496,"LOGLOG":1.76516023678063,"LINEAR":3.92041034926959,"NumberStocks":11},{"NAME":"Power_Generation","ARTH":0.00747897389666953,"LOGLOG":1.67980253383491,"LINEAR":3.69118375001457,"NumberStocks":24},{"NAME":"Precious_Metals","ARTH":0.026773029346592,"LOGLOG":6.29895432798292,"LINEAR":4.37478710869608,"NumberStocks":83},{"NAME":"Professional_Services","ARTH":0.00128492858406722,"LOGLOG":1.36355189047314,"LINEAR":3.90382357408155,"NumberStocks":42},{"NAME":"Property-Casualty_Insurers","ARTH":0.00262614572575114,"LOGLOG":1.22192420473157,"LINEAR":3.7404520730034,"NumberStocks":97},{"NAME":"Publishing","ARTH":0.00822772602216132,"LOGLOG":1.96289244399518,"LINEAR":4.15496321334822,"NumberStocks":11},{"NAME":"Radio_And_Television_Broadcasting_And_Communications_Equipment","ARTH":0.0054960187379861,"LOGLOG":1.82379476140258,"LINEAR":3.91794159019023,"NumberStocks":35},{"NAME":"Railroads","ARTH":0.00738650384796958,"LOGLOG":2.86860897605055,"LINEAR":4.08858926078811,"NumberStocks":16},{"NAME":"Real_Estate","ARTH":0.00097411540938732,"LOGLOG":1.56557141279507,"LINEAR":4.00115064211211,"NumberStocks":50},{"NAME":"Real_Estate_Investment_Trusts","ARTH":0.003815602828449,"LOGLOG":1.51428055462449,"LINEAR":3.89484510468785,"NumberStocks":227},{"NAME":"Recreational_Products/Toys","ARTH":0.00592106509282596,"LOGLOG":1.59859305491021,"LINEAR":3.84840003227326,"NumberStocks":14},{"NAME":"Restaurants","ARTH":0.00308406423509404,"LOGLOG":1.26285034076142,"LINEAR":3.49598309455895,"NumberStocks":63},{"NAME":"RETAIL:_Building_Materials","ARTH":0.00607772287458058,"LOGLOG":1.82100526968245,"LINEAR":4.09700691417668,"NumberStocks":13},{"NAME":"Savings_Institutions","ARTH":2.14277584917888e-05,"LOGLOG":1.28804730108981,"LINEAR":3.77921605094108,"NumberStocks":77},{"NAME":"Semiconductors","ARTH":-0.00162373895860315,"LOGLOG":1.15265614514029,"LINEAR":3.62273440810436,"NumberStocks":110},{"NAME":"Services-Misc._Amusement_&_Recreation","ARTH":0.0012717662037823,"LOGLOG":1.050500712408,"LINEAR":3.69121563163439,"NumberStocks":19},{"NAME":"Specialty_Chemicals","ARTH":0.00364930992790039,"LOGLOG":1.47173171688336,"LINEAR":3.95339465532618,"NumberStocks":24},{"NAME":"Specialty_Foods","ARTH":0.00131561110935803,"LOGLOG":1.1192781018166,"LINEAR":3.3850280855969,"NumberStocks":10},{"NAME":"Specialty_Insurers","ARTH":0.00440912885705501,"LOGLOG":1.73003701005578,"LINEAR":3.82073901406876,"NumberStocks":18},{"NAME":"Steel/Iron_Ore","ARTH":0.0151308591162358,"LOGLOG":4.59345729595075,"LINEAR":4.30837246899639,"NumberStocks":32},{"NAME":"Telecommunications_Equipment","ARTH":0.00362487862938918,"LOGLOG":1.48131782781403,"LINEAR":3.95556521740258,"NumberStocks":149},{"NAME":"Television_Services","ARTH":0.00441539040265485,"LOGLOG":1.65944268621825,"LINEAR":3.97424020836324,"NumberStocks":35},{"NAME":"Transportation_Services","ARTH":0.00105068463757321,"LOGLOG":1.72449162450081,"LINEAR":3.85740969239766,"NumberStocks":15},{"NAME":"Trucking_Freight/Courier_Services","ARTH":0.00584049081066912,"LOGLOG":1.87719600092811,"LINEAR":3.66175000761906,"NumberStocks":17},{"NAME":"Water_Supply","ARTH":0.00771396543142621,"LOGLOG":2.07009394062202,"LINEAR":4.11987553137974,"NumberStocks":20}]
+;
+
+
+var PERIOD=   [{"PERIOD":"Period {2015-12-31} : {2016-05-10}"}] ;
+
+
+    // register our custom symbols to nvd3
+    // make sure your path is valid given any size because size scales if the chart scales.
+    nv.utils.symbolMap.set('thin-x', function(size) {
+        size = Math.sqrt(size);
+        return 'M' + (-size/2) + ',' + (-size/2) +'l' + size + ',' + size +'m0,' + -(size) +'l' + (-size) + ',' + size;
+    });
+
+    // create the chart
+    var chart;
+    nv.addGraph(function() {
+        chart = nv.models.scatterChart()
+            .showDistX(true)
+            .showDistY(true)
+            .useVoronoi(true)
+            .color(d3.scale.category10().range())
+            .duration(300)
+            .showLegend(false)
+        ;
+
+        chart.yAxis
+    .axisLabel('Performance');
+    chart.xAxis
+    .axisLabel('Arth_Mean');
+    
+       chart.dispatch.on('renderEnd', function(){
+           console.log('render complete');
+        });
+
+        chart.xAxis.tickFormat(d3.format('.02f'));
+        chart.yAxis.tickFormat(d3.format('.02f'));
+       chart.tooltipContent(function(key) {
+       // return '<h2>' + key + '</h2>';
+       return key;
+       });
+
+        d3.select('#test1 svg')
+            .datum(randomData(datax.length))
+            .call(chart);
+
+        nv.utils.windowResize(chart.update);
+
+        chart.dispatch.on('stateChange', function(e) { ('New State:', JSON.stringify(e)); });
+        return chart;
+    });
+
+    function randomData(points) { //# groups,# points per group
+        // smiley and thin-x are our custom symbols!
+        var data = [];
+        var shapes = ['square'];
+        var     random = d3.random.normal();
+
+        for (i = 0; i < points; i++) {
+            data.push({ key:'<h2>' +  datax[i].NAME + '</h2>' + '<p><small> ' + ' # of Stocks ' + datax[i].NumberStocks+ ' </small> </p>'+ '<p><small>' + PERIOD[0].PERIOD + ' </small> </p>',values: []});
+            data[i].values.push({x: datax[i].ARTH,y: datax[i].LINEAR,size: 1000*Math.round(datax[i].LINEAR * 100) / 100,shape: shapes[0 % shapes.length]});
+        }
+
+        return data;
+    }
+
+
+</script>
+</body>
+</html>

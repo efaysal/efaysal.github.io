@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="../build/nv.d3.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js" charset="utf-8"></script>
+    <script src="../build/nv.d3.js"></script>
+
+    <style>
+        text {
+            font: 12px sans-serif;
+        }
+        svg {
+            display: block;
+        }
+        html, body, #test1, svg {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="test1" class='with-3d-shadow with-transitions'>
+    <svg></svg>
+</div>
+
+<script>
+
+var datax=[{"Name":"AMS","ARTH":0.00287752486222222,"GEOM":-0.00281944132222222,"LogLog":2.54218961333333,"LL":6.17881206645487,"STOCKN":"72"},{"Name":"ASE","ARTH":0.00944648871111111,"GEOM":0.00499635871111111,"LogLog":2.62923394666667,"LL":6.21602676896642,"STOCKN":"349"},{"Name":"ASX","ARTH":-0.000144462411111111,"GEOM":0.00177242677777778,"LogLog":2.48076062666667,"LL":6.17098775606516,"STOCKN":"1071"},{"Name":"ATH","ARTH":0.00782155662666667,"GEOM":-0.0228512372222222,"LogLog":2.53735046666667,"LL":6.18551948114637,"STOCKN":"64"},{"Name":"BER","ARTH":-0.00444739550555556,"GEOM":0.00306914453333333,"LogLog":2.35900345333333,"LL":6.16878183395931,"STOCKN":"403"},{"Name":"BRU","ARTH":0.00209360459222222,"GEOM":0.0122260712,"LogLog":8.70097102666667,"LL":4.78841501421355,"STOCKN":"83"},{"Name":"BSE","ARTH":-0.0585351341111111,"GEOM":-0.0376866023444444,"LogLog":2.38625292,"LL":6.01632358357271,"STOCKN":"667"},{"Name":"BUE","ARTH":0.0320857041444444,"GEOM":0.0290034184666667,"LogLog":3.69023344,"LL":6.21548120781789,"STOCKN":"59"},{"Name":"CPH","ARTH":-0.0373288707666667,"GEOM":-0.0197313065922222,"LogLog":2.35850994666667,"LL":6.14502325403957,"STOCKN":"90"},{"Name":"DOH","ARTH":-0.0176369432666667,"GEOM":-0.0167743124844444,"LogLog":2.62245614666667,"LL":6.22408422233557,"STOCKN":"43"},{"Name":"DUS","ARTH":-0.00524817388222222,"GEOM":-0.00911673422222222,"LogLog":2.45880589333333,"LL":6.19884323270403,"STOCKN":"138"},{"Name":"EBS","ARTH":-0.0409762477666667,"GEOM":-0.0136353190666667,"LogLog":2.38110632,"LL":6.1751712194641,"STOCKN":"169"},{"Name":"FRA","ARTH":0.00257265944444444,"GEOM":-0.00700260366666667,"LogLog":2.57643309333333,"LL":6.24225361778311,"STOCKN":"1597"},{"Name":"GER","ARTH":-0.0021204397,"GEOM":-0.0017345915,"LogLog":2.46387210666667,"LL":6.19234417983213,"STOCKN":"563"},{"Name":"HAM","ARTH":-0.00820919206666667,"GEOM":0.00153041405555556,"LogLog":2.50135896,"LL":6.19052772675409,"STOCKN":"105"},{"Name":"HAN","ARTH":-0.00275243166666667,"GEOM":-0.00515620653333333,"LogLog":2.73764501333333,"LL":6.1987323970498,"STOCKN":"36"},{"Name":"HEL","ARTH":0.00348757267444444,"GEOM":0.00542370287777778,"LogLog":2.45869381333333,"LL":6.18212398584284,"STOCKN":"65"},{"Name":"HKG","ARTH":-0.00469827345555556,"GEOM":-0.0118552119888889,"LogLog":2.52564517333333,"LL":6.18411813115169,"STOCKN":"904"},{"Name":"IOB","ARTH":0.00943867726666667,"GEOM":-0.00313522695555556,"LogLog":2.93745046666667,"LL":6.26363383103368,"STOCKN":"44"},{"Name":"IST","ARTH":0.00600950679333333,"GEOM":0.00555215655555556,"LogLog":2.75654102666667,"LL":6.20819783625591,"STOCKN":"246"},{"Name":"JKT","ARTH":0.00633841520555556,"GEOM":0.000739603288888889,"LogLog":2.63421478666667,"LL":6.15492825999068,"STOCKN":"266"},{"Name":"KLS","ARTH":-0.00383847526222222,"GEOM":-0.0132794581755556,"LogLog":2.44193284,"LL":6.16828864832348,"STOCKN":"246"},{"Name":"KSC","ARTH":-0.078200311,"GEOM":-0.00255103649888889,"LogLog":2.16653681333333,"LL":5.77162885296354,"STOCKN":"352"},{"Name":"LSE","ARTH":-0.00925124826666667,"GEOM":-0.00917313025555556,"LogLog":2.36296116,"LL":6.18298033049846,"STOCKN":"1407"},{"Name":"MCE","ARTH":0.00540754003333333,"GEOM":-0.003695794,"LogLog":2.58957788,"LL":6.22553618398868,"STOCKN":"77"},{"Name":"MCX","ARTH":-0.00881856362222222,"GEOM":0.0143884295777778,"LogLog":2.44699205333333,"LL":6.19769466991271,"STOCKN":"110"},{"Name":"MEX","ARTH":0.00535870042111111,"GEOM":0.0108721792,"LogLog":2.46196102666667,"LL":6.16867950126174,"STOCKN":"266"},{"Name":"MIL","ARTH":-0.00924845711444445,"GEOM":-0.028626159927,"LogLog":2.39500456,"LL":6.17504095014186,"STOCKN":"153"},{"Name":"MUN","ARTH":-0.002872808,"GEOM":0.00395976085444444,"LogLog":2.4576456,"LL":6.19254471417974,"STOCKN":"426"},{"Name":"NCM","ARTH":-0.0109675350477778,"GEOM":-0.0155578429717778,"LogLog":2.46020309333333,"LL":6.21081420403089,"STOCKN":"720"},{"Name":"NGM","ARTH":-0.0274171969555556,"GEOM":-0.0338324034666667,"LogLog":2.52456433333333,"LL":6.20838876667697,"STOCKN":"469"},{"Name":"NMS","ARTH":-0.0095098346,"GEOM":-0.0145005933666667,"LogLog":2.52087390666667,"LL":6.21030514196932,"STOCKN":"1569"},{"Name":"NSI","ARTH":-0.0467727417722222,"GEOM":-0.0378607596333333,"LogLog":2.30246044,"LL":6.04194697700042,"STOCKN":"389"},{"Name":"NYQ","ARTH":0.00712884502222222,"GEOM":-0.00303865827777778,"LogLog":2.74389868,"LL":6.23866132876511,"STOCKN":"2773"},{"Name":"NZE","ARTH":0.00277678933333333,"GEOM":-0.00150359944444444,"LogLog":2.59951792,"LL":6.21771420547324,"STOCKN":"97"},{"Name":"OBB","ARTH":-0.000670271622222222,"GEOM":-0.0239168165777778,"LogLog":2.51971237333333,"LL":6.18841989465936,"STOCKN":"312"},{"Name":"OSL","ARTH":0.0093669722,"GEOM":0.0107713064888889,"LogLog":2.57173834666667,"LL":6.17220292911961,"STOCKN":"158"},{"Name":"PAR","ARTH":0.00686618965555556,"GEOM":-0.00902227672222222,"LogLog":2.90113454666667,"LL":6.20420659519274,"STOCKN":"410"},{"Name":"PCX","ARTH":-0.0111367680888889,"GEOM":-0.0143819433333333,"LogLog":3.16245953333333,"LL":6.25710323147322,"STOCKN":"21"},{"Name":"PNK","ARTH":0.000438089222222222,"GEOM":-0.00233817276444444,"LogLog":2.55297254666667,"LL":6.1493430300353,"STOCKN":"5506"},{"Name":"SAO","ARTH":0.020794715,"GEOM":0.0334201217777778,"LogLog":6.37606976,"LL":6.19194858515072,"STOCKN":"215"},{"Name":"SES","ARTH":0.000906766411111111,"GEOM":-0.00807476508222222,"LogLog":2.41939293333333,"LL":6.18326404046622,"STOCKN":"341"},{"Name":"SET","ARTH":0.0128157901,"GEOM":0.00802969772222222,"LogLog":2.67331966666667,"LL":6.20639693758905,"STOCKN":"111"},{"Name":"STO","ARTH":-0.00694414275555556,"GEOM":-0.00301206236666667,"LogLog":2.44102630666667,"LL":6.15827849960839,"STOCKN":"179"},{"Name":"STU","ARTH":-0.00329049167777778,"GEOM":0.00592470518888889,"LogLog":2.45123345333333,"LL":6.18909330967094,"STOCKN":"589"},{"Name":"TAI","ARTH":0.0205446726311111,"GEOM":0.0129593069444444,"LogLog":2.92296370666667,"LL":6.16431123038435,"STOCKN":"276"},{"Name":"TLV","ARTH":-0.0127780896555556,"GEOM":-0.002634979,"LogLog":2.47187546666667,"LL":6.12017095732864,"STOCKN":"95"},{"Name":"TOR","ARTH":0.00272420831111111,"GEOM":0.0148295417777778,"LogLog":2.54985212,"LL":6.20162401687746,"STOCKN":"946"},{"Name":"TWO","ARTH":0.0171581502888889,"GEOM":0.0103464341111111,"LogLog":2.81986012,"LL":6.1899661052373,"STOCKN":"173"},{"Name":"VAN","ARTH":0.0133976485555556,"GEOM":0.036665744,"LogLog":3.0808806,"LL":6.24933260595457,"STOCKN":"941"},{"Name":"VIE","ARTH":-0.00290100466,"GEOM":-0.0108567743811111,"LogLog":2.40570506666667,"LL":6.19008862057647,"STOCKN":"28"},{"Name":"VTX","ARTH":0.0122329195211111,"GEOM":0.00599342608888889,"LogLog":2.70218832,"LL":6.1768511656861,"STOCKN":"20"}]
+;
+
+
+var PERIOD= [{"PERIOD":"Period {2016-01-06} : {2016-05-10}"}]
+;
+
+
+    // register our custom symbols to nvd3
+    // make sure your path is valid given any size because size scales if the chart scales.
+    nv.utils.symbolMap.set('thin-x', function(size) {
+        size = Math.sqrt(size);
+        return 'M' + (-size/2) + ',' + (-size/2) +'l' + size + ',' + size +'m0,' + -(size) +'l' + (-size) + ',' + size;
+    });
+
+    // create the chart
+    var chart;
+    nv.addGraph(function() {
+        chart = nv.models.scatterChart()
+            .showDistX(true)
+            .showDistY(true)
+            .useVoronoi(true)
+            .color(d3.scale.category10().range())
+            .duration(300)
+            .showLegend(false)
+        ;
+
+        chart.yAxis
+    .axisLabel('GEOM');
+    chart.xAxis
+    .axisLabel('ARTH');
+    
+       chart.dispatch.on('renderEnd', function(){
+           console.log('render complete');
+        });
+
+        chart.xAxis.tickFormat(d3.format('.02f'));
+        chart.yAxis.tickFormat(d3.format('.02f'));
+       chart.tooltipContent(function(key) {
+       // return '<h2>' + key + '</h2>';
+       return key;
+       });
+
+        d3.select('#test1 svg')
+            .datum(randomData(datax.length))
+            .call(chart);
+
+        nv.utils.windowResize(chart.update);
+
+        chart.dispatch.on('stateChange', function(e) { ('New State:', JSON.stringify(e)); });
+        return chart;
+    });
+
+    function randomData(points) { //# groups,# points per group
+        // smiley and thin-x are our custom symbols!
+        var data = [];
+        var shapes = ['square'];
+        var     random = d3.random.normal();
+
+        for (i = 0; i < points; i++) {
+            data.push({ key:'<h2>' +  datax[i].Name + '</h2>' + '<p><small> ' + ' # of Stocks ' + datax[i].STOCKN + ' </small> </p>'+ '<p><small>' + PERIOD[0].PERIOD + ' </small> </p>',values: []});
+            data[i].values.push({x: datax[i].GEOM,y: datax[i].ARTH,size: Math.round(datax[i].LL)*1000 ,shape: shapes[0 % shapes.length]});
+        }
+
+        return data;
+    }
+
+
+</script>
+</body>
+</html>

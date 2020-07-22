@@ -1,0 +1,266 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Debt Analytics & Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Numerics'
++ '<br><br>'
+                + ' Click Above:'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+
+    <h1 style="color:black"> Scoring Marketplace Lending Platform </h1>
+     <h1 style="color:black"> Evidence and Some Theory, all rights reserved </h1>
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+<!-- <div id="banner">
+    <div>
+        <span id="logo"></span>
+
+        <a href="https://github.com/nvd3-community/nvd3" target="github" class="button fork"><strong>GitHub</strong></a>
+        <a href="site.html" class="button fork docs selected"><strong>Examples</strong></a>
+        <a href="documentation.html" class="button fork docs"><strong>Documentation</strong></a>
+        <div class="downloads">
+            <span>Downloads:</span>
+            <ul>
+                <li><a href="https://github.com/nvd3-community/nvd3/zipball/master" class="button">ZIP</a></li>
+                <li><a href="https://github.com/nvd3-community/nvd3/tarball/master" class="button">TAR</a></li>
+            </ul>
+        </div>
+    </div>
+</div><!-- end banner --> 
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+         <h3>
+            Debt Analytics &amp Metrics:
+        </h3>
+        <p>
+
+Thanks to low interest rate monetary policy, most publicly economical or financial data services provided by the developed countries show that the households(also other economical entities) are highly leveraged. The most salient feature of this landscape is a challenge to the central bank's monetary policies, how to handle future interest rate level, how to control the impact of their previous and coming decisions on economic activities, financial stability and especially on households equities, i.e.  future wealth and income redistributions. Any resulting uncertainties can not necessary influence household decisions in an rational way, integration of new elements from central bank's monetary policies may be problematic and counterproductive dream, households may start reducing their current consumption for more savings, if any, against possible fluctuations in debt service ratios.
+
+<br> <br>
+The question we need to examine:
+<br>
+<h3>Are these current leverage ratios optimal?</h3>
+
+<ul>
+  <li type="square"> In the sense that it minimizes the cost of capital for households economical activities, investing in real estate for instance.</li>
+  <li type="square"> Without acquiring a high possibility of default during an economic downturn or especially if interest rates start to rise again as more debt means higher debt service ratios.</li>
+</ul>
+
+In this work, the optimal leverage ratio dynamics are compared to the current leverage ratio dynamics and a statistical assessment is conducted to see if the new indicator related to the debt service ratio is appropriately reflecting an early warning indicator. The methodology, the data inputs and some results are discussed (high-level overview) in the remainder of this essay.
+
+</p>
+
+<h3>
+ Nomenclature  &amp Definition:
+  </h3>
+ <p>
+In this essay, the leverage ratio is defined as the "amount" of liability divided by the "amount" of the equity. In financial accounting, see International Financial Reporting Standards - <a href="http://www.ifrs.org/Pages/default.aspx/"> IFRS </a>, a balance sheet covers the assets as liabilities plus the ownership equity. The System of National Accounts <a href="http://unstats.un.org/unsd/nationalaccount/sna.asp"> SNA </a> provides formal definition in Chapter 3: Stocks, flows and accounting rules.
+ <br> <br>
+A balance sheet may be understood as a "snapshot" of the financial condition of an economic entity at single point in time, yearly or quarterly as the case of Cansim framework which is following mainly <a href="http://www.ifrs.org/Pages/default.aspx/"> IFRS </a> and The System of National Accounts <a href="http://unstats.un.org/unsd/nationalaccount/sna.asp"> SNA </a> standards for its data preparation.
+ <br> <br>
+ The debt service ratio-DSR is defined as the ratio of interest payments plus amortizations to income, more details are in this <a href="http://www.bis.org/publ/qtrpdf/r_qt1509h.pdf"> publication </a> of the Bank for International Settlements <a href="http://www.bis.org/"> BIS </a> with a mandate to promote global monetary and financial stability through international cooperation.
+</p>
+ <h3>
+  Methodology:
+</h3>
+
+  To derive an optimal leverage ratio, we used a variant formulation of the interesting framework in <a target="alone" href="https://ideas.repec.org/f/pst581.html"> "Stochastic Optimal Control and Financial Modeling" </a>. Our approach derived interpretable and compatible formulations as in some works under this second rich framework: <a target="alone" href="http://www.probabilityandfinance.com/"> "Probability and Finance"</a>. 
+<br> <br>
+  As the original formulation requires extra or intermediate level-datasets which are not always fully available, hindered in their estimations by a lack of adequate data resources or need to satisfy several additional requirements.
+<br> <br>
+  Our reformulation enables us to compute the optimal leverage ratio as an inverse problem, i.e. calculating from a set of observations the causal factors that produced them and its numerical implementation is encouraging and simplifies the numerical task considerably as it lessens the need for extra or intermediate level-datasets fully required in the original formulation. 
+<br> <br>
+
+ Note that our approaches assess the degree of uncertainty by looking at the volatility of economic or financial indicators related to the temporal dynamics of the balance sheet. For example, the variation of debt indices, the evolution of recent changes in debt to gross domestic product, debt to disposable income, debt to net worth, debt to financial assets, debt to NON-financial assets and so on.
+
+<br> <br>
+ <h3>
+  Data  &amp  Numerics:
+  </h3>
+<br>
+<p>  Our numerical results rely as much as possible on the compiled data by the Canadian System of National Accounts and are available through public repositories, <a href="http://www5.statcan.gc.ca/cansim/"> Cansim server</a>.  </p>
+<p>  
+Our approximated calculation will mainly affect the level of the feature under consideration rather than its dynamics, by using the same analytical form and input data series over time, it generates a feature having a time series that captures the important dynamical pattern of the feature under consideration. This approximation  is more  useful when a calibration or normalization are used to compare the numerical level values of two similar features. In this work, we use zscore normalization: zscore = (Value –Mean)/sd, where "Value" is the raw numerical value, "Mean" is the average value of the time series and "sd" is the standard deviation, zscore describes where a value is located in the distribution. For instance, a zscore of 0 is at the mean of the distribution and a zscore of 2.0 or beyond is in the tails of the distribution. A negative zscore means that the original score is below the mean and positive is under the mean. For more detail, For more details, see <a href="https://en.wikipedia.org/wiki/Standard_score"> Standard score</a>. </p>
+<p>
+This convention is used to represent the Year and its associated Quarter: Year"00" is for quarter Q1, Year"25" for Q2, Year"50" for Q3 and Year"75" for Q4. For instance, 200025 is Year 2000 and Quarter Q2; 200875 is Year 2008 and Quarter Q4. </p>
+
+        <div>
+            <a href="#" class="showcharts">Show Chart Examples</a>
+        </div>
+         <div class="examplelinks chartlinks">
+
+
+        <h4>
+    Economical Entity : Households and non-profit institutions serving households-Leverage Ratios 
+     </h4>
+      <a href="Householdsandnon-profitinstitutionsservinghouseholdsMarketvalueBalanceSheet.html"> The balance sheet (Table 378-0121) </a> shows that the household net worth increases (likely by gains in the value of real estate), by consequent the current leverage is going down, see <a href="Intertemporalzscoreoptimaldegreeofleverage.html"> Optimal Leverage vs. Current Leverage Ratios ( Using Table 378-0121)</a>. 
+        <br>
+        Since 2014Q2, the value of the optimal leverage is supporting mainly moderate borrowing. It's important to remember that a mortgage-holder's ability to meet repayments can change over time because of illness, unemployment, a change in their financial circumstances  or home price takes a noticeable fall. 
+
+ <br>
+
+     The computed optimal leverage using the estimated parameters, for instance the volatility based on the observed pairs of values of liability and equity, are downsized. Using the data reporting debt ratios to economical activities, see  <a href="Households.html"> Debt and Associated Ratios (Table 378-0123)</a>, are consistent with the previous conclusion, see <a href="DebttonetworthIntertemporalzscoreoptimaldegreeofleverage.html"> Optimal Leverage vs. Current Leverage Ratios ( Using Table 378-0123)</a>.
+             <h4>
+    Economical Entity : Households-Debt Service Ratios 
+     </h4>
+
+     The DSR is not efficient under low interest and to be considered an early warning indicator is very questionable. 
+Its formulation has some subtleties when the interest rate is going toward zero.
+ <br> 
+             <a href="DebtServiceRatioSeasonallyadjustedatannualratesZSCORENET.html"> Current Debt Service Ratios (Seasonally adjusted at annual rates) (Table 380-0073) </a> 
+              <br>
+             <a href="DebtServiceRatioUnadjustedZSCORENET.html"> Current Debt Service Ratios (Unadjusted) (Table 380-0073) </a> 
+             <br>  <br>
+ <h4>
+    Industry  : Oil and gas extraction and support activities 
+     </h4> 
+
+      In this industry, the liability is increasing while the equity is falling hence current leverage ratio is increasing and it is far away to be the optimal. This sector is experiencing two simultaneous crisis, low oil price and Canadian dollar depreciation. Effect of raising interest rates will harm more this sector and may exacerbate the Canadian economical situation as long as  oil price and Canadian dollar rate are going down.
+      Considering the possibility of another interest-rate cut is more suitable for Canadian financial system stability.
+      <br> 
+ <a href="OilandgasextractionandsupportactivitiesASSETLIABILITYEQUITY.html">Balance Sheet (Table 187-0001)</a> 
+ <br>
+ <a href="OilandgasextractionandsupportactivitiesZscoredDegreeofleverage.html"> Optimal Leverage vs. Current Leverage Ratios (Table 187-0001)</a>
+  <br>    <br> 
+  <h4>
+     Sectors in Table 187-0001 (Quarterly balance sheet and income statement, by North American Industry Classification System (NAICS)): from more to less growing Equities/Liabilities, the ordering used the computed optimal leverage ratios, the normalization used zscore to compare the numerical level values. Four quarters moving average of the normalized scores is used to make the comparison more  robust and unified around the specific period of interest. 
+     </h4> 
+
+      <br> 
+<!-- <embed src="leftPOTENTIALSECTORSINVESTEMENT.pdf" width="850" height="425" type='application/pdf'>
+ <br>
+
+<object data="leftPOTENTIALSECTORSINVESTEMENT.pdf" type="application/pdf" width="850" height="425">
+  alt : <a href="leftPOTENTIALSECTORSINVESTEMENT.pdf">Potential Sectors for Investment</a>
+</object> -->
+
+<object data="leftPOTENTIALSECTORSINVESTEMENT.pdf" type="application/pdf" width="850" height="425">
+<embed src="leftPOTENTIALSECTORSINVESTEMENT.pdf" width="850" height="425" type='application/pdf'>
+</object>
+
+</div>
+     
+
+<br><br>
+
+<h1> Implementation:</h1>
+Our Mathematical formulations are implemented using the languages (C++,Python, for instance) &amp the insight analysis uses R programming language to process the results ( R is a software environment for statistical computing
+and graphics supported by the <a target="alone" href="https://www.r-project.org/" > R Foundation for Statistical Computing </a>). The interactive data visualizations in web browsers uses the <a target="alone"  href="http://nvd3.org/"> NVD3 data visualization library. </a>
+
+
+<br><br>
+
+
+ <h3>
+Acknowledgement:
+ </h3> 
+ Thanks to Cansim for the raw data. 
+<br><br>
+Publications are in preparation.
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+   
+</section>
+</div>
+ 
+</body>
+</html>
+
+
+<!--  
+git add --all
+  git commit -m "Initial commit"
+  git push -u origin master
+ -->
+
+<!-- 
+Calvo’s formulation makes the current contract price a geometrically
+weighted average of future price levels, adjusted for excess demand in the future.
+Denoting the contract price by Vt
+, the price level by Pt
+, and excess demand
+by Et
+,
+V P E e ds t s
+t
+s
+s t = +
+∞
+− − ∫ δ β δ [ ] . ( )
+The price index is a geometrically weighted average of past contract prices,
+P V e ds t s
+t
+t s =
+−∞
+− − ∫ δ δ ( ) .
+The combination of these two makes prices implicitly a mixed forward- and
+backward-looking function of contract prices, similar to Taylor (1980): -->

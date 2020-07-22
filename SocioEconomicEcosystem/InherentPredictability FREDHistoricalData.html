@@ -1,0 +1,242 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Socio-Econometrica:  Analytics & Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Numerics'
++ '<br><br>'
+                + ' Click Above:'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+    <h3 style="color:black"> Enterprising the Data Economic Indicators</h3>
+    <h3 style="color:black"> Their Inherent Predictability as an EconoSystem</h3>
+    <h3 style="color:black"> Using Mathematical Modeling &amp Machine Learning Tools </h3>
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+<!-- <div id="banner">
+    <div>
+        <span id="logo"></span>
+
+        <a href="https://github.com/nvd3-community/nvd3" target="github" class="button fork"><strong>GitHub</strong></a>
+        <a href="site.html" class="button fork docs selected"><strong>Examples</strong></a>
+        <a href="documentation.html" class="button fork docs"><strong>Documentation</strong></a>
+        <div class="downloads">
+            <span>Downloads:</span>
+            <ul>
+                <li><a href="https://github.com/nvd3-community/nvd3/zipball/master" class="button">ZIP</a></li>
+                <li><a href="https://github.com/nvd3-community/nvd3/tarball/master" class="button">TAR</a></li>
+            </ul>
+        </div>
+    </div>
+</div><!-- end banner --> 
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+<h3> Main Points: </h3>
+Whether a business is a small or large entity, what is doing can be molded by an econosystem which is directly influenced by the time evolving microeconomic and macroeconomic indicators, not necessary in a explicit and linear fashion. Staggering amounts of these data economic indicators are accessible as never before from public sources of open data. Thanks to low cost computing power, the processing capabilities of these economic indicator are accessible to users around the world. It's time to enable business entities with comprehensible and efficient algorithms &amp analytical tools scattering useful intelligence from these data economic indicators. 
+<br> <br> 
+This called process "Enterprising the Data Economic Indicators" is fundamentally different than what has come before, this process is based on the industrialization of learning through the ever-wider deployment of Machine Learning Tools and as companion to the formal economic models used to inform economic policy in concert with experimentation regarding the design of regulatory frameworks.
+<br> <br> 
+<h3> Completing and Challenging DSGE Models: </h3>
+The need to augment the current dynamic stochastic general equilibrium (DSGE) models with  a Machine Learning framework that can help us understand the associations(linear &amp nonlinear) between these indicators that shape the econosystem in an economy appears a reasonable addition to take the lessons of the recent crisis 2007-2008 into account. Following the unexpected sharp decline in real economic activity in the US and around the world in the autumn of 2008 and spring of 2009, a debated question "are DSGE models still useful in policy analysis?" has been addressed in this article:  <a target="alone"  href="https://academic.oup.com/oxrep/article/34/1-2/43/4781808" > On the future of macroeconomic models.</a>. The article promotes a clear message: "the current DSGE models are flawed, but they contain the right foundations and must be improved rather than discarded". Holistic approach is encouraged, different types of macro models are needed and have to interact.
+<br> <br> 
+Machine Learning models are also flexible enough to be used for many purposes, very effective in selecting important indicators from large number of candidate indicators(impossible to do with DSGE framework) and are designed to capture information that is true across the majority of repeated samples. Importantly enough, these flexible machine learning techniques have the potential to capture complex nonlinear interaction between the indicators using only algorithmic concepts and considering the interaction mechanisms as unknown and to be discovered by processing the datasets associated to these indicators.
+<br> <br> 
+The nonlinear aspect of these Machine Learning models is very crucial as the monetary policy, mainly conducted by central banks, has an important role in shaping microeconomic &amp macroeconomic developments into an economical systems affecting both national and around the world levels in an implicit manner with nonlinear feedbacks. For instance, unconventional monetary policy including credit easing, quantitative easing, forward guidance, and signaling.
+<br> <br> 
+Only changes in interest rates with a suitable supply-side credit conditions(credit standards) may have a direct effect on the valuation of financial assets and their expected returns, as well as on the consumption and investment decisions of households and corporations. Therefore sound established decisions by credit standards can in turn have desired consequences as a stable financial system enjoying gross domestic product (GDP) growth, more jobs, and controlled inflation. 
+<br> <br> 
+It is important to evaluate quantitatively how these decisions end up affecting the various economic indicators and their inherent predictability as an EconoSystem to address the economy’s performance. A key goal of adding machine learning framework to DSGE framework is to provide insights about the transmission mechanism of monetary policy and to assess the predictive power of a number of economic indicators representing the state of an economy during a specific period of time. These most predictive indicators have then  to be modeled accordingly to the fabrics of the DSGE models, dynamic, stochastic, and characterize the general equilibrium of the economy. This machine learning interactive process with DSGE models makes them less imperialistic and accept sharing the scene with other general purpose approaches to economical modelization. 
+
+
+
+<br> <br> 
+<!-- Motivated by a simple application of sound machine learning tools with graph theory approach to assess the predictive power of popular time series economic variables representing the macro and micro state of an economy. When applied to USA-FRED data considering only the last 96 weeks(or last two years), a Macro/Micro economic indicators network(see the posted image) is formed to calculate its stationary distribution that ranks the indicators from more predictive to less. We find that Net Percentage of Domestic Banks Tightening Standards for Commercial and Industrial Loans to Large and Middle-Market Firms (DRTSCILM) with Velocity of M2 Money Stock (M2V) are the most predictive. Followed by other indicators as depicted in this plot:
+http://efaysal.github.io/SocioEconomicEcosystem/TREASURIESUS/FREDMACROINDICATORESSTATDISTRNETWORKEDRATESFRED.pdf
+The temporal dynamics of the most 20 predictive indicators are in:
+http://efaysal.github.io/SocioEconomicEcosystem/TREASURIESUS/FREDMACROINDICATORESxxBOXPLOT.html
+
+No weekly indicators are inter/extrapolated to reflect weekly values.
+<br> <br>  
+An important question is how much trust can be placed on such "target for the overnight rate" or "discount rate" to influence really interest rates in an economy?
+<br> <br> 
+<!-- A complementary question is are the observed interest rates playing a prominent role in the determination of monetary policy "target for the overnight rate" or "discount rate"?
+<br> <br>  -->  
+<h3> How to Proceed: </h3>
+Our quantitative analysis uses a set of mathematical models to evaluate the historical data related to most popular economic indicators in public databases for patterns that help to answer the questions in the "Main Points Section" in terms of numerical values. These numerical values are presented into a form guided by this statement "Translating and analyzing big data using charts, graphics, and images is becoming more and more necessary for decision-making." </strong>  promoted by the  <a href="http://apdu.org/"> Association of Public Data Users.</a>  
+<br> <br> 
+We provide:
+<ul>
+    <li type="square">  <strong> Interactive Charting </strong> features the temporal dynamics of the considered interest rates in this work and to facilitate their comparisons. To find out more about the temporal dynamic of a specific interest rate, a double click on its name in the legend creates
+its associated curve and then add up for multiple comparisons.</li> 
+    <br>
+     <li type="square"> <strong> Economic Indicators Network  </strong>  is the results of our mathematical modeling and subsequent computation to study the numerical behavior of these interest rates. The obtained numerical values are used to explore and gain new insights into the impact of the temporal decision that determined them and to estimate and highlight specific interconnection levels between them. If there exist groups of interest rates highly interconnected but with few links to other interest rates. This kind of structure carry out much information about the network to answer our question quantitatively.
+     </li>  
+      <br>
+     <li type="square"> <strong> Random Walks on Interest Rates Network</strong>, by considering the interest rates network as a Graph (discrete mathematics), the theory of random walk on this graph help to extract basic properties determined by the <a href="http://jgaa.info/accepted/2006/PonsLatapy2006.10.2.pdf"> spectrum of the graph </a> as its community structures and stationary distribution.
+     </li>
+</ul>
+<h4> Interpretation of stationary distribution values</h4>
+More the stationary distribution value of a given indicator is higher more this indicator is affecting significantly the values of the considered economic indicators. The indicator in the lowest stationary distribution class have more difficulty to influence significantly other indicator values than the indicator in the highest stationary distribution class.
+<br><br>
+<h1> Detailed Numerical Results: United States of America Economy Case  </h1>
+<h2>  Interest Rates from  <a href="https://fred.stlouisfed.org/series/">  | FRED | St. Louis Fed </a> </h2>
+<ul>  <strong>  Interactive Charting: </strong>
+    <li type="square">  <a href= "./TREASURIESUS/TREASURIESUSFRED.html"> Raw Historical USA Interest Rates. </a> </li>
+</ul>
+<ul>  <strong>  Interest Rates Network: </strong>
+<div class="image12">
+    <div class="imgContainer">
+      <center>  <img class="middle-img" src="./TREASURIESUS/NOTCALIBRATEDNETWORKEDRATESFRED.jpeg" alt="Channel" /></center>
+    </div>
+
+       <div>
+    <object data="./TREASURIESUS/NOTCALIBRATEDNETWORKEDRATESFRED.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./TREASURIESUS/NOTCALIBRATEDNETWORKEDRATESFRED.pdf"> Community Structure Network </a>
+    </object>
+</div>
+
+
+</div>
+</ul>
+<ul>  <strong>  Random Walks on Interest Rates Network: </strong>
+<div class="image12">
+    <div class="imgContainer">
+      <center>  <img class="middle-img" src="./TREASURIESUS/STATDISTRNETWORKEDRATESFRED.jpeg" alt="Channel" /></center>
+    </div>
+
+
+       <div>
+    <object data="./TREASURIESUS/STATDISTRNETWORKEDRATESFRED.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./TREASURIESUS/STATDISTRNETWORKEDRATESFRED.pdf"> Stationary Distribution</a>
+    </object>
+</div>
+
+
+</div>
+</ul>
+<h2>   Economic Indicators    <a href="https://fred.stlouisfed.org/series/">  | FRED | St. Louis Fed </a> </h2>
+<ul>  <strong>  Interactive Charting: /strong>
+    <li type="square">  <a href= "./TREASURIESUS/FREDMACROINDICATORESxxBOXPLOT.html"> Most 20 Predictive Economic Indicators. </a> </li>
+</ul>
+<ul>  <strong> Community Structure Network: </strong>
+<div class="image12">
+<!--     <div class="imgContainer">
+      <center>  <img class="middle-img" src="./TREASURIESUS/FREDMACROINDICATORESNETWORKEDRATES.jpeg"alt="Channel" /></center>
+    </div> -->
+          <div>
+    <object data="./TREASURIESUS/FREDMACROINDICATORESNETWORKEDRATES.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./TREASURIESUS/FREDMACROINDICATORESNETWORKEDRATES.pdf"> Community Structure Network </a>
+    </object>
+</div>
+
+</div>
+</ul>
+<ul>  <strong>  Random Walks on Economic Indicators Network: </strong>
+<div class="image12">
+ <!--    <div class="imgContainer">
+      <center>  <img class="middle-img" src="./TREASURIESUS/FREDMACROINDICATORESSTATDISTRNETWORKEDRATESFRED.jpeg"  width="740" height="382"  alt="Channel" /></center>
+    </div> -->
+       <div>
+    <object data="./TREASURIESUS/FREDMACROINDICATORESSTATDISTRNETWORKEDRATESFRED.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./TREASURIESUS/FREDMACROINDICATORESSTATDISTRNETWORKEDRATESFRED.pdf"> Stationary Distribution</a>
+    </object>
+</div>
+</div>
+</ul>
+
+
+
+<h1> Implementation:</h1>
+The insight analysis uses R programming language to process the results ( R is a software environment for statistical computing
+and graphics supported by the <a target="alone" href="https://www.r-project.org/" > R Foundation for Statistical Computing </a>). The interactive data visualizations in web browsers uses the <a target="alone"  href="http://nvd3.org/"> NVD3 data visualization library. </a>
+
+
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com</a>
+    <br> 
+   The MIT License (MIT) Copyright 1994-2050, Faysal El Khettabi, Numerics &amp Analytics, All Rights Reserved.
+     </div> 
+   
+
+
+</section>
+</div>
+ 
+
+ 
+</body>
+</html>
+
+
+<!--  
+git add --all
+  git commit -m "Initial commit"
+  git push -u origin master
+ -->

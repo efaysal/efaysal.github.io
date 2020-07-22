@@ -1,0 +1,150 @@
+
+
+<!-- 
+git add --all
+git commit -m "Initial commit"
+ git push -u origin master
+
+ -->
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Analytics & Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Bursting Velocity'
++ '<br><br>'
+                + ' Click above: Category or Video'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+      <h2 style="color:black">  Quantitative Pathology Imaging  </h2>
+    <h2 style="color:black">  Deep Discrepancy Learning Process </h2>
+    <h2 style="color:black">  From a Long Shot to a Close-Up </h2>
+     
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+    <!--   Under Construction and Review! -->
+    <h1>  Aim and Motivation: Convert Data-Lights into Meaningful Insights.</h1>  
+
+
+Extracting meaningful information from intact tissue is
+becoming ever more critical as researchers look for better
+ways to characterize molecular activity of cells within their
+native microenvironments. In life science research and
+pharmaceutical drug development, progress often depends on it. In translational
+oncology, understanding cancer in its microenvironment is central to identifying
+disease subtype, validating targets, selecting patients for trials, characterizing efficacy
+and response, and making correlations with clinical outcome.
+inForm® is a patented automated image analysis software package for accurately
+visualizing and quantifying biomarkers in tissue sections. Two standalone versions
+of inForm image analysis software are available, inForm Cell Analysis™ and inForm
+Tissue Finder™. inForm Cell Analysis enables per-cell analysis of immunohistochemistry
+(IHC) and immunofluorescence samples, allowing the separation and measurement of
+weak and spectrally overlapping markers in single and multiplex assays. inForm Tissue
+Finder automates the detection and segmentation of specific tissue types using
+patented user-trainable algorithms developed to recognize morphological patterns. 
+
+<h4>  Note  </h4>
+The theoretical part of this work was  done when the author was in his PhD thesis (1994-1998), at the University of Savoie, Department of Mathematics, France. The work was shaped toward real applications accordingly to the learned scientific experience. 
+<br>   <br> 
+Previous Essays:
+
+
+ <ul>
+       <li type="square">  <a target="alone"  href="http://efaysal.github.io/SocioEconomicEcosystem/IFCCDTDIDDLP.html"> 
+Imaging Flow Cytometry (IFC), Sensitivity Resolution  Image Quality, CCD Camera in Time-Delay Integration Using Deep Discrepancy Learning Process (DDLP) </a>
+   </li>  
+    <li type="square">  <a target="alone"  href="http://efaysal.github.io/SocioEconomicEcosystem/IMAGECFLOWCYTOMETRYCONTENTANALYTICS.html"> Imaging Flow Cytometry Using Deep Discrepancy Learning Process.</a>
+   </li>
+   <li type="square"> <a target="alone"  href="http://efaysal.github.io/SocioEconomicEcosystem/FLOURESCENCEIMAGECONTENTANALYTICS.html">Fluorescence Imaging Analysis Using Deep Discrepancy Learning Process </a>
+   </li>
+  <li  <li type="square"> <a target="alone"  href="http://efaysal.github.io/SocioEconomicEcosystem/IMAGECONTENTANALYTICS.html"> Image Analytics Using Deep Discrepancy Learning Process. </a>
+   </li>
+</ul>
+
+
+ <br>   <br> 
+<h4>   Author scientific profile:  </h4>
+Statistics and Applied Mathematics for Data Analytics, Identify opportunities to apply Mathematical Statistics, Numerical Methods, Machine Learning and Pattern Recognition to investigate and implement solutions to the field of Data Content Analytics. Data prediction via computational methods to predict from massive amounts of data (Big Data Content). These methods included clustering, regression, survival analysis, neural network, classification , ranking, deep discrepancy learning .
+ <br>   <br> 
+
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com , Living in Vancouver, BC, Canada.</a>
+    <br> 
+   The MIT License (MIT) Copyright 1994-2017, Faysal El Khettabi, Numerics&Analytics, All Rights Reserved.
+     </div> 
+   
+</section>
+</div>
+ 
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Socio-Econometrica:  Analytics & Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Numerics'
++ '<br><br>'
+                + ' Click Above:'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+    <h3 style="color:black">  Multi-Assets Portfolios and Limit Behavior Analysis </h3>
+    <h4 style="color:black"> Using Machine Learning Perspective </h4>
+     <h4 style="color:black"> Based on Stochastic Discounting Factor Models  </h4>
+    
+<div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+<!-- <div id="banner">
+    <div>
+        <span id="logo"></span>
+
+        <a href="https://github.com/nvd3-community/nvd3" target="github" class="button fork"><strong>GitHub</strong></a>
+        <a href="site.html" class="button fork docs selected"><strong>Examples</strong></a>
+        <a href="documentation.html" class="button fork docs"><strong>Documentation</strong></a>
+        <div class="downloads">
+            <span>Downloads:</span>
+            <ul>
+                <li><a href="https://github.com/nvd3-community/nvd3/zipball/master" class="button">ZIP</a></li>
+                <li><a href="https://github.com/nvd3-community/nvd3/tarball/master" class="button">TAR</a></li>
+            </ul>
+        </div>
+    </div>
+</div><!-- end banner --> 
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+
+ <h6> This essay is a non-technical overview of some subjects related to the field of data science research, modeling financial stock market data using "Numerics-Machine Learning-Analytics".   </h8>
+<h6> 
+Terms: A security is a tradable asset in a financial market, this term refers to any form of financial instrument. 
+In financial stock market, security is termed as stock, asset, equity or share.</h6>
+
+
+<h1> Aim and Motivation </h1>
+The aim of this short introduction to equilibrium prices is to get across the essential modeling elements necessary to formalize them more carefully into an economic dynamic system to evaluate their exhibiting oscillatory behaviors.
+<br> <br>
+In general, equilibrium  price is determined when demand equals supply. The determination of equilibrium conditions rely on choices made by agents as investors, firms, households, central banks and so on. A discussion about the existence of this equilibrium price in a  competitive economy is in the work of <a href="https://web.stanford.edu/class/msande311/arrow-debreu.pdf"> Kenneth J. Arrow and Gerard Debreu</a>. 
+<br> <br>
+In financial stock market, the crucial focus is paid to what determines the equilibrium prices of multi-assets portfolios and how that equilibrium prices change when financial , economic and policy conditions change:
+<ul>
+    <li type="square">   To understand how the equilibrium price settings are causing the emergence of the volatility and return.  </li> 
+     <li type="square">  To be able to assess the condition of stability of the fluctuations in equilibrium prices and to know what happens to average characteristics of these fluctuations over time. 
+ </li>  
+    </ul>
+A nonlinear system is a system in which the change of the output is not proportional to the change of the input. A common approach to the analysis of condition of stability is via linearization which may not necessary provide insight into 
+non-linear interactions between equilibrium prices of multi-assets portfolios. 
+<br> <br>
+A nonlinear modelling is most preferred  to take at least some nonlinearities into account, modelling the interactions between equilibrium prices of multi-assets portfolios to capture their non linear complexity and synergetic nonlinear effects between them.  
+Importantly enough, the nonlinear modelling  has to convey useful information about the average characteristics of the  fluctuations over time and may not only if few exceptions occur.
+<br> <br>
+<h1> Stochastic Discounting Factor Models </h1>
+A modern elaboration of the work of  <a href="https://web.stanford.edu/class/msande311/arrow-debreu.pdf"> Kenneth J. Arrow and Gerard Debreu</a> for financial asset pricing is called Stochastic Discounting Factor Models(SDFm) when the no-arbitrage condition is assumed to secure the existence of security equilibrium in an economy where all agents have access to the same information set. The work 
+of  <a href="https://scholar.harvard.edu/files/campbell/files/campbell2013nobel_032914.pdf"> John Y. Campbell </a>  presents a detailed review about SDFm.
+<br> <br>
+This modern asset pricing theory is mainly focusing at understanding the prices of future claims that are subject to
+future uncertainty. In the presence of any payoff uncertainty when undertaking an investment venture, investors will typically ask for risk compensation, and thus for some investment-specific return, which will discount the expected future payoff stream.
+Importantly enough, the valuation process that investors undergo for investments with uncertain payoff typically depends on their statistical views on possible future outcomes, preferences as their attitudes toward risk, and, of course, the payoff structure itself.
+<br> <br>
+The equilibrium price is then an averaging discounting payoffs under different "states of affairs" and weighing them according to the investors's probabilities and marginal preference structures. The equilibrium prices of multi-assets portfolios serve also to identify the fundamental differences in risk premia patterns between them that give rise to differences in their average returns via the variances and covariance operators, which captures the risk adjustment for risky assets in the multi-assets portfolios. 
+<br> <br>
+The challenge in this modern asset pricing theory lies on the adequate identification of the investor’s probability and marginal preference structures and risk factors that are able to model empirically the actual SDFm from a given market data-sets. 
+In practice it is presumably infeasible to capture simultaneously all influencing factors in the actual SDFm from the data. Usually, a parametrization of SDFm is expressed as a function of the marginal rate of substitution of consumption of the investors. But most elementary parametrizations stop at this point. 
+<br> <br>
+<h1> Machine Learning Perspective </h1>
+Equilibrium prices of multi-assets portfolios are stochastic processes represented by time series exhibiting oscillatory behaviors. It is useful for financial and economic purposes to have a convenient way of summarizing the "average" behavior of such processes over time, see the work of <a href="https://lnkd.in/ehcJVrC"> Carl Futia</a>.
+<br> <br>
+The starting point of this analysis is a set of economic states(system) representing a number of multi-assets portfolios. The dynamics of this system are stochastic, governed by transition probabilities that are estimated by a Machine Learning perspective characterizing the actual SDFm, either due to intrinsic randomness in the equilibrium prices of the system or to the unpredictable influence of choices made by agents.
+
+<br> <br>
+An essential role that Machine Learning perspective can play in this modern asset pricing theory is to identify automatically from market equilibrium price data-sets the fundamental differences in risk premia patterns between multi-assets portfolios that give rise to differences in their average returns. For instance, to deduce similar correlated assets to the actual pricing structure of SDFm that may help to assess how the exposures of these assets to major intervention in the economy, as unconventional monetary policy, macroeconomic shocks, new trading strategies, new policies and so on, are priced.
+<br> <br>
+Using non-linear Machine Learning modeling is to take into consideration higher order terms that are important when analysing equilibrium prices and related financial variables as risk premia or asset returns. Also in order to characterize non discernible SDF without committing to a particular asset pricing model, i.e., a marked departure from the statistical artifact hypothesis.
+<br> <br>
+Therefore, the aim is to use machine learning as an integrative part of the modern asset pricing theory, offering automated procedures for the characterization of SDFm based on past market data-sets observations, unraveling
+underlying patterns in equilibrium prices data and providing insights about the characteristic of asset pricing under uncertainty as transition probabilities that are governing the dynamics of the system representing a number of multi-assets portfolios.
+<br> <br>
+<h1> Limiting Behaviors </h1>
+The system, representing a number of multi-assets portfolios, is determined by a set of time-dependent parameters, which may be thought of as a set of indicators of its macroscopic aspect summarising the dynamic behaviour implied by transition probabilities. 
+<br> <br>
+The initial knowledge of the system is characterized by some limiting distribution  of the transition probability as an equilibrium where the system settles down and, once there, there is no reason for the system to move. However, as the financial assets in the system  still interact in an unknown way, exhibiting new equilibrium prices, .i.e, change in the entries of the corresponding transition probability, resulting in structural changes in the underlying pricing processes of the financial assets and vice versa. Therefore the system again temporally evolves stochastically into new transition probabilities with new limiting distributions. Each new transition probability is the result of a perturbation on the previous transition probability.
+In other words, the system has a performing dynamic perturbation that involves time explicitly. 
+<br> <br>
+This comparative statics using equilibrium prices with Machine Learning perspectives to derive transition probabilities and to estimate the limiting distributions is a financial model to assess nonlinear relationships between the crucial elements of the financial assets system one is interested in. An important attention is to know what happens to the transition probabilities and their associated entropies over time. 
+
+
+<br> <br>
+<h1> Numerical Results </h1>
+ The system representing a finite number of multi-assets portfolios can be  described by a sequence of networks(graphs) where each network has a transition probability matrix 
+ estimated by the comparative statics procedure and the network is considered as a perturbed network(perturbed transition probability) of the previous network( previous transition probability). Therefore, this  empirical analysis(EA) is to assess the limiting distribution behaviors of these consecutive perturbed transition probability  matrices. 
+
+<br> <br>
+A numerical analysis shows that the limiting distribution may be extremely sensitive to perturbations of some entries of the transition matrix, but insensitive to others. An approximation of the relative difference between two entropies of two consecutive limiting distributions is derived in terms of hitting times which capture wide or no variations in the sensitivities of different entries of the transition probability matrix.  An important result of this numerical analysis is  the entropy of the system can be increasing or decreasing, thus the entropy can be a financial risk measure.
+<br> <br>
+The work of <a href="https://www.sciencedirect.com/science/article/pii/S0024379501003202"> Grace E. Choa and Carl D. Meyer </a> provides a detailed review to Markov chain sensitivity measurements.
+<br> <br>
+ Considering the last 252 days where each day is representing a perturbed transition probability matrix. This EA determines how the limiting distributions and their associated entropies change through daily perturbation. 
+<br> <br>
+More the limiting distribution values are clumped, going to be a uniform distribution, the higher its entropy(more uncertainty). 
+When limiting distribution values are evenly distributed over the interval (0:1), the entropy is reducing(less uncertainty). In plain English, low entropy means we know a lot about the system states(kind of observed order) and  high entropy means we don’t know much at all about the system states(disorder).
+<br> <br>
+<h3> Major World Indexes </h3>
+<ul>  <strong>  Temporal Dynamics of the Limiting Stationary Distributions </strong>
+ <div class="image12">
+     <div>
+    <object data="./FrGrSwRETURNVOLATILITY/ITERATIONS/CF_DLSD_ALL_Major_World_Indexes_.pdf
+" type="application/pdf" width="700" height="700">
+        alt : <a href="./FrGrSwRETURNVOLATILITY/ITERATIONS/CF_DLSD_ALL_Major_World_Indexes_.pdf"> Temporal Dynamics of the Limiting Stationary Distributions </a>
+    </object>
+    </div>
+</div>
+</ul>
+<ul>  <strong>  Variation in Limiting Stationary Distribution values </strong>
+ <div class="image12">
+     <div>
+    <object data="./FrGrSwRETURNVOLATILITY/ITERATIONS/CF_BOXPLOTDLSD_ALL_Major_World_Indexes_.pdf
+" type="application/pdf" width="700" height="700">
+        alt : <a href="./FrGrSwRETURNVOLATILITY/ITERATIONS/CF_BOXPLOTDLSD_ALL_Major_World_Indexes_.pdf
+"> Variation in Limiting Stationary Distribution values: </a>
+    </object>
+    </div>
+</div>
+</ul>
+
+<ul>  <strong>  Last Daily Network  </strong>
+ <div class="image12">
+     <div>
+    <object data="./FrGrSwRETURNVOLATILITY/ITERATIONS/CFBISRETURNCOEFFQBMONTECARLODaysVCMMajor_World_Indexes.pdf
+" type="application/pdf" width="700" height="700">
+        alt : <a href="./FrGrSwRETURNVOLATILITY/ITERATIONS/CFBISRETURNCOEFFQBMONTECARLODaysVCMMajor_World_Indexes.pdf
+"> Last Daily Network </a>
+    </object>
+    </div>
+</div>
+</ul>
+
+<ul>  <strong>   Daily Entropy of the Limiting Stationary Distributions </strong>
+    <li type="square">  <a href= "./FrGrSwRETURNVOLATILITY/ITERATIONS/CF_EntropyLimitingStationaryDistributions_ALL_Major_World_Indexes_.html
+">  Daily Entropy of the Limiting Stationary Distributions
+ </a> </li>
+</ul>
+<ul>  <strong>  Temporal Dynamics of the Limiting Stationary Distributions having Higher Values </strong>
+    <li type="square">  <a href= "./FrGrSwRETURNVOLATILITY/ITERATIONS/CF_dynamicsSD_ALL_Major_World_Indexes_.html
+"> Temporal Dynamics of the Limiting Stationary Distributions having Higher Values
+ </a> </li>
+</ul>
+<ul>  <strong>  Additional Numerical Results </strong>
+    <li type="square">  <a href= "./FrGrSwRETURNVOLATILITY/BISRETURNCOEFFQBMONTECARLOWeeklyMemSD_ETF_CAD_EUR_US.csv
+"> Additional Numerical Results
+ </a> </li>
+</ul>
+<br>
+
+<h3> DOW & NASDAQ100 </h3>
+<ul>  <strong>  Temporal Dynamics of the Limiting Stationary Distributions </strong>
+ <div class="image12">
+     <div>
+    <object data="./FrGrSwRETURNVOLATILITY/ITERATIONS/CF_DLSD_ALL_DOW_NASDAQ100_.pdf
+" type="application/pdf" width="700" height="700">
+        alt : <a href="./FrGrSwRETURNVOLATILITY/ITERATIONS/CF_DLSD_ALL_DOW_NASDAQ100_.pdf"> Temporal Dynamics of the Limiting Stationary Distributions </a>
+    </object>
+    </div>
+</div>
+</ul>
+<ul>  <strong>  Variation in Limiting Stationary Distribution values </strong>
+ <div class="image12">
+     <div>
+    <object data="./FrGrSwRETURNVOLATILITY/ITERATIONS/CF_BOXPLOTDLSD_ALL_DOW_NASDAQ100_.pdf
+" type="application/pdf" width="700" height="700">
+        alt : <a href="./FrGrSwRETURNVOLATILITY/ITERATIONS/CF_BOXPLOTDLSD_ALL_DOW_NASDAQ100_.pdf
+"> Variation in Limiting Stationary Distribution values: </a>
+    </object>
+    </div>
+</div>
+</ul>
+
+<ul>  <strong>  Last Daily Network  </strong>
+ <div class="image12">
+     <div>
+    <object data="./FrGrSwRETURNVOLATILITY/ITERATIONS/CFBISRETURNCOEFFQBMONTECARLODaysVCMDOW_NASDAQ100.pdf
+" type="application/pdf" width="700" height="700">
+        alt : <a href="./FrGrSwRETURNVOLATILITY/ITERATIONS/CFBISRETURNCOEFFQBMONTECARLODaysVCMDOW_NASDAQ100.pdf
+"> Last Daily Network </a>
+    </object>
+    </div>
+</div>
+</ul>
+
+<ul>  <strong>   Daily Entropy of the Limiting Stationary Distributions </strong>
+    <li type="square">  <a href= "./FrGrSwRETURNVOLATILITY/ITERATIONS/CF_EntropyLimitingStationaryDistributions_ALL_DOW_NASDAQ100_.html
+">  Daily Entropy of the Limiting Stationary Distributions
+ </a> </li>
+</ul>
+<ul>  <strong>  Temporal Dynamics of the Limiting Stationary Distributions having Higher Values </strong>
+    <li type="square">  <a href= "./FrGrSwRETURNVOLATILITY/ITERATIONS/CF_dynamicsSD_ALL_DOW_NASDAQ100_.html
+"> Temporal Dynamics of the Limiting Stationary Distributions having Higher Values
+ </a> </li>
+</ul>
+<ul>  <strong>  Additional Numerical Results </strong>
+    <li type="square">  <a href= "./FrGrSwRETURNVOLATILITY/BISRETURNCOEFFQBMONTECARLOWeeklyMemSD_ETF_CAD_EUR_US.csv
+"> Additional Numerical Results
+ </a> </li>
+</ul>
+<br>
+
+
+<h3> MAJOR WORLD BANK EQUITIES (Stock Prices)</h3>
+<ul>  <strong>  Temporal Dynamics of the Limiting Stationary Distributions </strong>
+ <div class="image12">
+     <div>
+    <object data="./FrGrSwRETURNVOLATILITY/ITERATIONS/CF_DLSD_ALL_Major_World_Banks_.pdf
+" type="application/pdf" width="700" height="700">
+        alt : <a href="./FrGrSwRETURNVOLATILITY/ITERATIONS/CF_DLSD_ALL_Major_World_Banks_.pdf"> Temporal Dynamics of the Limiting Stationary Distributions </a>
+    </object>
+    </div>
+</div>
+</ul>
+<ul>  <strong>  Variation in Limiting Stationary Distribution values </strong>
+ <div class="image12">
+     <div>
+    <object data="./FrGrSwRETURNVOLATILITY/ITERATIONS/CF_BOXPLOTDLSD_ALL_Major_World_Banks_.pdf
+" type="application/pdf" width="700" height="700">
+        alt : <a href="./FrGrSwRETURNVOLATILITY/ITERATIONS/CF_BOXPLOTDLSD_ALL_Major_World_Banks_.pdf
+"> Variation in Limiting Stationary Distribution values: </a>
+    </object>
+    </div>
+</div>
+</ul>
+
+<ul>  <strong>  Last Daily Network  </strong>
+ <div class="image12">
+     <div>
+    <object data="./FrGrSwRETURNVOLATILITY/ITERATIONS/CFBISRETURNCOEFFQBMONTECARLODaysVCMMajor_World_Banks.pdf
+" type="application/pdf" width="700" height="700">
+        alt : <a href="./FrGrSwRETURNVOLATILITY/ITERATIONS/CFBISRETURNCOEFFQBMONTECARLODaysVCMMajor_World_Banks.pdf
+"> Last Daily Network </a>
+    </object>
+    </div>
+</div>
+</ul>
+
+<ul>  <strong>   Daily Entropy of the Limiting Stationary Distributions </strong>
+    <li type="square">  <a href= "./FrGrSwRETURNVOLATILITY/ITERATIONS/CF_EntropyLimitingStationaryDistributions_ALL_Major_World_Banks_.html
+">  Daily Entropy of the Limiting Stationary Distributions
+ </a> </li>
+</ul>
+<ul>  <strong>  Temporal Dynamics of the Limiting Stationary Distributions having Higher Values </strong>
+    <li type="square">  <a href= "./FrGrSwRETURNVOLATILITY/ITERATIONS/CF_dynamicsSD_ALL_Major_World_Banks_.html
+"> Temporal Dynamics of the Limiting Stationary Distributions having Higher Values
+ </a> </li>
+</ul>
+<ul>  <strong>  Additional Numerical Results </strong>
+    <li type="square">  <a href= "./FrGrSwRETURNVOLATILITY/BISRETURNCOEFFQBMONTECARLOWeeklyMemSD_ETF_CAD_EUR_US.csv
+"> Additional Numerical Results
+ </a> </li>
+</ul>
+<br>
+
+<br> <br>
+<h1> Implementation:</h1>
+The insight analysis uses R programming language to process the results ( R is a software environment for statistical computing
+and graphics supported by the <a target="alone" href="https://www.r-project.org/" > R Foundation for Statistical Computing </a>). The interactive data visualizations in web browsers uses the <a target="alone"  href="http://nvd3.org/"> NVD3 data visualization library. </a>
+
+
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com</a>
+    <br> 
+   The MIT License (MIT) Copyright 1994-2050, Faysal El Khettabi, Numerics &amp Analytics, All Rights Reserved.
+     </div> 
+   
+
+
+</section>
+</div>
+ 
+
+ 
+</body>
+</html>
+
+
+<!--  
+git add --all
+  git commit -m "Initial commit"
+  git push -u origin master
+ -->

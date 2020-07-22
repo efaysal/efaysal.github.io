@@ -1,0 +1,172 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>HF Equaty Portfolio: Digital Analytics & Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #CCC; font-family: arial; font-size: 14px; font-weight:bold;">'
+                + 'Click the links above to load the example here'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+    <h1 style="color:black"> EQUITY RESEARCH-REPORT ESSENTIALS</h1>
+  <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+
+<h5>About Hedge Fund Equity Portfolio</h5>
+<blockquote>
+The nature of financial world is stochastic, not deterministic. Phenomena are mainly subject to randomness and only statistical statements can be made.
+</blockquote>
+
+<br><br>
+
+ <h1> Aim: </h1>
+
+Our aim is to rank the hedge fund equity portfolio managers during a period of time ( quarterly basis, for instance) using the numerical data related to their equities(stocks) in the file form 13F holdings . Their stock-picking decisions are quantified, analyzed and compared to other hedge funds in a Hedge Fund Universe (HFU). We considered two analytical approaches, to compare between two hedge fund portfolios, we assumed that the stocks are represented by prices following known stochastic processes as in <a target="alone" href="https://en.wikipedia.org/wiki/Stochastic_portfolio_theory/"> Stochastic portfolio theory</a> and <a target="alone" href="https://ideas.repec.org/f/pst581.html"> Stochastic Optimal Control and Financial Modeling </a>. Our approach derived compatible results as in <a target="alone" href="http://www.probabilityandfinance.com/"> Probability and Finance</a>.
+
+The second approach is based only on the logarithmic returns of the hedge fund portfolio to determine his capital accumulation process, this second approach is concise with the well-established <a target="alone" href= http://scholar.harvard.edu/files/campbell/files/campbellshiller_jf1988.pdf"> Campbell-Shiller framework</a>.
+<br><br>
+<h1>  Analytical Modeling and <a target="alone"  href="../Numerics/site.html"> Numerics </a>
+ </h1>
+
+A comparative capital asset pricing model, within stochastic finance theory, is
+derived to note the similarity or dissimilarity between two given hedge fund
+equity portfolios and their market portfolio benchmarks. The model linked the
+appreciation rates of two hedge fund equity portfolios to their returns, their
+volatilities and the covariance between their returns. Our analytical framework
+has an explicit relation with alpha quantification.
+<br><br>
+
+For a given hedge fund equity portfolio, a wealth accumulation process based
+on the logarithmic returns of its portfolio was formulated. The formulation
+takes into consideration the presence of the volatility which diminishes the
+wealth accumulation that one might naively expect from a given arithmetic
+return. The discerned price movements in the stocks are formulated as a wealth
+accumulation process that may be fostered by the hedge fund equity portfolio.
+
+
+The result from the wealth accumulation analytic is much more concrete
+than typical results from stochastic finance theory. The wealth accumulation
+analytic used the mean and variance of the actual returns, not as estimated
+parameters in a stochastic process that is assumed to generate these returns.
+<br><br>
+Nevertheless, our mathematical analysis ( to be published ) showed that the first approach is
+indeed a special case of the second approach when prices are following the
+known stochastic process in the modern portfolio theory, for instance stochastic
+portfolio framework. 
+<br><br>
+<h1>  Hedge Fund Datasets </h1>
+We collected a highly representative group of hedge funds from the <a target="alone" href="https://www.sec.gov/answers/form13f.htm"> EDGAR
+Form 13F Database </a> to construct our the Hedge Fund Universe (HFU). These
+files are downloaded using <a target="alone" href="https://www.python.org/"> Python </a> code, only 13F-HR filings are used to ex-
+tract the holdings, excluding the amendments and the notice filings which do
+not contain any significant information for our purposes, since they contain no
+holdings. The historical stocks prices are retrieved from <a target="alone" href="https://finance.yahoo.com/"> Yahoo! Finance </a> . We
+use daily historical data.
+<br><br>
+<h1> Implementation:</h1>
+Our Mathematical formulations are implemented using C++ Language as an
+analytic engine on the top of the databases EDGAR Form 13F Database and
+Yahoo! Finance’s daily historical stock prices. 
+<br><br>
+The C++ implementation used
+<a target="alone" href="http://www.boost.org/doc/libs/1_60_0/doc/html/boost_asio.html"> Boost Asio Library </a> to extract data from Yahoo! Finance Network. We also
+used the C++ <a target="alone" href="http://www.boost.org/"> Boost libraries </a> to handle major parts of our computational
+finance formulations. 
+<br><br>
+The insight analysis uses R programming language to
+process the C++ results ( R is a software environment for statistical computing
+and graphics supported by the <a target="alone" href="https://www.r-project.org/" > R Foundation for Statistical Computing </a>). The interactive data visualizations in web browsers uses the <a target="alone"  href="http://nvd3.org/"> NVD3 data visualization library. </a>
+
+ <br><br>
+<h1> Numerical Results:</h1>
+
+The featured numerical results are obtained by processing our codes on a Laptop
+with four cores: i3-core-CPU-2.10 GHz- 4GB-RAM and 64-bit-Ubuntu 14-04.
+In order to verify that our analytics are useful in practice, we consider the daily
+historical prices from a stock for the period from a given prior date until a
+given posterior date. Often we use data from a quarter to make comparisons
+and evaluate trends.
+<br><br>
+The numerical results are in 
+<a target="alone"  href="../Numerics/site.html"> EQUITY RESEARCH-NUMERICS ESSENTIALS </a>.
+
+<br><br>
+<br><br>
+Publications are in preparation.
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+
+ </section>
+</div>
+
+</body>
+</html>

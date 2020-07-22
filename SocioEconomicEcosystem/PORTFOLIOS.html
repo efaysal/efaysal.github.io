@@ -1,0 +1,132 @@
+
+
+<!-- 
+git add --all
+git commit -m "Initial commit"
+ git push -u origin master
+
+ -->
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Analytics & Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Bursting Velocity'
++ '<br><br>'
+                + ' Click above: Category or Video'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+      <h2 style="color:black"> Stock Analysis  </h2>
+    <h2 style="color:black">   </h2>
+<h2 style="color:black">  </h2>
+
+  
+    
+     
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+<!-- <h4> A reasonable diagnostic/prognostic test should not be prone to error when unseen case is presented for screening!  </h4>
+<br> <br>  -->
+
+
+      <h2>   Introduction  </h2>
+
+When an investor trades in a stock market using leverage, an intuitive startegy is to buy when the prices of the stocks are low with the ob-
+jective  of  getting  wealthy without  risking  bankruptcy by selling at the maximum prices. Price fluctuation is a critical element in this intuitive startegy. 
+The level of fluctuation depends on different socio-economic factors as well as one-off shocks such as liquidity ...
+ 
+ 
+
+
+
+   
+ <h2> ddd  </h2>
+
+
+<h4>   Author scientific profile:  </h4>
+Statistics and Applied Mathematics for Data Analytics, Identify opportunities to apply Mathematical Statistics, Numerical Methods, Machine Learning and Pattern Recognition to investigate and implement solutions to the field of Data Content Analytics. Data prediction via computational methods to predict from massive amounts of data (Big Data Content). These methods included clustering, regression, survival analysis, neural network, classification , ranking, deep discrepancy learning .
+ <br>   <br> 
+ <!--   Under Construction and Review! -->
+
+
+   
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com </a>
+    <br> 
+   The MIT License (MIT) Copyright 1994-2020, Faysal El Khettabi, Numerics&Analytics, All Rights Reserved.
+     </div> 
+   
+</section>
+</div>
+ 
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Zillow US Housing Data: Digital Analytics & Metrics </title>
+    <link rel="stylesheet" href="../Numerics/stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+//                 + '<br><br>'
+//                 + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+//                 + 'To load the Numerics'
+// + '<br><br>'
+//                 + ' Click Above:'
+// + '<br><br>'
+//                 + 'For US Hedge Funds: '
+// + '<br> '
+// +'  | Major_US_Hedge_Funds_Top_Down | ..._Performance'
+// + '<br><br>'
+//                 + 'For US Market: '
+// + '<br> '
+// +'  | US_Industries_Wealth_Accumulation_Performance | ..._Trends'
+// + '<br><br>'
+//                 + 'For Major World Exchanges: '
+// + '<br>'
+// +' Major_World_Exchanges_Wealth_Accumulation_Performance | ..._Trends'
+// + '<br><br>'
+//                 + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+
+    <h1 style="color:black"> ANALYTICS ON ZILLOW DATA </h1>
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+<!-- <div id="banner">
+    <div>
+        <span id="logo"></span>
+
+        <a href="https://github.com/nvd3-community/nvd3" target="github" class="button fork"><strong>GitHub</strong></a>
+        <a href="site.html" class="button fork docs selected"><strong>Examples</strong></a>
+        <a href="documentation.html" class="button fork docs"><strong>Documentation</strong></a>
+        <div class="downloads">
+            <span>Downloads:</span>
+            <ul>
+                <li><a href="https://github.com/nvd3-community/nvd3/zipball/master" class="button">ZIP</a></li>
+                <li><a href="https://github.com/nvd3-community/nvd3/tarball/master" class="button">TAR</a></li>
+            </ul>
+        </div>
+    </div>
+</div><!-- end banner --> 
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+
+         <h3>
+            Digital Analytics &amp Metrics:
+        </h3>
+
+        <div>
+            <a href="#" class="showcharts">Show Chart Examples</a>
+        </div>
+         <div class="examplelinks chartlinks">
+               <a href="LineChart_State_Zhvi_1bedroom_.html"> State_Zhvi_1bedroom </a> |
+                <a href="LineChart_State_Zhvi_2bedroom_.html"> State_Zhvi_2bedroom </a> |
+                 <a href="LineChart_State_Zhvi_3bedroom_.html"> State_Zhvi_3bedroom </a> |
+                <a href="LineChart_State_Zhvi_4bedroom_.html"> State_Zhvi_4bedroom </a> |
+                 <a href="LineChart_State_Zhvi_5bedroom_.html"> State_Zhvi_5bedroom </a> |
+                 <br>
+                  <a href="LineChart_State_Zhvi_AllHomes_.html"> State_Zhvi_AllHomes </a> |
+                <a href="LineChart_State_Zhvi_Condominum_.html"> State_Zhvi_Condominum </a> |
+                 <a href="LineChart_State_Zhvi_SingleFamilyResidence_.html"> State_Zhvi_SingleFamilyResidence</a> |
+                 <br>
+                <a href="LineChart_State_Zhvi_BottomTier_.html"> State_Zhvi_BottomTier </a> |
+                 <a href="LineChart_State_Zhvi_MiddleTier_.html"> State_Zhvi_MiddleTier </a> |
+                <a href="LineChart_ State_Zhvi_TopTier_.html"> State_Zhvi_TopTier </a> |
+        </div>
+         <br>
+        <div id="show_wrapper"><iframe id="show"></iframe></div>
+        <div id="example_options" style="visibility: hidden;">
+            <a target="alone" id="showonlythis" href="#">View in a New Window</a> ;
+            <br>
+            <a href=""> <strong> Refresh </strong></a> ;
+            <br>
+            <a target="alone"  href="http://www.zillow.com/research/data/" style="color:blue"> <strong>  Zillow Raw Data </strong></a> ; 
+             <br>
+           
+
+            
+
+        </div>
+
+
+<br><br>
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+   
+</section>
+</div>
+ 
+</body>
+</html>

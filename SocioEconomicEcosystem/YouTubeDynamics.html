@@ -1,0 +1,348 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Debt Analytics & Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Bursting Velocity'
++ '<br><br>'
+                + ' Click above: Category or Video'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+
+    <h1 style="color:black">  YouTube Most Popular Videos</h1>
+     <h1 style="color:black">  Learning Engagement With Bursting Velocity  </h1>
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+ <h1>
+        Introduction and Motivation
+</h1>
+     
+Every minute, creators, channels and Multi-channel network (MCN) around the world upload around or more than 300 hours of video content into the YouTube social network. This online platform has around or more than one billion viewers who watch millions of hours of YouTube videos making it the most adequate place for advertisers. By consequent YouTube generates billions in revenue through advertising, see <a target="alone"  href="http://efaysal.github.io/SocioEconomicEcosystem/YouTubeDAnalytics.html "> YouTube-Differential-Analytics</a>.
+<br> <br>
+A striking phenomena in this on-line platform, some particular videos become hugely popular while the
+majority receive very little attention. It's hard to be convinced that the content alone does influence the popularity of a video.
+It's likely that an initial burst in popularity determines more future popularity. Many factors affect the evolution of popularity of a video on YouTube. Many studies have been interested to analyze the factors that affect how the popularity of a video is evolving over time, see  <a target="alone"  href="http://dl.acm.org/citation.cfm?id=2665065"> On the Dynamics of Social Media Popularity: A YouTube Case Study</a> and  <a target="alone"  href="https://arxiv.org/abs/1611.00687 "> Engagement dynamics and sensitivity analysis of YouTube videos</a>. These works are very informative and inspiring. 
+<br> <br>
+The first concern that we have is related to the used dataset to derive the insight. Their conclusions are based on the nature or the characteristic of the used dataset and any application of the obtained results to other YouTube datasets may encounter some biases. A second serious concern is the used datasets contain only daily-viewcount samples of YouTube videos. In our numerical results section, We will challenge the characteristic of these datasets with a dataset formed "around the clock" by the most popular videos in YouTube platform. 
+<br> <br>
+We think that an early sampling using for instance every 10 minutes is more informative than a daily viewcount. The early video popularity detection is more effective and of great importance to support and derive a design to take advantage of the early and subsequent formed network effect to boost the online planning advertising campaigns, estimating costs and fostering more revenue for all parties involved in the platform. 
+<br> <br>
+A video popularity burst in YouTube platform can be classified into three main types which occur accordingly to different origins and mechanisms. 
+<ul>
+     <li type="square">  Type I bursts occur at intervals of minutes, hours, not more than a day. their average view-count during the first few minutes of a burst is generally substantial and can be persistent during one day and soften during burst decay, the future view-count decays quickly. </li>
+  <li type="square"> Type II bursts occur at intervals of several hours to days, and  their average future view-count do not soften during burst decay.</li>
+  <li type="square"> Type III their average future view-count is continuously pulsed with no gaps, there are no burst.</li>
+</ul>  
+<br> <br>
+The Types I and II are very substantial in YouTube platform. Specially for targeted advertising that focuses on certain socio-economical patterns in the viewers, these patterns help the advertiser to optimize the dynamics of his online advertisement. 
+These types contain the most popular videos which have more than 100 million view-counts daily. Such key videos are important for further media social analysis as the observed activities during an interval of time ( bursting velocity) around them may have informative  insights to personalization advertising or online marketing. However, the complexity of the graph-structure of these key videos to YouTube network need to be performed with an appropriate and efficient approach. The viewers of these types of videos in YouTube are attracted mainly by "controversial", "sensitive subjects" and specific events, shaping the platform into a trending streaming media ( the attraction occurs accordingly to different origins and mechanisms which need to be explored). 
+<br> <br>
+It seems that the viewers are often attracted to view a video that is exogenously made popular (first initial burst) and the subsequent popularity of this video ( bursting velocity) is more induced endogenously after.  We call this process a learning engagement that inspire limitless possibilities and empower video discovery and popularity in YouTube platform, i.e the viewers sustain their interest over an interval of time (bursting engagement) and are positive about the viewed content "to advise it to other viewers" (adaptive engagement). A chain interaction occurs attracting more subsequent viewers. During a specific period of time, the cycle repeats to sustain more interactions thus leading to the possibility of a self-propagating series of viewers to watch or explore the video content. A trend is created for that video which may be showing eagerness or enthusiasm of the viewers or something else to identify and not really related to the "keenness".
+<br> <br>
+This resulting trend is an important point that differentiate the Old TV era and the new TV era. The viewers not only "watch what they want to watch, when they  want to watch it", the viewers are creating the trend which can be interpreted socially, economically and commercially and may be exploited more efficiently by the online planning advertising campaigns. The network effect is easy to form with a substantial critical mass from the created trend which is very helpful to  the platform, the channels and the advertisers to growth financially.
+<br> <br>
+      <h1>
+      Numerical Facts
+</h1>
+      
+The burst phenomena in YouTube platform is investigated by collecting the most popular videos and their view-counts are sampled every 10 minutes, our approach is first to detect the initial popularity burst of a video and its subsequent popularity in the streaming data environment or ecosystem. The collected data will be subject to more statistical analysis. 
+<br> <br>
+ We used a mixing of <a target="alone"  href="https://github.com/soodoku/tuber"> R-Tuber </a>  and  <a target="alone"  href="https://github.com/MarkEdmondson1234/googleAnalyticsR"> R-Google Analytics </a> to access <a target="alone"  href="https://developers.google.com/youtube/v3/"> YouTube API</a>. We leveraged the two packages by homemade R Software coding to enable more data collection optimization, data statistical analysis and visualization. 
+<br> <br>
+R is a software environment for statistical computing and graphics supported by the <a target="alone" href="https://www.r-project.org/" > R Foundation for Statistical Computing </a>. The interactive data visualizations in web browsers uses the <a target="alone"  href="http://nvd3.org/"> NVD3 data visualization library </a>. The R-NVD3 library is in <a href="http://github.com/ramnathv/rCharts"> rCharts project</a>.
+<br> <br>
+Approximatively, our data batch processing extracts the most 50 popular videos every 10 minutes, the videos are collected into one single data and a follow up is conducted from the starting time: "2017-01-30 19:56:05", initial view-count = 424872083, till the end: "2017-01-31 11:05:06", updated view-count = 470385011. The list has around 400 videos with an updated view-count 45512928.
+The YouTube network is being able to exhibit at any time some key videos in any video category. 
+<br> <br>
+For instance, music category represents 6% of all categories, the videos in music category are representing 24% of all view-counts. The velocity, the change of the viewcount relatively to time, is 325 view-counts per second. 
+<br> <br>
+The gaming category represents 4% of all categories, the videos in gaming category are representing 2% of all view-counts. The velocity, the change of the viewcount relatively to time, is 5 view-counts per second. One of the cited work above used a dataset mainly representative of the gaming category which is not the main category in our data set representing the most popular videos in YouTube platform. 
+<br> <br>
+The Table below lists the characteristic of data by category:
+<table style="border-collapse:collapse;" class=table_allhtml border=0>
+<col width="150">
+<col width="150">
+<col width="150">
+<col width="150">
+<col width="150">
+<thead>
+<tr style="background-color:#428bca;">
+  <th id="header_1">CATEGORY</th>
+  <th id="header_2">ID</th>
+  <th id="header_3">CATEGORYPROPORTION</th>
+  <th id="header_4">VIDEOSVIEWCOUNTRATIO</th>
+  <th id="header_5">VELOCITY</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td id="CATEGORY" style="text-align:center;">Music</td>
+  <td id="ID" style="text-align:center;">10</td>
+  <td id="CATEGORYPROPORTION" style="text-align:center;">6.05</td>
+  <td id="VIDEOSVIEWCOUNTRATIO" style="text-align:center;">24.81</td>
+  <td id="VELOCITY" style="text-align:center;">325.06</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="CATEGORY" style="text-align:center;">Entertainment</td>
+  <td id="ID" style="text-align:center;">24</td>
+  <td id="CATEGORYPROPORTION" style="text-align:center;">19.15</td>
+  <td id="VIDEOSVIEWCOUNTRATIO" style="text-align:center;">8.75</td>
+  <td id="VELOCITY" style="text-align:center;">142.74</td>
+</tr>
+<tr>
+  <td id="CATEGORY" style="text-align:center;">News & Politics</td>
+  <td id="ID" style="text-align:center;">25</td>
+  <td id="CATEGORYPROPORTION" style="text-align:center;">18.59</td>
+  <td id="VIDEOSVIEWCOUNTRATIO" style="text-align:center;">8.21</td>
+  <td id="VELOCITY" style="text-align:center;">64.01</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="CATEGORY" style="text-align:center;">Science & Technology</td>
+  <td id="ID" style="text-align:center;">28</td>
+  <td id="CATEGORYPROPORTION" style="text-align:center;">5.09</td>
+  <td id="VIDEOSVIEWCOUNTRATIO" style="text-align:center;">17.94</td>
+  <td id="VELOCITY" style="text-align:center;">60.22</td>
+</tr>
+<tr>
+  <td id="CATEGORY" style="text-align:center;">People & Blogs</td>
+  <td id="ID" style="text-align:center;">22</td>
+  <td id="CATEGORYPROPORTION" style="text-align:center;">10.19</td>
+  <td id="VIDEOSVIEWCOUNTRATIO" style="text-align:center;">10.39</td>
+  <td id="VELOCITY" style="text-align:center;">56.8</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="CATEGORY" style="text-align:center;">Education</td>
+  <td id="ID" style="text-align:center;">27</td>
+  <td id="CATEGORYPROPORTION" style="text-align:center;">7.95</td>
+  <td id="VIDEOSVIEWCOUNTRATIO" style="text-align:center;">16.04</td>
+  <td id="VELOCITY" style="text-align:center;">43.55</td>
+</tr>
+<tr>
+  <td id="CATEGORY" style="text-align:center;">Comedy</td>
+  <td id="ID" style="text-align:center;">23</td>
+  <td id="CATEGORYPROPORTION" style="text-align:center;">8.73</td>
+  <td id="VIDEOSVIEWCOUNTRATIO" style="text-align:center;">3.93</td>
+  <td id="VELOCITY" style="text-align:center;">43.04</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="CATEGORY" style="text-align:center;">Film & Animation</td>
+  <td id="ID" style="text-align:center;">1</td>
+  <td id="CATEGORYPROPORTION" style="text-align:center;">4.64</td>
+  <td id="VIDEOSVIEWCOUNTRATIO" style="text-align:center;">4.21</td>
+  <td id="VELOCITY" style="text-align:center;">38.83</td>
+</tr>
+<tr>
+  <td id="CATEGORY" style="text-align:center;">Sports</td>
+  <td id="ID" style="text-align:center;">17</td>
+  <td id="CATEGORYPROPORTION" style="text-align:center;">6.34</td>
+  <td id="VIDEOSVIEWCOUNTRATIO" style="text-align:center;">22.34</td>
+  <td id="VELOCITY" style="text-align:center;">33.87</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="CATEGORY" style="text-align:center;">How-to & Style</td>
+  <td id="ID" style="text-align:center;">26</td>
+  <td id="CATEGORYPROPORTION" style="text-align:center;">7.85</td>
+  <td id="VIDEOSVIEWCOUNTRATIO" style="text-align:center;">5.15</td>
+  <td id="VELOCITY" style="text-align:center;">16.65</td>
+</tr>
+<tr>
+  <td id="CATEGORY" style="text-align:center;">Gaming</td>
+  <td id="ID" style="text-align:center;">20</td>
+  <td id="CATEGORYPROPORTION" style="text-align:center;">3.2</td>
+  <td id="VIDEOSVIEWCOUNTRATIO" style="text-align:center;">1.62</td>
+  <td id="VELOCITY" style="text-align:center;">4.19</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="CATEGORY" style="text-align:center;">Pets & Animals</td>
+  <td id="ID" style="text-align:center;">15</td>
+  <td id="CATEGORYPROPORTION" style="text-align:center;">0.77</td>
+  <td id="VIDEOSVIEWCOUNTRATIO" style="text-align:center;">11.38</td>
+  <td id="VELOCITY" style="text-align:center;">4.06</td>
+</tr>
+<tr>
+  <td id="CATEGORY" style="text-align:center;">Cars & Vehicles</td>
+  <td id="ID" style="text-align:center;">2</td>
+  <td id="CATEGORYPROPORTION" style="text-align:center;">0.58</td>
+  <td id="VIDEOSVIEWCOUNTRATIO" style="text-align:center;">4.24</td>
+  <td id="VELOCITY" style="text-align:center;">1.02</td>
+</tr>
+<tr style="background-color:#f2f2f2;">
+  <td id="CATEGORY" style="text-align:center;">Travel & Events</td>
+  <td id="ID" style="text-align:center;">19</td>
+  <td id="CATEGORYPROPORTION" style="text-align:center;">0.58</td>
+  <td id="VIDEOSVIEWCOUNTRATIO" style="text-align:center;">2.55</td>
+  <td id="VELOCITY" style="text-align:center;">0.23</td>
+</tr>
+<tr>
+  <td id="CATEGORY" style="text-align:center;">Non-profits & Activism</td>
+  <td id="ID" style="text-align:center;">29</td>
+  <td id="CATEGORYPROPORTION" style="text-align:center;">0.29</td>
+  <td id="VIDEOSVIEWCOUNTRATIO" style="text-align:center;">0.21</td>
+  <td id="VELOCITY" style="text-align:center;">0.2</td>
+</tr>
+</tbody>
+</table>
+<br> <br>
+
+<h2> Bursting Velocity </h2>
+The bursting velocity is in: 
+
+<br> <br> 
+      <ul>
+  <li type="square">  First Batch </li>
+   <li type="square">  <a href="CATEGORIESVelocity.html"> Click Category  </a></li>
+   <li type="square"> <a href="VIDEOSVelocity.html">  Click Video   </a>  </li>
+   </ul> 
+   <ul>
+  <li type="square">  Second Batch </li>
+   <li type="square">  <a href="2017-02-01 21:22:05CATEGORIESVelocity.html"> Click Category  </a></li>
+   <li type="square"> <a href="2017-02-01 21:22:05VIDEOSVelocity.html">  Click Video   </a>  </li>
+   </ul> 
+ 
+<!--         <div>
+            <a href="#" class="showcharts">Show Chart Examples</a>
+        </div>
+         <div class="examplelinks chartlinks" id="example_options">
+               <a href="CATEGORIESVelocity.html"> Category  </a> 
+        </div>
+         <div class="examplelinks chartlinks" id="example_options">
+               <a href="VIDEOSVelocity.html">  Video   </a> 
+        </div>
+         <br>
+        <div id="show_wrapper"><iframe id="show"></iframe></div>
+        <div id="example_options" style="visibility: visible">
+            <a target="alone" id="showonlythis" href="#"> Click for a view in a new window</a> ;
+        </div> -->
+<br> <br>
+
+<h3>
+Discussion and Conclusion:
+</h3> 
+We processed a number of data batch processing, the categories show more concise statistics as listed in the Table above. However video statistics are providing more dynamic insights. For instance, during the weekend, the data shows that videos related to entrainment category are more viewed than videos in music category. During the week, videos related to music category are the most viewed (certainly more statistical tests are needed using more overlapped data batch processing using research of study designs in Biostatistics, longitudinal studies, for instance.). 
+<br> <br>
+In general, a temporal dynamic insights is more suitable to extract real-time information from the observed bursting velocity of the most popular videos in YouTube platform. A mobile insight solution is a suitable way to enlighten the space between the platform, the channels and the advertisers, enabling them to improve their propositions and business models, specially the monetization problem faced by YouTube platform, see <a target="alone"  href="http://efaysal.github.io/SocioEconomicEcosystem/YouTubeDAnalytics.html "> YouTube-Differential-Analytics</a>. 
+<br> <br>
+ <!-- SWT Video Box by Showeblogin -->
+<div class="swt-video-box" data-id="H4sDlizuV7c">
+<a href="https://www.youtube.com/watch?v=H4sDlizuV7c">
+ <img src=http://img.youtube.com/vi/H4sDlizuV7c/0.jpg  width="200px" alt="Image Description"/></a>
+<div class="swt-video-play"> My Lonely Honey Video </div></div>
+
+             <br>   <br> 
+              <br>   <br> 
+              
+     <h4>   Author scientific profile:  </h4>
+Statistics and Applied Mathematics for Data Analytics, Identify opportunities to apply Mathematical Statistics, Numerical Methods, Machine Learning and Pattern Recognition to investigate and implement solutions to the field of Data Content Analytics. Data prediction via computational methods to predict from massive amounts of data (Big Data Content). These methods included clustering, regression, survival analysis, neural network, classification , ranking, deep discrepancy learning .
+ <br>   <br> 
+
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com , Living in Vancouver, BC, Canada.</a>
+    <br> 
+   The MIT License (MIT) Copyright 1994-2017, Faysal El Khettabi, Numerics&Analytics, All Rights Reserved.
+     </div> 
+   
+</section>
+</div>
+ 
+</body>
+</html>
+
+
+
+
+<!--  
+git add --all
+  git commit -m "Initial commit"
+  git push -u origin master
+ -->
+
+<!-- 
+Calvo???s formulation makes the current contract price a geometrically
+weighted average of future price levels, adjusted for excess demand in the future.
+Denoting the contract price by Vt
+, the price level by Pt
+, and excess demand
+by Et
+,
+V P E e ds t s
+t
+s
+s t = +
+???
+??? ??? ??? ?? ?? ?? [ ] . ( )
+The price index is a geometrically weighted average of past contract prices,
+P V e ds t s
+t
+t s =
+??????
+??? ??? ??? ?? ?? ( ) .
+The combination of these two makes prices implicitly a mixed forward- and
+backward-looking function of contract prices, similar to Taylor (1980): -->

@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Debt Analytics & Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Numerics'
++ '<br><br>'
+                + ' Click Above:'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+
+    <h1 style="color:black">  IT Socio-Economic Ecosystem</h1>
+     <h1 style="color:black"> Applied Mathematical Modelling </h1>
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+         <h2>
+            Motivation:
+        </h2>
+        <p>
+The new  <a target="alone"  href="http://aom.org/Publications/AMD/Call-for-Papers--Business-Models,-Ecosystems,-and-Society-in-the-Sharing-Economy.aspx"> IT socio-economic ecosystem </a>   is based on the advancement of information technologies that enabled real time connection between different peers(households &amp investors), firms(investors &amp advertisers), governments(financial regulation and supervision) to trade their socio-economic assets(creations, products and services) using Internet capabilities, i.e. this information technology is used to match directly buyer peers and seller peers that are forming a network on an on-line platform.
+<br> <br>
+Known IT socio-economic ecosystem sites are Youtube for online creator videos, and online marketplace lending, such as Lending Club, in the financial services sector.
+<br> <br>
+On-line contractual arrangements are created to mitigated the existing conflicts of interests between the on-line platform and its peers. New form of contracts are designed specifically for this IT socio-economic ecosystem platform to foster incentives for the contracting parties to exploit the <strong>  anticipated gains </strong>  from their on line collaborations.
+
+<h4> <a target="alone"  href="https://support.google.com/youtube/topic/14965?hl=en&ref_topic=2676320"> YouTube and creator's anticipated gains </a> </h4>
+
+<ul>
+  <li type="square"> A creator can become part of YouTube’s Partner Program which is the adequate way to make money on YouTube. The Partner Program has many benefits, the most important for the creator is monetization.</li>
+  <li type="square"> Or a creator can become part of a Multi-Channel Networks (“MCNs”) which are third-party service providers that affiliate with multiple YouTube channels to offer services that may include audience development, content programming, creator collaborations, digital rights management and to leverage the monetization.</li>
+  <li type="square"> Both ways are presenting advantage of higher quality video, branded channel options, and insight analytics to help creator learn about their audience and increase or leverage their viewer-ship for an adequate monetization. </li>
+  <li type="square"> The creator's anticipated gains from any contract is to have substantial views and more opportunities for continuously monetization. </li>
+</ul>
+
+<h4> <a target="alone"  href="https://www.treasury.gov/press-center/press-releases/Pages/jl0452.aspx"> Online Marketplace Lending and Lender's anticipated gains  </a>  </a></h4>
+
+
+<!-- <br> <br>
+Borrowers and Lenders(investors) are nodes in a highly dynamic network (platform) environments to
+which they must adapt and exercise adherence to the norms of the online marketplace lending platform. Both the borrowers and lenders receive numerous information eliciting a diverse array of actions that may affect the online marketpalce lending platform profitability or financial performance. The online marketpalce lending platform’s main priority is to use sound combination of data-driven underwriting, robust credit scoring models, automated and online operations to make installment payments due date more likely
+possible in order to collect fees.
+<br> <br>
+These installment payments would be constrained by the financial resources that investors and borrowers have at their disposal. Both parties may not necessary have large enough resources and are under non-negligible financial constraints. It is reasonable to assume that as the borrower is relatively risk-neutral, while the investor is more risk-averse even she/he is often richer or better diversified than the borrowers  and more because -->
+
+<ul>
+   <li type="square"> Online Marketplace Lending platform is a kind of IT socio-economic ecosystem that facilitates the direct matching of borrowers to lenders(investors) through online loan auctions. </li>
+  <li type="square"> The online marketplace lending are designing credit contracts that are not necessary combining the
+sharing of risk and efficient decision aimed at protecting the lender and encouraging sound decisions by borrowers as the loans are unsecured.</li>
+</ul>
+
+<h4>  Platform's Performance Modeling </h4>
+
+In spite of the fact that; the economic activity takes place "continuously" in an IT socio-economic ecosystem platform.
+A peer populating the online platform is only socially or economically connected to the platform during a consecutive finite number of periods and are not necessarily regularly connected.
+<br> <br>
+Globally, the peers populating the online platform are forming an overlapping or staggered network. Staggered implies any portion of the peers with similar social or economical characteristic to interact with the platform.
+<br> <br>
+My main motivation, this property of staggered connexions is a central feature in mathematical modeling of online platform performance dynamics. My theoretical mathematical formulations and statistical analysis  approaches to this micro-interaction foundations are proved essential to build a macroscopic scales  to estimate the online platform performance dynamics. 
+<br> <br>
+<h2>  Numerics &amp Analytics of IT socio-economic ecosystem platform </h2>
+The data type used for the result of a calculation depends on the type of the IT socio-economic ecosystem platform, its business model and the associated operations performed on the online platform.
+<br> <br>
+ 
+<ul>
+  <h4>  YouTube and Creator's Anticipated Gains </h4>  
+   <li type="square"> <a href="YouTubeDAnalytics.html">YouTube Differential Analytics</a>::  </li> 
+   <li type="square"> <a href="YouTubeDynamics.html">YouTube Most Popular Videos &amp Learning Engagement With Bursting Velocity</a>.  </li> 
+   <li type="square"> <a href="NLSDE3DMONT.html">Coupling Time Variable Bursting Traffic Intensity &amp Policy Effect Functions: Nonlinear Phenomena and Properties</a>.  </li> 
+<br>
+ <h4>  Online Marketplace Lending Analysis </h4>  
+  <li type="square"><a href="LCDAnalytics.html"> Lending Club Datasets</a>. </li>
+ <br>
+  <h4>  Deep Discrepancy Microscope:  </h4>
+  <li type="square"> Image Content Analytics  <a href="IMAGECONTENTANALYTICS.html"> Using Discrepancy Learning Process </a>. </li>
+   <li type="square">   Modern Pathology &amp Discrepancy Image  <a href="FLOURESCENCEIMAGECONTENTANALYTICS.html">  Using Discrepancy Learning Process </a>. </li>
+    <li type="square">   Imaging Flow Cytometry  <a href="IMAGECFLOWCYTOMETRYCONTENTANALYTICS.html"> Using Discrepancy Learning Process </a>. </li>
+    <li type="square"> <a href="EDICTSL2DDLP.html"> Predicting Lineage Progression of Stem Cells Combining Nanoscopy Epi-Mark Imaging &amp Deep Discrepancy Learning Process </a>. </li>
+     <li type="square"> <a href="RIOCTDDLP.html"> Retinal Optical Coherence Tomography Imaging Using Deep Discrepancy Learning Process (DDLP) </a>. </li>
+      <br>
+       <h4>  Cohort Formation, Accuracy &amp Reliability of Precision Medicine Projects:  </h4>
+        <ul>
+  We are interested to assess the analytics and the numerics of the cohort formation and its relation of the accuracy and reliability of the project using
+   <a target="alone"  href="https://allofus.nih.gov/"> cohort studies</a>, i.e. impact of censoring on the used formulations to estimate the sensitivity and specificity values and by consequent on the difference in survival:
+  <br>   <br> 
+<li type="square"> X-
+    <a target="alone"  href="./NIHcohortBIGITC.html"> Predictive Values function of Specificity/Sensitivity/Prevalence in the absence of Censoring. </a>
+</li> 
+<li type="square"> Y-
+<a target="alone"  href="./NIHcohortBIGITC0.html">  Predictive Values function of Specificity/Sensitivity/Prevalence in the presence of Censoring. </a>  
+</li> 
+      <li type="square"> Z- <a href="CELLULARTHERAPYREGISTRYSURVIVALANALYSIS.html"> 
+Competing Risks in Time-to-Event Analysis with Censoring </a>. </li>
+</ul>
+
+     <h4>  Empirical Assessment of Public Socio-Economical Data Using Mathematical Machine Learning:  </h4>
+        <ul> 
+</li> 
+      <li type="square">  Numerical Simulations of <a href="PublicDataForResearch.html"> Interest Rates &amp Stock Markets </a>. </li>
+</ul>
+
+
+<br><br>
+     <h4>   Author scientific profile:  </h4>
+Statistics and Applied Mathematics for Data Analytics, Identify opportunities to apply Mathematical Statistics, Numerical Methods, Machine Learning and Pattern Recognition to investigate and implement solutions to the field of Data Content Analytics. Data prediction via computational methods to predict from massive amounts of data (Big Data Content). These methods included clustering, regression, survival analysis, neural network, classification , ranking, deep discrepancy learning .
+ <br>   <br> 
+
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com , Living in Vancouver, BC, Canada.</a>
+    <br> 
+   The MIT License (MIT) Copyright 1994-2017, Faysal El Khettabi, Numerics&Analytics, All Rights Reserved.
+     </div> 
+   
+</section>
+</div>
+ 
+</body>
+</html>
+
+<!--  
+git add --all
+  git commit -m "Initial commit"
+  git push -u origin master
+ -->
+
+<!-- 
+Calvo’s formulation makes the current contract price a geometrically
+weighted average of future price levels, adjusted for excess demand in the future.
+Denoting the contract price by Vt
+, the price level by Pt
+, and excess demand
+by Et
+,
+V P E e ds t s
+t
+s
+s t = +
+∞
+− − ∫ δ β δ [ ] . ( )
+The price index is a geometrically weighted average of past contract prices,
+P V e ds t s
+t
+t s =
+−∞
+− − ∫ δ δ ( ) .
+The combination of these two makes prices implicitly a mixed forward- and
+backward-looking function of contract prices, similar to Taylor (1980): -->

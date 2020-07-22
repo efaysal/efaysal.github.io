@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title> Analytics &amp Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script language="JavaScript">
+<!--
+function autoResize(id){
+    var newheight;
+    var newwidth;
+
+    if(document.getElementById){
+        newheight=document.getElementById(id).contentWindow.document .body.scrollHeight;
+        newwidth=document.getElementById(id).contentWindow.document .body.scrollWidth;
+    }
+
+    document.getElementById(id).height= (newheight) + "px";
+    document.getElementById(id).width= (newwidth) + "px";
+}
+//-->
+</script>
+
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Numerics'
++ '<br><br>'
+                + ' Click Above:'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+
+
+<header>
+    <body style="background-color:lightgrey;">
+   
+   <h3 style="color:black"> Empirical Assessment of Public Economical Data </h3>
+    <h4 style="color:black"> Using Mathematical Machine Learning  </h4>
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+<!-- <div id="banner">
+    <div>
+        <span id="logo"></span>
+
+        <a href="https://github.com/nvd3-community/nvd3" target="github" class="button fork"><strong>GitHub</strong></a>
+        <a href="site.html" class="button fork docs selected"><strong>Examples</strong></a>
+        <a href="documentation.html" class="button fork docs"><strong>Documentation</strong></a>
+        <div class="downloads">
+            <span>Downloads:</span>
+            <ul>
+                <li><a href="https://github.com/nvd3-community/nvd3/zipball/master" class="button">ZIP</a></li>
+                <li><a href="https://github.com/nvd3-community/nvd3/tarball/master" class="button">TAR</a></li>
+            </ul>
+        </div>
+    </div>
+</div><!-- end banner --> 
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+<h6> 
+   <br> 
+<strong>"Translating and analyzing big data using charts, graphics, and images is becoming more and more necessary for decision-making."
+  </strong> <a href="http://apdu.org/"> Association of Public Data Users </a> </h5>
+<h4>   <a href="https://fred.stlouisfed.org/series/"> Interest Rates | FRED | St. Louis Fed </a> </h4>
+<ul>  <strong>  Interactive Charting: </strong>
+    <li type="square">  <a href= "./TREASURIESUS/TREASURIESUSFRED.html"> Raw Historical USA Interest Rates. </a> </li>
+</ul>
+A numerical simulation is conducted to study the numerical behavior of these Interest Rates. This computer simulation is used to explore and gain new insights into the impact of the temporal decision that determined them and to estimate and highlight specific interconnection levels between them.
+<br> <br>
+<div class="image12">
+    <div class="imgContainer">
+      <center>  <img class="middle-img" src="./TREASURIESUS/NOTCALIBRATEDNETWORKEDRATESFRED.jpeg" alt="Channel" /></center>
+    </div>
+</div>
+
+<h4>   <a href="http://www5.statcan.gc.ca/cansim/"> CANSIM-Table 176-0048, BoC-money market and other interest rates </a> </h4>
+<ul>  <strong>  Interactive Charting: </strong>
+    <li type="square">  <a href= "./OhCanada/APPLYMonthlyRateCANSIM1760048.html"> Raw Historical BoC Interest Rates. </a> </li>
+</ul>
+A numerical simulation is conducted to study the numerical behavior of these Interest Rates. This computer simulation is used to explore and gain new insights into the impact of the temporal decision that determined them and to estimate and highlight specific interconnection levels between them.
+<br> <br>
+<div class="image12">
+    <div class="imgContainer">
+      <center>  <img class="middle-img" src="./OhCanada/NOTCALNETWORKCANSIMTable1760048BBY.jpeg" alt="Channel" /></center>
+    </div>
+</div>
+
+<h4> Data Science and Analytics: Modelling Volatility in Major World Stock Markets </h4>
+ Mining World Exchanges Market Data-sets using Mathematical Modelling & Numerical Analysis with Machine Learning Methods to coupled systems of partial integro-differential equations and jump-diffusion processes:
+ <ul>  <strong>  Yahoo! Finance Public Stock Market Data </strong>
+    <li type="square">  <a href= "WORLDSTOCKVOLATILITIES6W.html"> Numerical Simulation </a> </li>
+</ul>
+
+<h4> Implementation:</h4>
+The insight analysis uses R programming language to process the results ( R is a software environment for statistical computing
+and graphics supported by the <a target="alone" href="https://www.r-project.org/" > R Foundation for Statistical Computing </a>). The interactive data visualizations in web browsers uses the <a target="alone"  href="http://nvd3.org/"> NVD3 data visualization library</a>.
+<br> <br>       
+    <h4>   Author scientific profile:  </h4>
+Statistics and Applied Mathematics for Data Analytics, Identify opportunities to apply Mathematical Statistics, Numerical Methods, Machine Learning and Pattern Recognition to investigate and implement solutions to the field of Data Content Analytics. Data prediction via computational methods to predict from massive amounts of data (Big Data Content). These methods included clustering, regression, survival analysis, neural network, classification , ranking, deep discrepancy learning .
+ <br>   <br> 
+
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com</a>
+    <br> 
+   The MIT License (MIT) Copyright 1994-2017, Faysal El Khettabi, Numerics &amp Analytics, All Rights Reserved.
+     </div> 
+   
+
+</section>
+</div>
+ 
+
+ 
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,398 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title> Analytics &amp Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script language="JavaScript">
+<!--
+function autoResize(id){
+    var newheight;
+    var newwidth;
+
+    if(document.getElementById){
+        newheight=document.getElementById(id).contentWindow.document .body.scrollHeight;
+        newwidth=document.getElementById(id).contentWindow.document .body.scrollWidth;
+    }
+
+    document.getElementById(id).height= (newheight) + "px";
+    document.getElementById(id).width= (newwidth) + "px";
+}
+//-->
+</script>
+
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Numerics'
++ '<br><br>'
+                + ' Click Above:'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+
+
+<header>
+    <body style="background-color:lightgrey;">
+    <h3 style="color:black"> Learning Depth Volatility Patterns In Major World Stock Market Indices</h3>
+    <h3 style="color:black"> Using Algorithmic Data Driven Analytics 
+    <!--     in The New Era </h3>
+    <h4 style="color:black"> Accommodative Monetary Policy &amp Financial Market Exchanges  </h4>
+    <h4 style="color:black">  Quantitative EasingTightening  &amp <a target="alone"  href="https://www.youtube.com/watch?v=s-g8EYqL6lc">  Volatility Control Mechanisms </a>< --></h3>
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+<!-- <div id="banner">
+    <div>
+        <span id="logo"></span>
+
+        <a href="https://github.com/nvd3-community/nvd3" target="github" class="button fork"><strong>GitHub</strong></a>
+        <a href="site.html" class="button fork docs selected"><strong>Examples</strong></a>
+        <a href="documentation.html" class="button fork docs"><strong>Documentation</strong></a>
+        <div class="downloads">
+            <span>Downloads:</span>
+            <ul>
+                <li><a href="https://github.com/nvd3-community/nvd3/zipball/master" class="button">ZIP</a></li>
+                <li><a href="https://github.com/nvd3-community/nvd3/tarball/master" class="button">TAR</a></li>
+            </ul>
+        </div>
+    </div>
+</div><!-- end banner --> 
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+<h6> 
+  <strong> -: </strong> 
+   <br> 
+<strong>  In this work, the used numerical datasets are for informational use only and with an only purpose to illustrate numerically our research points. Most of these research points have been inspired by our seminal work in: <a href="http://www.sciencedirect.com/science/article/pii/S0885064X99905095"> Quasi-Monte Carlo Simulation of Diffusion</a>, in a way that can be directly applied to Stock Market Volatility Calculations.
+  </strong> </h5>
+
+<h6> 
+Terms: A security is a tradable asset in a financial market, this term refers to any form of financial instrument. 
+In financial stock market, security is termed as stock, asset, equity or share. In this essay, stock is used to refer to security.</h6>
+</h6> 
+
+<h3> Introduction: </h3>
+
+The stock market volatility clustering, excess and “long memory” behavior are recognized as stylized properties present in most financial time series from stock market datasets(stock returns). A clear introductory to volatility definitions is here <a href="http://www.probabilityandfinance.com/articles/47.pdf"> "What causes volatility?"</a>.
+<br> <br> 
+Various modeling methods have been proposed to highlight and provide insights about these volatility characteristics in terms of stock settings as economical conditions, behavior of market participants and the news event process, these methods were focused on estimating the stock volatility that is not necessary well-calibrated for meaningful comparison, the estimated volatilities of a number of different stocks may not be necessary comparable. Since the range of values of the estimated volatilities varies widely, a machine learning algorithm needs a standardization/normalization treatment to this wildness in order to be practical and efficient.
+<br> <br> 
+<ul>
+    <li type="square">  Due to variation in stock settings, such as the used trading strategies, the quotes change 
+across stocks accordingly. The measurement of volatility/uncertainty through standard deviation could be also misleading for comparing two specific stock markets, i.e. the standard deviation is proportional to the mean and must always be understood in the context of the mean of the data. For consistent comparison of different stocks, a standardized volatility has to be used in place of the raw estimated volatility.  This can be useful in measuring variation in a stock in relative terms(not in absolute).</li> 
+</ul>
+
+<!--  A <strong> negative </strong> stock market return with a standard deviation equal to 1% can not be compared to a stock market with similar standard deviation and <strong>  positive </strong> return.  -->
+<br> 
+<h3> Research Points: </h3>
+
+<ul>
+    <li type="square"> An essential element in the computational process is to provide comparable numerical quantities. Given a number of different stock markets, the volatility characteristics as tendencies &amp trends should be determined using a modeling process of reducing measurements to a "neutral" or "standard" scale, i.e. important parameter in the learning process should have the same scale for a "fair" comparison between these given stock markets. </li> 
+    <br>
+     <li type="square"> To propose a time-frequency analysis approach, where volatility is decomposed into a number of adaptive oscillatory processes which occur accordingly to different origins and mechanisms. These adaptive oscillatory processes help to derive directional volatility measurements, indicating the direction in which volatility is situated, moving, or developing. These directional volatility measurements provide summary measures about the event effects.</li>  
+      <br>
+     <li type="square"> Its implementation can be built up gradually over time and in response to specific social and economical conditions(events), the parameter identification and volatility quantification are feasible or releasable, i.e. the magnitude of the change in the volatility should be binding to these events and is required to be an accurate quantification of their impact.</li> 
+      <br>
+</ul>
+<h3> Developmental Data Driven Analytics: </h3>
+Algorithmic Data Driven Analytics(ADDA) take a descriptive approach to studying properties of a stock market volatility that follow from empirical observations(realized quotes), i.e. to infer historical volatility structures from data and to score the stock volatility tendencies &amp trends under a "neutral" or "standard" scale. The historical volatility is decomposed into two oscillatory processes which occur accordingly to different origins and mechanisms. The temporel patterns that will be characterized by these oscillatory processes are called the "Depth Volatility Patterns".
+<br> <br>
+The numerical results related to major <strong> World </strong> stock market indices, since 2000 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+<br> <br>
+<ul>
+    <strong> World: </strong>
+    <li type="square">  <a href= "./TORVANSTOCKS/RawVolatility_WORLD_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_WORLD_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_WORLD_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_WORLD_Y_4W_.html"> Oscillatory Process II. </a> </li>
+ 
+</ul>
+<br> 
+The numerical results related to major <strong> Swiss </strong> stock market indices, since 2001 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+<br> <br>
+<ul>
+    <strong> Swiss: </strong>
+    <li type="square">  <a href= "./TORVANSTOCKS/RawVolatility_SWISS_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_SWISS_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_SWISS_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_SWISS_Y_4W_.html"> Oscillatory Process II. </a> </li>
+ 
+</ul>
+
+
+The numerical results related to major <strong> France </strong> stock market indices, since 2001 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+<br> <br>
+<ul>  <strong>  France:  </strong>
+    <li type="square">  <a href= "./TORVANSTOCKS/RawVolatility_FRANCE_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_FRANCE_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_FRANCE_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_FRANCE_Y_4W_.html"> Oscillatory Process II. </a> </li>
+ 
+</ul>
+
+The numerical results related to major <strong> Spain </strong> stock market indices, since 2001 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+<br> <br>
+<ul>  <strong>  Spain:  </strong>
+    <li type="square">  <a href= "./TORVANSTOCKS/RawVolatility_SPAIN_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_SPAIN_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_SPAIN_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_SPAIN_Y_4W_.html"> Oscillatory Process II. </a> </li>
+ 
+</ul>
+
+The numerical results related to major <strong> UK </strong> stock market indices, since 2001 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+<br> <br>
+<ul>  <strong>  UK:  </strong>
+    <li type="square">  <a href= "./TORVANSTOCKS/RawVolatility_UK_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_UK_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_UK_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_UK_Y_4W_.html"> Oscillatory Process II. </a> </li>
+ 
+</ul>
+
+The numerical results related to major <strong> Germany </strong> stock market indices, since 2001 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+<br> <br>
+<ul>  <strong>  Germany:  </strong>
+    <li type="square">  <a href= "./TORVANSTOCKS/RawVolatility_GERMANY_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_GERMANY_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_GERMANY_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_GERMANY_Y_4W_.html"> Oscillatory Process II. </a> </li>
+ 
+</ul>
+
+The numerical results related to major <strong> Canada </strong> stock market indices, since 2001 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+<br> <br>
+<ul>  <strong>  Canada:  </strong>
+    <li type="square">  <a href= "./TORVANSTOCKS/RawVolatility_CANADA_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_CANADA_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_CANADA_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_CANADA_Y_4W_.html"> Oscillatory Process II. </a> </li>
+ 
+</ul>
+
+
+ The numerical results related to major <strong>  China </strong> stock market indices, since 2000 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+ <br> <br>
+<ul>
+
+   <strong>  China(HKEX): </strong>
+    <li type="square">  <a href= "./TORVANSTOCKS/RawVolatility_CHINAHK_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_CHINAHK_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_CHINAHK_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_CHINAHK_Y_4W_.html"> Oscillatory Process II. </a> </li>
+ 
+</ul>
+
+
+The numerical results related to major <strong>  Singapore </strong> stock market indices, since 2000 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+ <br> <br>
+<ul>
+
+   <strong>  Singapore: </strong>
+    <li type="square">  <a href= "./TORVANSTOCKS/RawVolatility_SINGAPORE_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_SINGAPORE_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_SINGAPORE_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_SINGAPORE_Y_4W_.html"> Oscillatory Process II. </a> </li>
+ 
+</ul>
+The numerical results related to major <strong>  India </strong> stock market indices, since 2000 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+ <br> <br>
+ <ul>
+   <strong>  India(NSE): </strong>
+    <li type="square">  <a href= "./TORVANSTOCKS/RawVolatility_INDIA_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_INDIA_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_INDIA_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_INDIA_Y_4W_.html"> Oscillatory Process II. </a> </li>
+ 
+</ul>
+
+The numerical results related to major <strong>  Bank </strong> stock market indices, since 2000 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+ <br> <br>
+<ul>
+   <strong>  Bank: </strong>
+    <li type="square">  <a href= "./TORVANSTOCKS/RawVolatility_WORLDBANKS_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_WORLDBANKS_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_WORLDBANKS_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_WORLDBANKS_Y_4W_.html"> Oscillatory Process II. </a> </li>
+</ul>
+
+
+The numerical results related to major <strong>  Pharmaceutical </strong> stock market indices, since 2000 up to recently, are presented in these Interactive Charts: <strong>(a double click on a stock shows its associated curve) </strong>
+ <br> <br>
+<ul>
+
+   <strong>  Pharmaceutical: </strong>
+    <li type="square">  <a href= "./TORVANSTOCKS/RawVolatility_PHARMACEUTICAL_4W_.html"> Raw Historical Volatility (Not Calibrated). </a> </li>
+       <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_PHARMACEUTICAL_Z_4W_.html"> Calibrated Historical Volatility as function of two Oscillatory Processes I &amp II. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_PHARMACEUTICAL_X_4W_.html"> Oscillatory Process I. </a> </li>
+     <li type="square">  <a href= "./TORVANSTOCKS/LearningDepthVolatility_PHARMACEUTICAL_Y_4W_.html"> Oscillatory Process II. </a> </li>
+ 
+</ul>
+
+
+The Interactive Chart displays data related to a number of stocks in ways that are meaningful for comparison. 
+Straight line is used along the horizontal axis for a stock not having available quotes.
+
+This is the historical volatility  calculated from known past returns of a security. Implied volatility, a forward-looking and subjective measure, differs from historical volatility because the latter is calculated from known past returns of a security.
+
+
+<br> <br>
+<h3> Some Observations: </h3>
+﻿﻿Upward spikes in volatility tendencies &amp trends are mainly associated to sharp stock market sell-offs. Declines in volatility are associated to steady gains in the market and tend to unfold with irregular bursts with a more or less random sequence of patterns, this was before the year 2007. After, our numerical result is showing cyclical volatility tendencies &amp trends in various ways, see
+<a href= "./TORVANSTOCKS/LearningDepthVolatility_WORLD_X_4W_.html"> Oscillatory Process I. </a> 
+<br> 
+This cyclic volatility starts to be extraordinarily visible after the Financial crisis of 2007–2008. Whether across time, or across World stock markets, there is a strikingly high correlation between the depth volatility patterns over a period of 10 years. 
+Yet signs of friction in different parts of Major World Stock Markets raise many questions about how long this recently realized  streak of low volatility can continue, and point to the challenges that World Economy to face in a rising volatility era.
+<br> <br>  
+The healthiest stock markets should express a volatility commensurate with genuine fundamental economic factors and their 
+inherited uncertainties. The moves in the stock markets are always accompanied by increased volatility if bad events are affecting the fundamental economic factors (crisis 2007-2008, for instance). If they are just showing a steady low-volatility streak, something needs to be investigated, not to be ignored till the next crisis.
+<br> <br> 
+<h2>   Investigating Volatility Network Using Machine Learning to Detect Communities: </h2>
+ 
+<!-- <ul>
+   <strong> (_oio_) :  </strong>
+    <li type="square"> 
+<a href="./LEARNINGVOLATILITIES/_DOW_D4W_WORLD_.pdf" download="newfilename">World.</a>
+ </li>
+   <strong> (_oio_) :  </strong>
+    <li type="square"> 
+<a href="./LEARNINGVOLATILITIES/HSISSECHC_D4W_CHINAHK_.pdf" download="newfilename">China(KHEX).</a>
+ </li>
+   <strong> (_oio_) :  </strong>
+    <li type="square"> 
+<a href="./LEARNINGVOLATILITIES/_FTSE_D4W_UK_.pdf" download="newfilename">UK.</a>
+ </li>
+   <strong> (_oio_) :  </strong>
+    <li type="square"> 
+<a href="./LEARNINGVOLATILITIES/_GSPT_D4W_CANADA_.pdf" download="newfilename">Canada.</a>
+ </li>
+ </ul>
+</ul> -->
+
+<ul>
+   <strong> World:  </strong>
+    <li type="square">  
+      <object data="./LEARNINGVOLATILITIES/DOW_D4W_WORLD_.pdf" type="application/pdf" width="800" height="600">
+      <a href="./LEARNINGVOLATILITIES/DOW_D4W_WORLD_.pdf">Communities Using Calibrated Volatilities</a>
+    </object>
+ </li>
+<strong>  China(HKEX): </strong>
+    <li type="square">  
+      <object data="./LEARNINGVOLATILITIES/HSISSECHC_D4W_CHINAHK_.pdf" type="application/pdf" width="800" height="600">
+      <a href="./LEARNINGVOLATILITIES/HSISSECHC_D4W_CHINAHK_.pdf">Communities Using Calibrated Volatilities</a>
+    </object>
+ </li>
+ <strong>  UK: </strong>
+    <li type="square">  
+      <object data="./LEARNINGVOLATILITIES/FTSE_D4W_UK_.pdf" type="application/pdf" width="800" height="600">
+      <a href="./LEARNINGVOLATILITIES/FTSE_D4W_UK_.pdf">Communities Using Calibrated Volatilities</a>
+    </object>
+ </li>
+ <strong>  Canada: </strong>
+    <li type="square">  
+      <object data="./LEARNINGVOLATILITIES/GSPT_D4W_CANADA_.pdf" type="application/pdf" width="800" height="600">
+      <a href="./LEARNINGVOLATILITIES/GSPT_D4W_CANADA_.pdf">Communities Using Calibrated Volatilities</a>
+    </object>
+ </li>
+
+ 
+ <strong>  Singapore: </strong>
+    <li type="square">  
+      <object data="./LEARNINGVOLATILITIES/STI_D4W_SINGAPORE .pdf" type="application/pdf" width="800" height="600">
+      <a href="./LEARNINGVOLATILITIES/STI_D4W_SINGAPORE .pdf">Communities Using Calibrated Volatilities</a>
+    </object>
+ </li>
+
+
+ <strong>  PHARMACEUTICAL: </strong>
+    <li type="square">  
+      <object data="./LEARNINGVOLATILITIES/PHARMACEUTICAL_D4W_PHARMACEUTICAL_.pdf" type="application/pdf" width="800" height="600">
+      <a href="./LEARNINGVOLATILITIES/PHARMACEUTICAL_D4W_PHARMACEUTICAL_.pdf">Communities Using Calibrated Volatilities</a>
+    </object>
+ </li>
+</ul>
+
+
+ <br>
+
+<h4> Implementation:</h4>
+The insight analysis uses R programming language to process the results ( R is a software environment for statistical computing
+and graphics supported by the <a target="alone" href="https://www.r-project.org/" > R Foundation for Statistical Computing </a>). The interactive data visualizations in web browsers uses the <a target="alone"  href="http://nvd3.org/"> NVD3 data visualization library</a>.
+<br> <br>       
+    <h4>   Author scientific profile:  </h4>
+Statistics and Applied Mathematics for Data Analytics, Identify opportunities to apply Mathematical Statistics, Numerical Methods, Machine Learning and Pattern Recognition to investigate and implement solutions to the field of Data Content Analytics. Data prediction via computational methods to predict from massive amounts of data (Big Data Content). These methods included clustering, regression, survival analysis, neural network, classification , ranking, deep discrepancy learning .
+ <br>   <br> 
+
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com</a>
+    <br> 
+   The MIT License (MIT) Copyright 1994-2017, Faysal El Khettabi, Numerics &amp Analytics, All Rights Reserved.
+     </div> 
+   
+
+</section>
+</div>
+ 
+
+ 
+</body>
+</html>

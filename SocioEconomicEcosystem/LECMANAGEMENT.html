@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Socio-Econometrica:  Analytics & Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Numerics'
++ '<br><br>'
+                + ' Click Above:'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+    <h3 style="color:black"> Learning Financial Enterprise Content Management (LFECM)</h3>
+    <h3 style="color:black"> Using Mathematical Modeling &amp Machine Learning Tools </h3>
+<h6 style="color:black">     Automated Numerical Reasoning Framework</h6>
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+<!-- <div id="banner">
+    <div>
+        <span id="logo"></span>
+
+        <a href="https://github.com/nvd3-community/nvd3" target="github" class="button fork"><strong>GitHub</strong></a>
+        <a href="site.html" class="button fork docs selected"><strong>Examples</strong></a>
+        <a href="documentation.html" class="button fork docs"><strong>Documentation</strong></a>
+        <div class="downloads">
+            <span>Downloads:</span>
+            <ul>
+                <li><a href="https://github.com/nvd3-community/nvd3/zipball/master" class="button">ZIP</a></li>
+                <li><a href="https://github.com/nvd3-community/nvd3/tarball/master" class="button">TAR</a></li>
+            </ul>
+        </div>
+    </div>
+</div><!-- end banner --> 
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+
+<h1> Enterprise Content Management (ECM) </h1>
+ Well-designed Enterprise Content Management (ECM) is an important element to enable the recent development of AI/ML models and the massive recent improvements in computer processing power, to extract key information contained within the content. This key information is to help deriving insight that leads to monitoring and auditing the suitability of the assigned design to the content, better decision making and so on. 
+
+<br> <br>
+<h1> Financial ECM </h1>
+For instance, the Quarterly financial statistics for enterprises are based upon a sample survey and represent the activities of all corporations in Canada. Starting in the first quarter of 2011, quarterly financial statistics include data prepared by surveyed enterprises using International Financial Reporting Standards (IFRS) and Accounting Standards for Private Enterprises (ASPE).
+The obtained Financial Enterprise Content is readily available in <a target="alone"  href="http://www5.statcan.gc.ca/cansim/a26?lang=eng&id=1870001" > CANSIM Table 187-0001 "Quarterly balance sheet and income statement, by NAICS"</a>. The Table is organized in a model that contains, for each sector in NAICS, the IFRS-Elements of Financial Statements as Items and their associated Measurements following a well-designed set of international accounting standards stating how particular types of transactions and other events should be reported in financial statements. 
+<br> <br>
+An important insight to learn from this content is:
+<br>
+<strong> What do we know about the most "relevant and informative" items in IFRS-Elements of Financial Statements? </strong>
+<br> <br>
+<h1> Machine Learning Tools &amp Financial ECM </h1>
+I explore the last question using Machine Learning Tools. As time series, the period used is from 2014/12 to 2017/12.
+<br> <br>
+Through this automated numerical reasoning process, the obtained items network is:
+<ul>  <strong>  IFRS Items Network </strong>
+ <div class="image12">
+     <div>
+    <object data="./IFRSITEMS/COMPACTMLTIFRSCANSIMNETWORKEDRATES.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./IFRSITEMS/COMPACTMLTIFRSCANSIMNETWORKEDRATES.pdf"> IFRS Items Network </a>
+    </object>
+    </div>
+</div>
+</ul>
+
+The stationary distribution associated to this network that ranks items from less to more "relevant and informative" is depicted in this plot:
+
+<ul>  <strong>  IFRS Items Stationary Distribution </strong>
+ <div class="image12">
+     <div>
+    <object data="./IFRSITEMS/COMPACTMLTIFRSCANSIMSTATDISTRNETWORKEDRATES.pdf" type="application/pdf" width="700" height="700">
+        alt : <a href="./IFRSITEMS/COMPACTMLTIFRSCANSIMSTATDISTRNETWORKEDRATES.pdf"> Stationary Distribution </a>
+    </object>
+    </div>
+</div>
+</ul>
+
+
+
+
+<br> <br>
+The most "relevant and informative" items are: Retained earnings, Cash and deposits, Share capital, Total equity, Accounts payable and accrued liabilities, Loans and accounts with affiliates, Borrowings, Contributed surplus and other. All items are in this  <a href="
+./IFRSITEMS/COMPACTMLTIFRSCANSIMSTATDISTRNETWORKEDRATES.csv"> CSV-file</a> where items are sorted from more to less "relevant and informative".
+<br> <br>
+Accounting is about  Concepts & Mathematics, Machine Learning can fit into what can be considered understanding the conceptual framework of IFRS. Well designed Financial Enterprise Content Management of IFRS Elements is to enable analysis, and is firmly the extraction of actionable insights as complementary to storing and tracking of content. 
+<br> <br>
+<h1> Implementation:</h1>
+The insight analysis uses R programming language to process the results ( R is a software environment for statistical computing
+and graphics supported by the <a target="alone" href="https://www.r-project.org/" > R Foundation for Statistical Computing </a>). The interactive data visualizations in web browsers uses the <a target="alone"  href="http://nvd3.org/"> NVD3 data visualization library. </a>
+
+
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com</a>
+    <br> 
+   The MIT License (MIT) Copyright 1994-2050, Faysal El Khettabi, Numerics &amp Analytics, All Rights Reserved.
+     </div> 
+   
+
+
+</section>
+</div>
+ 
+
+ 
+</body>
+</html>
+
+
+<!--  
+git add --all
+  git commit -m "Initial commit"
+  git push -u origin master
+ -->

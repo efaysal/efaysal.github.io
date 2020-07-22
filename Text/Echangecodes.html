@@ -1,0 +1,92 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>HF Equaty Portfolio: Digital Analytics & Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #CCC; font-family: arial; font-size: 14px; font-weight:bold;">'
+                + 'Click the links above to load the example here'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+    <h1 style="color:black"> EQUITY RESEARCH-World Exchange Names</h1>
+  <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+
+                                           
+        <div id="main-content" class="wiki-content">
+                           
+        <div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh"><p>Country Name</p></th><th class="confluenceTh"><p>Exchange Name</p></th><th class="confluenceTh"><p>Symbol</p></th><th colspan="1" class="confluenceTh"><p>Suffix ( mainly used in Yahoo! Finance)</p></th></tr><tr><td class="confluenceTd"><p>Australia</p></td><td class="confluenceTd"><p>Australian Stock Exchange</p></td><td class="confluenceTd"><p>ASX</p></td><td colspan="1" class="confluenceTd">AX</td></tr><tr><td class="confluenceTd"><p>Austria</p></td><td class="confluenceTd"><p>Vienna Stock Exchange</p></td><td class="confluenceTd"><p>VIE</p></td><td colspan="1" class="confluenceTd">VI</td></tr><tr><td class="confluenceTd"><p>Brazil</p></td><td class="confluenceTd"><p>BOVESPA - Sao Paolo Stock Exchange</p></td><td class="confluenceTd"><p>SAO</p></td><td colspan="1" class="confluenceTd">BB</td></tr><tr><td colspan="1" class="confluenceTd">Brazil</td><td colspan="1" class="confluenceTd">Brazil Mercantile &amp; Futures Exchange</td><td colspan="1" class="confluenceTd">BMF</td><td colspan="1" class="confluenceTd">BM</td></tr><tr><td class="confluenceTd"><p>Brussels</p></td><td class="confluenceTd"><p>Euronext Brussels</p></td><td class="confluenceTd"><p>BRU</p></td><td colspan="1" class="confluenceTd">BR</td></tr><tr><td colspan="1" class="confluenceTd">Canada</td><td colspan="1" class="confluenceTd">Montreal Stock Exchange</td><td colspan="1" class="confluenceTd">MSE</td><td colspan="1" class="confluenceTd">MSE</td></tr><tr><td class="confluenceTd"><p>Canada</p></td><td class="confluenceTd"><p>Toronto Stock Exchange</p></td><td class="confluenceTd"><p>TOR</p></td><td colspan="1" class="confluenceTd">TO</td></tr><tr><td class="confluenceTd"><p>Canada</p></td><td class="confluenceTd"><p>Toronto Venture Exchange</p></td><td class="confluenceTd"><p>VAN</p></td><td colspan="1" class="confluenceTd">TV</td></tr><tr><td class="confluenceTd"><p>Chile</p></td><td class="confluenceTd"><p>Santiago Stock Exchange</p></td><td class="confluenceTd"><p>SGO</p></td><td colspan="1" class="confluenceTd">CI</td></tr><tr><td class="confluenceTd"><p>China</p></td><td class="confluenceTd"><p>Hong Kong Stock Exchange</p></td><td class="confluenceTd"><p>HKG</p></td><td colspan="1" class="confluenceTd">HK</td></tr><tr><td colspan="1" class="confluenceTd">China</td><td colspan="1" class="confluenceTd">Hong Kong Futures Exchange</td><td colspan="1" class="confluenceTd">HKF</td><td colspan="1" class="confluenceTd">HKF</td></tr><tr><td colspan="1" class="confluenceTd">Colombia</td><td colspan="1" class="confluenceTd">Columbia Stock Exchange (Bolsa de Valores de Columbia)</td><td colspan="1" class="confluenceTd">BVC</td><td colspan="1" class="confluenceTd">CB</td></tr><tr><td class="confluenceTd"><p>Denmark</p></td><td class="confluenceTd"><p>Copenhagen Stock Exchange</p></td><td class="confluenceTd"><p>CPH</p></td><td colspan="1" class="confluenceTd">CO</td></tr><tr><td class="confluenceTd"><p>Finland</p></td><td class="confluenceTd"><p>Helsinki Stock Exchange</p></td><td class="confluenceTd"><p>HEL</p></td><td colspan="1" class="confluenceTd">FH</td></tr><tr><td class="confluenceTd"><p>France</p></td><td class="confluenceTd"><p>Euronext Paris</p></td><td class="confluenceTd"><p>PAR</p></td><td colspan="1" class="confluenceTd">PA</td></tr><tr><td class="confluenceTd"><p>Germany</p></td><td class="confluenceTd"><p>XETRA Stock Exchange</p></td><td class="confluenceTd"><p>GER</p></td><td colspan="1" class="confluenceTd">DE</td></tr><tr><td class="confluenceTd"><p>Greece</p></td><td class="confluenceTd"><p>Athens Stock Exchange</p></td><td class="confluenceTd"><p>ATH</p></td><td colspan="1" class="confluenceTd">AT</td></tr><tr><td class="confluenceTd"><p>India</p></td><td class="confluenceTd"><p>National Stock Exchange of India</p></td><td class="confluenceTd"><p>NSE</p></td><td colspan="1" class="confluenceTd">NS</td></tr><tr><td class="confluenceTd"><p>Indonesia</p></td><td class="confluenceTd"><p>Jakarta Stock Exchange</p></td><td class="confluenceTd"><p>JKT</p></td><td colspan="1" class="confluenceTd">JK</td></tr><tr><td class="confluenceTd"><p>Ireland</p></td><td class="confluenceTd"><p>Irish Stock Exchange</p></td><td class="confluenceTd"><p>DUB</p></td><td colspan="1" class="confluenceTd">ID</td></tr><tr><td class="confluenceTd"><p>Israel</p></td><td class="confluenceTd"><p>Tel Aviv Stock Exchange</p></td><td class="confluenceTd"><p>TLV</p></td><td colspan="1" class="confluenceTd">TA</td></tr><tr><td class="confluenceTd"><p>Italy</p></td><td class="confluenceTd"><p>Milan Stock Exchange / Borsa Italia</p></td><td class="confluenceTd"><p>MIL</p></td><td colspan="1" class="confluenceTd">MI</td></tr><tr><td class="confluenceTd"><p>Japan</p></td><td class="confluenceTd"><p>Tokyo Stock Exchange</p></td><td class="confluenceTd"><p>TSE</p></td><td colspan="1" class="confluenceTd">JP</td></tr><tr><td colspan="1" class="confluenceTd">Japan</td><td colspan="1" class="confluenceTd">Osaka Securities Exchange</td><td colspan="1" class="confluenceTd">OSE</td><td colspan="1" class="confluenceTd">OS</td></tr><tr><td class="confluenceTd"><p>Malaysia</p></td><td class="confluenceTd"><p>Malaysia Derivatives Exchange</p></td><td class="confluenceTd"><p>MDE</p></td><td colspan="1" class="confluenceTd">MDE</td></tr><tr><td class="confluenceTd"><p>Malaysia</p></td><td class="confluenceTd"><p>Malaysia Exchange</p></td><td class="confluenceTd"><p>KLS</p></td><td colspan="1" class="confluenceTd">MK</td></tr><tr><td class="confluenceTd"><p>Mexico</p></td><td class="confluenceTd"><p>Mexico Stock Exchange</p></td><td class="confluenceTd"><p>MEX</p></td><td colspan="1" class="confluenceTd">MX</td></tr><tr><td colspan="1" class="confluenceTd">Morocco</td><td colspan="1" class="confluenceTd">Casablanca Stock Exchange (Bourse de Casablanca)</td><td colspan="1" class="confluenceTd">CSE</td><td colspan="1" class="confluenceTd">CS</td></tr><tr><td class="confluenceTd"><p>Netherlands</p></td><td class="confluenceTd"><p>Amsterdam Exchange</p></td><td class="confluenceTd"><p>AMS</p></td><td colspan="1" class="confluenceTd">AS</td></tr><tr><td class="confluenceTd"><p>New Zealand</p></td><td class="confluenceTd"><p>New Zealand Stock Exchange</p></td><td class="confluenceTd"><p>NZE</p></td><td colspan="1" class="confluenceTd">NZ</td></tr><tr><td class="confluenceTd"><p>Norway</p></td><td class="confluenceTd"><p>Oslo Bors</p></td><td class="confluenceTd"><p>OSL</p></td><td colspan="1" class="confluenceTd">OL</td></tr><tr><td colspan="1" class="confluenceTd">Pakistan</td><td colspan="1" class="confluenceTd">Karachi</td><td colspan="1" class="confluenceTd">KSA</td><td colspan="1" class="confluenceTd">KA</td></tr><tr><td class="confluenceTd"><p>Philippines</p></td><td class="confluenceTd"><p>Philippine Stock Exchange</p></td><td class="confluenceTd"><p>PHS</p></td><td colspan="1" class="confluenceTd">PM</td></tr><tr><td class="confluenceTd"><p>Poland</p></td><td class="confluenceTd"><p>Warsaw Stock Exchange</p></td><td class="confluenceTd"><p>WAR</p></td><td colspan="1" class="confluenceTd">PW</td></tr><tr><td class="confluenceTd"><p>Portugal</p></td><td class="confluenceTd"><p>Euronext Lisbon</p></td><td class="confluenceTd"><p>LIS</p></td><td colspan="1" class="confluenceTd">PL</td></tr><tr><td class="confluenceTd"><p>Russia</p></td><td class="confluenceTd"><p>Russian Trading System</p></td><td class="confluenceTd"><p>RTS</p></td><td colspan="1" class="confluenceTd">RU</td></tr><tr><td class="confluenceTd"><p>Singapore</p></td><td class="confluenceTd"><p>Singapore Exchange</p></td><td class="confluenceTd"><p>SES</p></td><td colspan="1" class="confluenceTd">SP</td></tr><tr><td class="confluenceTd"><p>South Africa</p></td><td class="confluenceTd"><p>Johannesburg Stock Exchange</p></td><td class="confluenceTd"><p>JSE</p></td><td colspan="1" class="confluenceTd">SJ</td></tr><tr><td class="confluenceTd"><p>South Africa</p></td><td class="confluenceTd"><p>South African Futures Exchange</p></td><td class="confluenceTd"><p>SAF</p></td><td colspan="1" class="confluenceTd">SAF</td></tr><tr><td class="confluenceTd"><p>South Korea</p></td><td class="confluenceTd"><p>Korean Futures Exchange (KOFEX)</p></td><td class="confluenceTd"><p>KFE</p></td><td colspan="1" class="confluenceTd">KFE</td></tr><tr><td class="confluenceTd"><p>South Korea</p></td><td class="confluenceTd"><p>Korea Stock Exchange</p></td><td class="confluenceTd"><p>KSC</p></td><td colspan="1" class="confluenceTd">KS</td></tr><tr><td class="confluenceTd"><p>Spain</p></td><td class="confluenceTd"><p>Madrid Stock Exchange (Cats)</p></td><td class="confluenceTd"><p>MCE</p></td><td colspan="1" class="confluenceTd">MC</td></tr><tr><td colspan="1" class="confluenceTd">Spain</td><td colspan="1" class="confluenceTd"><span>Mercado Español de Futuros Financieros (MEFF)</span></td><td colspan="1" class="confluenceTd">MFM</td><td colspan="1" class="confluenceTd">MFM</td></tr><tr><td class="confluenceTd"><p>Sweden</p></td><td class="confluenceTd"><p>Stockholm Stock Exchange</p></td><td class="confluenceTd"><p>STO</p></td><td colspan="1" class="confluenceTd">ST</td></tr><tr><td class="confluenceTd"><p>Switzerland</p></td><td class="confluenceTd"><p>SIX Swiss Exchange</p></td><td class="confluenceTd"><p>EBS</p></td><td colspan="1" class="confluenceTd">SW</td></tr><tr><td class="confluenceTd"><p>Switzerland</p></td><td class="confluenceTd"><p>Swiss Exchange</p></td><td class="confluenceTd"><p>VTX</p></td><td colspan="1" class="confluenceTd">VX</td></tr><tr><td class="confluenceTd"><p>Taiwan</p></td><td class="confluenceTd"><p>Taiwan Stock Exchange</p></td><td class="confluenceTd"><p>TAI</p></td><td colspan="1" class="confluenceTd">TW</td></tr><tr><td class="confluenceTd"><p>Thailand</p></td><td class="confluenceTd"><p>Thailand Stock Exchange</p></td><td class="confluenceTd"><p>BKK</p></td><td colspan="1" class="confluenceTd">TB</td></tr><tr><td class="confluenceTd"><p>Turkey</p></td><td class="confluenceTd"><p>Istanbul Stock Exchange</p></td><td class="confluenceTd"><p>IST</p></td><td colspan="1" class="confluenceTd">TI</td></tr><tr><td class="confluenceTd"><p>United Kingdom</p></td><td class="confluenceTd"><p>International Order Book</p></td><td class="confluenceTd"><p>IOB</p></td><td colspan="1" class="confluenceTd">IL</td></tr><tr><td class="confluenceTd"><p>United Kingdom</p></td><td class="confluenceTd"><p>London Stock Exchange</p></td><td class="confluenceTd"><p>LSE</p></td><td colspan="1" class="confluenceTd">L</td></tr><tr><td class="confluenceTd"><p>United States</p></td><td class="confluenceTd"><p>Chicago Mercantile Exchange</p></td><td class="confluenceTd"><p>CME</p></td><td colspan="1" class="confluenceTd">CME</td></tr><tr><td colspan="1" class="confluenceTd">United States</td><td colspan="1" class="confluenceTd">BATS Global Markets</td><td colspan="1" class="confluenceTd">BTS</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">United States</td><td colspan="1" class="confluenceTd">ICE (NYBOT)</td><td colspan="1" class="confluenceTd">ICE</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td class="confluenceTd"><p>United States</p></td><td class="confluenceTd"><p>NASDAQ</p></td><td class="confluenceTd"><p>NAS</p></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td class="confluenceTd"><p>United States</p></td><td class="confluenceTd"><p>NYSE Market (Amex)</p></td><td class="confluenceTd"><p>ASE</p></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">United States</td><td colspan="1" class="confluenceTd">NYSE Arca</td><td colspan="1" class="confluenceTd">PCX</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td class="confluenceTd"><p>United States</p></td><td class="confluenceTd"><p>NYSE</p></td><td class="confluenceTd"><p>NYQ</p></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td class="confluenceTd"><p>United States</p></td><td class="confluenceTd"><p>OPRA</p></td><td class="confluenceTd"><p>OPR</p></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td class="confluenceTd"><p>United States</p></td><td class="confluenceTd"><p>OTC Bulletin Board Market</p></td><td class="confluenceTd"><p>OBB</p></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td class="confluenceTd"><p>United States</p></td><td class="confluenceTd"><p>Pink Sheets</p></td><td class="confluenceTd"><p>PNK</p></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td class="confluenceTd"><p>Vietnam</p></td><td class="confluenceTd"><p>HoChiMinh Stock Exchange</p></td><td class="confluenceTd"><p>HSX</p></td><td colspan="1" class="confluenceTd">VN</td></tr></tbody></table></div>
+    
+        </div>
+ </section>
+</div>
+
+</body>
+</html>

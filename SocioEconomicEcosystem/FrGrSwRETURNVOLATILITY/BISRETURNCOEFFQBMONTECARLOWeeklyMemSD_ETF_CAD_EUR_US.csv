@@ -1,0 +1,156 @@
+Ticker,Name
+URTH,"iShares, Inc. - iShares MSCI World ETF"
+SPY,SPDR S&P 500 ETF Trust
+ITOT,iShares Trust - iShares Core S&P Total U.S. Stock Market ETF
+IVV,iShares Trust - iShares Core S&P 500 ETF
+IWV,iShares Trust - iShares Russell 3000 ETF
+^W5000,^W5000
+^GSPC,^GSPC
+^NDX,^NDX
+^DJI,^DJI
+^IXIC,^IXIC
+^NYA,^NYA
+^RUT,^RUT
+^RUA,^RUA
+^RUI,^RUI
+CRBN,iShares MSCI ACWI Low Carbon Target ETF
+IEFA,iShares Core MSCI EAFE ETF
+IEMG,"iShares, Inc. - iShares Core MSCI Emerging Markets ETF"
+PZD,PowerShares Exchange-Traded Fund Trust - PowerShares Cleantech Portfolio
+VIDI,Vident International Equity
+VTI,Vanguard Index Funds - Vanguard Total Stock Market ETF
+^SPEUP,^SPEUP
+VEF.TO,Vanguard FTSE Developed All Cap ex U.S. Index ETF (CAD-hedged)
+VBU.TO,Vanguard U.S. Aggregate Bond Index ETF (CAD-hedged)
+FDE.TO,First Trust AlphaDEX Emerging Market Dividend ETF (CAD-Hedged)
+ZWE.TO,BMO Europe High Dividend Covered Call Hedged to CAD ETF
+ZUB.TO,BMO Equal Weight US Banks Hedged to CAD Index ETF
+ZSU.TO,BMO Short-Term US IG Corporate Bond Hedged to CAD Index ETF
+ZEQ.TO,BMO MSCI Europe High Quality Hedged to CAD Index ETF
+ZDM.TO,BMO MSCI EAFE Hedged to CAD Index ETF
+ZDH.TO,BMO International Dividend Hedged to CAD ETF
+XPF.TO,iShares S&P/TSX North American Preferred Stock Index ETF (CAD-Hedged)
+XFS.TO,iShares Edge MSCI Multifactor USA Index ETF (CAD-Hedged)
+XFH.TO,iShares Core MSCI EAFE IMI Index ETF (CAD-Hedged)
+XEB.TO,iShares J.P. Morgan USD Emerging Markets Bond Index ETF (CAD-Hedged)
+CSD.TO,iShares Short Duration High Income ETF (CAD-Hedged)
+ZEF.TO,BMO Emerging Markets Bond Hedged to CAD Index ETF
+XHY.TO,iShares U.S. High Yield Bond Index ETF (CAD-Hedged)
+XIN.TO,iShares MSCI EAFE Index ETF (CAD-Hedged)
+ZMT.TO,BMO S&P/TSX Equal Weight Global Base Metals Hedged to CAD Index ETF
+XFF.TO,iShares Edge MSCI Multifactor EAFE Index ETF (CAD-Hedged)
+ZMU.TO,BMO Mid-Term US IG Corporate Bond Hedged to CAD Index ETF
+ZHY.TO,BMO High Yield US Corporate Bond Hedged to CAD Index ETF
+CHB.TO,iShares U.S. High Yield Fixed Income Index ETF (CAD-Hedged)
+FSL.TO,First Trust Senior Loan ETF (CAD-Hedged)
+FUD.TO,First Trust AlphaDEX U.S. Dividend ETF (CAD-Hedged)
+VBG.TO,Vanguard Global ex-U.S. Aggregate Bond Index ETF (CAD-hedged)
+XCD.TO,iShares S&P Global Consumer Discretionary Index ETF (CAD-Hedged)
+EUR.TO,First Trust AlphaDEX European Dividend Index ETF (CAD-Hedged)
+XEH.TO,iShares MSCI Europe IMI Index ETF (CAD-Hedged)
+XIG.TO,iShares U.S. IG Corporate Bond Index ETF (CAD-Hedged)
+XGI.TO,iShares S&P Global Industrials Index ETF (CAD-Hedged)
+^SSMI,^SSMI
+^STOXX,^STOXX
+^STOXX50E,^STOXX50E
+AUTP.MI,LYXOR UCITS ETF STOXX EU 600 AU
+CHM.MI,LYXOR UCITS ETF STOXX EURO 600
+SC01.DE,Source Markets plc - Source STOXX Europe 600 Optimised Construction & Materials UCITS ETF
+EXSA.MI,ISHARES STOXX EUROPE 600 UCITS
+MEUD.MI,LYXOR STOXX EUROPE 600 (DR) UCI
+S600.L,Source Markets plc - Source STOXX Europe 600 UCITS ETF
+S600.SW,Source Markets plc - Source STOXX Europe 600 UCITS ETF
+^FTSE,^FTSE
+PHR.TO,Purpose Fund Corp. - Purpose Duration Hedged Real Estate Fund
+XSH.TO,iShares Core Canadian Short Term Corporate + Maple Bond Index ETF
+ZFM.TO,BMO Mid Federal Bond Index ETF
+VGH.TO,Vanguard U.S. Dividend Appreciation Index ETF (CAD-hedged)
+CYH.TO,iShares Global Monthly Dividend Index ETF (CAD-Hedged)
+ZDJ.TO,BMO Dow Jones Industrial Average Hedged to CAD Index ETF
+ZWA.TO,BMO Covered Call Dow Jones Industrial Average Hedged to CAD ETF
+ULV.TO,PowerShares S&P 500 Low Volatility (CAD Hedged) Index ETF
+ZUE.TO,BMO S&P 500 Hedged to CAD Index ETF
+ZUD.TO,BMO US Dividend Hedged to CAD ETF
+ZQQ.TO,BMO NASDAQ 100 Equity Hedged to CAD Index ETF
+VUS.TO,Vanguard U.S. Total Market Index ETF (CAD-Hedged)
+VSP.TO,Vanguard S&P 500 Index ETF (CAD-hedged)
+CUD.TO,iShares US Dividend Growers Index ETF (CAD-Hedged)
+XSU.TO,iShares U.S. Small Cap Index ETF (CAD-Hedged)
+XHD.TO,iShares U.S. High Dividend Equity Index ETF (CAD-Hedged)
+XHC.TO,iShares Global Healthcare Index ETF (CAD-Hedged)
+XSP.TO,iShares Core S&P 500 Index ETF (CAD-Hedged)
+ZUH.TO,BMO Equal Weight US Health Care Hedged to CAD Index ETF
+XMH.TO,iShares S&P U.S. Mid-Cap Index ETF (CAD-Hedged)
+XQQ.TO,iShares NASDAQ 100 Index ETF (CAD-Hedged)
+XUH.TO,iShares Core S&P U.S. Total Market Index ETF (CAD-Hedged)
+PDF.TO,Purpose Fund Corp. - Purpose Core Dividend Fund
+XIU.TO,iShares S&P/TSX 60 Index ETF
+XIC.TO,iShares Core S&P/TSX Capped Composite Index ETF
+^GSPTSE,^GSPTSE
+FSD.TO,First Trust Short Duration High Yield Bond ETF (CAD-Hedged)
+XEN.TO,iShares Jantzi Social Index ETF
+C060.DE,ComStage - STOXX Europe 600 NR UCITS ETF
+MEUD.PA,LYXOR STOXX600 EUR
+SC0C.DE,Source Markets plc - Source STOXX Europe 600 UCITS ETF
+FUD-A.TO,First Trust AlphaDEX U.S. Dividend ETF (CAD-Hedged)
+EUR-A.TO,First Trust AlphaDEX European Dividend Index ETF (CAD-Hedged)
+FSL-A.TO,First Trust Senior Loan ETF (CAD-Hedged)
+EXH2.F,iShares (DE) I - iShares STOXX Europe 600 Financial Services UCITS ETF (DE)
+C064.F,ComStage - STOXX Europe 600 Chemicals NR UCITS ETF
+EXV8.F,iShares (DE) I - iShares STOXX Europe 600 Construction & Materials UCITS ETF (DE)
+EXV7.F,iShares (DE) I - iShares STOXX Europe 600 Chemicals UCITS ETF (DE)
+C060.F,ComStage - STOXX Europe 600 NR UCITS ETF
+C066.F,ComStage - STOXX Europe 600 Financial Services NR UCITS ETF
+C065.F,ComStage - STOXX Europe 600 Construction & Materials NR UCITS ETF
+EXH4.F,iShares (DE) I - iShares STOXX Europe 600 Industrial Goods & Services UCITS ETF (DE)
+C069.F,ComStage - STOXX Europe 600 Industrial Goods & Services NR UCITS ETF
+EXSA.F,iShares STOXX Europe 600 UCITS ETF (DE)
+EXSA.DE,iShares STOXX Europe 600 UCITS ETF (DE)
+^CXKCX,^CXKCX
+^FCHI,^FCHI
+^GDAXI,^GDAXI
+^N100,^N100
+INDA,iShares Trust - iShares MSCI India ETF
+EEMA,iShares MSCI Emerging Markets Asia ETF
+ERUS,"iShares, Inc. - iShares MSCI Russia Capped ETF"
+ECNS,iShares MSCI China Small-Cap ETF
+AAXJ,iShares MSCI All Country Asia ex Jpn ETF
+BKF,iShares MSCI BRIC ETF
+EWY,iShares MSCI South Korea Capped ETF
+^MERV,MERVAL BUENOS AIRES
+^DJAT,Dow Jones Asian Titans 50 Index
+^BVSP,IBOVESPA
+^XAU,PHLX GOLD AND SILVER SECTOR IND
+^XU100,-
+FXI,iShares China Large-Cap ETF
+INDY,iShares India 50 ETF
+^SSMI,^SSMI
+^STOXX,STXE6 EUR P
+^FTSE,FTSE 100
+^STOXX50E,ESTX50 EUR P
+QAT,iShares Trust - iShares MSCI Qatar Capped ETF
+AAIT,iShares MSCI All Country Asia Info Tech
+^HSI,-
+^STI,-
+^KS11,-
+^TWII,-
+000001.SS,SSE Composite Index
+^OMXSPI,OMX Stockholm_PI
+000001.SS,SSE Composite Index
+^OMX,OMX Stockholm 30 Index
+^ISEQ,ISEQ-OVERALL PRICE
+^OMXH25,OMX Helsinki 25
+^MXX,-
+^N225,-
+^BFX,BEL 20
+^AEX,AEX-INDEX
+^IBEX,IBEX 35
+^SPEUP,S&P EUROPE 350
+EWC,iShares MSCI Canada ETF
+^BSESN,S&P BSE SENSEX
+^NSEI,NIFTY 50
+BSE-500.BO,S&P BSE 500 INDEX
+EEMS,"iShares, Inc. - iShares MSCI Emerging Markets Small-Cap ETF"
+EIDO,iShares MSCI Indonesia ETF
+EEM,iShares MSCI Emerging Markets ETF
+MCHI,iShares MSCI China ETF

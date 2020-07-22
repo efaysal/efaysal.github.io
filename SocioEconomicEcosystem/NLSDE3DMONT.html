@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Analytics & Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Realized-Profitability numerics'
++ '<br><br>'
+                + ' First click above ... '
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return true;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=yes">
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+
+    <h2 style="color:black">  Coupling Time Variable Bursting Traffic Intensity &amp Policy Effect Functions</h2>
+     <h3 style="color:black">  Nonlinear Phenomena and Properties </h3>
+     <h4 style="color:black"> Tech-Platform Differential Analytics </h4>
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal.El.Khettabi@gmail.com </a>
+     </div> 
+</header>
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+ <h3>
+       This essay is a continuation of: 
+</h3>
+
+<ul>
+   <li type="square"> <a href="YouTubeDAnalytics.html">YouTube Differential Analytics</a>.  </li> 
+    <li type="square"> <a href="YouTubeDynamics.html">YouTube Most Popular Videos &amp Learning Engagement With Bursting Velocity </a>.  </li> 
+    <div>
+</ul>
+
+<h2> Quantitative Analysis. </h2>
+
+We have already dealt with the fixed traffic intensity coupled with different policy effect functions in <a href="YouTubeDAnalytics.html">YouTube Differential Analytics</a>. Our empirical analysis showed the existence of bursting phenoma in the collected YouTube data, see <a href="YouTubeDynamics.html">YouTube Most Popular Videos &amp Learning Engagement With Bursting Velocity </a>.
+Here our emphasis will be on nonlinear phenomena and properties, particularly those with physical
+relevance when traffic intensity has a time depending busrting trend.
+<br>
+In this Figure, the used time variable bursting traffic intensity that is coupled with different policy effect functions. 
+
+<div class="image12">
+    <div class="imgContainer">
+      <center>  <img src="./YTBurstGITHUB/BURST.jpg" alt="Channel" /></center>
+    </div>
+</div>
+<br>
+Our first order systems of differential equations(FOSDE) used a policy effect function depending of the state of the system in a non-linear manner. Without some basic theoretical understanding of the nature of solutions, it will be hard to understand when numerical solutions are to be trusted. We considered a time variable bursting traffic intensity that is coupled with different policy effect functions to treat systematically the state feedback of our (FOSDE), see Figure I. The effect of bounded input perturbation, policy effect function, is analysed by solving numerically our FOSDE that feed the founded solutions into the policy effect function, at any given time. 
+<br> <br>
+A perfect policy effect function is the one adding no perturbation on the Expected-Profitability. In this case, our FOSDE is a linear system, the exact numerical solution is designed as P0.
+<br> <br>
+A parameter is used – known as a perturbation – that quantifies the deviation from the exactly solvable problem with perfect policy effect function. A series of perturbations have been conducted, P1,P2,P3, and so on. The associated solutions due to the deviations from the perfect policy effect function( an increasing policy effect function are used to damp the Expected-Profitability). 
+<br> <br>
+The strong perturbations immediately dislodge the system far away from the observed Expected-Profitability under the perfect policy effect function, click on <a href="./YTBurstGITHUB/FODEQ_.html"> Realized-Profitability using variable traffic intensities under diffrent policy effect functions to monitor the Expected-Profitability. </a>
+         
+
+ <br>   <br> 
+
+
+<div class="examplelinks chartlinks"> <a href="./YTBurstGITHUB/FODEQ_.html"> Realized-Profitability using variable traffic intensities under diffrent policy effect functions to monitor the Expected-Profitability. </a>
+            </div>
+        <div>
+            <a href="#" class="showcharts">Show Chart Examples</a>
+        </div>
+        <div id="show_wrapper"><iframe id="show"></iframe></div>
+        <div id="example_options" style="visibility: hidden;">
+            <br><br>
+            <a target="alone" id="showonlythis" href="#">View in a New Window</a> ;
+        </div>
+
+     <h4>   Author scientific profile:  </h4>
+Statistics and Applied Mathematics for Data Analytics, Identify opportunities to apply Mathematical Statistics, Numerical Methods, Machine Learning and Pattern Recognition to investigate and implement solutions to the field of Data Content Analytics. Data prediction via computational methods to predict from massive amounts of data (Big Data Content). These methods included clustering, regression, survival analysis, neural network, classification , ranking, deep discrepancy learning .
+ <br>   <br> 
+
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com , Living in Vancouver, BC, Canada.</a>
+    <br> 
+   The MIT License (MIT) Copyright 1994-2017, Faysal El Khettabi, Numerics&Analytics, All Rights Reserved.
+     </div> 
+   
+</section>
+</div>
+ 
+</body>
+</html>
+
+
+<!--  
+git add --all
+  git commit -m "Initial commit"
+  git push -u origin master
+ -->
+
+<!-- 
+Calvo’s formulation makes the current contract price a geometrically
+weighted average of future price levels, adjusted for excess demand in the future.
+Denoting the contract price by Vt
+, the price level by Pt
+, and excess demand
+by Et
+,
+V P E e ds t s
+t
+s
+s t = +
+∞
+− − ∫ δ β δ [ ] . ( )
+The price index is a geometrically weighted average of past contract prices,
+P V e ds t s
+t
+t s =
+−∞
+− − ∫ δ δ ( ) .
+The combination of these two makes prices implicitly a mixed forward- and
+backward-looking function of contract prices, similar to Taylor (1980): -->

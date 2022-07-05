@@ -1,3 +1,4 @@
+
 World Indices and Exchange Traded Funds(Yahoo Finance):
 1) Daily Prices
 efaysal.github.io/SocioEconomicEcosystem/WIETFs/TSSDF_World_Indices_iShares_ETFs.html
@@ -12,3 +13,5 @@ Liquidity and Risk Diversification.
 Furthermore, currency fluctuations also pose a serious risk to the  CRP, see posted figure and  1 & 2 for more details.
 
 #mathematics #probability #data #datascience #machinelearning #artificialintelligence #ml #financeautomation #finance #stochasticprocesses #markets #analytics #risk #covid19 #inflation #wrongdiplomacies
+
+

@@ -6,11 +6,11 @@ efaysal.github.io/SocioEconomicEcosystem/WIETFs/TSSDF_World_Indices_iShares_ETFs
 efaysal.github.io/SocioEconomicEcosystem/WIETFs/NETSDFETF_Country_iShares_MSCI.pdf
 
 
-New kid in the block, ETF, exacerbates the Sell-Off initiated by the current state of affairs
-through the inefficient Creation and Recovery Process(CRP), this process is usually supposed to facilitate  
-Liquidity and Risk Diversification. 
+New kid in the block, ETF, may be exacerbating the Sell-Off initiated by the current state of affairs
+through an inefficient application of the creation and recovery proces(CRP), 
+this process is usually supposed to facilitate Liquidity and Risk Diversification. 
 
-Furthermore, currency fluctuations also pose a serious risk to the  CRP, see posted figure and  1 & 2 for more details.
+Furthermore, currency fluctuations also pose a serious risk to the CRP, see posted figure and  1 & 2 for more details.
 
 #mathematics #probability #data #datascience #machinelearning #artificialintelligence #ml #financeautomation #finance #stochasticprocesses #markets #analytics #risk #covid19 #inflation #wrongdiplomacies
 

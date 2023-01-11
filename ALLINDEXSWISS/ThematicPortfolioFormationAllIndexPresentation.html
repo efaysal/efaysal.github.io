@@ -1,0 +1,193 @@
+
+<!-- 
+git add --all
+git commit -m "Initial commit"
+ git push -u origin master
+
+ -->
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Analytics & Metrics </title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('body').ready(function() {
+            // preload iframe with message
+            var iframe = document.getElementById('show');
+            var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframedoc.body.innerHTML = ''
+                + '<br><br>'
+                + '<div style="text-align: center; color: #000000; font-family: arial; font-size: 20px; font-weight:bold;">'
+                + 'To load the Bursting Velocity'
++ '<br><br>'
+                + ' Click above: Category or Video'
++ '<br><br>'
+                + '</div>';
+
+            $('.showbases').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.chartlinks').stop().slideUp({complete: function() {
+                    $('.showcharts').fadeIn();
+                    $('.baselinks').slideDown();
+                }});
+            });
+            $('.showcharts').click(function(evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+                $(evt.target).fadeOut();
+                $('.baselinks').stop().slideUp({complete: function() {
+                    $('.showbases').fadeIn();
+                    $('.chartlinks').slideDown();
+                }});
+            });
+            $('.examplelinks a').each(function(i, elem) {
+                $(elem).click(function(evt) {
+                    $('#show').prop('src', $(evt.target).prop('href'));
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    $('.examplelinks a').removeClass('selected');
+                    $(evt.target).addClass('selected');
+                    // add link to source
+                    var urlparts = $(evt.target).prop('href').split('/');
+                    var file = urlparts[urlparts.length - 1];
+                    var sourceurl = 'https://github.com/nvd3-community/nvd3/blob/gh-pages/examples/' + file;
+                    $('#tosource').prop('href', sourceurl).fadeIn();
+                    // also set link to view only the example
+                    $('#showonlythis').prop('href', $(evt.target).prop('href'));
+                    // done
+                    $('#example_options').attr('style', '');
+                    return false;
+                });
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=55, user-scalable=no">
+
+<style>
+  .boxes{
+  width:50%;
+  float:left;
+  }
+  #mainDiv{
+    width:50%;
+margin:auto;
+  }
+  img{
+    max-width:100%;
+  }
+</style>
+
+</head>
+<body>
+
+<header>
+    <body style="background-color:lightgrey;">
+         <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Faysal El Khettabi (_oio_)  </a>
+     </div> 
+      <h2 style="color:black">  Comments on ALLINDEX Presentation:  </h2>
+      <h2 style="color:black">   How to Build & OPTIMIZE an Investment Basket in a few Minutes </h2>
+      <h2 style="color:black">   Recording from January 5, 2023 // 4:30 pm CET (10:30 am EST) </h2>
+  
+      
+ 
+
+
+<div class="wrapper">
+    <nav>
+        <ul></ul>
+    </nav>
+    <section>
+
+The presentation is well structures, timely informative and present a relevant opportunity to elaborate on my work related to  assessing methodologies in thematic investing.
+<br> <br>  
+
+ One of the aim of the presentation, important efforts are developing ways to design and build fully automatically efficient portfolios given a specific theme or context. 
+ The characterization of these portfolios will be facilitated by using mainly two processes based on the  "state of the art" of ML, AI  and Modern Portfolio Theory for Quantitative Portfolio Management.
+
+ <br> <br> 
+ A primary process(PP) is to facilitate the formation of a basket of stocks based on features associated to a given theme or even a given stock and so on. 
+ A kind of score from NLP is used to characterize only most interesting basket of stocks.  
+ <br> 
+As in the context of stock markets, nonlinearity is a rule and not an exception, the return of a stock does not vary in proportion to the invested capital but exponentially and is generally subject to risk or volatility. A crucial second process(CSP) is added and is based on the Modern Portfolio Theory to efficiently determine the weights to assess asset allocation and eventually provide the most efficient portfolios.
+<br> <br> 
+Portfolio diversification is the risk management strategy of combining different securities to reduce the overall investment portfolio risk. 
+In short, this means an investor opts to include various types of securities and investments from different issuers and industries. Importantly enough, 
+Unsystematic risk can be mitigated through diversification while systematic or market risk is generally unavoidable.
+<br> <br> 
+For example, efficient mean-variance portfolios are known to achieve superior risk-adjusted returns. However, these portfolios are sensitive to estimation errors, particularly in the event of a lack of diversification, which affect the performance of the portfolio. I do have questions related the CSP. 
+I will only focus(in this correspondence) on the PP and provide some numerical results using actual financial data.
+
+<br> <br> 
+My conclusions from these numerical assessment motivate these questions: 
+<br> <br> 
+Q1) How to ensure that the PP is able to select a diversified primary portfolio suitable for the CSP, to maximize returns and minimize the risk profile?
+<br>  <br> 
+Government policies play a large role in market movement and cannot be diversified.
+<br>
+Q2) How to ensure that the primary process selects a diversified primary portfolio and is not primarily SENSITIVE to a single financial index, such as the SF500, Nasdaq, Dow Jones or rate co-movement of interest?
+<br> <br> 
+Q3)  Are process methodologies able to differentiate between short-term and long-term trends?
+
+<h2 style="color:black">  Numerical Assessment of Actual Financial Data </h2>
+
+<h2 style="color:black">  Financial Indices and Interest Rates (US-FRED-ECONOMIC DATA): </h2>
+The aim is to assess the daily co-movement between financial indices and interest rates.
+    </li>
+       <li type="square">  <a target="alone"  href="https://lnkd.in/gk755tMg"> 
+Daily Prices (Raw Data) </a>
+      </li>
+        <li type="square">  <a target="alone"  href="https://lnkd.in/gKcCYCtr"> 
+Most Influential in the Global Trend </a>
+      </li>
+       <li type="square">  <a target="alone"  href="https://lnkd.in/ghhv5GAa"> 
+Associated Stochastic Discount Factor Models </a>
+      </li>
+      
+</ul>
+
+With attractive and secure (zero risk) interest rates, investors have been ditching NASDAQ stocks for short-term bonds.
+
+
+<h2 style="color:black">  Sensitivity of Thematic ETFs to Financial Indices (Yahoo Finance) </h2>
+The aim is to assess the daily co-movement between financial indices and Thematic ETFs.
+
+    </li>
+       <li type="square">  <a target="alone"  href="https://lnkd.in/gjBAqf2C"> 
+Daily Prices (Raw Data) </a>
+      </li>
+        <li type="square">  <a target="alone"  href="https://lnkd.in/grXcGyzn"> 
+Most Influential in the Global Trend </a>
+      </li>
+       <li type="square">  <a target="alone"  href="https://lnkd.in/gRZB6dvU"> 
+Associated Stochastic Discount Factor Models </a>
+      </li>
+      
+</ul>
+
+<br>  <br> 
+
+ETFs associated with thematic investing are primarily sensitive to the Nasdaq index. Moreover, since the government's anti-inflation policies, alongside the current situation, play a large role in the decline of NASDAQ stocks, so being sensitive only to the NASDAQ index is above all a handicap. Thus, it can be said with certainty from this actual financial data that the thematic ETFs reviewed are poorly designed to differentiate between short-term and long-term trends.
+
+
+<br>  <br> 
+<br>  <br> 
+
+    <div>
+    <a target="alone"  href="https://github.com/efaysal" style="color:black"> Author: Faysal.El.Khettabi@gmail.com</a>
+    <br> 
+   The MIT License (MIT) Copyright 1994-2023, Faysal El Khettabi, Numerics&Analytics, All Rights Reserved.
+     </div> 
+   
+</section>
+</div>
+ 
+</body>
+</html>
